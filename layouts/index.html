@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<div class="about animated fadeInDown">
+    {{ range first 10 .Data.Pages }}
+        {{ if eq .Type "post"}}
+        <div>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ .Summary }}
+          </div>
+          {{ if .Truncated }}
+          <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+          <div>
+            <a href="{{ .RelPermalink }}">Read More…</a>
+          </div>
+          {{ end }}
+        {{ end }}
+    {{ end }}
+</div>
+
+{{ end }}

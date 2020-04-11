@@ -1,13 +1,9 @@
 <div class="page-top animated fadeInDown">
     <div class="nav">
-    <li>
-    <a href="{{ .Site.BaseURL }}">Home</a>
-    </li>
-    {{ range .Site.Menus.main -}}
-    <li>
-    <a href="{{.URL}}"> {{ .Name }} </a>
-    </li>
-    {{- end }}
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        <li><a {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}class="current"{{end}} href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
 
+        {{ end }}
     </div>
 </div>

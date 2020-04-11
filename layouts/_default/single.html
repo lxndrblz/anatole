@@ -28,11 +28,11 @@
     </div>
 </div>
 {{ if eq .Type "post"}}
+{{ if .Site.DisqusShortname -}}
 <div id="fb_comments_container">
-  {{ if .Site.DisqusShortname -}}
   <h2>Comments</h2>
   {{ template "_internal/disqus.html" . }}
-  {{- end }}
-</div>          
+</div>
+{{- end }}       
 {{ end }}
 {{ end }}

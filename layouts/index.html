@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <div class="about animated fadeInDown">
-    {{ range first 10 .Data.Pages }}
+    {{ range first 10 .Site.RegularPages }}
         {{ if eq .Type "post"}}
         <div>
             <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>

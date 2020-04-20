@@ -1,0 +1,53 @@
+baseURL = "https://example.com"
+languageCode = "en"
+DefaultContentLanguage = "en"
+title = "I'm Jane Doe"
+theme = "anatole"
+summarylength = 10
+enableEmoji = true
+disqusShortname = ""
+math=true
+
+[params]
+author = "Jane Doe"
+description = "Call me Jane"
+profilePicture = "images/profile.jpg"
+keywords = ""
+favicon = "favicons/"
+
+
+## Set as many as you want.
+[[params.socialIcons]]
+icon = "fa-linkedin"
+title = "Linkedin"
+url = "https://de.linkedin.com/"
+
+[[params.socialIcons]]
+icon = "fa-github"
+title = "GitHub"
+url = "https://github.com/lxndrblz/anatole/"
+
+[[params.socialIcons]]
+icon = "fa-instagram"
+title = "instagram"
+url = "https://www.instagram.com/"
+
+[[params.socialIcons]]
+icon = "fa-envelope"
+title = "e-mail"
+url = "mailto:mail@alexbilz.com"
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+

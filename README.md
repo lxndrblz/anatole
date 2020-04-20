@@ -5,12 +5,12 @@ Anatole is a minimalist two-column hugo theme based on farbox-theme-Anatole.
 ## Quick Start
 
 1. Add the repository into your Hugo Project repository as a submodule, `git submodule add https://github.com/lxndrblz/anatole.git themes/anatole`.
-2. Configure your `config.toml`.
+2. Configure your `config.toml`. Feel free to copy the demo toml and some content from the exampleSite. 
 3. Build your site with `hugo serve` and see the result at `http://localhost:1313/`.
 
 ## License
 
-Coder is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).
+Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).
 
 ## Maintenance
 

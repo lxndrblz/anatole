@@ -23,6 +23,36 @@ a {
   text-decoration: none;
 }
 
+.category {
+  padding: 4px 6px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #f9f9fd;
+  border: 1px solid #f2f2f2;
+}
+
+.tag::before {
+  content: "#";
+  opacity: .5;
+}
+
+.tag, .category {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1;
+  margin: 5px 8px 5px 0;
+}
+
+pre {
+  background-color: #f9f9fd;
+  padding: 5px;
+}
+
+.info i{
+  opacity: 0.5;
+  margin-right: 5px;
+}
+
 a:link, a:visited {
   opacity: 1;
   -webkit-transition: all .15s linear;
@@ -659,6 +689,8 @@ a.btn {
   text-align: center;
   padding-top: 50px;
 }
+
+
 
 @media screen and (max-width: 960px) {
   .sidebar {

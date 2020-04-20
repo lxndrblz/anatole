@@ -1,7 +1,6 @@
 
-    <i class="fa fa-hashtag"></i>
-      <span class="separator">
+    <span class="separator">
         {{- range $index, $el := . -}}
-      <a href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
+      <a class="tag" href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
       {{- end -}}
     </span>

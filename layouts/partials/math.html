@@ -1,4 +1,4 @@
-{{- if or (eq site.Params.math.enable true) (eq .Params.math true) -}}
+{{- if or (eq site.Params.math true) (eq .Params.math true) -}}
     {{- $use := "katex" -}}
 
     {{- with site.Params.math -}}

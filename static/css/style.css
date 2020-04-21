@@ -547,7 +547,7 @@ a:hover, a:active {
   cursor: pointer;
 }
 
-/* 评论样式 */
+/* Comments */
 .comment-count {
   color: #666;
 }
@@ -567,12 +567,12 @@ a:hover, a:active {
   float: left;
 }
 
-/* 默认评论样式 */
+/* Facebook Comments */
 #fb_comments_container {
   margin: 30px;
 }
 
-/* 按钮样式 */
+/* Buttons */
 a.btn {
   color: #868686;
   font-weight: 400;
@@ -631,7 +631,7 @@ a.btn {
   padding: 6px 12px;
 }
 
-/* Menu样式 */
+/* Menu */
 .menu {
   float: right;
   padding-top: 30px;

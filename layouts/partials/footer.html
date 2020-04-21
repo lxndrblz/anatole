@@ -1,10 +1,8 @@
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous">
-</script>
-<script type="text/javascript" src="{{ `js/jquery-migrate-1.2.1.min.js` | absURL }}"></script>
-<script type="text/javascript" src="{{ `js/jquery.appear.js` | absURL }}"></script>
 </body>
+<script type="text/javascript" src="{{ `js/jquery.min.js` | absURL }}"></script>
+<script type="text/javascript" src="{{ `js/jquery-migrate.min.js` | absURL }}"></script>
+<script type="text/javascript" src="{{ `js/jquery-appear.min.js` | absURL }}"></script>
+{{- partial "math.html" . -}}
+{{- template "_internal/google_analytics_async.html" . -}}
 </html>

@@ -1,8 +1,8 @@
 <div class="sidebar animated fadeInDown">
     <div class="logo-title">
       <div class="title">
-        <img src="{{ .Site.Params.profilePicture | absURL }}" style="width:127px;border-radius: 50%;">
-        <h3 title=""><a href="/">{{ .Site.Title }}</a></h3>
+        <img src="{{ .Site.Params.profilePicture | absURL }}" alt="profile picture" style="width:127px;border-radius: 50%;">
+        <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
         <div class="description">
           <p>{{ .Site.Params.description }}</p>
         </div>
@@ -17,5 +17,6 @@
     </ul>
     <div class="footer">
         <div class="by_farbox">&copy; {{ .Site.Params.author }} {{ now.Format "2006"}} </div>
+      </div>
     </div>
 </div>

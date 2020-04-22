@@ -1,4 +1,4 @@
-![](https://github.com/lxndrblz/anatole/blob/master/images/screenshot.png)
+![](https://raw.githubusercontent.com/lxndrblz/anatole/blob/master/images/screenshot.png)
 
 # Anatole ![](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/ee7a5df4-b944-4e03-853d-39219c96d484/deploy-status)](https://alexbilz.com/)
 

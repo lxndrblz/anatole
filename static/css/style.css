@@ -310,6 +310,9 @@ a:hover, a:active {
   color: #5F5F5F;
   font-size: 16px;
 }
+.post .post-content img {
+  max-width: 100%;
+}
 .post .post-footer {
   padding: 0 0 30px 0;
   border-bottom: 1px solid #f2f2f2;

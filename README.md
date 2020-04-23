@@ -5,7 +5,7 @@ Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme ba
 ![Screenshot Anatole Theme](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/screenshot.png)
 
 ## Features
-Anatole's aims to be minimalistic and sleek, but still brings some create functionality.
+Anatole's aims to be minimalistic and sleek, but still brings some great functionality.
 
 Features include:
 * Profile picture and slogan
@@ -69,7 +69,7 @@ name: "About"
 weight: 300
 ```
 ### Comments powered by Disqus
-No comment section is shown on the `single.html`, unless a disqus code is specified in the theme.
+No comment section is shown on the `single.html`, unless a disqus code is specified in the `config.toml` file.
 ```
 disqusShortname = "XXX"
 ```

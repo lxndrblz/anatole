@@ -46,6 +46,8 @@ a {
 pre {
   background-color: #f9f9fd;
   padding: 5px;
+  display: block;
+  overflow-x: auto;
 }
 
 .info i{

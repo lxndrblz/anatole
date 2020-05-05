@@ -19,6 +19,7 @@ description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
+customCss = []
 
 ## Math settings
 [params.math]

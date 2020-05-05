@@ -15,6 +15,7 @@ Features include:
 * Katex support
 * MIT License
 * Fontawesome icons
+* Custom CSS
 
 ## Preview the exampleSite
 ```
@@ -38,7 +39,7 @@ git submodule update --remote --merge
 Ìn this section I'll discuss the custom parameters available within the `config.toml`. The complete [sample](https://github.com/lxndrblz/anatole/blob/master/exampleSite/config.toml) can be found in the exampleSite folder. 
 
 ### Profile picture and slogan
-```
+```toml
 [params]
 title = "I'm Jane Doe"
 author = "Jane Doe"
@@ -47,7 +48,7 @@ profilePicture = "images/profile.jpg"
 ```
 ### Navigation items
 Non-content entries can be added right from the `config.toml` file.
-```
+```toml
 [menu]
 
   [[menu.main]]
@@ -70,22 +71,30 @@ weight: 300
 ```
 ### Comments powered by Disqus
 No comment section is shown on the `single.html`, unless a disqus code is specified in the `config.toml` file.
-```
+```toml
 disqusShortname = "XXX"
 ```
 ### Google Analytics
 To use Google Analytics, a valid tracking code has to be added. If you don't want to load the code, then commend out the parameter.
-```
+```toml
 googleAnalytics = "UA-123-45"
 ```
 
 ### Beautiful math functions
-```
+```toml
 ## Math settings
 [params.math]
 enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
 use = "katex"  # options: "katex", "mathjax". default is "katex".
 ```
+
+### Custom CSS
+You can add your custom CSS files with the `customCss` parameter of the configuration file. Put your files into the `static/css` directory.
+
+```toml
+customCss = ["css/custom1.css", "css/custom2.css"]
+```
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

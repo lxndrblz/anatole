@@ -16,6 +16,7 @@ Features include:
 * MIT License
 * Fontawesome icons
 * Custom CSS
+* Medium like zoom for images
 
 ## Preview the exampleSite
 ```

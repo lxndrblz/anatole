@@ -8,15 +8,15 @@ Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme ba
 Anatole's aims to be minimalistic and sleek, but still brings some great functionality.
 
 Features include:
-* Profile picture and slogan
-* Navigation items
-* Google Analytics
-* Comments powered by Disqus
-* Katex support
-* MIT License
-* Fontawesome icons
-* Custom CSS
-* Medium like zoom for images
+- Profile picture and slogan
+- Navigation items
+- Google Analytics (optional)
+- Comments powered by Disqus (optional)
+- Katex support (optional)
+- MIT License
+- Fontawesome icons
+- Custom CSS (optional)
+- Medium like zoom for images
 
 ## Preview the exampleSite
 ```

@@ -10,6 +10,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 Features include:
 - Profile picture and slogan
 - Navigation items
+- Pagination
 - Google Analytics (optional)
 - Comments powered by Disqus (optional)
 - Katex support (optional)

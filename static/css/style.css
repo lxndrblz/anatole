@@ -377,7 +377,7 @@ a:hover, a:active {
 .pagination {
   margin: 30px;
   padding: 0px 0 56px 0;
-  border-bottom: 1px solid #f2f2f2;
+  text-align: center;
 }
 .pagination ul {
   list-style: none;
@@ -392,6 +392,7 @@ a:hover, a:active {
 }
 .pagination ul li a {
   text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
 }
 .pagination .pre {
   float: left;

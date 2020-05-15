@@ -321,7 +321,7 @@ a:hover, a:active {
 }
 .post .post-footer .meta {
   max-width: 100%;
-  height: 25px;
+  display: flex;
   color: #bbbbbb;
 }
 .post .post-footer .meta .info {

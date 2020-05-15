@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ $paginator := .Paginate (where .Pages "Type" "post") }}
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
   {{ range $paginator.Pages }}
   <div class="post animated fadeInDown">
     <div class="post-title">

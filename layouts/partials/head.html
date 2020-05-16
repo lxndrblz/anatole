@@ -1,5 +1,5 @@
 <head>
-    <title> {{.Site.Params.author}} | {{.Title}} </title>
+    <title> {{.Site.Params.author}}{{ with .Title }} | {{ . }}{{ end }} </title>
     <meta charset="utf-8">
     {{- hugo.Generator -}}
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">

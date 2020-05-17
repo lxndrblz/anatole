@@ -451,3 +451,7 @@
     };
     return mediumZoom;
   });
+
+mediumZoom(document.querySelectorAll('div.post-content img'), {
+    background: '#fff'
+});

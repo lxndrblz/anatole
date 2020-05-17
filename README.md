@@ -97,6 +97,23 @@ You can add your custom CSS files with the `customCss` parameter of the configur
 customCss = ["css/custom1.css", "css/custom2.css"]
 ```
 
+### Content Security Policy
+The theme is compliant with most strict CSP policies out of the box. A sample CSP for an Anatole-based site would look something like this:
+
+```
+Content-Security-Policy "
+  base-uri 'self';
+  connect-src 'self';
+  default-src 'self';
+  frame-ancestors 'none';
+  font-src 'self' stackpath.bootstrapcdn.com;
+  img-src 'self';
+  object-src 'none';
+  script-src 'self';
+  style-src 'self' stackpath.bootstrapcdn.com;
+"
+```
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

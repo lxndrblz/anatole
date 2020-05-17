@@ -1,12 +1,12 @@
 
 </body>
+
 {{ $js := resources.Get "js/jquery.js" }}
 {{ $secureJS := $js |  resources.Minify | resources.Fingerprint }}
 <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
-{{ $js := resources.Get "js/jquery-migrate.js" }}
-{{ $secureJS := $js |  resources.Minify | resources.Fingerprint }}
-<script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
-{{ $js := resources.Get "js/jquery-appear.js" }}
+{{ $migrate := resources.Get "js/jquery-migrate.js" }}
+{{ $appear := resources.Get "js/jquery-appear.js" }}
+{{ $js := slice $migrate $appear | resources.Concat "js/bundle.js" }}
 {{ $secureJS := $js |  resources.Minify | resources.Fingerprint }}
 <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 {{- partial "medium-zoom.html" . -}}

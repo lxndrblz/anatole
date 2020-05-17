@@ -449,31 +449,5 @@
       };
       return zoom;
     };
-    function styleInject(css, ref) {
-      if (ref === void 0) ref = {};
-      var insertAt = ref.insertAt;
-      if (!css || typeof document === "undefined") {
-        return;
-      }
-      var head = document.head || document.getElementsByTagName("head")[0];
-      var style = document.createElement("style");
-      style.type = "text/css";
-      if (insertAt === "top") {
-        if (head.firstChild) {
-          head.insertBefore(style, head.firstChild);
-        } else {
-          head.appendChild(style);
-        }
-      } else {
-        head.appendChild(style);
-      }
-      if (style.styleSheet) {
-        style.styleSheet.cssText = css;
-      } else {
-        style.appendChild(document.createTextNode(css));
-      }
-    }
-    var css = ".medium-zoom-overlay{position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .3s;will-change:opacity}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{position:relative;cursor:pointer;cursor:zoom-out;will-change:transform}";
-    styleInject(css);
     return mediumZoom;
   });

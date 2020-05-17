@@ -1,7 +1,10 @@
-<script type="text/javascript" src="{{ `js/medium-zoom.min.js` | absURL }}"></script>
+{{ $js := resources.Get "js/medium-zoom.js" }}
+{{ $secureJS := $js |  resources.Minify | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 <script>
 	mediumZoom(document.querySelectorAll('div.post-content img'), {
         background: '#fff'
     });
 </script>
-<link rel="stylesheet" href="{{ `css/medium-zoom.css` | absURL }}" type="text/css">
+{{ $style := resources.Get "css/medium-zoom.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" type="text/css">

@@ -7,7 +7,8 @@ Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme ba
 ## Features
 Anatole's aims to be minimalistic and sleek, but still brings some great functionality.
 
-Features include:
+### Features include:
+
 - Profile picture and slogan
 - Navigation items
 - Pagination
@@ -18,6 +19,8 @@ Features include:
 - Fontawesome icons
 - Custom CSS (optional)
 - Medium like zoom for images
+- Compliant to strict CSP
+- Uses Hugo pipes to process assets
 
 ## Preview the exampleSite
 ```
@@ -112,6 +115,17 @@ Content-Security-Policy "
   script-src 'self';
   style-src 'self' stackpath.bootstrapcdn.com;
 "
+```
+If you want to configure the security headers for a site running on Netlify, you want to make sure you create a special `_headers` file in your sites static folder. The content might look like the following:
+```
+/*
+  X-Frame-Options: DENY
+  X-Clacks-Overhead: "GNU Terry Pratchett"
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
+  Content-Security-Policy:  base-uri 'self'; connect-src 'self'; default-src 'self'; frame-ancestors 'none'; font-src 'self' stackpath.bootstrapcdn.com; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self' stackpath.bootstrapcdn.com;
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 ```
 
 ## License

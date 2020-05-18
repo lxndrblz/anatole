@@ -225,6 +225,10 @@ a:hover, a:active {
 .sidebar .logo-title .logo {
   margin: 0 auto;
 }
+.sidebar .logo-title .title img {
+  width: 127px;
+  border-radius: 50%;
+}
 .sidebar .logo-title .title h3 {
   text-transform: uppercase;
   font-size: 2rem;

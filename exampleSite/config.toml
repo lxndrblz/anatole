@@ -63,3 +63,8 @@ url = "mailto:mail@alexbilz.com"
   identifier = "posts"
   url = "/post/"
 
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"

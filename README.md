@@ -67,12 +67,12 @@ Non-content entries can be added right from the `config.toml` file.
   weight = 200
   identifier = "posts"
   url = "/post/"
-```
-If you want to add content to menus, please see the `about.md` file as an example.
-```
-menu: main
-name: "About"
-weight: 300
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
 ```
 ### Comments powered by Disqus
 No comment section is shown on the `single.html`, unless a disqus code is specified in the `config.toml` file.

@@ -127,7 +127,12 @@ If you want to configure the security headers for a site running on Netlify, you
   Content-Security-Policy:  base-uri 'self'; connect-src 'self'; default-src 'self'; frame-ancestors 'none'; font-src 'self' stackpath.bootstrapcdn.com; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self' stackpath.bootstrapcdn.com;
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 ```
-
+### Configurable pagination section
+You can configure the pages shown on the front page by altering the `mainSections` parameter:
+```toml
+[params]
+  mainSections = ["post", "docs"]
+```
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

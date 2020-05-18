@@ -20,6 +20,7 @@ profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
 customCss = []
+mainSections = ["post"]
 
 ## Math settings
 [params.math]

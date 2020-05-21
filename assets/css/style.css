@@ -514,7 +514,6 @@ input:checked + .slider:before {
   position: absolute;
   width: 100%;
   padding-bottom: 20px;
-  background: red;
 }
 .footer a {
   color: #A6A6A6;

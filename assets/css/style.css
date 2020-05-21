@@ -1,16 +1,37 @@
 @charset "UTF-8";
+:root{
+  --bg-color:#fff;
+  --heading-color: #5f5f5f;
+  --body-color: rgba(0, 0, 0, 0.5);
+  --post-color: rgba(0, 0, 0, 0.44);
+  --border-color: rgba(0, 0, 0, 0.15);
+  --pre-bg-color: #f9f9fd;
+  --nav-text-color:#5a5a5a;
+  --tag-color: #424242;
+}
 html {
-  background-color: #fff;
+  background-color: var(--bg-color);
   -webkit-font-smoothing: antialiased;
 }
-
+html[data-theme='dark'] {
+  --bg-color:#222831;
+  --secondary-bg-color: #393e46;
+  --heading-color: #d65a31;
+  --body-color: white;
+  --post-color: rgba(0, 0, 0, 0.44);
+  --border-color: rgba(0, 0, 0, 0.15);
+  --nav-text-color: #fff;
+  --pre-bg-color: #21212d;
+  --tag-color: rgb(83, 83, 83) !important;
+  
+}
 body {
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--body-color);
   font-family: 'Verdana', sans-serif;
   font-size: 15px;
   width: 100%;
   margin: 0 auto 30px auto;
-  background-color: #fff;
+  background-color: var(--bg-color);
 }
 
 p {
@@ -44,7 +65,7 @@ a {
 }
 
 pre {
-  background-color: #f9f9fd;
+  background-color: var(--pre-bg-color);
   padding: 5px;
   display: block;
   overflow-x: auto;
@@ -152,7 +173,7 @@ a:hover, a:active {
   position: fixed;
   right: 0;
   z-index: 3;
-  background-color: #fff;
+  background-color: var(--secondary-bg-color);
   height: 60px;
   border-bottom: 1px solid #f2f2f2;
 }
@@ -168,15 +189,68 @@ a:hover, a:active {
   padding-right: 20px;
 }
 .page-top .nav a {
-  color: #5A5A5A;
+  color: var(--nav-text-color);
 }
 .page-top .nav a:hover {
   color: #4786D6;
 }
 .page-top .nav a.current {
-  color: #5A5A5A;
+  color: var(--nav-text-color);
   padding-bottom: 22px;
-  border-bottom: 1px solid #5A5A5A;
+  border-bottom: 1px solid var(--nav-text-color);
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+.theme-switch-wrapper{
+
+	float: right;
+
+}
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 .page-top .information {
   float: right;
@@ -205,7 +279,7 @@ a:hover, a:active {
   width: 40%;
   -webkit-background-size: cover;
   background-size: cover;
-  background-color: #fff;
+  background-color: var(--secondary-bg-color);
   height: 100%;
   transition: 0.8s;
   top: 0;
@@ -265,7 +339,7 @@ a:hover, a:active {
 }
 
 .post {
-  background-color: #FFF;
+  background-color: var(--bg-color);
   margin: 30px;
 }
 .post .post-title h1 {
@@ -280,21 +354,22 @@ a:hover, a:active {
   font-size: 28px;
   line-height: 1;
   font-weight: 600;
-  color: #5f5f5f;
+  color: var(--heading-color);
 }
 .post .post-title h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1;
   font-weight: 600;
-  color: #464646;
+  /* color: #464646; */
+  color: var(--heading-color);
   font-size: 22px;
   margin: 0;
 }
 .post .post-title a {
   text-decoration: none;
   letter-spacing: 1px;
-  color: #5f5f5f;
+  color: var(--heading-color);
 }
 .post .post-title a:hover {
   text-decoration: underline;
@@ -308,12 +383,12 @@ a:hover, a:active {
   color: #2F69B3;
 }
 .post .post-content h3 {
-  color: #5F5F5F;
+  /*  */
   font-size: 22px;
   font-weight: 600;
 }
 .post .post-content h4 {
-  color: #5F5F5F;
+  /* color: var(--heading-color); */
   font-size: 16px;
 }
 .post .post-content img {
@@ -371,7 +446,7 @@ a:hover, a:active {
 }
 .post .post-footer .tags a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.44);
+  color: var(--post-color);
   font-weight: 400;
 }
 .post .post-footer .tags a:hover {
@@ -396,7 +471,7 @@ a:hover, a:active {
 }
 .pagination ul li a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--body-color);
 }
 .pagination .pre {
   float: left;
@@ -439,7 +514,7 @@ a:hover, a:active {
   position: absolute;
   width: 100%;
   padding-bottom: 20px;
-  background: #fff;
+  background: red;
 }
 .footer a {
   color: #A6A6A6;
@@ -592,13 +667,13 @@ a.btn {
   display: inline-block;
   position: relative;
   outline: 0;
-  color: rgba(0, 0, 0, 0.44);
+  color: var(--post-color);
   background: transparent;
   font-size: 14px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-color);
   white-space: nowrap;
   font-weight: 400;
   font-style: normal;
@@ -658,13 +733,13 @@ a.btn {
   position: relative;
   padding: 0.5em 1.25em;
   outline: 0;
-  color: rgba(0, 0, 0, 0.44);
+  color: var(--post-color);
   background: transparent;
   font-size: 14px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--border-color);
   white-space: nowrap;
   font-weight: 400;
   font-style: normal;

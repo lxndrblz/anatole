@@ -4,24 +4,35 @@ function getTheme(){
     return localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 }
 
+function setTheme(style){
+    document.documentElement.setAttribute('data-theme', style);
+    localStorage.setItem('theme', style);  
+}
+
 // switch themes
 function switchTheme(e) {
     var theme = getTheme();
     if (theme == 'light') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+        setTheme('dark');
     }
     else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+        setTheme('light');
     }
 }
 
 // initialize default value
 var theme = getTheme();
+
+// check if a prefered color theme is set for users that have never been to our site
+const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 if (theme === null) {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
+    if(userPrefersDark){
+        setTheme('dark');
+    }
+    else{
+        setTheme('light');
+    }
 }
 else {
     // load a stored theme

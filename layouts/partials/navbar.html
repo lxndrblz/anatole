@@ -5,12 +5,10 @@
         <li><a {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}class="current"{{end}} href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
 
         {{ end }}
-        <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round"></div>
-          </label>
-          
-        </div>
+        <li>
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+        </li>
     </div>
 </div>

@@ -10,6 +10,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 ### Features include:
 
 - Profile picture and slogan
+- Dark mode
 - Navigation items
 - Pagination
 - Google Analytics (optional)

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root{
   --bg-color:#fff;
-  --secondary-bg-color:#fff;
+  --secondary-bg-color:#eeeeee;
   --heading-color: #5f5f5f;
   --body-color: rgba(0, 0, 0, 0.5);
   --post-color: rgba(0, 0, 0, 0.44);
@@ -16,14 +16,14 @@ html {
 }
 html[data-theme='dark'] {
   --bg-color:rgb(28, 28, 33);
-  --secondary-bg-color:rgb(28, 28, 33);
+  --secondary-bg-color:rgb(119, 119, 122);
   --heading-color:rgba(191, 191, 191, 0.5);
   --body-color: rgba(191, 191, 191, 0.5);
   --post-color: rgba(0, 0, 0, 0.44);
-  --border-color: rgb(38, 38, 38);;
+  --border-color: rgb(38, 38, 38);
   --pre-bg-color: #21212d;
   --nav-text-color:rgb(191, 191, 191);
-  --tag-color: #fff !important;
+  --tag-color: rgb(191, 191, 191) !important;
   
 }
 body {
@@ -49,7 +49,7 @@ a {
   padding: 4px 6px;
   border-radius: 3px;
   color: #000 !important;
-  background-color: #d1d1fd;
+  background-color: var(--secondary-bg-color);
   border: 1px solid var(--border-color);
 }
 
@@ -174,7 +174,7 @@ a:hover, a:active {
   position: fixed;
   right: 0;
   z-index: 3;
-  background-color: var(--secondary-bg-color);
+  background-color: var(--bg-color);
   height: 60px;
   border-bottom: 1px solid var(--border-color);
 }
@@ -232,7 +232,7 @@ a:hover, a:active {
   width: 40%;
   -webkit-background-size: cover;
   background-size: cover;
-  background-color: var(--secondary-bg-color);
+  background-color: var(--bg-color);
   height: 100%;
   transition: 0.8s;
   top: 0;
@@ -247,7 +247,6 @@ a:hover, a:active {
 }
 .sidebar .logo-title .description {
   font-size: 14px;
-  color: #565654;
 }
 .sidebar .logo-title .logo {
   margin: 0 auto;
@@ -266,7 +265,7 @@ a:hover, a:active {
 }
 .sidebar .logo-title .title a {
   text-decoration: none;
-  color: #464646;
+  color: var(--heading-color);
   font-size: 2rem;
   font-weight: bold;
 }
@@ -285,7 +284,7 @@ a:hover, a:active {
   line-height: 0;
 }
 .sidebar .social-links a {
-  color: #565654;
+  color: var(--heading-color);
 }
 .sidebar .social-links a:hover {
   color: #4786D6;
@@ -348,7 +347,7 @@ a:hover, a:active {
   max-width: 100%;
 }
 .post .post-footer {
-  padding: 0 0 30px 0;
+  padding: 0 0 10px 0;
   border-bottom: 1px solid var(--border-color);
 }
 .post .post-footer .meta {
@@ -360,6 +359,7 @@ a:hover, a:active {
   float: left;
   font-size: 12px;
   margin-bottom: 1em;
+  color: var(--body-color);
 }
 .post .post-footer .info .separator a {
   margin-right: 0.2em;
@@ -372,7 +372,7 @@ a:hover, a:active {
 }
 .post .post-footer .meta a {
   text-decoration: none;
-  color: #bbbbbb;
+  color: var(--body-color);
   padding-right: 10px;
 }
 .post .post-footer .meta a:hover {

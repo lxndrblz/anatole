@@ -23,7 +23,7 @@ html[data-theme='dark'] {
   --border-color: rgb(38, 38, 38);;
   --pre-bg-color: #21212d;
   --nav-text-color:rgb(191, 191, 191);
-  --tag-color: rgb(83, 83, 83) !important;
+  --tag-color: #fff !important;
   
 }
 body {
@@ -48,8 +48,8 @@ a {
 .category {
   padding: 4px 6px;
   border-radius: 3px;
-  color: #fff;
-  background-color: #f9f9fd;
+  color: #000 !important;
+  background-color: #d1d1fd;
   border: 1px solid var(--border-color);
 }
 
@@ -84,7 +84,7 @@ a:link, a:visited {
   -o-transition: all .15s linear;
   -ms-transition: all .15s linear;
   transition: all .15s linear;
-  color: #424242;
+  color: var(--tag-color);
 }
 
 a:hover, a:active {

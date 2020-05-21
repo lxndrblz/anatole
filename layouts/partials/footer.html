@@ -6,10 +6,12 @@
 <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 {{ $migrate := resources.Get "js/jquery-migrate.js" }}
 {{ $appear := resources.Get "js/jquery-appear.js" }}
-{{ $js := slice $migrate $appear | resources.Concat "js/bundle.js" }}
+{{ $anatole := resources.Get "js/anatole.js" }}
+{{ $js := slice $migrate $appear $anatole | resources.Concat "js/bundle.js" }}
 {{ $secureJS := $js |  resources.Minify | resources.Fingerprint }}
 <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 {{- partial "medium-zoom.html" . -}}
 {{- partial "math.html" . -}}
 {{- template "_internal/google_analytics_async.html" . -}}
+
 </html>

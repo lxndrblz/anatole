@@ -204,6 +204,7 @@ a:hover, a:active {
   list-style: none;
   padding: 15px 30px;
   float: right;
+  font-size: 1.6em;
 }
 .page-top .information {
   float: right;

@@ -17,6 +17,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | absURL }}apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | absURL }}favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | absURL }}favicon-16x16.png">
-
     <link rel="canonical" href="{{ .Permalink }}">
+    {{ $anatole := resources.Get "js/anatole-header.js" }}
+    {{ $secureJS := $anatole |  resources.Minify | resources.Fingerprint }}
+    <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 </head>

@@ -200,6 +200,13 @@ a:hover, a:active {
   padding-bottom: 22px;
   border-bottom: 1px solid var(--nav-text-color);
 }
+.page-top .themeswitcher {
+  list-style: none;
+  padding: 18px 30px;
+  float: right;
+  font-size: 20px;
+
+}
 .page-top .information {
   float: right;
   padding-top: 12px;

@@ -18,7 +18,7 @@ html[data-theme='dark'] {
   --body-color:rgb(169,169,179);
   --post-color: rgba(0, 0, 0, 0.44);
   --border-color: rgb(38, 38, 38);
-  --pre-bg-color:rgb(33,33,45);
+  --pre-bg-color:#292a2d;
   --nav-text-color:rgb(191, 191, 191);
   --tag-color: rgb(191, 191, 191) !important;
   

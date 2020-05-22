@@ -10,8 +10,8 @@
     </div>
     <ul class="social-links">
         {{ range $item := .Site.Params.socialIcons }}
-        <a href="{{ $item.url }}" rel="me" >
-          <i class="fa fa-2x {{ $item.icon }}" aria-hidden="true" title="{{ $item.title }}"></i>
+        <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
+          <i class="fa fa-2x {{ $item.icon }}" aria-hidden="true"></i>
         </a>
         {{ end }}
     </ul>

@@ -1,12 +1,12 @@
 <div class="page-top animated fadeInDown">
-    <!-- <div class="nav"> -->
+
         <ul class="nav">
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-        <li><a {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}class="current"{{end}} href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
-        {{ end }}
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+            {{ $active := or (eq $currentPage.Title .Name) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
+            <li><a {{if $active }}class="current"{{end}} href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+            {{ end }}
         </ul>
-    <!-- </div> -->
     <div class="themeswitcher">
         <a class="theme-switch" title="Switch Theme">
             <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>

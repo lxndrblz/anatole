@@ -9,6 +9,7 @@
   --pre-bg-color: #f9f9fd;
   --nav-text-color:#5a5a5a;
   --tag-color: #424242;
+  transition: all .8s;
 }
 
 html[data-theme='dark'] {
@@ -97,6 +98,7 @@ a:hover, a:active {
 /*basic styles ends*/
 /*animation starts*/
 .animated {
+  transition: all .8s;
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   -ms-animation-fill-mode: both;
@@ -124,7 +126,6 @@ a:hover, a:active {
   }
   100% {
     opacity: 1;
-    background-color: var(--bg-color);
     -webkit-transform: translateY(0);
   }
 }
@@ -135,7 +136,6 @@ a:hover, a:active {
   }
   100% {
     opacity: 1;
-    background-color: var(--bg-color);
     -moz-transform: translateY(0);
   }
 }
@@ -146,7 +146,6 @@ a:hover, a:active {
   }
   100% {
     opacity: 1;
-    background-color: var(--bg-color);
     -o-transform: translateY(0);
   }
 }
@@ -157,7 +156,6 @@ a:hover, a:active {
   }
   100% {
     opacity: 1;
-    background-color: var(--bg-color);
     transform: translateY(0);
   }
 }
@@ -242,7 +240,6 @@ a:hover, a:active {
   background-size: cover;
   background-color: var(--bg-color);
   height: 100%;
-  transition: 0.8s;
   top: 0;
   left: 0;
   position: fixed;

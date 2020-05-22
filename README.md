@@ -14,6 +14,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Dark mode
 - Navigation items
 - Pagination
+- 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
 - Comments powered by Disqus (optional)
 - Katex support (optional)
@@ -76,6 +77,10 @@ Non-content entries can be added right from the `config.toml` file.
   identifier = "about"
   url = "/about/"
 ```
+### :100: Google Lighthouse score
+The theme is optimized to adhere to the requirements checked for in the Lighthouse Audit. On my [personal site](https://www.alexbilz.com) I was able to reach a perfect 100⁄100 score.
+![Google Lighthouse Score](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/lighthouse.png)
+
 ### Comments powered by Disqus
 No comment section is shown on the `single.html`, unless a disqus code is specified in the `config.toml` file.
 ```toml

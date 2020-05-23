@@ -1,6 +1,6 @@
 <div class="page-top animated fadeInDown">
     <ul class="nav">
-        {{ $url := .URL }}
+        {{ $url := .RelPermalink }}
         {{ range .Site.Menus.main }}
         {{ $active := eq $url .URL }}
         <li><a {{if $active }}class="current"{{end}} href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>

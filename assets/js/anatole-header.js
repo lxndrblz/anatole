@@ -23,7 +23,6 @@ function init(){
         }
     }
     else {
-        console.log(theme);
         // load a stored theme
         if (theme == 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
@@ -47,7 +46,7 @@ function switchTheme(e) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    themeSwitcher = document.querySelector('.theme-switch');
+    var themeSwitcher = document.querySelector('.theme-switch');
     themeSwitcher.addEventListener('click', switchTheme, false);
 }, false);
 

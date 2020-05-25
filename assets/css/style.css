@@ -20,13 +20,14 @@ html[data-theme='dark'] {
   --border-color: rgb(38, 38, 38);
   --pre-bg-color:rgb(33,33,45);
   --nav-text-color:rgb(191, 191, 191);
-  --tag-color: rgb(191, 191, 191) !important;
+  --tag-color: rgb(191, 191, 191);
   
 }
 
 html {
   background-color: var(--bg-color);
   -webkit-font-smoothing: antialiased;
+  
 }
 
 body {
@@ -82,11 +83,6 @@ pre {
 
 a:link, a:visited {
   opacity: 1;
-  -webkit-transition: all .15s linear;
-  -moz-transition: all .15s linear;
-  -o-transition: all .15s linear;
-  -ms-transition: all .15s linear;
-  transition: all .15s linear;
   color: var(--tag-color);
 }
 
@@ -96,12 +92,9 @@ a:hover, a:active {
 
 /*basic styles ends*/
 /*animation starts*/
+
 .animated {
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
-  animation-fill-mode: both;
+  transition: top .8s linear;
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
   -ms-animation-duration: 1s;
@@ -119,48 +112,37 @@ a:hover, a:active {
 
 @-webkit-keyframes fadeInDown {
   0% {
-    opacity: 0;
     -webkit-transform: translateY(-20px);
   }
   100% {
-    opacity: 1;
-    background-color: var(--bg-color);
     -webkit-transform: translateY(0);
   }
 }
 @-moz-keyframes fadeInDown {
   0% {
-    opacity: 0;
     -moz-transform: translateY(-20px);
   }
   100% {
-    opacity: 1;
-    background-color: var(--bg-color);
     -moz-transform: translateY(0);
   }
 }
 @-o-keyframes fadeInDown {
   0% {
-    opacity: 0;
     -o-transform: translateY(-20px);
   }
   100% {
-    opacity: 1;
-    background-color: var(--bg-color);
     -o-transform: translateY(0);
   }
 }
 @keyframes fadeInDown {
   0% {
-    opacity: 0;
     transform: translateY(-20px);
   }
   100% {
-    opacity: 1;
-    background-color: var(--bg-color);
     transform: translateY(0);
   }
 }
+
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
@@ -242,7 +224,6 @@ a:hover, a:active {
   background-size: cover;
   background-color: var(--bg-color);
   height: 100%;
-  transition: 0.8s;
   top: 0;
   left: 0;
   position: fixed;
@@ -343,7 +324,6 @@ a:hover, a:active {
   color: #2F69B3;
 }
 .post .post-content h3 {
-  /*  */
   font-size: 22px;
   font-weight: 600;
 }

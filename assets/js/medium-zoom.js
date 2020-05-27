@@ -47,10 +47,9 @@
         throw new TypeError("The provided selector is invalid.\n" + "Expects a CSS selector, a Node element, a NodeList or an array.\n" + "See: https://github.com/francoischalifour/medium-zoom");
       }
     };
-    var createOverlay = function createOverlay(background) {
+    var createOverlay = function createOverlay() {
       var overlay = document.createElement("div");
       overlay.classList.add("medium-zoom-overlay");
-      overlay.style.background = background;
       return overlay;
     };
     var cloneTarget = function cloneTarget(template) {
@@ -117,9 +116,6 @@
       var update = function update() {
         var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
         var newOptions = options;
-        if (options.background) {
-          overlay.style.background = options.background;
-        }
         if (options.container && options.container instanceof Object) {
           newOptions.container = _extends({}, zoomOptions.container, options.container);
         }
@@ -423,12 +419,11 @@
       }
       zoomOptions = _extends({
         margin: 0,
-        background: "#fff",
         scrollOffset: 40,
         container: null,
         template: null
       }, zoomOptions);
-      var overlay = createOverlay(zoomOptions.background);
+      var overlay = createOverlay();
       document.addEventListener("click", _handleClick);
       document.addEventListener("keyup", _handleKeyUp);
       document.addEventListener("scroll", _handleScroll);
@@ -452,6 +447,4 @@
     return mediumZoom;
   });
 
-mediumZoom(document.querySelectorAll('div.post-content img'), {
-    background: '#fff'
-});
+mediumZoom(document.querySelectorAll('div.post-content img'));

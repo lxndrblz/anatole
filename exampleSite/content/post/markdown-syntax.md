@@ -1,7 +1,7 @@
 +++
 author = "Hugo Authors"
 title = "Markdown Syntax Guide"
-date = "2020-03-11"
+date = "2019-03-11"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
     "markdown",
@@ -129,9 +129,13 @@ html
 
 #### Nested list
 
-* Item
-1. First Sub-item
-2. Second Sub-item
+* Fruit
+  * Apple
+  * Orange
+  * Banana
+* Dairy
+  * Milk
+  * Cheese
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 

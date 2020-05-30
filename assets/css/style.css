@@ -9,6 +9,7 @@
   --pre-bg-color: #f9f9fd;
   --nav-text-color:#5a5a5a;
   --tag-color: #424242;
+  scroll-padding-top: 100px;
 }
 
 html[data-theme='dark'] {
@@ -48,6 +49,7 @@ p {
 a {
   text-decoration: none;
 }
+
 
 .category {
   padding: 4px 6px;

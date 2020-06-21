@@ -54,6 +54,10 @@ author = "Jane Doe"
 description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 ```
+
+### Favicon
+Add you own favicon in `static/favicons/favicon.ico`.
+
 ### Navigation items
 Non-content entries can be added right from the `config.toml` file.
 ```toml

@@ -21,6 +21,7 @@ keywords = ""
 favicon = "favicons/"
 customCss = []
 mainSections = ["post"]
+images = ["images/site-feature-image.png"]
 
 ## Math settings
 [params.math]

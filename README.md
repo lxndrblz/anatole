@@ -18,6 +18,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Google Analytics (optional)
 - Comments powered by Disqus (optional)
 - Katex support (optional)
+- Twitter Cards support
 - MIT License
 - Fontawesome icons
 - Custom CSS (optional)
@@ -103,6 +104,20 @@ googleAnalytics = "UA-123-45"
 enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
 use = "katex"  # options: "katex", "mathjax". default is "katex".
 ```
+
+### Twitter Cards support
+In order to use the full functionality of Twitter cards, you will have to define a couple of settings in the `config.toml` and the frontmatter of a page.
+
+In the `config.toml` you can configure a site feature image. This image will be displayed, if no image is defined in the frontmatter of a page.
+```toml
+[params]
+  images = ["images/site-feature-image.png"]
+```
+To define a custom image of a page, you might want to add the following to the frontmatter of a post.
+```toml
+images = ["post-cover.png"]
+```
+
 
 ### Custom CSS
 You can add your custom CSS files with the `customCss` parameter of the configuration file. Put your files into the `static/css` directory.

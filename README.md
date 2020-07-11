@@ -159,6 +159,13 @@ You can configure the pages shown on the front page by altering the `mainSection
 [params]
   mainSections = ["post", "docs"]
 ```
+### Robots.txt
+If you want Hugo to generate a robots.txt, you will have to set the `enableRobotsTXT` in the `config.toml` to `true`. By default a robots.txt, which allows search engine crawlers to access to any page, will be generated. It will look like this:
+```
+User-agent: *
+```
+If certain sites shoud be excluded from being accessed, you might want to setup a custom robots.txt file within your `static` folder of your site. 
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

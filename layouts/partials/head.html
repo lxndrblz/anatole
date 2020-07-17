@@ -6,9 +6,11 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" type="text/css">
-    {{ range .Site.Params.customCss -}}
-    <link rel="stylesheet" href="{{ . | absURL }}" type="text/css">
-    {{- end }}
+    {{- $css := "" -}}
+    {{- range .Site.Params.customCss -}}
+    {{ $css := resources.Get . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" type="text/css">
+    {{- end -}}
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Favicons -->
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}favicon.ico" type="image/x-icon">
@@ -22,5 +24,25 @@
     {{ $anatole := resources.Get "js/anatole-header.js" }}
     {{ $secureJS := $anatole |  resources.Minify | resources.Fingerprint }}
     <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
+    
+    
+    {{- $js := "" -}}
+    {{- range .Site.Params.customJs -}}
+      {{- $customJS := resources.Get . -}}
+      {{- if $customJS -}}
+        {{- if eq $js "" -}}
+          {{- $js = $customJS -}}
+        {{- else -}}
+          {{- $js = slice $js $customJS | resources.Concat "js/custom.js" -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    
+    {{- if ne $js "" -}}
+    {{- $secureJS := $js |  resources.Minify | resources.Fingerprint -}}
+    <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end -}}
+
+    <!-- Twitter Cards -->
     {{ template "_internal/twitter_cards.html" . }}
 </head>

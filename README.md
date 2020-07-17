@@ -22,6 +22,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - MIT License
 - Fontawesome icons
 - Custom CSS (optional)
+- Custom JavaScript (optional)
 - Medium like zoom for images
 - Compliant to strict CSP
 - Uses Hugo pipes to process assets
@@ -120,11 +121,34 @@ images = ["post-cover.png"]
 
 
 ### Custom CSS
-You can add your custom CSS files with the `customCss` parameter of the configuration file. Put your files into the `static/css` directory.
+You can add your custom CSS files with the `customCss` parameter of the configuration file. Put your files into the `assets/css` directory.
 
 ```toml
-customCss = ["css/custom1.css", "css/custom2.css"]
+customCss = ["css/custom.css", "css/styles.css"]
 ```
+On the user-side it will look like this:
+```text
+.
+└── assets
+    └── css
+        ├── custom.css
+        └── styles.css
+```
+### Custom JavaScript
+You can add your custom JS files with the `customJs` parameter of the configuration file. Put your files into the `assets/js` directory.
+```toml
+[params]
+customJs = ["js/hello.js", "js/world.js"]
+```
+On the user-side it will look like this:
+```text
+.
+└── assets
+    └── js
+        ├── hello.js
+        └── world.js
+```
+`hello.js` and `world.js` will be bundled into a `custom.min.js`.
 
 ### Content Security Policy
 The theme is compliant with most strict CSP policies out of the box. A sample CSP for an Anatole-based site would look something like this:

@@ -28,12 +28,16 @@
     
     {{- $js := "" -}}
     {{- range .Site.Params.customJs -}}
-      {{- $customJS := resources.Get . -}}
-      {{- if $customJS -}}
-        {{- if eq $js "" -}}
-          {{- $js = $customJS -}}
-        {{- else -}}
-          {{- $js = slice $js $customJS | resources.Concat "js/custom.js" -}}
+      {{- if or (in . "http://") (in . "https://")  -}}
+      <script src="{{ . | relURL }}"></script>
+      {{- else -}}
+        {{- $customJS := resources.Get . -}}
+        {{- if $customJS -}}
+          {{- if eq $js "" -}}
+            {{- $js = $customJS -}}
+          {{- else -}}
+            {{- $js = slice $js $customJS | resources.Concat "js/custom.js" -}}
+          {{- end -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}

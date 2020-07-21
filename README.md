@@ -150,6 +150,16 @@ On the user-side it will look like this:
 ```
 `hello.js` and `world.js` will be bundled into a `custom.min.js`.
 
+You can also include links to remote javascript files (hosted on CDNs for example). But be aware, that integrity settings and minification won't be applied. Further make sure to adjust your CSP. You can load a remote script like this:
+```toml
+[params]
+customJs = ["http://cdn.exmple.org/fancyscript.js"]
+```
+Both approaches can even be mixed:
+```toml
+[params]
+customJs = ["https://cdn.exmple.org/fancyscript.js", "js/world.js"]
+```
 ### Content Security Policy
 The theme is compliant with most strict CSP policies out of the box. A sample CSP for an Anatole-based site would look something like this:
 

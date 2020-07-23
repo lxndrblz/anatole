@@ -28,7 +28,7 @@
     
     {{- $js := "" -}}
     {{- range .Site.Params.customJs -}}
-      {{- if or (in . "http://") (in . "https://")  -}}
+      {{- if or (in . "http://") (in . "https://") -}}
       <script src="{{ . | relURL }}"></script>
       {{- else -}}
         {{- $customJS := resources.Get . -}}

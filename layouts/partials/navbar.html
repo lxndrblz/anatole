@@ -1,5 +1,10 @@
 <div class="page-top animated fadeInDown">
-    <ul class="nav">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    <ul class="nav" id="navMenu">
         {{ $url := .RelPermalink }}
         {{ range .Site.Menus.main }}
         {{ $active := eq $url .URL }}
@@ -9,12 +14,11 @@
             {{ range $.Site.Home.AllTranslations }}
             <li><a href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a></li>
             {{ end }}
-            </ul>
-        {{ end }}  
-    </ul>
-    <div class="themeswitcher">      
+        {{ end }}
+        <li class="theme-switch-item">
         <a class="theme-switch" title="Switch Theme">
             <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
         </a>
-    </div>
+        </li>
+    </ul>
 </div>

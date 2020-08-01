@@ -1,0 +1,21 @@
+[category]
+other = "Kategorie"
+
+[tag]
+other = "Tag"
+
+[reading_time]
+one = "{{ .Count }} Minute zum Lesen"
+other = "{{ .Count }} Minuten zum Lesen"
+
+[page_not_found]
+other = "Seite nicht gefunden"
+
+[page_does_not_exist]
+other = "Tut mir Leid, diese Seite existiert leider nicht."
+
+[head_back]
+other = "Du kannst hier zurück zur <a href=\"{{ . }}\">Startseite</a>."
+
+[comments]
+other = "Kommentare"

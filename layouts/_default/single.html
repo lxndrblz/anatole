@@ -7,8 +7,9 @@
         </h3>
         {{ if eq .Type "post"}}
         <div class="info">
-          <i class="fa fa-sun-o"></i><span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-          <i class="fa fa-clock-o"></i><span class="reading-time">{{ .ReadingTime }}-minute read</span>
+          <i class="fa fa-sun-o"></i>
+          <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
         </div>
         {{ end }}
         </div>
@@ -25,7 +26,7 @@
     {{ if eq .Type "post"}}
     {{ if .Site.DisqusShortname -}}
     <div id="fb_comments_container">
-      <h2>Comments</h2>
+      <h2>{{ i18n "comments" }}</h2>
       {{ template "_internal/disqus.html" . }}
     </div>
     {{- end }}       

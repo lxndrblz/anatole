@@ -14,6 +14,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Dark mode
 - Navigation items
 - Pagination
+- Multilingual
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
 - Comments powered by Disqus (optional)
@@ -83,6 +84,42 @@ Non-content entries can be added right from the `config.toml` file.
   identifier = "about"
   url = "/about/"
 ```
+### Multilingual support
+Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each Language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.  
+```toml
+[Languages]
+  [Languages.en]
+  title = "My blog"
+  weight = 1
+  LanguageName = "EN"
+
+  [Languages.de]
+  title = "Mein blog"
+  description = "Ich bin Jane"
+  weight = 2
+  LanguageName = "DE"
+```
+To make sure your menu is linking to the correct localized content, make sure that you customize the menu items to inlude the language prefix. Your menu might look like the following:
+```toml
+[[Languages.de.menu.main]]
+url    = "/de/"
+identifier = "home"
+name   = "Startseite"
+weight = 100
+
+[[Languages.de.menu.main]]
+name = "Beiträge"
+weight = 200
+identifier = "posts"
+url = "/de/post/"
+
+[[Languages.de.menu.main]]
+name = "Über"
+weight = 300
+identifier = "about"
+url = "/de/about/"
+```
+Anatole currently ships with support for some basic languages. Contributions for other language translations are welcome.
 ### :100: Google Lighthouse score
 The theme is optimized to adhere to the requirements checked for in the Lighthouse Audit. On my [personal site](https://www.alexbilz.com) I was able to reach a perfect 100⁄100 score.
 ![Google Lighthouse Score](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/lighthouse.png)

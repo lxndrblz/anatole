@@ -99,6 +99,14 @@ Anatole supports multilingual page setups. All you need to do is to add the lang
   weight = 2
   LanguageName = "DE"
 ```
+There are two ways of translating your content either by adding a suffix in the filename eg. `mypost.de.md` or by setting a contentDir (a certain directory) for each language. [Link to the Hugo documentation](https://gohugo.io/content-management/multilingual/). If you want to use the option with the `contentDir`, you will have to add the `contentDir` parameter for each language:
+```toml
+[languages]
+  [languages.en]
+    contentDir = "content/english"
+    languageName = "EN"
+    weight = 1
+```
 To make sure your menu is linking to the correct localized content, make sure that you customize the menu items to inlude the language prefix. Your menu might look like the following:
 ```toml
 [[Languages.de.menu.main]]

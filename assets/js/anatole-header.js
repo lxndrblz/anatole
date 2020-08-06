@@ -18,8 +18,11 @@ function init(){
         if(userPrefersDark){
             setTheme('dark');
         }
-        else{
+        else if(!document.documentElement.getAttribute('data-theme')){
             setTheme('light');
+        }
+        else{
+            setTheme(document.documentElement.getAttribute('data-theme'));
         }
     }
     else {

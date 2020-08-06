@@ -84,6 +84,15 @@ Non-content entries can be added right from the `config.toml` file.
   identifier = "about"
   url = "/about/"
 ```
+### Prefer dark theme
+You can easily enable the dark mode from the `config.toml` all you have to do is to set the parameter `displayMode` to `dark`. If you dont specify any displayMode, then the light version will be loaded.
+
+Please also note that returning visitors will see the theme that was last displayed to them on your site. If your user has his system configured to dark mode, then this will also take presendence over the displayMode set in the `config.toml`.
+```toml
+[params]
+displayMode = "dark"
+``` 
+
 ### Multilingual support
 Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each Language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.  
 ```toml

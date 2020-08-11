@@ -10,6 +10,8 @@
   --pre-bg-color: #f9f9fd;
   --nav-text-color: #5a5a5a;
   --tag-color: #424242;
+  --blockquote-text-color: #858585;
+  --blockquote-border-color: #dfe2e5;
   scroll-padding-top: 100px;
 }
 
@@ -23,13 +25,13 @@ html[data-theme='dark'] {
   --pre-bg-color: rgb(33, 33, 45);
   --nav-text-color: rgb(191, 191, 191);
   --tag-color: rgb(191, 191, 191);
-
+  --blockquote-text-color: #808080;
+  --blockquote-border-color: #424242;
 }
 
 html {
   background-color: var(--bg-color);
   -webkit-font-smoothing: antialiased;
-
 }
 
 body {
@@ -51,6 +53,11 @@ a {
   text-decoration: none;
 }
 
+blockquote {
+  padding: 0 1em;
+  border-left: .25em solid var(--blockquote-border-color);
+  color: var(--blockquote-text-color);
+}
 
 .category {
   padding: 4px 6px;

@@ -62,7 +62,7 @@ blockquote {
 .category {
   padding: 4px 6px;
   border-radius: 3px;
-  color: #000 !important;
+  color: var(--tag-color) !important;
   background-color: var(--secondary-bg-color);
   border: 1px solid var(--border-color);
 }

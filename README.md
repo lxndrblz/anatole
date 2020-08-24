@@ -268,6 +268,11 @@ Then, you can generate a different style by running:
 hugo gen chromastyles --style=monokailight > assets/css/syntax.css
 ```
 If you get any errors, make sure the `assets/css/` directory exists within your sites root folder.
+Include the newly generated `syntax.css` like a standard custom css script:
+```
+[params]
+customCss = ["css/syntax.css"]
+```
 
 ## License
 

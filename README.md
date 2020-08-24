@@ -26,6 +26,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Custom JavaScript (optional)
 - Medium like zoom for images
 - Compliant to strict CSP
+- Syntax highlighting
 - Uses Hugo pipes to process assets
 
 ## Preview the exampleSite
@@ -253,6 +254,20 @@ If you want Hugo to generate a robots.txt, you will have to set the `enableRobot
 User-agent: *
 ```
 If certain sites shoud be excluded from being accessed, you might want to setup a custom robots.txt file within your `static` folder of your site. 
+
+### Syntax highlighting
+This theme has support for either Hugo's lightning fast Chroma code highlighting. See the [Hugo docs](https://gohugo.io/content-management/syntax-highlighting/) for more information.
+
+To enable Chroma, add the following to your site parameters:
+```
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+```
+Then, you can generate a different style by running:
+```
+hugo gen chromastyles --style=monokailight > assets/css/syntax.css
+```
+If you get any errors, make sure the `assets/css/` directory exists within your sites root folder.
 
 ## License
 

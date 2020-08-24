@@ -8,7 +8,7 @@
         {{ $url := .RelPermalink }}
         {{ range .Site.Menus.main }}
         {{ $active := eq $url .URL }}
-        <li><a {{if $active }}class="current"{{end}} href="{{ .URL }}" {{ if strings.HasPrefix .URL "http" }}target="_blank"{{ end }} title="{{ .Title }}">{{ .Name }}</a></li>
+        <li><a {{if $active }}class="current"{{end}} href="{{ .URL }}" {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener noreferrer" {{ end }} title="{{ .Title }}">{{ .Name }}</a></li>
         {{ end }}
         {{ if .Site.IsMultiLingual }}
             {{ range $.Site.Home.AllTranslations }}

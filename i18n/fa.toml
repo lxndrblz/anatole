@@ -1,0 +1,21 @@
+[category]
+other = "دسته‌بندی"
+
+[tag]
+other = "برچسب"
+
+[reading_time]
+one = "یک دقیقه زبان برای مطالعه"
+other = "{{ .Count }}-دقیقه زمان باقی مانده است"
+
+[page_not_found]
+other = "صفحه پیدا نشد"
+
+[page_does_not_exist]
+other = "با عرض معذرت، این صفحه موجود نمی‌باشد."
+
+[head_back]
+other = "شما می‌توانید برگردید به <a href=\"{{ . }}\">صفحه اصلی</a>."
+
+[comments]
+other = "نظرات"

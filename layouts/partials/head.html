@@ -41,6 +41,11 @@
         {{- end -}}
       {{- end -}}
     {{- end -}}
+
+    {{- if isset .Params "googleSiteVerify" }}
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="{{ .Param "googleSiteVerify" }}">
+    {{- end -}}
     
     {{- if ne $js "" -}}
     {{- $secureJS := $js |  resources.Minify | resources.Fingerprint -}}

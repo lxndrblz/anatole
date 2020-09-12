@@ -153,6 +153,13 @@ To use Google Analytics, a valid tracking code has to be added. If you don't wan
 googleAnalytics = "UA-123-45"
 ```
 
+### Google Site Verification
+To use Google Site Verification, add the following line to the `[params]`:
+```toml
+googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+```
+Replace the hash with the one Google provided you.
+
 ### Beautiful math functions
 ```toml
 ## Math settings

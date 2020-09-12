@@ -1,25 +1,23 @@
 <div class="sidebar animated fadeInDown">
     <div class="logo-title">
-      <div class="title">
-        <img src="{{ .Site.Params.profilePicture | absURL }}" alt="profile picture">
-        <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
-        <div class="description">
-          <p>{{ .Site.Params.description }}</p>
+        <div class="title">
+            <img src="{{ .Site.Params.profilePicture | absURL }}" alt="profile picture">
+            <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
+            <div class="description">
+                <p>{{ .Site.Params.description }}</p>
+            </div>
         </div>
-      </div>
     </div>
     <ul class="social-links">
         {{ range $item := .Site.Params.socialIcons }}
-        <li>
-        <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
-          <i class="fa fa-2x {{ $item.icon }}" aria-hidden="true"></i>
-        </a>          
-        </li>
-
+            <li>
+                <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
+                    <i class="fa fa-2x {{ $item.icon }}" aria-hidden="true"></i>
+                </a>
+            </li>
         {{ end }}
     </ul>
     <div class="footer">
         <div class="by_farbox">&copy; {{ .Site.Params.author }} {{ now.Format "2006"}} </div>
-      </div>
     </div>
 </div>

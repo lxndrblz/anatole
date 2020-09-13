@@ -42,9 +42,9 @@
       {{- end -}}
     {{- end -}}
 
-    {{- if isset .Params "googleSiteVerify" }}
+    {{- if .Site.Params.googleSiteVerify }}
     <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="{{ .Param "googleSiteVerify" }}">
+    <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}">
     {{- end -}}
     
     {{- if ne $js "" -}}

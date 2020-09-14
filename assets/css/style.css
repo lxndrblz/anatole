@@ -858,7 +858,7 @@ a.btn {
     }
 
     .page-top .nav {
-        background-color: var(--secondary-bg-color);;
+        background-color: var(--secondary-bg-color);
         box-shadow: 0 8px 16px rgba(10, 10, 10, .1);
         padding: .5rem 0;
         width: 100%;

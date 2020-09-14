@@ -6,9 +6,9 @@
                 <h3>{{ .Title }}</h3>
                 {{ if eq .Type "post"}}
                     <div class="info">
-                        <i class="fa fa-sun-o"></i>
+                        <em class="fa fa-sun-o"></em>
                         <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-                        <i class="fa fa-clock-o"></i>
+                        <em class="fa fa-clock-o"></em>
                         <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
                 {{ end }}

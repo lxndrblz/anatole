@@ -1,24 +1,32 @@
 <div class="page-top animated fadeInDown">
-    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
-      </a>
+    </a>
     <ul class="nav" id="navMenu">
         {{ $url := .RelPermalink }}
         {{ range .Site.Menus.main }}
-        {{ $active := eq $url .URL }}
-        <li><a {{if $active }}class="current"{{end}} href="{{ .URL }}" {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener noreferrer" {{ end }} title="{{ .Title }}">{{ .Name }}</a></li>
+            {{ $active := eq $url .URL }}
+            <li><a {{if $active }}class="current"{{end}}
+                   href="{{ .URL }}"
+                        {{ if strings.HasPrefix .URL "http" }}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        {{ end }}
+                   title="{{ .Title }}">{{ .Name }}</a></li>
         {{ end }}
         {{ if .Site.IsMultiLingual }}
             {{ range $.Site.Home.AllTranslations }}
-            <li><a href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a></li>
+                <li><a href="{{ .Permalink }}"
+                       title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
+                </li>
             {{ end }}
         {{ end }}
         <li class="theme-switch-item">
-        <a class="theme-switch" title="Switch Theme">
-            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-        </a>
+            <a class="theme-switch" title="Switch Theme">
+                <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
         </li>
     </ul>
 </div>

@@ -293,5 +293,3 @@ This theme is maintained by its author [Alexander Bilz](https://github.com/lxndr
 
 * Go to [Cai Cai](https://github.com/hi-caicai), for the great Anatole Farbox theme that formed the foundation for this theme.
 * Go to [Kareya Saleh](https://unsplash.com/photos/tLKOj6cNwe0) for providing the profile picture in the exampleSite.
-
-

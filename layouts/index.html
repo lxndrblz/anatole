@@ -1,28 +1,32 @@
 {{ define "main" }}
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-  {{ range $paginator.Pages }}
-  <div class="post animated fadeInDown">
-    <div class="post-title">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </h3>
-    </div>
-    <div class="post-content"><div class="p_part"><p>{{ .Summary }}</p></div>
-  
-  <div class="p_part"><p></p></div></div>
-    <div class="post-footer">
-      <div class="meta">
-        <div class="info"><i class="fa fa-sun-o"></i><span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-          {{ with .Params.tags }}
-          {{- range $index, $el := . -}}
-          <a class="tag" href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
-          {{- end -}}
-          {{ end }}       
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+    {{ range $paginator.Pages }}
+        <div class="post animated fadeInDown">
+            <div class="post-title">
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+            </div>
+            <div class="post-content">
+                <div class="p_part"><p>{{ .Summary }}</p></div>
+
+                <div class="p_part"><p></p></div>
+            </div>
+            <div class="post-footer">
+                <div class="meta">
+                    <div class="info"><em class="fa fa-sun-o"></em><span
+                                class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+                        {{ with .Params.tags }}
+                            {{- range $index, $el := . -}}
+                                <a class="tag"
+                                   href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
+                            {{- end -}}
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    {{ end }}
+    <div class="pagination">
+        {{ template "_internal/pagination.html" . }}
     </div>
-  </div>
-  {{ end }}
-<div class="pagination">
-  {{ template "_internal/pagination.html" . }}
-</div>
 {{ end }}

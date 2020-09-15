@@ -1,55 +1,77 @@
 <head>
     <title> {{.Site.Params.author}}{{ with .Title }} | {{ . }}{{ end }} </title>
+
+    <!-- Meta -->
     <meta charset="utf-8">
     {{- hugo.Generator -}}
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="{{ .Site.Params.description }}">
+    {{- if .Site.Params.googleSiteVerify }}
+    <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}">
+    {{- end -}}
+
+    <!-- CSS -->
     {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" type="text/css">
+    <link rel="stylesheet"
+          href="{{ $style.Permalink }}"
+          integrity="{{ $style.Data.Integrity }}"
+          crossorigin="anonymous"
+          type="text/css">
     {{- $css := "" -}}
     {{- range .Site.Params.customCss -}}
     {{ $css := resources.Get . | fingerprint }}
-    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" type="text/css">
+    <link rel="stylesheet"
+          href="{{ $css.Permalink }}"
+          integrity="{{ $css.Data.Integrity }}"
+          crossorigin="anonymous"
+          type="text/css">
     {{- end -}}
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <!-- Favicons -->
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | absURL }}apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | absURL }}favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | absURL }}favicon-16x16.png">
+
     <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- RSS -->
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
+
+    <!-- JavaScript -->
     {{ $anatole := resources.Get "js/anatole-header.js" }}
     {{ $secureJS := $anatole |  resources.Minify | resources.Fingerprint }}
-    <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
-    
-    
+    <script type="text/javascript"
+            src="{{ $secureJS.Permalink }}"
+            integrity="{{ $secureJS.Data.Integrity }}"
+            crossorigin="anonymous"></script>
+
     {{- $js := "" -}}
     {{- range .Site.Params.customJs -}}
-      {{- if or (in . "http://") (in . "https://") -}}
-      <script src="{{ . | relURL }}"></script>
-      {{- else -}}
-        {{- $customJS := resources.Get . -}}
-        {{- if $customJS -}}
-          {{- if eq $js "" -}}
-            {{- $js = $customJS -}}
-          {{- else -}}
-            {{- $js = slice $js $customJS | resources.Concat "js/custom.js" -}}
-          {{- end -}}
+        {{- if or (in . "http://") (in . "https://") -}}
+            <script src="{{ . | relURL }}"></script>
+        {{- else -}}
+            {{- $customJS := resources.Get . -}}
+            {{- if $customJS -}}
+                {{- if eq $js "" -}}
+                    {{- $js = $customJS -}}
+                {{- else -}}
+                    {{- $js = slice $js $customJS | resources.Concat "js/custom.js" -}}
+                {{- end -}}
+            {{- end -}}
         {{- end -}}
-      {{- end -}}
     {{- end -}}
 
-    {{- if .Site.Params.googleSiteVerify }}
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}">
-    {{- end -}}
-    
     {{- if ne $js "" -}}
     {{- $secureJS := $js |  resources.Minify | resources.Fingerprint -}}
-    <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+            src="{{ $secureJS.Permalink }}"
+            integrity="{{ $secureJS.Data.Integrity }}"
+            crossorigin="anonymous"></script>
     {{- end -}}
 
     <!-- Twitter Cards -->

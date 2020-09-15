@@ -12,6 +12,8 @@
     --tag-color: #424242;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
+    --thumbnail-size: 150px;
+    --thumbnail-position: 1; /* -1 left, 1 right */
     scroll-padding-top: 100px;
 }
 
@@ -323,7 +325,9 @@ a:active {
 }
 
 .post {
+    /* max-width: 720px; better for larger resolutions */
     background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
     margin: 30px;
 }
 
@@ -390,7 +394,6 @@ a:active {
 
 .post .post-footer {
     padding: 0 0 10px 0;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .post .post-footer .meta {
@@ -459,6 +462,30 @@ a:active {
 
 .post .post-footer .tags a:hover {
     text-decoration: none;
+}
+
+/* Post preview */
+.preview {
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview .thumbnail {
+    order: var(--thumbnail-position);
+    height: var(--thumbnail-size);
+    width: var(--thumbnail-size);
+    flex: 0 0 auto;
+    margin: 0 20px 20px 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-bg-color); /* for lazy loading */
+}
+
+.preview .thumbnail img {
+    max-height: 100%;
 }
 
 .pagination {

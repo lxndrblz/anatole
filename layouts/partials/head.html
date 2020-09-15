@@ -42,6 +42,7 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
+    <!-- JavaScript -->
     {{ $anatole := resources.Get "js/anatole-header.js" }}
     {{ $secureJS := $anatole |  resources.Minify | resources.Fingerprint }}
     <script type="text/javascript"

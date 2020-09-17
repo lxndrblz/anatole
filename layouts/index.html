@@ -26,9 +26,9 @@
                     </div>
                 </div>
             </div>
-            {{ if isset .Params "thumbnail" }}
+            {{ with .Params.thumbnail }}
             <div class="thumbnail">
-                <img src="{{ .Params.thumbnail | absURL }}" loading="lazy">
+                <img src="{{ .src | absURL }}" alt="{{ .alt | default "" }}" loading="lazy">
             </div>
             {{ end }}
         </div>

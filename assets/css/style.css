@@ -814,7 +814,8 @@ a.btn {
     display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 960px),
+print {
     .sidebar {
         width: 100%;
         position: absolute;
@@ -969,4 +970,10 @@ a.btn {
     cursor: pointer;
     cursor: zoom-out;
     will-change: transform;
+}
+
+@media print {
+	.page-top {
+		display: none;
+	}
 }

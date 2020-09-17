@@ -971,3 +971,9 @@ print {
     cursor: zoom-out;
     will-change: transform;
 }
+
+@media print {
+	.page-top {
+		display: none;
+	}
+}

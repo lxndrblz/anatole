@@ -488,6 +488,17 @@ a:active {
     max-height: 100%;
 }
 
+/* Alternative Thumbnail */
+.post-thumbnail {
+    width: 100%;
+    padding-bottom: 1em;
+    height: auto;
+}
+
+.post-thumbnail img {
+    width: 100%;
+}
+
 .pagination {
     margin: 30px;
     padding: 0px 0 56px 0;

@@ -962,6 +962,15 @@ a.btn {
     .theme-switch-item {
         float: none;
     }
+
+    .preview {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview .thumbnail {
+        order: var(--thumbnail-position);
+    }
 }
 
 /* Medium zoom */

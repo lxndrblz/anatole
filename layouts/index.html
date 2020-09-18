@@ -3,11 +3,6 @@
     {{ range $paginator.Pages }}
         <div class="post animated fadeInDown preview">
             <div class="post-text">
-                {{ if isset .Params "thumbnail" }}
-                <div class="post-thumbnail">
-                    <img src="{{ .Params.thumbnail | absURL }}" loading="lazy">
-                </div>
-                {{ end }}
                 <div class="post-title">
                     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h3>
@@ -31,6 +26,11 @@
                     </div>
                 </div>
             </div>
+            {{ if isset .Params "thumbnail" }}
+            <div class="thumbnail">
+                <img src="{{ .Params.thumbnail | absURL }}" loading="lazy">
+            </div>
+            {{ end }}
         </div>
     {{ end }}
     <div class="pagination">

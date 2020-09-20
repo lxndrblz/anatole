@@ -8,7 +8,7 @@ tags = [
     "privacy",
 ]
 [thumbnail]
-    src = "http://placeimg.com/1200/400/any?3"
+    src = "http://placeimg.com/600/800/any?3"
     alt = "Thumbnail image"
 +++
 

@@ -7,7 +7,7 @@ tags = [
     "emoji",
 ]
 [thumbnail]
-	src = "http://placeimg.com/1200/400/any?2"
+	src = "http://placeimg.com/800/800/any?2"
 	alt = "Thumbnail image"
 +++
 

@@ -16,7 +16,7 @@ categories = [
 series = ["Themes Guide"]
 aliases = ["migrate-from-jekyl"]
 [thumbnail]
-  src = "http://placeimg.com/1200/400/any?1"
+  src = "http://placeimg.com/800/600/any?1"
   alt = "Thumbnail image"
 +++
 

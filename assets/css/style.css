@@ -261,11 +261,15 @@ a:active {
     position: fixed;
     z-index: 4;
     border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .sidebar .logo-title {
     text-align: center;
     padding-top: 240px;
+    flex: 1;
 }
 
 .sidebar .logo-title .description {
@@ -302,6 +306,7 @@ a:active {
     padding: 0;
     font-size: 14px;
     text-align: center;
+    flex: 7;
 }
 
 .sidebar .social-links i {
@@ -524,9 +529,10 @@ a:active {
     font-size: 10px;
     margin: 0 auto;
     bottom: 0;
-    position: absolute;
     width: 100%;
     padding-bottom: 20px;
+    flex: 0;
+    position: relative;
 }
 
 .footer a {
@@ -976,4 +982,15 @@ print {
 	.page-top {
 		display: none;
 	}
+}
+
+@media (min-width: 1921px){
+    .content {
+        padding-right: 25%;
+        width: 35%;
+    }
+    .sidebar {
+        padding-left: 15%;
+        width: 25%;
+    }
 }

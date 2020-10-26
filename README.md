@@ -21,7 +21,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Katex support (optional)
 - Twitter Cards support
 - MIT License
-- Fontawesome icons
+- Fontawesome 5.15.1 icons
 - Custom CSS (optional)
 - Custom JavaScript (optional)
 - Medium like zoom for images

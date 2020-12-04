@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
-        <div class="post animated fadeInDown">
+        <div class="post {{ with .Site.Params.animatedLoading }} animated fadeInDown {{ end }}">
             <div class="post-title">
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </h3>

@@ -107,6 +107,12 @@ Please also note that returning visitors will see the theme that was last displa
 displayMode = "dark"
 ```
 
+### Disable Animations
+
+```toml
+doNotLoadAnimations = true # Animations are loaded by default
+```
+
 ### Multilingual support
 
 Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each Language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.

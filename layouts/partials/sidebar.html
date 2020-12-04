@@ -1,4 +1,4 @@
-<div class="sidebar {{ with .Site.Params.animatedLoading }} animated fadeInDown {{ end }}">
+<div class="sidebar{{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
     <div class="logo-title">
         <div class="title">
             <img src="{{ .Site.Params.profilePicture | absURL }}" alt="profile picture">

@@ -108,8 +108,9 @@ displayMode = "dark"
 ```
 
 ### Disable Animations
-
+You can easily disable the animations from the `config.toml`. All you have to do is to set the parameter `doNotLoadAnimations` to `true`.
 ```toml
+[params]
 doNotLoadAnimations = true # Animations are loaded by default
 ```
 

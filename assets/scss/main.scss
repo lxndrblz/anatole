@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+/* Desktop screen configs */
+$body_max_width: {{ .Site.Params.body_max_width | default "1920px" }};/*SET THIS VALUE ON MEDIA QUERY FOR BEST PRFMANCE*/
+$content_ratio: {{ .Site.Params.content_ratio | default 0.1 }};
+
+/* automated values */
+$sidebar-ratio: 1 - $content-ratio;
+$content-max-width: $body_max_width * $content_ratio;
+$sidebar-max-width: $body_max_width - $content-max-width;
+$content-width: $content_ratio * 100%;
+$sidebar-width: $sidebar-ratio * 100%;
+
 :root {
     --bg-color: #fff;
     --secondary-bg-color: #eeeeee;
@@ -14,16 +25,9 @@
     --blockquote-border-color: #dfe2e5;
     scroll-padding-top: 100px;
     
-    /* Desktop screen configs */
-    --body-max-width: 1920px;/*SET THIS VALUE ON MEDIA QUERY FOR BEST PRFMANCE*/
-    --content-ratio: 0.7;
+
     
-    /* automated values */
-    --sidebar-ratio: calc(1 - var(--content-ratio));
-    --content-max-width: calc(var(--body-max-width) * var(--content-ratio));
-    --sidebar-max-width: calc(var(--body-max-width) - var(--content-max-width));
-    --content-width: calc(var(--content-ratio) * 100%);
-    --sidebar-width: calc(var(--sidebar-ratio) * 100%);
+
 }
 
 html[data-theme='dark'] {
@@ -50,7 +54,7 @@ body {
     font-family: 'Verdana', sans-serif;
     font-size: 15px;
     width: 100%;
-    max-width: var(--body-max-width);
+    max-width: $body_max_width;
     margin: 0 auto;
     background-color: var(--bg-color);
 }
@@ -186,12 +190,12 @@ a:active {
 .content {
     height: auto;
     float: right;
-    width: var(--content-width);
+    width: $content-width;
     margin-top: 60px;
 }
 
 .page-top {
-    width: var(--content-width);
+    width: $content-width;
     position: fixed;
     right: 0;
     z-index: 3;
@@ -263,7 +267,7 @@ a:active {
 }
 
 .sidebar {
-    width: var(--sidebar-width);
+    width: $sidebar-width;
     -webkit-background-size: cover;
     background-size: cover;
     background-color: var(--bg-color);
@@ -1002,23 +1006,23 @@ print {
 	}
 }
 
-/* USE --body-max-width VALUE FOR SEAMLESS TRANSITION */
-@media (min-width: 1920px) { 
+/* USE $body_max_width VALUE FOR SEAMLESS TRANSITION */
+@media (min-width: $body_max_width) { 
     .content {
-        width: var(--content-max-width);
+        width: $content-max-width;
     }
     
     .sidebar {
-        width: var(--sidebar-max-width);
+        width: $sidebar-max-width;
         left: 50%;
-        margin-left: calc( -1 * var(--body-max-width)/2);
+        margin-left: calc( -1 * $body_max_width/2);
     }
     
     .page-top {
-        width: var(--content-max-width);
+        width: $content-max-width;
         position: fixed;
         left: 50%;
-        margin-left: calc(-1* (var(--body-max-width)/2 - var(--sidebar-max-width) ));
+        margin-left: calc(-1* ($body_max_width/2 - $sidebar-max-width ));
         z-index: 3;
         background-color: var(--bg-color);
         height: 60px;

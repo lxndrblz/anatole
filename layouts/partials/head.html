@@ -17,6 +17,12 @@
           integrity="{{ $style.Data.Integrity }}"
           crossorigin="anonymous"
           type="text/css">
+    {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet"
+        href="{{ $markupHighlightStyle.Permalink }}"
+        integrity="{{ $markupHighlightStyle.Data.Integrity }}"
+        crossorigin="anonymous"
+        type="text/css">
     {{- $css := "" -}}
     {{- range .Site.Params.customCss -}}
     {{ $css := resources.Get . | fingerprint }}

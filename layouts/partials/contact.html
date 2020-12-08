@@ -1,0 +1,19 @@
+
+<div class="contact-form">
+  <form class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}" data-toggle="validator">
+    <ul>
+      <li>
+        <input class="field-style field-full" type="text" name="username" id="username" placeholder="Name" required>
+      </li>
+      <li>
+        <input class="field-style field-full" type="email" id="email" name="email" placeholder="Email" required>
+      </li>
+      <li>
+        <textarea class="field-style" name="message" id="message" rows="6" placeholder="{{ i18n "message" }}"></textarea>
+      </li>
+      <li>
+        <input class="field-style" type="submit" value="{{ i18n "send" }}"></input>
+      </li>
+    </ul>
+  </form>
+</div>

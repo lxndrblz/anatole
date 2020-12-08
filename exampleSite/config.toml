@@ -25,6 +25,8 @@ customJs = []
 mainSections = ["post"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
+contactFormAction = "https://formspree.io/f/your-form-hash-here"
+
 # Google Site Verification
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
@@ -76,3 +78,9 @@ url = "mailto:mail@alexbilz.com"
   weight = 300
   identifier = "about"
   url = "/about/"
+
+  [[menu.main]]
+  name = "Contact"
+  weight = 400
+  identifier = "contact"
+  url = "/contact/"

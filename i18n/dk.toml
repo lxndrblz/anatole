@@ -19,3 +19,6 @@ other = "Returner til <a href=\"{{ . }}\">homepage</a>."
 
 [comments]
 other = "kommentar"
+
+[send]
+other = "Sende"

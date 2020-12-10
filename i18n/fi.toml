@@ -19,3 +19,6 @@ other = "Voit palata takaisin <a href=\"{{ . }}\">kotisivulle</a>."
 
 [comments]
 other = "kommentit"
+
+[send]
+other = "Lähetä"

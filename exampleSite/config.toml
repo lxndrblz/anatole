@@ -13,6 +13,11 @@ enableRobotsTXT = true
 # Google Analytics
 #googleAnalytics = "UA-123-45"
 
+# Syntax highlighting
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
 [params]
 title = "I'm Jane Doe"
 author = "Jane Doe"
@@ -20,12 +25,16 @@ description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
+# example ["css/custom.css"]
 customCss = []
-customJs = []
+# example ["js/custom.js"]
+customJs = [] 
 mainSections = ["post"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
-# Google Site Verification
+# Form Spree Contact Form
+#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+# Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 ## Math settings
@@ -76,3 +85,9 @@ url = "mailto:mail@alexbilz.com"
   weight = 300
   identifier = "about"
   url = "/about/"
+
+  [[menu.main]]
+  name = "Contact"
+  weight = 400
+  identifier = "contact"
+  url = "/contact/"

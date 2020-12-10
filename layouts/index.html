@@ -1,7 +1,19 @@
 {{ define "main" }}
+
+    <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+        <!-- (Optional) Home
+            -- on top of `mainSections` content (aka posts) ;
+            -- as declared in content/_index.md
+
+            One can set `mainSections = [""]` and have the content/_index.md specified here
+        -->
+        {{ .Content }}
+    </div>
+
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
-        <div class="post animated fadeInDown">
+
+        <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
             <div class="post-title">
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 </h3>
@@ -12,7 +24,7 @@
             <div class="post-footer">
                 <div class="meta">
                     <div class="info"><em class="fas fa-calendar-day"></em><span
-                                class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+                                class="date">{{ .Date.Format .Site.Params.indexDateFormat }}</span>
                         {{ with .Params.tags }}
                             {{- range $index, $el := . -}}
                                 <a class="tag"

@@ -1,13 +1,12 @@
 {{ define "main" }}
-    <div class="post animated fadeInDown">
+    <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <div class="post-content">
-
             <div class="post-title">
                 <h3>{{ .Title }}</h3>
                 {{ if eq .Type "post"}}
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
-                        <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+                        <span class="date">{{ .Date.Format .Site.Params.singleDateFormat }}</span>
                         <em class="fas fa-stopwatch"></em>
                         <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
@@ -15,6 +14,11 @@
             </div>
 
             {{ .Content }}
+
+            {{- if (eq .Params.contact true) -}}
+              {{- partial "contact.html" . -}}
+            {{- end -}}
+
         </div>
         <div class="post-footer">
             <div class="info">

@@ -25,14 +25,16 @@ description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
-customCss = [] # ie ["css/custom.css"]
-customJs = [] # ie ["js/custom.js"]
+# example ["css/custom.css"]
+customCss = []
+# example ["js/custom.js"]
+customJs = [] 
 mainSections = ["post"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
-contactFormAction = "https://formspree.io/f/your-form-hash-here"
-
-# Google Site Verification
+# Form Spree Contact Form
+#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+# Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 ## Math settings

@@ -20,6 +20,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Google Analytics (optional)
 - Comments powered by Disqus (optional)
 - Katex support (optional)
+- Formspree Contact Form (optional)
 - Twitter Cards support
 - MIT License
 - Fontawesome 5.15.1 icons
@@ -114,6 +115,14 @@ You can easily disable the animations from the `config.toml`. All you have to do
 doNotLoadAnimations = true # Animations are loaded by default
 ```
 
+### Have a static page as a home page
+If you prefer having a static page as your home page rather than a listing of the latest posts, then make sure you leave the `mainSections` parameter blank:
+```toml
+[params]
+  mainSections = []
+```
+Put any content into the `_index.md` file located in the content directory. If you want, you can also have some static text and the posts below. In such case, simply keep the `mainSections = ["post"]` and put any static content in the `_index.md`.
+
 ### Multilingual support
 
 Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each Language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.
@@ -192,6 +201,7 @@ googleAnalytics = "UA-123-45"
 To use Google Site Verification, add the following line to the `[params]`:
 
 ```toml
+[params]
 googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 ```
 
@@ -205,7 +215,13 @@ Replace the hash with the one Google provided you.
 enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
 use = "katex"  # options: "katex", "mathjax". default is "katex".
 ```
-
+### Formspree Contact Form on the Contact page
+Step 1: Configure the `contactFormAction` in the `config.toml`
+```toml
+[params]
+#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+```
+Step 2: Activate the `contact: true` or  `contact=true` in the frontmatter of a page. See the `exampleSite/content/contact.html` as an example.
 ### Twitter Cards support
 
 In order to use the full functionality of Twitter cards, you will have to define a couple of settings in the `config.toml` and the frontmatter of a page.

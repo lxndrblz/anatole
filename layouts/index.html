@@ -24,7 +24,10 @@
             <div class="post-footer">
                 <div class="meta">
                     <div class="info"><em class="fas fa-calendar-day"></em><span
-                                class="date">{{ .Date.Format .Site.Params.indexDateFormat }}</span>
+                                class="date">{{ if isset .Site.Params "indexdateformat" }} 
+                                                 {{ .Date.Format .Site.Params.indexDateFormat }} 
+                                             {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}} 
+                                             {{ end }}</span>
                         {{ with .Params.tags }}
                             {{- range $index, $el := . -}}
                                 <a class="tag"

@@ -1,0 +1,59 @@
+<script>
+    var id = {{ .Params.GHissueID }};
+
+    if (id) {
+        let url = "https://github.com/YOUR-ACCOUNT/YOUR-REPOSITORY/issues/".concat(id);
+        let api_url = "https://api.github.com/repos/YOUR-ACCOUNT/YOUR-REPOSITORY/issues/".concat(id, "/comments");
+
+        var commentsDiv = document.getElementById("comments");
+
+        let xhr = new XMLHttpRequest();
+        xhr.responseType = "json";
+        xhr.open("GET", api_url);
+        xhr.setRequestHeader("Accept", "application/vnd.github.v3.html+json");
+        xhr.send();
+
+        xhr.onload = function () {
+            if (xhr.status != 200) {
+                let errorText = document.createElement("p");
+                errorText.innerHTML = "<i>Comments for this post are not opened yet (or you have GitHub scripts disabled).</i>";
+                commentsDiv.appendChild(errorText);
+            }
+            else {
+                let comments = xhr.response;
+
+                let mainHeader = document.createElement("h2");
+                mainHeader.innerHTML = "Comments: ".concat(comments.length);
+                commentsDiv.appendChild(mainHeader);
+
+                let issueLink = document.createElement("p");
+                issueLink.innerHTML = "<i>You can leave a comment using <a href='".concat(url, "'>GitHub</a>.</i>");
+                commentsDiv.appendChild(issueLink);
+
+                comments.forEach(function (comment) {
+                    let commentContent = document.createElement("div");
+                    commentContent.setAttribute('class', 'gh-comment')
+                    commentContent.innerHTML = "".concat(
+                        "<div class='gh-header'>",
+                        "<img src='", comment.user.avatar_url, "' />",
+                        "<div style='margin:auto 0;'>",
+                        "<b><a class='gh-username' href='", comment.user.html_url, "'>", comment.user.login, "</a></b>",
+                        " commented at <em>", new Date(comment.created_at), "</em>",
+                        "</div>",
+                        "</div>",
+                        "<div class='gh-body'>",
+                        comment.body_html,
+                        "</div>"
+                    );
+                    commentsDiv.appendChild(commentContent);
+                });
+            }
+        };
+
+        xhr.onerror = function () {
+            let errorText = document.createElement("p");
+            errorText.innerHTML = "<i>Some error loading comments.</i>";
+            commentsDiv.appendChild(errorText);
+        };
+    }
+</script>

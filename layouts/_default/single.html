@@ -1,40 +1,46 @@
 {{ define "main" }}
-    <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
-        <div class="post-content">
-            <div class="post-title">
-                <h3>{{ .Title }}</h3>
-                {{ if eq .Type "post"}}
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                        <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-                        <em class="fas fa-stopwatch"></em>
-                        <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
-                    </div>
-                {{ end }}
-            </div>
-
-            {{ .Content }}
-
-            {{- if (eq .Params.contact true) -}}
-              {{- partial "contact.html" . -}}
-            {{- end -}}
-
-        </div>
-        <div class="post-footer">
+<div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+    <div class="post-content">
+        <div class="post-title">
+            <h3>{{ .Title }}</h3>
+            {{ if eq .Type "post"}}
             <div class="info">
-                {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
-                {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}
+                <em class="fas fa-calendar-day"></em>
+                <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+                <em class="fas fa-stopwatch"></em>
+                <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
             </div>
+            {{ end }}
         </div>
 
-        {{ if eq .Type "post"}}
-            {{ if .Site.DisqusShortname -}}
-                <div id="fb_comments_container">
-                    <h2>{{ i18n "comments" }}</h2>
-                    {{ template "_internal/disqus.html" . }}
-                </div>
-            {{- end }}
+        {{ .Content }}
+
+        {{- if (eq .Params.contact true) -}}
+        {{- partial "contact.html" . -}}
+        {{- end -}}
+
+    </div>
+    <div class="post-footer">
+        <div class="info">
+            {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
+            {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}
+        </div>
+    </div>
+    <div id="comments">
+        {{ with .Params.GHissueID }}
+        {{ partial "comments.html" $ }}
+        {{ else }}
+        {{ template "_internal/disqus.html" . }}
         {{ end }}
     </div>
+    {{ if eq .Type "post"}}
+    {{ if .Site.DisqusShortname -}}
+    <div id="fb_comments_container">
+        <h2>{{ i18n "comments" }}</h2>
+        {{ template "_internal/disqus.html" . }}
+    </div>
+    {{- end }}
+    {{ end }}
+</div>
 
 {{ end }}

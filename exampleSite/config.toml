@@ -36,6 +36,7 @@ doNotLoadAnimations = false
 #contactFormAction = "https://formspree.io/f/your-form-hash-here"
 # Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+githubId = "userid"
 
 ## Math settings
 [params.math]

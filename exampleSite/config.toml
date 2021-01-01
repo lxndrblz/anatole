@@ -21,6 +21,7 @@ pygmentsCodefencesGuessSyntax = true
 [params]
 title = "I'm Jane Doe"
 author = "Jane Doe"
+#copyright = "2020-2021"
 description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 keywords = ""

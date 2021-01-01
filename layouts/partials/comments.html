@@ -2,8 +2,8 @@
     var id = {{ .Params.GHissueID }};
 
     if (id) {
-        let url = "https://github.com/{{ .Site.Params.GithubId }}/{{ .Params.GHrepo }}/issues/".concat(id);
-        let api_url = "https://api.github.com/repos/{{ .Site.Params.GithubId }}/{{ .Params.GHrepo }}/issues/".concat(id, "/comments");
+        let url = "https://github.com/{{ .Site.Params.GithubId }}/{{ .Site.Params.GHrepo }}/issues/".concat(id);
+        let api_url = "https://api.github.com/repos/{{ .Site.Params.GithubId }}/{{ .Site.Params.GHrepo }}/issues/".concat(id, "/comments");
 
         var commentsDiv = document.getElementById("comments");
 

@@ -51,12 +51,22 @@
     {{ end -}}
 
     <!-- JavaScript -->
-    {{ $anatole := resources.Get "js/anatole-header.js" }}
-    {{ $secureJS := $anatole |  resources.Minify | resources.Fingerprint }}
+    {{ $anatoleHeader := resources.Get "js/anatole-header.js" }}
+    {{ $secureHeaderJS := $anatoleHeader |  resources.Minify | resources.Fingerprint }}
     <script type="text/javascript"
-            src="{{ $secureJS.Permalink }}"
-            integrity="{{ $secureJS.Data.Integrity }}"
+            src="{{ $secureHeaderJS.Permalink }}"
+            integrity="{{ $secureHeaderJS.Data.Integrity }}"
             crossorigin="anonymous"></script>
+
+
+    {{ if not .Site.Params.disableThemeSwitcher }}
+        {{ $anatoleThemeSwitcher := resources.Get "js/anatole-theme-switcher.js" }}
+        {{ $secureThemeSwitcherJS := $anatoleThemeSwitcher |  resources.Minify | resources.Fingerprint }}
+        <script type="text/javascript"
+                src="{{ $secureThemeSwitcherJS.Permalink }}"
+                integrity="{{ $secureThemeSwitcherJS.Data.Integrity }}"
+                crossorigin="anonymous"></script>
+    {{ end }}
 
     {{- $js := "" -}}
     {{- range .Site.Params.customJs -}}

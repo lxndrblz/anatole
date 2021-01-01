@@ -114,6 +114,13 @@ Please also note that returning visitors will see the theme that was last displa
 displayMode = "dark"
 ```
 
+### Disable Theme Switcher
+You can easily disable the theme switcher from the `config.toml`. All you have to do is to set the parameter `disableThemeSwitcher` to `true`.
+```toml
+[params]
+disableThemeSwitcher = true # Theme switcher is enabled by default
+```
+
 ### Disable Animations
 You can easily disable the animations from the `config.toml`. All you have to do is to set the parameter `doNotLoadAnimations` to `true`.
 ```toml

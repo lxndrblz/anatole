@@ -71,6 +71,12 @@ profilePicture = "images/profile.jpg"
 
 Add you own favicon in `static/favicons/favicon.ico`.
 
+### Copyright
+By default the copyright, will show the current year, but you can change this by configuring the `copyright` parameter.
+```toml
+copyright = "2020-2021"
+```
+
 ### Navigation items
 
 Non-content entries can be added right from the `config.toml` file.

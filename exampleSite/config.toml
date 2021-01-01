@@ -36,7 +36,8 @@ doNotLoadAnimations = false
 #contactFormAction = "https://formspree.io/f/your-form-hash-here"
 # Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-githubId = "userid"
+GithubId = "rkbright"
+GHrepo = "jekyll-server-build" #set blog repo if all issues will be associated to one repo. If issues will be associaated to more than one repo, set the value in front matter 
 
 ## Math settings
 [params.math]

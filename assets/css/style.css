@@ -179,7 +179,7 @@ a:active {
     float: right;
     width: 60%;
     margin-top: 60px;
-    background-color: var(--pre-bg-color);
+    /* background-color: var(--pre-bg-color); */
 }
 
 .page-top {
@@ -329,7 +329,9 @@ a:active {
 .post {
     /* max-width: 720px; better for larger resolutions */
     background-color: var(--bg-color);
-    border-bottom: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
     margin: 30px;
 }
 
@@ -544,6 +546,7 @@ a:active {
 
 .has-image {
     width: 100%;
+    border-radius: .5em;
 }
 
 .like-reblog-buttons {

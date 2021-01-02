@@ -37,11 +37,6 @@ doNotLoadAnimations = false
 # Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
-indexDateFormat = "Mon, Jan 2, 2006"
-listDateFormat = "Jan 2"
-singleDateFormat = "Mon, Jan 2, 2006"
-
-
 ## Math settings
 [params.math]
 enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.

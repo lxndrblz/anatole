@@ -7,10 +7,7 @@
                     <ul class="listing">
                         <div class="listing-item">
                             <div class="listing-post"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-                                <div class="post-time"><span class="date">{{ if isset .Site.Params "listdateformat" }} 
-                                                                            {{ .Date.Format .Site.Params.listDateFormat }}
-                                                                            {{ else }} {{.Date.Format "Jan 2"}} 
-                                                                            {{ end }}</span></div>
+                                <div class="post-time"><span class="date">{{.Date.Format "Jan 2" }}</span></div>
                             </div>
                         </div>
                     </ul>

@@ -6,10 +6,7 @@
                 {{ if eq .Type "post"}}
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
-                        <span class="date">{{ if isset .Site.Params "singledateformat" }} 
-                                                {{ .Date.Format .Site.Params.singleDateFormat }}
-                                           {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}} 
-                                           {{ end }}</span>
+                        <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
                         <em class="fas fa-stopwatch"></em>
                         <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>

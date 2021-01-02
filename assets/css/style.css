@@ -179,6 +179,7 @@ a:active {
     float: right;
     width: 60%;
     margin-top: 60px;
+    background-color: var(--pre-bg-color);
 }
 
 .page-top {
@@ -491,18 +492,21 @@ a:active {
 
 /* Alternative Thumbnail */
 .post-text {
-    width: 100%;
+    padding: 1em;
 }
 
 .post-thumbnail {
     width: 100%;
     padding-bottom: 1em;
-    height: var(--thumbnail-height);
+    box-shadow: black;
+    border-radius: 0.5em;
+    overflow: hidden;
+    transition: box-shadow .3s ease;
 }
 
 .post-thumbnail img {
     width: 100%;
-    height: 100%;
+    height: 20em;
     object-fit: cover;
 }
 
@@ -536,6 +540,10 @@ a:active {
 
 .pagination .next {
     float: right;
+}
+
+.has-image {
+    width: 100%;
 }
 
 .like-reblog-buttons {

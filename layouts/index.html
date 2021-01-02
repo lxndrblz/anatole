@@ -2,20 +2,21 @@
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
         <div class="post animated fadeInDown preview">
+            {{ with .Params.thumbnail }}
+            <article class="has-image">
+            <div class="post-thumbnail">
+                <a href="{{ .RelPermalink }}">
+                <img src="{{ .src | absURL }}" alt="{{ .alt | default "" }}" loading="lazy">
+                </a>
+            </div>
+            {{ end }}
             <div class="post-text">
-                {{ with .Params.thumbnail }}
-                    <div class="post-thumbnail">
-                        <img src="{{ .src | absURL }}" alt="{{ .alt | default "" }}" loading="lazy">
-                    </div>
-                {{ end }}
                 <div class="post-title">
                     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h3>
                 </div>
                 <div class="post-content">
                     <div class="p_part"><p>{{ .Summary }}</p></div>
-
-                    <div class="p_part"><p></p></div>
                 </div>
                 <div class="post-footer">
                     <div class="meta">
@@ -31,6 +32,7 @@
                     </div>
                 </div>
             </div>
+            </article>
         </div>
     {{ end }}
     <div class="pagination">

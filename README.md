@@ -18,7 +18,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Multilingual
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
-- Comments powered by Disqus or Utterances (optional)
+- Comments powered by Disqus or Utteranc.es (optional)
 - Katex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
@@ -201,7 +201,7 @@ No comment section is shown on the `single.html`, unless a Disqus code is specif
 disqusShortname = "XXX"
 ```
 
-### Comments powered by Utterance.es
+### Comments powered by Utteranc.es
 
 No comment section is shown on the `single.html`, unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation}(https://utteranc.es/).
 

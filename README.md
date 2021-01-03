@@ -18,7 +18,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Multilingual
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
-- Comments powered by Disqus (optional)
+- Comments powered by Disqus or Utterances (optional)
 - Katex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
@@ -195,11 +195,24 @@ The theme is optimized to adhere to the requirements checked for in the Lighthou
 
 ### Comments powered by Disqus
 
-No comment section is shown on the `single.html`, unless a disqus code is specified in the `config.toml` file.
+No comment section is shown on the `single.html`, unless a Disqus code is specified in the `config.toml` file.
 
 ```toml
 disqusShortname = "XXX"
 ```
+
+### Comments powered by Utterance.es
+
+No comment section is shown on the `single.html`, unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation}(https://utteranc.es/).
+
+```toml
+[params.utterances]
+repo = "githubuser/reponame"
+issueTerm = "pathname"
+theme= "preferred-color-scheme"
+# label = 
+```
+If you are using a strict CSP, you'll have to add the domain to it. 
 
 ### Google Analytics
 

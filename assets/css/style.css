@@ -698,6 +698,10 @@ a:active {
     margin: 30px;
 }
 
+.utterances {
+    max-width: unset;
+}
+
 /* Buttons */
 a.btn {
     color: #868686;

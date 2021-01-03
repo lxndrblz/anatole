@@ -1,0 +1,7 @@
+{{ with .Site.Params.simpleAnalytics.customUrl }}
+<script async defer src="{{ . | relURL }}/latest.js"></script>
+<noscript><img src="{{ . | relURL }}/noscript.gif" alt=""/></noscript>
+{{ else }}
+<script async defer src=" https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""/></noscript>
+{{ end }}

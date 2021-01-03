@@ -18,6 +18,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Multilingual
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
+- SimpleAnalytics (optional)
 - Comments powered by Disqus (optional)
 - Katex support (optional)
 - Formspree Contact Form (optional)
@@ -207,6 +208,16 @@ To use Google Analytics, a valid tracking code has to be added. If you don't wan
 
 ```toml
 googleAnalytics = "UA-123-45"
+```
+
+### Simple Analytics
+
+To use Simple Analytics, it has to be enabled by setting the parameter to true. If you are using a custom subdomain to evade Adblockers, then specify the URL without a trailing slash.
+
+```toml
+[params.simpleAnalytics]
+enable = true
+# customurl = "https://analytics.example.com"
 ```
 
 ### Google Site Verification

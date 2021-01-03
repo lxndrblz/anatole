@@ -14,6 +14,9 @@
 </div>
 
 {{- partial "footer.html" . -}}
+{{- if (eq .Site.Params.simpleAnalytics.enable true) -}}
+    {{- partial "analytics/simpleanalytics.html" . -}}
+{{- end -}}
 </body>
 
 </html>

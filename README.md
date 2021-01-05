@@ -222,8 +222,9 @@ issueTerm = "pathname"
 theme= "preferred-color-scheme"
 # label = 
 ```
-If you are using a strict CSP, you'll have to add the domain to it. 
-
+Two notes on the security of Utteranc.es
+- If you are using a strict CSP, you'll have to add the domain to it. 
+- The script currently has no built-in integrity check, due to limitations of ![Uutterances](https://github.com/utterance/utterances/issues/40).
 ### Google Analytics
 
 To use Google Analytics, a valid tracking code has to be added. If you don't want to load the code, then commend out the parameter.

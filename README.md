@@ -115,6 +115,15 @@ You can easily disable the animations from the `config.toml`. All you have to do
 doNotLoadAnimations = true # Animations are loaded by default
 ```
 
+### Control the date Format
+You can change the default date formating for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
+```toml
+[params]
+singleDateFormat = "Mon, Jan 2, 2006"
+indexDateFormat = "Mon, Jan 2, 2006"
+listDateFormat = "Jan 2"
+```
+
 ### Have a static page as a home page
 If you prefer having a static page as your home page rather than a listing of the latest posts, then make sure you leave the `mainSections` parameter blank:
 ```toml

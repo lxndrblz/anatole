@@ -887,7 +887,6 @@ print {
         display: block;
         flex-grow: 0;
         flex-shrink: 0;
-        display: block;
         line-height: 2.5;
         padding: .5rem .75rem;
         position: relative;

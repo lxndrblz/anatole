@@ -18,6 +18,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Multilingual
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
+- SimpleAnalytics (optional)
 - Comments powered by Disqus (optional)
 - Katex support (optional)
 - Formspree Contact Form (optional)
@@ -71,6 +72,12 @@ profilePicture = "images/profile.jpg"
 
 Add you own favicon in `static/favicons/favicon.ico`.
 
+### Copyright
+By default the copyright, will show the current year, but you can change this by configuring the `copyright` parameter.
+```toml
+copyright = "2020-2021"
+```
+
 ### Navigation items
 
 Non-content entries can be added right from the `config.toml` file.
@@ -106,6 +113,13 @@ Please also note that returning visitors will see the theme that was last displa
 ```toml
 [params]
 displayMode = "dark"
+```
+
+### Disable Theme Switcher
+You can easily disable the theme switcher from the `config.toml`. All you have to do is to set the parameter `disableThemeSwitcher` to `true`.
+```toml
+[params]
+disableThemeSwitcher = true # Theme switcher is enabled by default
 ```
 
 ### Disable Animations
@@ -203,6 +217,16 @@ To use Google Analytics, a valid tracking code has to be added. If you don't wan
 
 ```toml
 googleAnalytics = "UA-123-45"
+```
+
+### Simple Analytics
+
+To use Simple Analytics, it has to be enabled by setting the parameter to true. If you are using a custom subdomain to evade Adblockers, then specify the URL without a trailing slash.
+
+```toml
+[params.simpleAnalytics]
+enable = true
+# customurl = "https://analytics.example.com"
 ```
 
 ### Google Site Verification

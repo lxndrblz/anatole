@@ -19,6 +19,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
 - Comments powered by Disqus or Utteranc.es (optional)
+- SimpleAnalytics (optional)
 - Katex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
@@ -128,6 +129,15 @@ You can easily disable the animations from the `config.toml`. All you have to do
 doNotLoadAnimations = true # Animations are loaded by default
 ```
 
+### Control the date Format
+You can change the default date formating for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
+```toml
+[params]
+singleDateFormat = "Mon, Jan 2, 2006"
+indexDateFormat = "Mon, Jan 2, 2006"
+listDateFormat = "Jan 2"
+```
+
 ### Have a static page as a home page
 If you prefer having a static page as your home page rather than a listing of the latest posts, then make sure you leave the `mainSections` parameter blank:
 ```toml
@@ -220,6 +230,16 @@ To use Google Analytics, a valid tracking code has to be added. If you don't wan
 
 ```toml
 googleAnalytics = "UA-123-45"
+```
+
+### Simple Analytics
+
+To use Simple Analytics, it has to be enabled by setting the parameter to true. If you are using a custom subdomain to evade Adblockers, then specify the URL without a trailing slash.
+
+```toml
+[params.simpleAnalytics]
+enable = true
+# customurl = "https://analytics.example.com"
 ```
 
 ### Google Site Verification

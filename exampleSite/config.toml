@@ -37,6 +37,13 @@ doNotLoadAnimations = false
 #contactFormAction = "https://formspree.io/f/your-form-hash-here"
 # Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+# indexDateFormat = "Mon, Jan 2, 2006"
+# listDateFormat = "Jan 2"
+# singleDateFormat = "Mon, Jan 2, 2006"
+
+[params.simpleAnalytics]
+# enable = true
+# customurl = "https://analytics.example.com"
 
 ## Math settings
 [params.math]

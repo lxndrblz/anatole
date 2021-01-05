@@ -106,9 +106,9 @@ Non-content entries can be added right from the `config.toml` file.
 
 ### Prefer dark theme
 
-You can easily enable the dark mode from the `config.toml` all you have to do is to set the parameter `displayMode` to `dark`. If you dont specify any displayMode, then the light version will be loaded.
+You can easily enable the dark mode from the `config.toml` all you have to do is to set the parameter `displayMode` to `dark`. If you don't specify any displayMode, then the light version will be loaded.
 
-Please also note that returning visitors will see the theme that was last displayed to them on your site. If your user has his system configured to dark mode, then this will also take presendence over the displayMode set in the `config.toml`.
+Please also note that returning visitors will see the theme that was last displayed to them on your site. If your user has his system configured to dark mode, then this will also take precedence over the `displayMode` set in the `config.toml`.
 
 ```toml
 [params]
@@ -174,7 +174,7 @@ There are two ways of translating your content either by adding a suffix in the 
     weight = 1
 ```
 
-To make sure your menu is linking to the correct localized content, make sure that you customize the menu items to inlude the language prefix. Your menu might look like the following:
+To make sure your menu is linking to the correct localized content, make sure that you customize the menu items to include the language prefix. Your menu might look like the following:
 
 ```toml
 [[Languages.de.menu.main]]
@@ -213,7 +213,7 @@ disqusShortname = "XXX"
 
 ### Comments powered by Utteranc.es
 
-No comment section is shown on the `single.html`, unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation}(https://utteranc.es/).
+No comment section is shown on the `single.html` unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation}(https://utteranc.es/).
 
 ```toml
 [params.utterances]
@@ -224,7 +224,7 @@ theme= "preferred-color-scheme"
 ```
 Two notes on the security of Utteranc.es
 - If you are using a strict CSP, you'll have to add the domain to it. 
-- The script currently has no built-in integrity check, due to limitations of ![Uutterances](https://github.com/utterance/utterances/issues/40).
+- The script currently has no built-in integrity check, due to limitations of [Utterances](https://github.com/utterance/utterances/issues/40).
 ### Google Analytics
 
 To use Google Analytics, a valid tracking code has to be added. If you don't want to load the code, then commend out the parameter.
@@ -268,7 +268,7 @@ Step 1: Configure the `contactFormAction` in the `config.toml`
 [params]
 #contactFormAction = "https://formspree.io/f/your-form-hash-here"
 ```
-Step 2: Activate the `contact: true` or  `contact=true` in the frontmatter of a page. See the `exampleSite/content/contact.html` as an example.
+Step 2: Activate the `contact: true` or  `contact=true` in the frontmatter of a page. See `exampleSite/content/contact.html` as an example.
 ### Twitter Cards support
 
 In order to use the full functionality of Twitter cards, you will have to define a couple of settings in the `config.toml` and the frontmatter of a page.
@@ -387,11 +387,11 @@ If you want Hugo to generate a robots.txt, you will have to set the `enableRobot
 User-agent: *
 ```
 
-If certain sites shoud be excluded from being accessed, you might want to setup a custom robots.txt file within your `static` folder of your site.
+If certain sites should be excluded from being accessed, you might want to setup a custom robots.txt file within your `static` folder of your site.
 
 ### Syntax highlighting
 
-This theme has support for either Hugo's lightning fast Chroma code highlighting. See the [Hugo docs](https://gohugo.io/content-management/syntax-highlighting/) for more information.
+This theme has support for either Hugo's lightning-fast Chroma code highlighting. See the [Hugo docs](https://gohugo.io/content-management/syntax-highlighting/) for more information.
 
 To enable Chroma, add the following to your site parameters:
 
@@ -407,7 +407,7 @@ hugo gen chromastyles --style=monokailight > assets/css/syntax.css
 ```
 
 If you get any errors, make sure the `assets/css/` directory exists within your sites root folder.
-Include the newly generated `syntax.css` like a standard custom css script:
+Include the newly generated `syntax.css` like a standard custom CSS script:
 
 ```toml
 [params]
@@ -420,7 +420,14 @@ Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/
 
 ## Maintenance
 
-This theme is maintained by its author [Alexander Bilz](https://github.com/lxndrblz). Please open an issue/pull request if you want to contribute in making this theme better and more feature-complete.
+This theme is maintained by its author [Alexander Bilz](https://github.com/lxndrblz) and with the help from these awesome [contributors](https://github.com/lxndrblz/anatole/graphs/contributors). Please open an issue/pull request if you want to contribute to making this theme better and more feature-complete. For PRs please make sure that they align with theme's goals: minimalism, speed and elegance.  
+
+## Sponsoring
+
+If you like this theme, give it a star on GitHub, and consider supporting its development:
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/lxndrblz/)
+
 
 ## Special Thanks 🎁
 

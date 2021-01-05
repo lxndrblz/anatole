@@ -18,8 +18,8 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Multilingual
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
+- Comments powered by Disqus or Utteranc.es (optional)
 - SimpleAnalytics (optional)
-- Comments powered by Disqus (optional)
 - Katex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
@@ -205,12 +205,26 @@ The theme is optimized to adhere to the requirements checked for in the Lighthou
 
 ### Comments powered by Disqus
 
-No comment section is shown on the `single.html`, unless a disqus code is specified in the `config.toml` file.
+No comment section is shown on the `single.html`, unless a Disqus code is specified in the `config.toml` file.
 
 ```toml
 disqusShortname = "XXX"
 ```
 
+### Comments powered by Utteranc.es
+
+No comment section is shown on the `single.html`, unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation}(https://utteranc.es/).
+
+```toml
+[params.utterances]
+repo = "githubuser/reponame"
+issueTerm = "pathname"
+theme= "preferred-color-scheme"
+# label = 
+```
+Two notes on the security of Utteranc.es
+- If you are using a strict CSP, you'll have to add the domain to it. 
+- The script currently has no built-in integrity check, due to limitations of ![Uutterances](https://github.com/utterance/utterances/issues/40).
 ### Google Analytics
 
 To use Google Analytics, a valid tracking code has to be added. If you don't want to load the code, then commend out the parameter.

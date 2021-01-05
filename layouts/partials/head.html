@@ -11,17 +11,6 @@
     {{- end -}}
 
     <!-- CSS -->
-<<<<<<< HEAD
-    {{ $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
-
-    <link rel="stylesheet" 
-    href="{{ $styles.Permalink }}"
-    integrity="{{ $styles.Data.Integrity }}"
-    media="screen">
-    {{- $css := "" -}}
-    {{- range .Site.Params.customCss -}}
-    {{ $css := resources.Get . | fingerprint }}
-=======
     {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
           href="{{ $style.Permalink }}"
@@ -29,7 +18,6 @@
           crossorigin="anonymous"
           type="text/css">
     {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
->>>>>>> upstream/master
     <link rel="stylesheet"
         href="{{ $markupHighlightStyle.Permalink }}"
         integrity="{{ $markupHighlightStyle.Data.Integrity }}"

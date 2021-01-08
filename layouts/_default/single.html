@@ -34,18 +34,18 @@
         </div>
 
         {{ if eq .Type "post"}}
-            {{ if .Site.DisqusShortname -}}
+            {{- if .Site.DisqusShortname -}}
                 <div id="fb_comments_container">
                     <h2>{{ i18n "comments" }}</h2>
                     {{ template "_internal/disqus.html" . }}
                 </div>
-            {{- end }}
-            {{ if .Site.Params.utterances.repo  -}}
+            {{- end -}}
+            {{- if .Site.Params.utterances.repo -}}
             <div id="fb_comments_container">
                 <h2>{{ i18n "comments" }}</h2>
                 {{ partial "comments/utterances.html" . }}
             </div>
-            {{- end }}
+            {{- end -}}
         {{ end }}
     </div>
 

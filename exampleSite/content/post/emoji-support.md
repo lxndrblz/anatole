@@ -6,9 +6,6 @@ description = "Guide to emoji usage in Hugo"
 tags = [
     "emoji",
 ]
-[thumbnail]
-	src = "http://placeimg.com/800/800/any?2"
-	alt = "Thumbnail image"
 +++
 
 Emoji can be enabled in a Hugo project in a number of ways. 

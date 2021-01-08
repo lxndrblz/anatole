@@ -16,6 +16,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Navigation items
 - Pagination
 - Multilingual
+- Post Thumbnails (optional)
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
 - Comments powered by Disqus or Utteranc.es (optional)

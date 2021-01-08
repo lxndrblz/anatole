@@ -14,6 +14,7 @@
     --tag-color: #424242;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
+    --thumbnail-height: 15em;
     scroll-padding-top: 100px;
 }
 
@@ -469,6 +470,24 @@ a:active {
 
 .post .post-footer .tags a:hover {
     text-decoration: none;
+}
+
+.post .post-thumbnail {
+    width: 100%;
+    padding-bottom: 1em;
+    box-shadow: black;
+    border-radius: 0.5em;
+    overflow: hidden;
+    transition: box-shadow .3s ease;
+    
+}
+
+.post .post-thumbnail img {
+    width: 100%;
+    height: var(--thumbnail-height);
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    border-bottom: 0px;
 }
 
 .pagination {

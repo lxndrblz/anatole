@@ -16,6 +16,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Navigation items
 - Pagination
 - Multilingual
+- Post Thumbnails (optional)
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
 - Comments powered by Disqus or Utteranc.es (optional)
@@ -286,6 +287,19 @@ To define a custom image of a page, you might want to add the following to the f
 images = ["post-cover.png"]
 ```
 
+### Post Thumbnails
+Thumbnails can be enabled easily by setting the `thumbnail` parameter in the frontmatter of a post to an image such as `"images/landscape.jpg"`.
+```md
++++
+...
+tags = [
+    "thumbnail",
+]
+thumbnail= "images/landscape.jpg"
++++
+```
+Make sure to put the image in the `static/images/` directory.
+
 ### Custom CSS
 
 You can add your custom CSS files with the `customCss` parameter of the configuration file. Put your files into the `assets/css` directory.
@@ -433,3 +447,4 @@ If you like this theme, give it a star on GitHub, and consider supporting its de
 
 - Go to [Cai Cai](https://github.com/hi-caicai), for the great Anatole Farbox theme that formed the foundation for this theme.
 - Go to [Kareya Saleh](https://unsplash.com/photos/tLKOj6cNwe0) for providing the profile picture in the exampleSite.
+- Go to [Ales Krivec](https://unsplash.com/photos/4miBe6zg5r0) for providing the thumbnail picture in the exampleSite post.

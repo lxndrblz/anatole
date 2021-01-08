@@ -297,7 +297,7 @@ tags = [
 thumbnail= "images/landscape.jpg"
 +++
 ```
-Make surefront mattere image the `static/images/` directory.
+Make sure to put the image in the `static/images/` directory.
 
 ### Custom CSS
 

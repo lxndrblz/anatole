@@ -1,6 +1,9 @@
 {{ define "main" }}
     <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <div class="post-content">
+            {{ if .Params.thumbnail }}
+            <img class="post-thumbnail" src="{{ .Params.thumbnail | absURL }}">
+            {{ end }}
             <div class="post-title">
                 <h3>{{ .Title }}</h3>
                 {{ if eq .Type "post"}}

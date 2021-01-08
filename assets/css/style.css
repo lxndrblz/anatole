@@ -14,9 +14,7 @@
     --tag-color: #424242;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
-    --thumbnail-size: 150px;
-    --thumbnail-position: 1; /* -1 left, 1 right */
-    --thumbnail-height: 300px;
+    --thumbnail-height: 15em;
     scroll-padding-top: 100px;
 }
 
@@ -183,7 +181,6 @@ a:active {
     float: right;
     width: 60%;
     margin-top: 60px;
-    /* background-color: var(--pre-bg-color); */
 }
 
 .page-top {
@@ -336,11 +333,7 @@ a:active {
 }
 
 .post {
-    /* max-width: 720px; better for larger resolutions */
     background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
     margin: 30px;
 }
 
@@ -407,6 +400,7 @@ a:active {
 
 .post .post-footer {
     padding: 0 0 10px 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .post .post-footer .meta {
@@ -478,48 +472,22 @@ a:active {
     text-decoration: none;
 }
 
-/* Post preview */
-.preview {
-    display: flex;
-    justify-content: space-between;
-}
-
-.preview .thumbnail {
-    order: var(--thumbnail-position);
-    height: var(--thumbnail-size);
-    width: var(--thumbnail-size);
-    flex: 0 0 auto;
-    margin: 0 20px 20px 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondary-bg-color); /* for lazy loading */
-}
-
-.preview .thumbnail img {
-    max-height: 100%;
-}
-
-/* Alternative Thumbnail */
-.post-text {
-    padding: 1em;
-}
-
-.post-thumbnail {
+.post .post-thumbnail {
     width: 100%;
     padding-bottom: 1em;
     box-shadow: black;
     border-radius: 0.5em;
     overflow: hidden;
     transition: box-shadow .3s ease;
+    
 }
 
-.post-thumbnail img {
+.post .post-thumbnail img {
     width: 100%;
-    height: 20em;
+    height: var(--thumbnail-height);
     object-fit: cover;
+    border: 1px solid var(--border-color);
+    border-bottom: 0px;
 }
 
 .pagination {
@@ -552,11 +520,6 @@ a:active {
 
 .pagination .next {
     float: right;
-}
-
-.has-image {
-    width: 100%;
-    border-radius: .5em;
 }
 
 .like-reblog-buttons {
@@ -995,19 +958,6 @@ print {
 
     .theme-switch-item {
         float: none;
-    }
-
-    .preview {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .preview .thumbnail {
-        order: var(--thumbnail-position);
-    }
-
-    :root {
-        --thumbnail-height: 200px;
     }
 }
 

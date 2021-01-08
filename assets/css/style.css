@@ -7,6 +7,8 @@
     --body-color: rgba(0, 0, 0, 0.7);
     --post-color: rgba(0, 0, 0, 0.44);
     --border-color: rgba(0, 0, 0, 0.15);
+    --form-border-color: #9f9f9f;
+    --form-button-hover-border-color: #000;
     --pre-bg-color: #f9f9fd;
     --nav-text-color: #5a5a5a;
     --tag-color: #424242;
@@ -25,6 +27,8 @@ html[data-theme='dark'] {
     --body-color: rgb(169, 169, 179);
     --post-color: rgba(0, 0, 0, 0.44);
     --border-color: rgb(38, 38, 38);
+    --form-border-color: rgb(169, 169, 179);
+    --form-button-hover-border-color: #fff;
     --pre-bg-color: rgb(33, 33, 45);
     --nav-text-color: rgb(191, 191, 191);
     --tag-color: rgb(191, 191, 191);
@@ -265,11 +269,15 @@ a:active {
     position: fixed;
     z-index: 4;
     border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .sidebar .logo-title {
     text-align: center;
     padding-top: 240px;
+    flex: 1;
 }
 
 .sidebar .logo-title .description {
@@ -306,6 +314,7 @@ a:active {
     padding: 0;
     font-size: 14px;
     text-align: center;
+    flex: 7;
 }
 
 .sidebar .social-links i {
@@ -419,6 +428,7 @@ a:active {
 
 .post .post-footer .meta .info .date {
     margin-right: 10px;
+    margin-left: 5px
 }
 
 .info {
@@ -580,9 +590,10 @@ a:active {
     font-size: 10px;
     margin: 0 auto;
     bottom: 0;
-    position: absolute;
     width: 100%;
     padding-bottom: 20px;
+    flex: 0;
+    position: relative;
 }
 
 .footer a {
@@ -743,6 +754,10 @@ a:active {
     margin: 30px;
 }
 
+.utterances {
+    max-width: unset;
+}
+
 /* Buttons */
 a.btn {
     color: #868686;
@@ -870,7 +885,8 @@ a.btn {
     display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 960px),
+print {
     .sidebar {
         width: 100%;
         position: absolute;
@@ -931,7 +947,6 @@ a.btn {
         display: block;
         flex-grow: 0;
         flex-shrink: 0;
-        display: block;
         line-height: 2.5;
         padding: .5rem .75rem;
         position: relative;
@@ -1039,3 +1054,91 @@ a.btn {
     cursor: zoom-out;
     will-change: transform;
 }
+
+@media print {
+	.page-top {
+		display: none;
+	}
+}
+
+@media (min-width: 1921px){
+    .content {
+        padding-right: 25%;
+        width: 35%;
+    }
+    .sidebar {
+        padding-left: 15%;
+        width: 25%;
+    }
+}
+
+
+/* (CONTACT) FORM */
+
+.contact-form {
+    margin-top: 30px;
+}
+.form-style{
+    width: 100%;
+}
+.form-style ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.form-style ul li {
+    display: block;
+    margin-bottom: 10px;
+    min-height: 35px;
+}
+.form-style ul li .field-style {
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    font-size: 14px;
+    padding: 8px;
+    outline: none;
+    background-color: var(--bg-color);
+    border: 1px solid var(--form-border-color);
+    color: var(--body-color);
+}
+.form-style ul li    .field-style:focus {
+    box-shadow: 0 0 5px;
+    border:1px solid;
+}
+.form-style ul li .field-split {
+    width: 49%;
+}
+.form-style ul li .field-full {
+    width: 100%;
+}
+.form-style ul li input.align-left {
+    float:left;
+}
+.form-style ul li input.align-right {
+    float:right;
+}
+.form-style ul li textarea {
+    background-color: var(--bg-color);
+    border: 1px solid var(--form-border-color);
+    color: var(--body-color);
+    width: 100%;
+    height: auto;
+}
+.form-style ul li input[type="button"], 
+.form-style ul li input[type="submit"] {
+    background-color: var(--bg-color);
+    border: 1px solid var(--form-border-color);
+    display: inline-block;
+    cursor: pointer;
+    color: var(--body-color);
+    text-decoration: none;
+    width: 100%;
+}
+.form-style ul li input[type="button"]:hover, 
+.form-style ul li input[type="submit"]:hover {
+    background-color: var(--bg-color);
+    border: 1px solid var(--form-button-hover-border-color);
+}
+
+/* (CONTACT) FORM END */

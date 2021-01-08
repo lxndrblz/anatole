@@ -1,0 +1,24 @@
+[category]
+other = "categoria"
+
+[tag]
+other = "etiqueta"
+
+[reading_time]
+one = "Tempo de leitura: 1 minuto"
+other = "Tempo de leitura: {{ .Count }} minutos"
+
+[page_not_found]
+other = "Página não encontrada"
+
+[page_does_not_exist]
+other = "Desculpa, esta página não existe."
+
+[head_back]
+other = "Retornar à <a href=\"{{ . }}\">página inicial</a>."
+
+[comments]
+other = "comentários"
+
+[send]
+other = "Enviar"

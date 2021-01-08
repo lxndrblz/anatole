@@ -1,0 +1,24 @@
+[category]
+other = "Kategori"
+
+[tag]
+other = "mærkat"
+
+[reading_time]
+one = "et minuts læsetid"
+other = "{{ .Count }}-minutters læsetid"
+
+[page_not_found]
+other = "Side ikke fundet"
+
+[page_does_not_exist]
+other = "Beklager, denne side eksisterer ikke"
+
+[head_back]
+other = "Returner til <a href=\"{{ . }}\">homepage</a>."
+
+[comments]
+other = "kommentar"
+
+[send]
+other = "Sende"

@@ -1,20 +1,27 @@
 {{ define "main" }}
-    <div class="post animated fadeInDown">
+    <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <div class="post-content">
-
             <div class="post-title">
                 <h3>{{ .Title }}</h3>
                 {{ if eq .Type "post"}}
                     <div class="info">
-                        <em class="fa fa-sun-o"></em>
-                        <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-                        <em class="fa fa-clock-o"></em>
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date">{{ if isset .Site.Params "singledateformat" }} 
+                                                {{ .Date.Format .Site.Params.singleDateFormat }}
+                                           {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}} 
+                                           {{ end }}</span>
+                        <em class="fas fa-stopwatch"></em>
                         <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
                 {{ end }}
             </div>
 
             {{ .Content }}
+
+            {{- if (eq .Params.contact true) -}}
+              {{- partial "contact.html" . -}}
+            {{- end -}}
+
         </div>
         <div class="post-footer">
             <div class="info">
@@ -29,6 +36,12 @@
                     <h2>{{ i18n "comments" }}</h2>
                     {{ template "_internal/disqus.html" . }}
                 </div>
+            {{- end }}
+            {{ if .Site.Params.utterances.repo  -}}
+            <div id="fb_comments_container">
+                <h2>{{ i18n "comments" }}</h2>
+                {{ partial "comments/utterances.html" . }}
+            </div>
             {{- end }}
         {{ end }}
     </div>

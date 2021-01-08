@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <div class="archive animated fadeInDown">
+    <div class="archive {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <ul class="list-with-title">
             {{ range .Data.Pages.GroupByDate "2006" }}
                 <div class="listing-title">{{ .Key }}</div>
@@ -7,7 +7,10 @@
                     <ul class="listing">
                         <div class="listing-item">
                             <div class="listing-post"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-                                <div class="post-time"><span class="date">{{.Date.Format "Jan 2" }}</span></div>
+                                <div class="post-time"><span class="date">{{ if isset .Site.Params "listdateformat" }} 
+                                                                            {{ .Date.Format .Site.Params.listDateFormat }}
+                                                                            {{ else }} {{.Date.Format "Jan 2"}} 
+                                                                            {{ end }}</span></div>
                             </div>
                         </div>
                     </ul>

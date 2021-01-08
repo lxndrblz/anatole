@@ -17,17 +17,25 @@
           integrity="{{ $style.Data.Integrity }}"
           crossorigin="anonymous"
           type="text/css">
-    {{- $css := "" -}}
-    {{- range .Site.Params.customCss -}}
-    {{ $css := resources.Get . | fingerprint }}
+    {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
-          href="{{ $css.Permalink }}"
-          integrity="{{ $css.Data.Integrity }}"
-          crossorigin="anonymous"
-          type="text/css">
-    {{- end -}}
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        href="{{ $markupHighlightStyle.Permalink }}"
+        integrity="{{ $markupHighlightStyle.Data.Integrity }}"
+        crossorigin="anonymous"
+        type="text/css">
+    {{ range .Site.Params.customCss }}
+        {{ $minstyles := resources.Get . }}
+        {{ $styles := $minstyles | resources.Minify | resources.Fingerprint }}
+        <link rel="stylesheet"
+        href="{{ $styles.Permalink }}"
+        integrity="{{ $styles.Data.Integrity }}"
+        crossorigin="anonymous"
+        media="screen" />
+    {{ end }}
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}favicon.ico" type="image/x-icon">
@@ -43,12 +51,22 @@
     {{ end -}}
 
     <!-- JavaScript -->
-    {{ $anatole := resources.Get "js/anatole-header.js" }}
-    {{ $secureJS := $anatole |  resources.Minify | resources.Fingerprint }}
+    {{ $anatoleHeader := resources.Get "js/anatole-header.js" }}
+    {{ $secureHeaderJS := $anatoleHeader |  resources.Minify | resources.Fingerprint }}
     <script type="text/javascript"
-            src="{{ $secureJS.Permalink }}"
-            integrity="{{ $secureJS.Data.Integrity }}"
+            src="{{ $secureHeaderJS.Permalink }}"
+            integrity="{{ $secureHeaderJS.Data.Integrity }}"
             crossorigin="anonymous"></script>
+
+
+    {{ if not .Site.Params.disableThemeSwitcher }}
+        {{ $anatoleThemeSwitcher := resources.Get "js/anatole-theme-switcher.js" }}
+        {{ $secureThemeSwitcherJS := $anatoleThemeSwitcher |  resources.Minify | resources.Fingerprint }}
+        <script type="text/javascript"
+                src="{{ $secureThemeSwitcherJS.Permalink }}"
+                integrity="{{ $secureThemeSwitcherJS.Data.Integrity }}"
+                crossorigin="anonymous"></script>
+    {{ end }}
 
     {{- $js := "" -}}
     {{- range .Site.Params.customJs -}}

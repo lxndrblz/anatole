@@ -21,7 +21,7 @@
       </li>
     </ul>
     {{ with .Site.Params.contactFormReCaptchaSiteKey }}
-      <div class="g-recaptcha" data-sitekey="{{ . }}" data-callback="onSubmit" data-size="invisible" data-theme=""></div>
+      <div class="g-recaptcha" data-sitekey="{{ . }}" data-callback="onSubmit" data-size="invisible" data-theme="{{ $.Page.Params.data-theme }}"></div>
     {{ end }}
   </form>
 </div>

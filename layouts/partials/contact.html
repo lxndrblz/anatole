@@ -1,38 +1,5 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-  // When the page is loaded, or when the theme is switched, the data-theme has to be propagated to the g-recaptcha.
-  function setRecaptchaTheme() {
-    const recaptcha = document.querySelector('.g-recaptcha');
-    const theme = document.documentElement.getAttribute('data-theme');
-
-    alert(`About to set the grecaptcha to data theme ${theme}`);
-
-    recaptcha.setAttribute('theme', theme);
-    grecaptcha.render();
-    // grecaptcha.setRecaptchaTheme();
-    /*
-    $('.g-recaptcha').attr('data-theme', theme);
-    */
-  }
-  // document.addEventListener('DOMContentLoaded', setRecaptchaTheme);
-  const observer = new MutationObserver((mutations) => {
-    const changed = mutations.some(mutation =>
-      mutation.type === 'attributes' && mutation.attributeName === 'data-theme');
-    if (changed) {
-      setRecaptchaTheme();
-    }
-  });
-  observer.observe(document.documentElement, { attributes: true });
-
-  // Sets feedback message.
-  function setFeedback(message = '', ok = true) {
-    const feedback = $('#submit-feedback');
-
-    feedback.attr('feedback-success', ok);
-    feedback.text(message);
-  }
-</script>
 
 <div class="contact-form">
   <form id="contact-form" class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}">
@@ -54,17 +21,25 @@
       </li>
     </ul>
     {{ with .Site.Params.contactFormReCaptchaSiteKey }}
-      <div class="g-recaptcha" data-sitekey="{{ . }}" data-callback="onSubmit" data-size="invisible"></div>
+      <div class="g-recaptcha" data-sitekey="{{ . }}" data-callback="onSubmit" data-size="invisible" data-theme=""></div>
     {{ end }}
   </form>
 </div>
 
 <script>
+  // Sets feedback message.
+  function setFeedback(message = '', ok = true) {
+    const feedback = $('#submit-feedback');
+
+    feedback.attr('feedback-success', ok);
+    feedback.text(message);
+  }
+
   // This hanlder takes care of submission post-captcha.
   function onSubmit() {
-    const response = grecaptcha.getResponse();
-
-    if(response.length == 0) { 
+    // Verify if we have a recaptcha at all before checking.
+    if($('.g-recaptcha')[0] !== null &&
+      grecaptcha.getResponse().length == 0) { 
       setFeedback('{{ i18n "form_captcha_error" }}', false);
     } else {
       const message = $('#contact-form').serialize();
@@ -82,7 +57,7 @@
           },
       });
 
-      // Reenable button.
+      // Enable button.
       $('#form-submit').prop('disabled', false);
     }
   }
@@ -94,6 +69,12 @@
     setFeedback('');
     // Disable submit button for the time being,
     $('#form-submit').prop('disabled', true);
-    grecaptcha.execute();
+  
+    // Make sure we have a captcha to execute before trying to do so.
+    if ($('.g-recaptcha')[0] !== null) {
+      grecaptcha.execute();
+    } else {
+      onSubmit();
+    }
   });
 </script>

@@ -1,19 +1,80 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <div class="contact-form">
-  <form class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}" data-toggle="validator">
+  <form id="contact-form" class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}">
     <ul>
       <li>
-        <input class="field-style field-full" type="text" name="username" id="username" placeholder="Name" required>
+        <input class="field-style field-full" type="text" name="username" id="username" placeholder="{{ i18n "name" }}" oninvalid="setCustomValidity('{{ i18n "name_error" }}')" oninput="setCustomValidity('')" required>
       </li>
       <li>
-        <input class="field-style field-full" type="email" id="email" name="email" placeholder="Email" required>
+        <input class="field-style field-full" type="email" name="email" id="email" placeholder="{{ i18n "email" }}" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="setCustomValidity('{{ i18n "email_error" }}')" oninput="setCustomValidity('')" required>
       </li>
       <li>
-        <textarea class="field-style" name="message" id="message" rows="6" placeholder="{{ i18n "message" }}"></textarea>
+        <textarea class="field-style" name="message" id="message" rows="6" placeholder="{{ i18n "message" }}" oninvalid="setCustomValidity('{{ i18n "message_error" }}')" oninput="setCustomValidity('')" required></textarea>
       </li>
       <li>
-        <input class="field-style" type="submit" value="{{ i18n "send" }}"></input>
+        <input class="field-style" id="form-submit" type="submit" value="{{ i18n "send" }}">
+      </li>
+      <li>
+        <div id="submit-feedback"></div>
       </li>
     </ul>
+    {{ with .Site.Params.contactFormReCaptchaSiteKey }}
+      <div class="g-recaptcha" data-sitekey="{{ . }}" data-callback="onSubmit" data-size="invisible" data-theme=""></div>
+    {{ end }}
   </form>
 </div>
+
+<script>
+  // Sets feedback message.
+  function setFeedback(message = '', ok = true) {
+    const feedback = $('#submit-feedback');
+
+    feedback.attr('feedback-success', ok);
+    feedback.text(message);
+  }
+
+  // This hanlder takes care of submission post-captcha.
+  function onSubmit() {
+    // Verify if we have a recaptcha at all before checking.
+    if($('.g-recaptcha')[0] !== null &&
+      grecaptcha.getResponse().length == 0) { 
+      setFeedback('{{ i18n "form_captcha_error" }}', false);
+    } else {
+      const message = $('#contact-form').serialize();
+
+      $.ajax({
+          url: '{{ .Site.Params.contactFormAction }}', 
+          method: 'POST',
+          data: message,
+          dataType: 'json',
+          success: (result) => {
+            setFeedback('{{ i18n "form_success" }}');
+          },
+          error: (xhr) => {
+            setFeedback('{{ i18n "form_submit_error" }}', false);
+          },
+      });
+
+      // Enable button.
+      $('#form-submit').prop('disabled', false);
+    }
+  }
+
+  // Initial contact form submit is disabled, and optionally kicks off captcha.
+  $('#contact-form').submit((e) => {
+    // We're doing the submission to avoid the redirect for free Formspree accounts.
+    e.preventDefault();
+    setFeedback('');
+    // Disable submit button for the time being,
+    $('#form-submit').prop('disabled', true);
+  
+    // Make sure we have a captcha to execute before trying to do so.
+    if ($('.g-recaptcha')[0] !== null) {
+      grecaptcha.execute();
+    } else {
+      onSubmit();
+    }
+  });
+</script>

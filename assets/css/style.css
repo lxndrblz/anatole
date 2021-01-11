@@ -14,6 +14,7 @@
     --tag-color: #424242;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
+    --error-color: #ff3939;
     --thumbnail-height: 15em;
     scroll-padding-top: 100px;
 }
@@ -32,6 +33,7 @@ html[data-theme='dark'] {
     --tag-color: rgb(191, 191, 191);
     --blockquote-text-color: #808080;
     --blockquote-border-color: #424242;
+    --error-color: #ff3939;
 }
 
 html {
@@ -1052,7 +1054,7 @@ print {
     border: 1px solid var(--form-border-color);
     color: var(--body-color);
 }
-.form-style ul li    .field-style:focus {
+.form-style ul li .field-style:focus {
     box-shadow: 0 0 5px;
     border:1px solid;
 }
@@ -1090,5 +1092,13 @@ print {
     background-color: var(--bg-color);
     border: 1px solid var(--form-button-hover-border-color);
 }
-
+.form-style .form-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+.form-style div[feedback-success="false"] {
+    color: var(--error-color);
+}
 /* (CONTACT) FORM END */

@@ -1,5 +1,5 @@
-<script type="text/javascript" src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script type="text/javascript" src="/assets/js/jquery.js"></script>
+{{ $jquery := resources.Get "js/jquery.js" }}
+<script type="text/javascript" src="{{ $jquery.Permalink }}"></script>
 
 <div class="contact-form">
   <form id="contact-form" class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}">
@@ -20,11 +20,11 @@
         <div id="submit-feedback"></div>
       </li>
     </ul>
-    {{ with .Site.Params.contactFormReCaptchaSiteKey }}
-      <div class="g-recaptcha" data-sitekey="{{ . }}" data-callback="onSubmit" data-size="invisible" data-theme=""></div>
-    {{ end }}
   </form>
 </div>
+{{ with .Site.Params.contactFormReCaptchaSiteKey }}
+  <div id="g-recaptcha"></div>
+{{ end }}
 
 <script>
   // Sets feedback message.
@@ -78,3 +78,21 @@
     }
   });
 </script>
+
+{{ with .Site.Params.contactFormReCaptchaSiteKey }}
+  <script>
+      // Captcha rendered dynamically to deal with some rendering issues with
+      // theme and with animation.
+      function captchaLoadCallback() {
+        grecaptcha.render( 'g-recaptcha', {
+          sitekey: '{{ . }}',
+          callback: onSubmit,
+          size: 'invisible',
+          badge: 'bottomright',
+          theme: $('html').attr('data-theme'),
+        });
+      }
+  </script>
+  <!-- Explicit rendering of recaptcha to deal with data-theme and animation issues -->
+  <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit" async defer></script>
+{{ end }}

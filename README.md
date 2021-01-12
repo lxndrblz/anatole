@@ -129,6 +129,10 @@ You can easily disable the animations from the `config.toml`. All you have to do
 [params]
 doNotLoadAnimations = true # Animations are loaded by default
 ```
+You can also turn off animations on a per-page basis by setting `animation` to `false` in the frontmatter of a page.
+```md
+animation: false
+```
 
 ### Control the date Format
 You can change the default date formating for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
@@ -267,9 +271,15 @@ use = "katex"  # options: "katex", "mathjax". default is "katex".
 Step 1: Configure the `contactFormAction` in the `config.toml`
 ```toml
 [params]
-#contactFormAction = "https://formspree.io/f/your-form-hash-here"
+contactFormAction = "https://formspree.io/f/your-form-hash-here"
 ```
 Step 2: Activate the `contact: true` or  `contact=true` in the frontmatter of a page. See `exampleSite/content/contact.html` as an example.
+Step 3: If you have configured a Google reCaptcha v2 in your formSpree form, you will want to
+put the site key in `config.toml`:
+```toml
+[params]
+contactFormReCaptchaSiteKey = "your-site-key"
+```
 ### Twitter Cards support
 
 In order to use the full functionality of Twitter cards, you will have to define a couple of settings in the `config.toml` and the frontmatter of a page.

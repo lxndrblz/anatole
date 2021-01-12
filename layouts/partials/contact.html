@@ -16,15 +16,17 @@
       <li>
         <input class="field-style" id="form-submit" type="submit" value="{{ i18n "send" }}">
       </li>
+      {{ with .Site.Params.contactFormReCaptchaSiteKey }}
+      <li>
+        <div id="g-recaptcha"></div>
+      </li>
+      {{ end }}
       <li>
         <div id="submit-feedback"></div>
       </li>
     </ul>
   </form>
 </div>
-{{ with .Site.Params.contactFormReCaptchaSiteKey }}
-  <div id="g-recaptcha"></div>
-{{ end }}
 
 <script>
   // Sets feedback message.

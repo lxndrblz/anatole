@@ -274,12 +274,31 @@ Step 1: Configure the `contactFormAction` in the `config.toml`
 contactFormAction = "https://formspree.io/f/your-form-hash-here"
 ```
 Step 2: Activate the `contact: true` or  `contact=true` in the frontmatter of a page. See `exampleSite/content/contact.html` as an example.
-Step 3: If you have configured a Google reCaptcha v2 in your formSpree form, you will want to
-put the site key in `config.toml`:
+Step 3: If you wish to use a Google reCaptcha v2, you must [go to a Google Admin console](https://www.google.com/recaptcha/about/) and create a reCaptcha:
+Make sure it is a reCaptcha v2. You must then [go to your Formspree account](https://help.formspree.io/hc/en-us/articles/360022811154-Adding-a-custom-reCAPTCHA-key) and enter the secret key that you were given in the appropriate location.
+Step 4: Enter the recaptcha site key in `config.toml`:
 ```toml
 [params]
 contactFormReCaptchaSiteKey = "your-site-key"
 ```
+### Netlify Contact Form on the Contact Page
+Netlify forms only work when your site is being actively hosted by Netlify - unlike Formspree, testing your form locally before committing to Netlify will not work.
+Step 1: Configure the `contactFormType` in the `config.toml`. Netlify does not require a `contactFormAction` configured.
+```toml
+[params]
+contactFormType = "netlify"
+```
+Step 2: Set `contact: true` or  `contact=true` in the frontmatter of a page. See `exampleSite/content/contact.html` as an example.
+Step 3: If you wish to use a Google reCaptcha v2, you must [go to a Google Admin console](https://www.google.com/recaptcha/about/) and create a reCaptcha.
+Make sure it is a reCaptcha v2. You must then [go to your Formspree account](https://help.formspree.io/hc/en-us/articles/360022811154-Adding-a-custom-reCAPTCHA-key) and enter the secret key that you were given in the appropriate location.
+Step 4: Enter the recaptcha site key in `config.toml`:
+```toml
+[params]
+contactFormReCaptchaSiteKey = "your-site-key"
+```
+Step 5: [Go to your Netlify account](https://www.netlify.com/blog/2018/05/23/bring-your-own-recaptcha-to-netlify-forms/) and let them know both the site key and the secret key for your custom recaptcha.
+Step 6: You will probably want to set up some [form notification](https://docs.netlify.com/forms/notifications/).
+
 ### Twitter Cards support
 
 In order to use the full functionality of Twitter cards, you will have to define a couple of settings in the `config.toml` and the frontmatter of a page.

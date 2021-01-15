@@ -44,7 +44,7 @@ other = "ارسال"
 [form_captcha_error]
 other = "Captcha error; please try again later"
 
-[form_submit_error]
+[form_error]
 other = "Fatal error, contact not made - please reach out some other way"
 
 [form_success]

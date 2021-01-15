@@ -2,7 +2,7 @@
 <script type="text/javascript" src="{{ $jquery.Permalink }}"></script>
 
 <div class="contact-form">
-  <form id="contact-form" name="Contact Form" class="form-style" method="POST" action="{{ if eq .Site.Params.ContactFormType "netlify" }}'/'{{ else }}{{ .Site.Params.contactFormAction }}{{ end }}"
+  <form id="contact-form" name="Contact Form" class="form-style" method="POST" action="{{ if eq .Site.Params.ContactFormType "netlify" }}/{{ else }}{{ .Site.Params.contactFormAction }}{{ end }}"
     {{ with .Site.Params.contactFormReCaptchaSiteKey }} data-netlify-recaptcha="true"{{ end }}
     {{ if eq .Site.Params.contactFormType "netlify" }} data-netlify="true" netlify-honeypot="my-lovely-house"{{ end }}>
     <ul>

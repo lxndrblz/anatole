@@ -129,11 +129,6 @@ You can easily disable the animations from the `config.toml`. All you have to do
 [params]
 doNotLoadAnimations = true # Animations are loaded by default
 ```
-You can also turn off animations on a per-page basis by setting `animation` to `false` in the frontmatter of a page.
-```md
-animation: false
-```
-
 ### Control the date Format
 You can change the default date formating for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
 ```toml

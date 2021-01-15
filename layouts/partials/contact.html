@@ -22,10 +22,8 @@
         <div class="form-feedback" id="submit-feedback"></div>
       </li>
       {{ if eq .Site.Params.contactFormType "netlify"}}
-      <li>
         <input name="form-name" value="Contact Form" type="hidden">
         <input class="field-style" name="my-lovely-house" id="my-lovely-house" type="hidden">
-      </li>
       {{ end }}
       {{ with .Site.Params.contactFormReCaptchaSiteKey }}
       <li>

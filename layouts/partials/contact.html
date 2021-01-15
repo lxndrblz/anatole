@@ -2,7 +2,7 @@
 <script type="text/javascript" src="{{ $jquery.Permalink }}"></script>
 
 <div class="contact-form">
-  <form id="contact-form" name="Contact Form" class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}"
+  <form id="contact-form" name="Contact Form" class="form-style" method="POST" action="{{ if eq .Site.Params.contactFormType "netlify" }}/{{ else }}{{ .Site.Params.contactFormAction }}{{ end }}"
     {{ with .Site.Params.contactFormReCaptchaSiteKey }} data-netlify-recaptcha="true"{{ end }}
     {{ if eq .Site.Params.contactFormType "netlify" }} data-netlify="true" netlify-honeypot="my-lovely-house"{{ end }}>
     <ul>
@@ -51,23 +51,31 @@
       setFeedback('{{ i18n "form_captcha_error" }}', false);
     } else {
       // Formspree requires json; ajax will do the conversion.
-      const message = $('#contact-form').serialize();
-      const specifics = ('{{ .Site.Params.ContactFormType }}' === 'netlify')
-        ? { url: '/', dataType: 'application/x-www-form-urlencoded' }
-        : { url: '{{ .Site.Params.contactFormAction }}', dataType: 'json'};
+      const form = $('#contact-form');
+      const message = form.serialize();
+      const dataType = ('{{ .Site.Params.ContactFormType }}' === 'netlify')
+        ? 'application/x-www-form-urlencoded' : 'json';
 
-      alert(`Specifics: ${JSON.stringify(specifics, null, 2)}. Message: ${JSON.stringify(message, null, 2)}.`);
+      const temp = {
+        url: form.prop('action'),
+        method: 'POST',
+        data: message,
+        dataType,
+      };
+
+      alert(`ajax data: ${JSON.stringify(temp, null, 2)}`);
 
       $.ajax({
-          ...specifics,
+          url: form.prop('action'),
           method: 'POST',
           data: message,
+          dataType,
           success: (result) => {
-            alert(result);
+            alert(JSON.stringify(result));
             setFeedback('{{ i18n "form_success" }}');
           },
           error: (xhr) => {
-            alert(xhr.status);
+            alert(`${xhr.status}, ${xhr.responseText}`);
             setFeedback('{{ i18n "form_submit_error" }}', false);
           },
       });

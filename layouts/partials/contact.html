@@ -88,6 +88,7 @@
   
     // Make sure we have a captcha to execute before trying to do so.
     if ($('.g-recaptcha')[0] !== null) {
+      alert('grecaptcha.execute()');
       grecaptcha.execute();
     } else {
       onSubmit();

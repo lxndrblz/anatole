@@ -65,9 +65,11 @@
           method: 'POST',
           data: message,
           success: (result) => {
+            alert(result);
             setFeedback('{{ i18n "form_success" }}');
           },
           error: (xhr) => {
+            alert(xhr.status);
             setFeedback('{{ i18n "form_submit_error" }}', false);
           },
       });

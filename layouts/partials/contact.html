@@ -56,26 +56,15 @@
       const dataType = ('{{ .Site.Params.ContactFormType }}' === 'netlify')
         ? 'application/x-www-form-urlencoded' : 'json';
 
-      const temp = {
-        url: form.prop('action'),
-        method: 'POST',
-        data: message,
-        dataType,
-      };
-
-      alert(`ajax data: ${JSON.stringify(temp, null, 2)}`);
-
       $.ajax({
           url: form.prop('action'),
           method: 'POST',
           data: message,
           dataType,
           success: (result) => {
-            alert(JSON.stringify(result));
             setFeedback('{{ i18n "form_success" }}');
           },
           error: (xhr) => {
-            alert(`${xhr.status}, ${xhr.responseText}`);
             setFeedback('{{ i18n "form_submit_error" }}', false);
           },
       });

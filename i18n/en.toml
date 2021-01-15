@@ -45,7 +45,7 @@ other = "Send"
 other = "Captcha error; please try again later"
 
 [form_submit_error]
-other = "Fatal error, contact not made - please reach out some other way"
+other = "Fatal error, contact not made - please reach out in some other way"
 
 [form_success]
 other = "Thank you for reaching out! We will be touch soon"

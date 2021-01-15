@@ -17,6 +17,7 @@
     --error-color: #ff3939;
     --thumbnail-height: 15em;
     scroll-padding-top: 100px;
+    --font-family: 'Verdana', sans-serif;
 }
 
 html[data-theme='dark'] {
@@ -43,7 +44,7 @@ html {
 
 body {
     color: var(--body-color);
-    font-family: 'Verdana', sans-serif;
+    font-family: var(--font-family);
     font-size: 15px;
     width: 100%;
     margin: 0 auto 30px auto;
@@ -1078,6 +1079,10 @@ print {
 .form-style ul li input.align-right {
     float:right;
 }
+.form-style input,
+.form-style textarea {
+    font-family: var(--font-family);
+}
 .form-style ul li textarea {
     background-color: var(--bg-color);
     border: 1px solid var(--form-border-color);
@@ -1085,7 +1090,6 @@ print {
     width: 100%;
     height: auto;
 }
-.form-style ul li input[type="button"], 
 .form-style ul li input[type="submit"] {
     background-color: var(--bg-color);
     border: 1px solid var(--form-border-color);
@@ -1095,7 +1099,6 @@ print {
     text-decoration: none;
     width: 100%;
 }
-.form-style ul li input[type="button"]:hover, 
 .form-style ul li input[type="submit"]:hover {
     background-color: var(--bg-color);
     border: 1px solid var(--form-button-hover-border-color);
@@ -1106,7 +1109,10 @@ print {
     align-items: center;
     flex: 1;
 }
-.form-style div[feedback-success="false"] {
+.form-feedback {
+    text-align: center;
+}
+.form-feedback[feedback-success="false"] {
     color: var(--error-color);
 }
-/* (CONTACT) FORM END */
+/* (CONTACT) FORM END */[

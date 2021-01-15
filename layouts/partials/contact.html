@@ -2,7 +2,9 @@
 <script type="text/javascript" src="{{ $jquery.Permalink }}"></script>
 
 <div class="contact-form">
-  <form id="contact-form" class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}">
+  <form id="contact-form" name="Contact Form" class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}"
+    {{ with .Site.Params.contactFormReCaptchaSiteKey }} data-netlify-recaptcha="true"{{ end }}
+    {{ if eq .Site.Params.contactFormType "netlify" }} data-netlify="true" netlify-honeypot="my-lovely-house"{{ end }}>
     <ul>
       <li>
         <input class="field-style field-full" type="text" name="username" id="username" placeholder="{{ i18n "name" }}" oninvalid="setCustomValidity('{{ i18n "name_error" }}')" oninput="setCustomValidity('')" required>
@@ -16,14 +18,20 @@
       <li>
         <input class="field-style" id="form-submit" type="submit" value="{{ i18n "send" }}">
       </li>
-      {{ with .Site.Params.contactFormReCaptchaSiteKey }}
       <li>
-        <div id="g-recaptcha"></div>
+        <div class="form-feedback" id="submit-feedback"></div>
+      </li>
+      {{ if eq .Site.Params.contactFormType "netlify"}}
+      <li>
+        <input name="form-name" value="Contact Form" type="hidden">
+        <input class="field-style" name="my-lovely-house" id="my-lovely-house" type="hidden">
       </li>
       {{ end }}
+      {{ with .Site.Params.contactFormReCaptchaSiteKey }}
       <li>
-        <div id="submit-feedback"></div>
+        <div id="g-recaptcha" data-netlify-recaptcha="true"></div>
       </li>
+      {{ end }}
     </ul>
   </form>
 </div>
@@ -40,17 +48,22 @@
   // This hanlder takes care of submission post-captcha.
   function onSubmit() {
     // Verify if we have a recaptcha at all before checking.
-    if($('.g-recaptcha')[0] !== null &&
+    if($('.g-recaptcha')[0] != null &&
       grecaptcha.getResponse().length == 0) { 
       setFeedback('{{ i18n "form_captcha_error" }}', false);
     } else {
+      // Formspree requires json; ajax will do the conversion.
       const message = $('#contact-form').serialize();
+      const specifics = ('{{ .Site.Params.ContactFormType }}' === 'netlify')
+        ? { url: window.location.href, dataType: 'application/x-www-form-urlencoded' }
+        : { url: '{{ .Site.Params.contactFormAction }}', dataType: 'json'};
+
+      // alert(`Specifics: ${JSON.stringify(specifics, null, 2)}. Message: ${JSON.stringify(message, null, 2)}.`);
 
       $.ajax({
-          url: '{{ .Site.Params.contactFormAction }}', 
+          ...specifics,
           method: 'POST',
           data: message,
-          dataType: 'json',
           success: (result) => {
             setFeedback('{{ i18n "form_success" }}');
           },

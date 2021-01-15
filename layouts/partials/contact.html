@@ -2,7 +2,7 @@
 <script type="text/javascript" src="{{ $jquery.Permalink }}"></script>
 
 <div class="contact-form">
-  <form id="contact-form" name="Contact Form" class="form-style" method="POST" action="{{ if eq .Site.Params.ContactFormType "netlify" }}/{{ else }}{{ .Site.Params.contactFormAction }}{{ end }}"
+  <form id="contact-form" name="Contact Form" class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}"
     {{ with .Site.Params.contactFormReCaptchaSiteKey }} data-netlify-recaptcha="true"{{ end }}
     {{ if eq .Site.Params.contactFormType "netlify" }} data-netlify="true" netlify-honeypot="my-lovely-house"{{ end }}>
     <ul>
@@ -22,8 +22,10 @@
         <div class="form-feedback" id="submit-feedback"></div>
       </li>
       {{ if eq .Site.Params.contactFormType "netlify"}}
+      <li>
         <input name="form-name" value="Contact Form" type="hidden">
         <input class="field-style" name="my-lovely-house" id="my-lovely-house" type="hidden">
+      </li>
       {{ end }}
       {{ with .Site.Params.contactFormReCaptchaSiteKey }}
       <li>
@@ -51,18 +53,17 @@
       setFeedback('{{ i18n "form_captcha_error" }}', false);
     } else {
       // Formspree requires json; ajax will do the conversion.
-      const form = $('#contact-form');
-      const message = form.serialize();
-      const dataType = ('{{ .Site.Params.ContactFormType }}' === 'netlify')
-        ? 'application/x-www-form-urlencoded' : 'json';
+      const message = $('#contact-form').serialize();
+      const specifics = ('{{ .Site.Params.ContactFormType }}' === 'netlify')
+        ? { url: '/', dataType: 'application/x-www-form-urlencoded' }
+        : { url: '{{ .Site.Params.contactFormAction }}', dataType: 'json'};
 
-      alert(`url: ${form.prop('action')}, datatype: ${datatype}, message: ${JSON.stringify(message, null, 2)}.`);
+      alert(`Specifics: ${JSON.stringify(specifics, null, 2)}. Message: ${JSON.stringify(message, null, 2)}.`);
 
       $.ajax({
-          url: form.prop('action'),
+          ...specifics,
           method: 'POST',
           data: message,
-          dataType,
           success: (result) => {
             alert(result);
             setFeedback('{{ i18n "form_success" }}');
@@ -88,7 +89,6 @@
   
     // Make sure we have a captcha to execute before trying to do so.
     if ($('.g-recaptcha')[0] !== null) {
-      alert('grecaptcha.execute()');
       grecaptcha.execute();
     } else {
       onSubmit();

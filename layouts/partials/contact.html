@@ -29,7 +29,7 @@
       {{ end }}
       {{ with .Site.Params.contactFormReCaptchaSiteKey }}
       <li>
-        <div id="g-recaptcha" data-netlify-recaptcha="true"></div>
+        <div id="g-recaptcha"></div>
       </li>
       {{ end }}
     </ul>
@@ -58,7 +58,7 @@
         ? { url: window.location.href, dataType: 'application/x-www-form-urlencoded' }
         : { url: '{{ .Site.Params.contactFormAction }}', dataType: 'json'};
 
-      // alert(`Specifics: ${JSON.stringify(specifics, null, 2)}. Message: ${JSON.stringify(message, null, 2)}.`);
+      alert(`Specifics: ${JSON.stringify(specifics, null, 2)}. Message: ${JSON.stringify(message, null, 2)}.`);
 
       $.ajax({
           ...specifics,

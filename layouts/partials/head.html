@@ -25,7 +25,7 @@
         type="text/css">
     {{ range .Site.Params.customCss }}
         {{ $minstyles := resources.Get . }}
-        {{ $styles := $minstyles | resources.Minify | resources.Fingerprint }}
+        {{ $styles := $minstyles | resources.ExecuteAsTemplate . $ | resources.Minify | resources.Fingerprint }}
         <link rel="stylesheet"
         href="{{ $styles.Permalink }}"
         integrity="{{ $styles.Data.Integrity }}"

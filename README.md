@@ -278,7 +278,7 @@ Step 4: Enter the reCAPTCHA site key in `config.toml`:
 contactFormReCaptchaSiteKey = "your-site-key"
 ```
 ### Netlify Contact Form on the Contact Page
-Netlify forms only work when your site is being actively hosted by Netlify - unlike Formspree, testing your form locally before committing to Netlify will not work.
+Netlify forms only work when your site is being actively hosted by Netlify - unlike Formspree, testing your form locally before committing to Netlify will return a false success.
 Step 1: Configure the `contactFormType` in the `config.toml`. Netlify does not require a `contactFormAction` configured.
 ```toml
 [params]

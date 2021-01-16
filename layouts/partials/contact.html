@@ -60,11 +60,10 @@
           data: message,
           dataType,
           complete: (xhr, status) => {
-            // Netlify asks for urlencoded data but sends back HTML. This causes a
-            // data type mismatch that Ajax flags as a parsererror ... I believe the solution is to just
+            // Netlify asks for urlencoded data but sends back HTML. This causes a data type mismatch
+            // that Ajax flags as a 'parsererror' status ... I believe the solution is to just
             // screen for the false negative in this combined handler.
             // https://stackoverflow.com/questions/16230624/ajax-call-fires-error-event-but-returns-200-ok/16230794
-            alert(`Result: ${status}, ${xhr.status}. ${JSON.stringify(xhr, null, 2)}.`);
             if (status === 'error' && xhr.status !== 200) {
               setFeedback('{{ i18n "form_error" }}', false);
             } else {

@@ -46,7 +46,8 @@
   // This hanlder takes care of submission post-captcha.
   function onSubmit() {
     // Verify if we have a recaptcha at all before checking.
-    if($('.g-recaptcha')[0] != null &&
+    alert('We are here.');
+    if($('#g-recaptcha')[0] != null &&
       grecaptcha.getResponse().length == 0) { 
       setFeedback('{{ i18n "form_captcha_error" }}', false);
     } else {
@@ -88,7 +89,7 @@
     $('#form-submit').prop('disabled', true);
   
     // Make sure we have a captcha to execute before trying to do so.
-    if ($('.g-recaptcha')[0] !== null) {
+    if ($('#g-recaptcha')[0] !== null) {
       grecaptcha.execute();
     } else {
       onSubmit();
@@ -100,6 +101,7 @@
   <script>
       // Captcha rendered dynamically to deal with some rendering issues with
       // theme and with animation.
+      alert('We are there.');
       function captchaLoadCallback() {
         grecaptcha.render( 'g-recaptcha', {
           sitekey: '{{ . }}',

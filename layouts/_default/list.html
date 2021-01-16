@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <div class="archive {{ if and (or (not (isset .Site.Params "doNotLoadAnimations")) (and (isset .Site.Params "doNotLoadAnimations") (not .Site.Params.doNotLoadAnimations))) (or (not (isset .Page.Params "animation")) .Page.Params.animation) }} animated fadeInDown {{ end }}">
+    <div class="archive {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <ul class="list-with-title">
             {{ range .Data.Pages.GroupByDate "2006" }}
                 <div class="listing-title">{{ .Key }}</div>

@@ -1,115 +1,19 @@
-{{ $jquery := resources.Get "js/jquery.js" }}
-<script type="text/javascript" src="{{ $jquery.Permalink }}"></script>
 
 <div class="contact-form">
-  <form id="contact-form" name="Contact Form" class="form-style" method="POST" action="{{ if eq .Site.Params.contactFormType "netlify" }}/{{ else }}{{ .Site.Params.contactFormAction }}{{ end }}"
-    {{ with .Site.Params.contactFormReCaptchaSiteKey }} data-netlify-recaptcha="true"{{ end }}
-    {{ if eq .Site.Params.contactFormType "netlify" }} data-netlify="true" netlify-honeypot="my-lovely-house"{{ end }}>
+  <form class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}" data-toggle="validator">
     <ul>
       <li>
-        <input class="field-style field-full" type="text" name="username" id="username" placeholder="{{ i18n "name" }}" oninvalid="setCustomValidity('{{ i18n "name_error" }}')" oninput="setCustomValidity('')" required>
+        <input class="field-style field-full" type="text" name="username" id="username" placeholder="Name" required>
       </li>
       <li>
-        <input class="field-style field-full" type="email" name="email" id="email" placeholder="{{ i18n "email" }}" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="setCustomValidity('{{ i18n "email_error" }}')" oninput="setCustomValidity('')" required>
+        <input class="field-style field-full" type="email" id="email" name="email" placeholder="Email" required>
       </li>
       <li>
-        <textarea class="field-style" name="message" id="message" rows="6" placeholder="{{ i18n "message" }}" oninvalid="setCustomValidity('{{ i18n "message_error" }}')" oninput="setCustomValidity('')" required></textarea>
+        <textarea class="field-style" name="message" id="message" rows="6" placeholder="{{ i18n "message" }}"></textarea>
       </li>
       <li>
-        <input class="field-style" id="form-submit" type="submit" value="{{ i18n "send" }}">
+        <input class="field-style" type="submit" value="{{ i18n "send" }}"></input>
       </li>
-      <li>
-        <div class="form-feedback" id="submit-feedback"></div>
-      </li>
-      {{ if eq .Site.Params.contactFormType "netlify"}}
-        <input name="form-name" value="Contact Form" type="hidden">
-        <input class="field-style" name="my-lovely-house" id="my-lovely-house" type="hidden">
-      {{ end }}
-      {{ with .Site.Params.contactFormReCaptchaSiteKey }}
-      <li>
-        <div id="g-recaptcha"></div>
-      </li>
-      {{ end }}
     </ul>
   </form>
 </div>
-
-<script>
-  // Sets feedback message.
-  function setFeedback(message = '', ok = true) {
-    const feedback = $('#submit-feedback');
-
-    feedback.attr('feedback-success', ok);
-    feedback.text(message);
-  }
-
-  // This hanlder takes care of submission post-captcha.
-  function onSubmit() {
-    // Verify if we have a recaptcha at all before checking.
-    if($('.g-recaptcha')[0] != null &&
-      grecaptcha.getResponse().length == 0) { 
-      setFeedback('{{ i18n "form_captcha_error" }}', false);
-    } else {
-      // Formspree requires json; ajax will do the conversion.
-      const form = $('#contact-form');
-      const message = form.serialize();
-      const dataType = ('{{ .Site.Params.ContactFormType }}' === 'netlify')
-        ? 'application/x-www-form-urlencoded' : 'json';
-
-      $.ajax({
-          url: form.prop('action'),
-          method: 'POST',
-          data: message,
-          dataType,
-          complete: (xhr, status) => {
-            // Netlify asks for urlencoded data but sends back HTML. This causes a
-            // data type mismatch that Ajax flags as an error ... I believe the solution is to just
-            // screen for the false negative in this combined handler.
-            // https://stackoverflow.com/questions/16230624/ajax-call-fires-error-event-but-returns-200-ok/16230794
-            if (status === 'error' && xhr.status !== 200) {
-              setFeedback('{{ i18n "form_error" }}', false);
-            } else {
-              setFeedback('{{ i18n "form_success" }}');
-            }
-          },
-      });
-
-      // Enable button.
-      $('#form-submit').prop('disabled', false);
-    }
-  }
-
-  // Initial contact form submit is disabled, and optionally kicks off captcha.
-  $('#contact-form').submit((e) => {
-    // We're doing the submission to avoid the redirect for free Formspree accounts.
-    e.preventDefault();
-    setFeedback('');
-    // Disable submit button for the time being,
-    $('#form-submit').prop('disabled', true);
-  
-    // Make sure we have a captcha to execute before trying to do so.
-    if ($('.g-recaptcha')[0] !== null) {
-      grecaptcha.execute();
-    } else {
-      onSubmit();
-    }
-  });
-</script>
-
-{{ with .Site.Params.contactFormReCaptchaSiteKey }}
-  <script>
-      // Captcha rendered dynamically to deal with some rendering issues with
-      // theme and with animation.
-      function captchaLoadCallback() {
-        grecaptcha.render( 'g-recaptcha', {
-          sitekey: '{{ . }}',
-          callback: onSubmit,
-          size: 'invisible',
-          badge: 'bottomright',
-          theme: $('html').attr('data-theme'),
-        });
-      }
-  </script>
-  <!-- Explicit rendering of recaptcha to deal with data-theme and animation issues -->
-  <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit" async defer></script>
-{{ end }}

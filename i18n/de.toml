@@ -20,32 +20,5 @@ other = "Du kannst hier zurück zur <a href=\"{{ . }}\">Startseite</a>."
 [comments]
 other = "Kommentare"
 
-[name]
-other = "Name"
-
-[name_error]
-other = "Bitte geben Sie Ihren Namen an"
-
-[email]
-other = "Email"
-
-[email_error]
-other = "Bitte geben Sie eine gültige E-Mail Adresse ein"
-
-[message]
-other = "Nachricht"
-
-[message_error]
-other = "Bitte teilen Sie uns mit, warum Sie sich an uns wenden"
-
 [send]
 other = "Senden"
-
-[form_captcha_error]
-other = "Captcha-Fehler; bitte versuchen Sie es später noch einmal"
-
-[form_error]
-other = "Fataler Fehler, Kontakt nicht hergestellt - bitte melden Sie sich auf anderem Wege"
-
-[form_success]
-other = "Thank für Ihre Kontaktaufnahme. Wir werden uns bald bei Ihnen melden."

@@ -20,32 +20,5 @@ other = "Puedes regresar a la <a href=\"{{ . }}\">página inicial</a>."
 [comments]
 other = "comentarios"
 
-[name]
-other = "Nombre"
-
-[name_error]
-other = "Por favor, indique su nombre"
-
-[email]
-other = "Email"
-
-[email_error]
-other = "Por favor, introduzca una dirección de correo electrónico válida"
-
-[message]
-other = "Mensaje"
-
-[message_error]
-other = "Por favor, háganos saber por qué está contactando con nosotros"
-
 [send]
 other = "Enviar"
-
-[form_captcha_error]
-other = "Error de Captcha; por favor, inténtelo de nuevo más tarde"
-
-[form_error]
-other = "Error fatal, contacto no realizado - por favor, contacte de otra manera"
-
-[form_success]
-other = "¡Gracias por tender la mano! Pronto nos tocará"

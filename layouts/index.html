@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-    <div class="post {{ if and (or (not (isset .Site.Params "doNotLoadAnimations")) (and (isset .Site.Params "doNotLoadAnimations") (not .Site.Params.doNotLoadAnimations))) (or (not (isset .Page.Params "animation")) .Page.Params.animation) }} animated fadeInDown {{ end }}">
+    <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <!-- (Optional) Home
             -- on top of `mainSections` content (aka posts) ;
             -- as declared in content/_index.md
@@ -13,7 +13,7 @@
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
     {{ range $paginator.Pages }}
 
-        <div class="post {{ if and (or (not (isset .Site.Params "doNotLoadAnimations")) (and (isset .Site.Params "doNotLoadAnimations") (not .Site.Params.doNotLoadAnimations))) (or (not (isset .Page.Params "animation")) .Page.Params.animation) }} animated fadeInDown {{ end }}">
+        <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
             {{ if .Params.thumbnail }}
             <div class="post-thumbnail">
                 <a href="{{ .RelPermalink }}">

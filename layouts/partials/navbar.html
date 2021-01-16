@@ -1,4 +1,4 @@
-<div class="page-top {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+<div class="page-top {{ if and (or (not (isset .Site.Params "doNotLoadAnimations")) (and (isset .Site.Params "doNotLoadAnimations") (not .Site.Params.doNotLoadAnimations))) (or (not (isset .Page.Params "animation")) .Page.Params.animation) }} animated fadeInDown {{ end }}">
     <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>

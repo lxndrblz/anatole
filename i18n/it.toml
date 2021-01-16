@@ -21,31 +21,31 @@ other = "Puoi tornare alla <a href=\"{{ . }}\">homepage</a>."
 other = "commenti"
 
 [name]
-other = "Name"
+other = "Nome"
 
 [name_error]
-other = "Please provide your name"
+other = "Si prega di fornire il proprio nome"
 
 [email]
-other = "Email"
+other = "e-mail"
 
 [email_error]
-other = "Please enter a valid email address"
+other = "Inserire un indirizzo e-mail valido"
 
 [message]
-other = "Message"
+other = "Messaggio"
 
 [message_error]
-other = "Please let us know why you are contacting us"
+other = "Per favore, fateci sapere perché ci contattate"
 
 [send]
 other = "Spedire"
 
 [form_captcha_error]
-other = "Captcha error; please try again later"
+other = "Errore Captcha; si prega di riprovare più tardi"
 
 [form_error]
-other = "Fatal error, contact not made - please reach out some other way"
+other = "Errore fatale, contatto non effettuato - si prega di contattare in altro modo"
 
 [form_success]
-other = "Thank you for reaching out! We will be touch soon"
+other = "Grazie per averci raggiunto! Ci sentiremo presto"

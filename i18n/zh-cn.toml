@@ -21,31 +21,31 @@ other = "返回<a href=\"{{ . }}\">首页</a>."
 other = "评论"
 
 [name]
-other = "Name"
+other = "名称"
 
 [name_error]
-other = "Please provide your name"
+other = "请提供您的姓名"
 
 [email]
-other = "Email"
+other = "电子邮件"
 
 [email_error]
-other = "Please enter a valid email address"
+other = "请输入有效的电子邮件地址"
 
 [message]
-other = "Message"
+other = "留言内容"
 
 [message_error]
-other = "Please let us know why you are contacting us"
+other = "请告诉我们您联系我们的原因。"
 
 [send]
 other = "发送"
 
 [form_captcha_error]
-other = "Captcha error; please try again later"
+other = "验证码错误，请稍后再试"
 
 [form_error]
-other = "Fatal error, contact not made - please reach out some other way"
+other = "致命的错误，没有取得联系--请以其他方式联系。"
 
 [form_success]
-other = "Thank you for reaching out! We will be touch soon"
+other = "谢谢您的联系！我们会尽快与您联系。我们会尽快联系您"

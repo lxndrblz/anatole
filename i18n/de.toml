@@ -24,28 +24,28 @@ other = "Kommentare"
 other = "Name"
 
 [name_error]
-other = "Please provide your name"
+other = "Bitte geben Sie Ihren Namen an"
 
 [email]
 other = "Email"
 
 [email_error]
-other = "Please enter a valid email address"
+other = "Bitte geben Sie eine gültige E-Mail Adresse ein"
 
 [message]
-other = "Message"
+other = "Nachricht"
 
 [message_error]
-other = "Please let us know why you are contacting us"
+other = "Bitte teilen Sie uns mit, warum Sie sich an uns wenden"
 
 [send]
 other = "Senden"
 
 [form_captcha_error]
-other = "Captcha error; please try again later"
+other = "Captcha-Fehler; bitte versuchen Sie es später noch einmal"
 
 [form_error]
-other = "Fatal error, contact not made - please reach out some other way"
+other = "Fataler Fehler, Kontakt nicht hergestellt - bitte melden Sie sich auf anderem Wege"
 
 [form_success]
-other = "Thank you for reaching out! We will be touch soon"
+other = "Thank für Ihre Kontaktaufnahme. Wir werden uns bald bei Ihnen melden."

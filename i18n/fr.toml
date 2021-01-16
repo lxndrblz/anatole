@@ -30,7 +30,7 @@ other = "Veuillez indiquer votre nom"
 other = "Email"
 
 [email_error]
-other = Veuillez saisir une adresse électronique valide"
+other = "Veuillez saisir une adresse électronique valide"
 
 [message]
 other = "Message"
@@ -42,7 +42,7 @@ other = "Veuillez nous indiquer la raison pour laquelle vous nous contactez"
 other = "Envoyer"
 
 [form_captcha_error]
-other = Erreur Captcha ; veuillez réessayer plus tard"
+other = "Erreur Captcha ; veuillez réessayer plus tard"
 
 [form_error]
 other = "Erreur fatale, contact non établi - veuillez prendre contact d'une autre manière"

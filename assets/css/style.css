@@ -429,10 +429,13 @@ a:active {
     margin: 1em;
 }
 
+.info span {
+    margin-right: 0.5em;
+}
+
 .post .post-footer .meta a {
     text-decoration: none;
     color: var(--body-color);
-    padding-right: 10px;
 }
 
 .post .post-footer .meta a:hover {

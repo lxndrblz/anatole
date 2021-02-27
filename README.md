@@ -24,6 +24,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Katex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
+- Open Graph support
 - MIT License
 - Fontawesome 5.15.1 icons
 - Custom CSS (optional)
@@ -286,6 +287,9 @@ To define a custom image of a page, you might want to add the following to the f
 ```toml
 images = ["post-cover.png"]
 ```
+### Open Graph Support
+
+The [internal template for Open Graph protocol](https://gohugo.io/templates/internal/#open-graph) uses a mix of configuration variables; settings in `config.toml` and frontmatter of  the page.
 
 ### Post Thumbnails
 Thumbnails can be enabled easily by setting the `thumbnail` parameter in the frontmatter of a post to an image such as `"images/landscape.jpg"`.

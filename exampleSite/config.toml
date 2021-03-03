@@ -99,3 +99,7 @@ url = "mailto:mail@alexbilz.com"
   weight = 400
   identifier = "contact"
   url = "/contact/"
+
+## Taxonomies for Opengraph
+[taxonomies]
+  series = "series"

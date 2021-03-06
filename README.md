@@ -148,6 +148,13 @@ If you prefer having a static page as your home page rather than a listing of th
 ```
 Put any content into the `_index.md` file located in the content directory. If you want, you can also have some static text and the posts below. In such case, simply keep the `mainSections = ["post"]` and put any static content in the `_index.md`.
 
+### Show full post content on the home page
+If you prefer the full content of your posts to appear on the home page rather than a summary of each post, then set the parameter `fullPostContent` to `true`.
+```toml
+[params]
+fullPostContent = true
+```
+
 ### Multilingual support
 
 Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each Language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.

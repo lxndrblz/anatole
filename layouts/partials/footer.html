@@ -16,3 +16,7 @@
 {{- partial "medium-zoom.html" . -}}
 {{- partial "math.html" . -}}
 {{- template "_internal/google_analytics_async.html" . -}}
+
+{{- if and (hugo.IsProduction) (.Site.Params.gtagId) -}}
+    {{ partial "google-analytics-gtag-async.html" . }}
+{{- end -}}

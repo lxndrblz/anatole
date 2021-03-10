@@ -364,6 +364,15 @@ Both approaches can even be mixed:
 customJs = ["https://cdn.exmple.org/fancyscript.js", "js/world.js"]
 ```
 
+### Medium Like Zoom
+
+Enabled by default, the medium like zoom for images can be disabled by adding the following config under `[params]`.
+
+```toml
+[params]
+enableMediumZoom = false
+```
+
 ### Content Security Policy
 
 The theme is compliant with most strict CSP policies out of the box. A sample CSP for an Anatole-based site would look something like this:

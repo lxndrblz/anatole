@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        {{ if eq .Type "post"}}
+        {{ if and (eq .Type "post") (ne .Page.Params.disableComments true) }}
             {{- if .Site.DisqusShortname -}}
                 <div id="fb_comments_container">
                     <h2>{{ i18n "comments" }}</h2>

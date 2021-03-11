@@ -231,9 +231,16 @@ issueTerm = "pathname"
 theme= "preferred-color-scheme"
 # label = 
 ```
+
 Two notes on the security of Utteranc.es
 - If you are using a strict CSP, you'll have to add the domain to it. 
 - The script currently has no built-in integrity check, due to limitations of [Utterances](https://github.com/utterance/utterances/issues/40).
+
+### Disabling Comments Per Page
+
+Comments can be disabled per page by setting `disableComments: true` on the pages [Front Matter](https://gohugo.io/content-management/front-matter/)
+
+
 ### Google Analytics
 
 To use Google Analytics, a valid tracking code has to be added. If you don't want to load the code, then commend out the parameter.

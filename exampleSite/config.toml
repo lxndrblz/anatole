@@ -70,7 +70,7 @@ url = "https://www.instagram.com/"
 [[params.socialIcons]]
 icon = "fas fa-envelope"
 title = "e-mail"
-url = "mailto:mail@alexbilz.com"
+url = "mailto:mail@example.com"
 
 ## Menu items
 

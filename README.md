@@ -310,7 +310,7 @@ images = ["post-cover.png"]
 ```
 ### Open Graph Support
 
-The [internal template for Open Graph protocol](https://gohugo.io/templates/internal/#open-graph) uses a mix of configuration variables; settings in `config.toml` and frontmatter of  the page.
+The [internal template for Open Graph protocol](https://gohugo.io/templates/internal/#open-graph) uses a mix of configuration variables; settings in `config.toml` and frontmatter of the page. In a nutshell, you will have to configure a taxonomies series.
 
 ### Post Thumbnails
 Thumbnails can be enabled easily by setting the `thumbnail` parameter in the frontmatter of a post to an image such as `"images/landscape.jpg"`.

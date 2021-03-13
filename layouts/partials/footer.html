@@ -1,22 +1,6 @@
-{{ $js := resources.Get "js/jquery.js" }}
-{{ $secureJS := $js |  resources.Minify | resources.Fingerprint }}
-<script type="text/javascript"
-        src="{{ $secureJS.Permalink }}"
-        integrity="{{ $secureJS.Data.Integrity }}"
-        crossorigin="anonymous"></script>
-{{ $migrate := resources.Get "js/jquery-migrate.js" }}
-{{ $appear := resources.Get "js/jquery-appear.js" }}
-{{ $js := slice $migrate $appear | resources.Concat "js/bundle.js" }}
-{{ $secureJS := $js |  resources.Minify | resources.Fingerprint }}
-<script type="text/javascript"
-        src="{{ $secureJS.Permalink }}"
-        integrity="{{ $secureJS.Data.Integrity }}"
-        crossorigin="anonymous"></script>
-
 {{- partial "medium-zoom.html" . -}}
 {{- partial "math.html" . -}}
 {{- template "_internal/google_analytics_async.html" . -}}
-
 {{- if and (hugo.IsProduction) (.Site.Params.gtagId) -}}
     {{ partial "google-analytics-gtag-async.html" . }}
 {{- end -}}

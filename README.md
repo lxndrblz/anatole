@@ -19,7 +19,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Post Thumbnails (optional)
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
-- Comments powered by Disqus or Utteranc.es (optional)
+- Comments powered by Disqus, Commento or Utteranc.es (optional)
 - SimpleAnalytics (optional)
 - Katex support (optional)
 - Formspree Contact Form (optional)
@@ -235,6 +235,14 @@ theme= "preferred-color-scheme"
 Two notes on the security of Utteranc.es
 - If you are using a strict CSP, you'll have to add the domain to it. 
 - The script currently has no built-in integrity check, due to limitations of [Utterances](https://github.com/utterance/utterances/issues/40).
+
+### Comments powered by Commento
+You can use [Commento](https://commento.io/) as an alternative to Disqus. All you need to do is to configure a `CommentoURL`:
+
+```toml
+[params]
+CommentoURL = "https://commento.example.com/js/commento.js"
+```
 
 ### Disabling Comments Per Page
 

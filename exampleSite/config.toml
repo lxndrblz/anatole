@@ -40,6 +40,8 @@ doNotLoadAnimations = false
 # indexDateFormat = "Mon, Jan 2, 2006"
 # listDateFormat = "Jan 2"
 # singleDateFormat = "Mon, Jan 2, 2006"
+# Commento Comments
+# CommentoURL = "https://commento.example.com/js/commento.js"
 
 [params.simpleAnalytics]
 # enable = true

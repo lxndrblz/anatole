@@ -22,3 +22,6 @@ other = "نظرات"
 
 [send]
 other = "ارسال"
+
+[read_more]
+other = "ادامه خواندن"

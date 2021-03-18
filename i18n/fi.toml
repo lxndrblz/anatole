@@ -22,3 +22,6 @@ other = "kommentit"
 
 [send]
 other = "Lähetä"
+
+[read_more]
+other = "Jatka lukemista"

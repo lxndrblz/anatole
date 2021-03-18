@@ -26,12 +26,15 @@
                 </h3>
             </div>
             <div class="post-content">
-                <div class="p_part"><p>{{ if .Site.Params.fullPostContent }}{{ .Content }}{{ else }}{{ .Summary }}{{ end }}</p></div>
+                <div class="p_part">
+                    <p>{{ if .Site.Params.fullPostContent }}{{ .Content }}{{ else }}{{ .Summary }}{{ end }}</p>
+                    <!-- add read more -->
+                    {{- if .Truncated -}}
+                        <a href='{{ .RelPermalink }}' class="read_more">{{ i18n "read_more" }}</a>
+                    {{- end -}}
+                </div>
             </div>
-            <!-- add read more -->
-            {{- if .Truncated -}}
-                 <a href='{{ .RelPermalink }}'>&hellip; Read more</a>
-            {{- end -}}
+
             <!--  -->
             <div class="post-footer">
                 <div class="meta">

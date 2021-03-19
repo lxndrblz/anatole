@@ -4,7 +4,7 @@
             <img src="{{ .Site.Params.profilePicture | absURL }}" alt="profile picture">
             <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
             <div class="description">
-                <p>{{ .Site.Params.description }}</p>
+                <p>{{ replace .Site.Params.description "\n" "<br>" | safeHTML }}</p>
             </div>
         </div>
     </div>

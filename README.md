@@ -70,6 +70,16 @@ description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 ```
 
+Please note that slogan can be multi-lined:
+```toml
+[params]
+description = """
+Call me Jane
+Blogging from Texas
+"""
+```
+
+
 ### Favicon
 
 Add you own favicon in `static/favicons/favicon.ico`.

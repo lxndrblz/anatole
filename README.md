@@ -70,7 +70,7 @@ description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 ```
 
-Please note that slogan can be multi-lined:
+Please note that the slogan can be multi-lined (note the three quotes at the beginning and end):
 ```toml
 [params]
 description = """
@@ -82,10 +82,10 @@ Blogging from Texas
 
 ### Favicon
 
-Add you own favicon in `static/favicons/favicon.ico`.
+Add your own favicon in `static/favicons/favicon.ico`.
 
 ### Copyright
-By default the copyright, will show the current year, but you can change this by configuring the `copyright` parameter.
+By defaul,t the copyright will show the current year, but you can change this by configuring the `copyright` parameter.
 ```toml
 copyright = "2020-2021"
 ```
@@ -167,7 +167,7 @@ fullPostContent = true
 
 ### Multilingual support
 
-Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each Language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.
+Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.
 
 ```toml
 [Languages]

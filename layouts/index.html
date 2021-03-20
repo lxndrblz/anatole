@@ -37,12 +37,7 @@
                                              {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}} 
                                              {{ end }}</span>
                         {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
-                        {{ with .Params.tags }}
-                            {{- range $index, $el := . -}}
-                                <a class="tag"
-                                   href="{{ ( printf "tags/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
-                            {{- end -}}
-                        {{ end }}
+                        {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}
                     </div>
                 </div>
             </div>

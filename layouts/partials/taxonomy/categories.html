@@ -1,5 +1,7 @@
 <span class="separator">
-{{- range $index, $el := . -}}
-    <a class="category" href="{{ ( printf "categories/%s/" ( . | urlize ) ) | relLangURL }}">{{ . }}</a>
-{{- end -}}
+    {{- range $index, $el := . -}}
+        {{- $category := replace . "#" "%23" -}}
+        {{- $category = replace $category "." "%2e" -}}
+        <a class="category" href="{{ ( printf "categories/%s/" ( $category | urlize ) ) | relLangURL }}">{{ . }}</a>
+    {{- end -}}
 </span>

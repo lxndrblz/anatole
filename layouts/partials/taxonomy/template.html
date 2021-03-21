@@ -1,0 +1,12 @@
+{{- $linkClass := .linkClass -}}
+{{- $linkBase := .linkBase -}}
+
+<span class="separator">
+    {{- range $index, $el := .items -}}
+        <!-- Replace certain special characters with their URL encoded counterparts -->
+        {{- $item := replace . "#" "%23" -}}
+        {{- $item = replace $item "." "%2e" -}}
+        {{- $link := ( printf "%s/%s/" $linkBase ( $item | urlize ) ) | relLangURL -}}
+        <a class="{{$linkClass}}" href="{{$link}}">{{- . -}}</a>
+    {{- end -}}
+</span>

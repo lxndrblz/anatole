@@ -14,6 +14,7 @@
     --tag-color: #424242;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
+    --link-color: #0366d7;
     --thumbnail-height: 15em;
     scroll-padding-top: 100px;
 }
@@ -32,6 +33,7 @@ html[data-theme='dark'] {
     --tag-color: rgb(191, 191, 191);
     --blockquote-text-color: #808080;
     --blockquote-border-color: #424242;
+    --link-color: #58a6fe;
 }
 
 html {
@@ -56,6 +58,7 @@ p {
 
 a {
     text-decoration: none;
+    color: var(--link-color);
 }
 
 blockquote {
@@ -100,12 +103,11 @@ pre {
 a:link,
 a:visited {
     opacity: 1;
-    color: var(--tag-color);
 }
 
 a:hover,
 a:active {
-    color: #2660ab;
+    color: var(--link-color);
 }
 
 /*basic styles ends*/

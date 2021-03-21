@@ -26,15 +26,23 @@
                 </h3>
             </div>
             <div class="post-content">
-                <div class="p_part"><p>{{ if .Site.Params.fullPostContent }}{{ .Content }}{{ else }}{{ .Summary }}{{ end }}</p></div>
+                <div class="p_part">
+                    <p>{{ if .Site.Params.fullPostContent }}{{ .Content }}{{ else }}{{ .Summary }}{{ end }}</p>
+                    <!-- add read more -->
+                    {{- if and (.Truncated) (.Site.Params.readMore) -}}
+                        <a href='{{ .RelPermalink }}' class="read_more">{{ i18n "read_more" }}</a>
+                    {{- end -}}
+                </div>
             </div>
+
+            <!--  -->
             <div class="post-footer">
                 <div class="meta">
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
-                            <span class="date">{{ if isset .Site.Params "indexdateformat" }} 
-                                                 {{ .Date.Format .Site.Params.indexDateFormat }} 
-                                             {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}} 
+                            <span class="date">{{ if isset .Site.Params "indexdateformat" }}
+                                                 {{ .Date.Format .Site.Params.indexDateFormat }}
+                                             {{ else }} {{.Date.Format "Mon, Jan 2, 2006"}}
                                              {{ end }}</span>
                         {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
                         {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}

@@ -150,6 +150,13 @@ indexDateFormat = "Mon, Jan 2, 2006"
 listDateFormat = "Jan 2"
 ```
 
+### Read-more Links
+You can enable read-more links for truncated posts by setting the `readMore = true`. The length of the preview is controlled by Hugo's `summarylength`. Read-more links are disabled by default.
+```toml
+[params]
+  readMore = true
+```
+
 ### Have a static page as a home page
 If you prefer having a static page as your home page rather than a listing of the latest posts, then make sure you leave the `mainSections` parameter blank:
 ```toml

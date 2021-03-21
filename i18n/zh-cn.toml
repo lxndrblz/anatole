@@ -22,3 +22,6 @@ other = "评论"
 
 [send]
 other = "发送"
+
+[read_more]
+other = "继续阅读"

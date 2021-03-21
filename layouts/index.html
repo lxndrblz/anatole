@@ -29,7 +29,7 @@
                 <div class="p_part">
                     <p>{{ if .Site.Params.fullPostContent }}{{ .Content }}{{ else }}{{ .Summary }}{{ end }}</p>
                     <!-- add read more -->
-                    {{- if .Truncated -}}
+                    {{- if and (.Truncated) (.Site.Params.readMore) -}}
                         <a href='{{ .RelPermalink }}' class="read_more">{{ i18n "read_more" }}</a>
                     {{- end -}}
                 </div>

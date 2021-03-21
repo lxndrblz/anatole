@@ -19,9 +19,9 @@
 }
 
 html[data-theme='dark'] {
-    --bg-color: #292a2d;
+    --bg-color: #010408;
     --secondary-bg-color: #2c2d32;
-    --heading-color: rgb(169, 169, 179);
+    --heading-color: #c9d1d9;
     --body-color: rgb(169, 169, 179);
     --post-color: rgba(0, 0, 0, 0.44);
     --border-color: rgb(38, 38, 38);

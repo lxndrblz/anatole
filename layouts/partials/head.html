@@ -13,13 +13,13 @@
     <!-- CSS -->
     {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
-          href="{{ $style.Permalink }}"
+          href="{{ $style.RelPermalink }}"
           integrity="{{ $style.Data.Integrity }}"
           crossorigin="anonymous"
           type="text/css">
     {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
-        href="{{ $markupHighlightStyle.Permalink }}"
+        href="{{ $markupHighlightStyle.RelPermalink }}"
         integrity="{{ $markupHighlightStyle.Data.Integrity }}"
         crossorigin="anonymous"
         type="text/css">
@@ -27,7 +27,7 @@
         {{ $minstyles := resources.Get . }}
         {{ $styles := $minstyles | resources.Minify | resources.Fingerprint }}
         <link rel="stylesheet"
-        href="{{ $styles.Permalink }}"
+        href="{{ $styles.RelPermalink }}"
         integrity="{{ $styles.Data.Integrity }}"
         crossorigin="anonymous"
         media="screen" />
@@ -38,23 +38,23 @@
     crossorigin="anonymous" />
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | absURL }}apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | absURL }}favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | absURL }}favicon-16x16.png">
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon | relURL }}favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | relURL }}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | relURL }}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | relURL }}favicon-16x16.png">
 
-    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .RelPermalink }}">
 
     <!-- RSS -->
     {{ with .OutputFormats.Get "rss" -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
     {{ end -}}
 
     <!-- JavaScript -->
     {{ $anatoleHeader := resources.Get "js/anatole-header.js" }}
     {{ $secureHeaderJS := $anatoleHeader |  resources.Minify | resources.Fingerprint }}
     <script type="text/javascript"
-            src="{{ $secureHeaderJS.Permalink }}"
+            src="{{ $secureHeaderJS.RelPermalink }}"
             integrity="{{ $secureHeaderJS.Data.Integrity }}"
             crossorigin="anonymous"></script>
 
@@ -63,7 +63,7 @@
         {{ $anatoleThemeSwitcher := resources.Get "js/anatole-theme-switcher.js" }}
         {{ $secureThemeSwitcherJS := $anatoleThemeSwitcher |  resources.Minify | resources.Fingerprint }}
         <script type="text/javascript"
-                src="{{ $secureThemeSwitcherJS.Permalink }}"
+                src="{{ $secureThemeSwitcherJS.RelPermalink }}"
                 integrity="{{ $secureThemeSwitcherJS.Data.Integrity }}"
                 crossorigin="anonymous"></script>
     {{ end }}
@@ -87,7 +87,7 @@
     {{- if ne $js "" -}}
     {{- $secureJS := $js |  resources.Minify | resources.Fingerprint -}}
     <script type="text/javascript"
-            src="{{ $secureJS.Permalink }}"
+            src="{{ $secureJS.RelPermalink }}"
             integrity="{{ $secureJS.Data.Integrity }}"
             crossorigin="anonymous"></script>
     {{- end -}}

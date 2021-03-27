@@ -6,7 +6,7 @@
             {{ end }}
             <div class="post-title">
                 <h3>{{ .Title }}</h3>
-                {{ if eq .Type "post"}}
+                {{ if or (eq .Type "post") (eq .Type "blog")}}
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
                         <span class="date">{{ if isset .Site.Params "singledateformat" }} 
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        {{ if and (eq .Type "post") (ne .Page.Params.disableComments true) }}
+        {{ if and (or (eq .Type "post") (eq .Type "blog")) (ne .Page.Params.disableComments true) }}
             {{- if .Site.DisqusShortname -}}
                 <div id="fb_comments_container">
                     <h2>{{ i18n "comments" }}</h2>

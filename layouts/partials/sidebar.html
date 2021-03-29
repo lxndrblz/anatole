@@ -1,7 +1,7 @@
 <div class="sidebar{{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
     <div class="logo-title">
         <div class="title">
-            <img src="{{ .Site.Params.profilePicture | absURL }}" alt="profile picture">
+            <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture">
             <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
             <div class="description">
                 <p>{{ replace .Site.Params.description "\n" "<br>" | safeHTML }}</p>

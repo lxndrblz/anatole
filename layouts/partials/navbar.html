@@ -18,7 +18,7 @@
         {{ end }}
         {{ if .Site.IsMultiLingual }}
             {{ range $.Site.Home.AllTranslations }}
-                <li><a href="{{ .Permalink }}"
+                <li><a href="{{ .RelPermalink }}"
                        title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
                 </li>
             {{ end }}

@@ -165,6 +165,16 @@ If you prefer having a static page as your home page rather than a listing of th
 ```
 Put any content into the `_index.md` file located in the content directory. If you want, you can also have some static text and the posts below. In such case, simply keep the `mainSections = ["post"]` and put any static content in the `_index.md`.
 
+### Rename post section
+If you want to have a different post section identifier, such as `/blog`, you can specify the section name using `postSectionName`:
+
+```toml
+[params]
+  postSectionName = "blog"
+```
+
+If the parameter is not set, it will default to `post`.
+
 ### Show full post content on the home page
 If you prefer the full content of your posts to appear on the home page rather than a summary of each post, then set the parameter `fullPostContent` to `true`.
 ```toml

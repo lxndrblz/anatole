@@ -44,7 +44,7 @@ doNotLoadAnimations = false
 # CommentoURL = "https://commento.example.com/js/commento.js"
 # Read More links for truncated summaries
 # readMore = true
-
+# postSectionName = "blog"
 
 [params.simpleAnalytics]
 # enable = true

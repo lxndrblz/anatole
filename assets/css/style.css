@@ -369,6 +369,8 @@ a:active {
     text-decoration: none;
     letter-spacing: 1px;
     color: var(--heading-color);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .post .post-title a:hover {

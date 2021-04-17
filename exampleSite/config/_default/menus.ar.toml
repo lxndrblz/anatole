@@ -1,0 +1,23 @@
+  [[main]]
+  name = "الرئيسية"
+  identifier = "main"
+  weight = 100
+  url = "/ar"
+
+  [[main]]
+  name = "المنشورات"
+  weight = 200
+  identifier = "posts"
+  url = "/ar/post"
+
+  [[main]]
+  name = "حول"
+  weight = 300
+  identifier = "about"
+  url = "/ar/about"
+
+  [[main]]
+  name = "للتواصل"
+  weight = 400
+  identifier = "contact"
+  url = "/ar/contact"

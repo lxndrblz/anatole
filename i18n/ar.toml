@@ -1,0 +1,37 @@
+[category]
+other = "التصنيفات"
+
+[tag]
+other = "الإشارات"
+
+[reading_time]
+one = "دقيقة للقراءة"
+two = "دقيقتان للقراءة"
+other = "{{ .Count }} دقائق للقراءة"
+
+[page_not_found]
+other = "لم يتم العثور على الصفحة"
+
+[page_does_not_exist]
+other = "عذرا, الصفحة غير موجودة"
+
+[head_back]
+other = "يمكنك العودة <a href=\"{{ . }}\">للصفحة الرئيسية</a>."
+
+[comments]
+other = "تعليقات"
+
+[send]
+other = "أرسل"
+
+[read_more]
+other = "اقرأ المزيد"
+
+[name]
+other = "الاسم"
+
+[email]
+other = "البريد الالكتروني"
+
+[message]
+other = "الرسالة" 

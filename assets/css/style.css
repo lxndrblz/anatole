@@ -16,6 +16,8 @@
     --blockquote-border-color: #dfe2e5;
     --thumbnail-height: 15em;
     scroll-padding-top: 100px;
+    --duration: 0.5s;
+    --timing: ease;
 }
 
 html[data-theme='dark'] {
@@ -46,6 +48,7 @@ body {
     width: 100%;
     margin: 0 auto 30px auto;
     background-color: var(--bg-color);
+    transition: color var(--duration) var(--timing), background-color var(--duration) var(--timing);
 }
 
 p {

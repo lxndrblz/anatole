@@ -104,3 +104,19 @@ url = "mailto:mail@example.com"
   weight = 400
   identifier = "contact"
   url = "/contact/"
+
+
+[Languages]
+  [Languages.en]
+  title = "My blog"
+  weight = 1
+  LanguageName = "EN"
+  
+
+
+  [Languages.ar]
+  title = "عربي"
+  description = "أنا أحمد"
+  weight = 2
+  LanguageDirection = "rtl" 
+  LanguageName = "AR"

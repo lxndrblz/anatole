@@ -11,12 +11,19 @@
     {{- end -}}
 
     <!-- CSS -->
-    {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
+    
+    {{ if eq .Site.Language.LanguageDirection "rtl"}}
+    {{ $style := resources.Get "css/style.rtl.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
           href="{{ $style.RelPermalink }}"
           integrity="{{ $style.Data.Integrity }}"
           crossorigin="anonymous"
           type="text/css">
+    {{else}}
+    {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous"
+        type="text/css">
+    {{end}}
     {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
         href="{{ $markupHighlightStyle.RelPermalink }}"

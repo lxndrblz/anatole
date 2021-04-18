@@ -22,3 +22,15 @@ other = "kommentit"
 
 [send]
 other = "Lähetä"
+
+[read_more]
+other = "Jatka lukemista"
+
+[name]
+other = "Nimi"
+
+[email]
+other = "Sähköposti"
+
+[message]
+other = "Viesti" 

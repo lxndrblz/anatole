@@ -22,3 +22,15 @@ other = "commentaire"
 
 [send]
 other = "Envoyer"
+
+[read_more]
+other = "continuer la lecture"
+
+[name]
+other = "Nom"
+
+[email]
+other = "Email"
+
+[message]
+other = "Message" 

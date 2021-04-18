@@ -1,24 +1,4 @@
-baseURL = "https://example.com"
-languageCode = "en"
-DefaultContentLanguage = "en"
-title = "Website of Jane Doe"
-theme = "anatole"
-summarylength = 10
-enableEmoji = true
-enableRobotsTXT = true
 
-# Enable Disqus
-#disqusShortname = ""
-
-# Google Analytics
-#googleAnalytics = "UA-123-45"
-
-# Syntax highlighting
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-
-[params]
 title = "I'm Jane Doe"
 author = "Jane Doe"
 #copyright = "2020-2021"
@@ -37,67 +17,43 @@ doNotLoadAnimations = false
 #contactFormAction = "https://formspree.io/f/your-form-hash-here"
 # Google Site Verify
 #googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-# indexDateFormat = "Mon, Jan 2, 2006"
-# listDateFormat = "Jan 2"
-# singleDateFormat = "Mon, Jan 2, 2006"
+singleDateFormat = "2/1/2006"
+indexDateFormat = "2/1/2006"
+listDateFormat = "2/1/2006"
 # Commento Comments
 # CommentoURL = "https://commento.example.com/js/commento.js"
+# Read More links for truncated summaries
+# readMore = true
+# postSectionName = "blog"
 
-[params.simpleAnalytics]
+
+[simpleAnalytics]
 # enable = true
 # customurl = "https://analytics.example.com"
 
 ## Math settings
-[params.math]
+[math]
 enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
 use = "katex"  # options: "katex", "mathjax". default is "katex".
 
 ## Social links
 # use 'fab' when brand icons, use 'fas' when standard solid icons.
-[[params.socialIcons]]
+[[socialIcons]]
 icon = "fab fa-linkedin"
 title = "Linkedin"
 url = "https://de.linkedin.com/"
 
-[[params.socialIcons]]
+[[socialIcons]]
 icon = "fab fa-github"
 title = "GitHub"
 url = "https://github.com/lxndrblz/anatole/"
 
-[[params.socialIcons]]
+[[socialIcons]]
 icon = "fab fa-instagram"
 title = "instagram"
 url = "https://www.instagram.com/"
 
-[[params.socialIcons]]
+[[socialIcons]]
 icon = "fas fa-envelope"
 title = "e-mail"
 url = "mailto:mail@example.com"
-
-## Menu items
-
-[menu]
-
-  [[menu.main]]
-  name = "Home"
-  identifier = "home"
-  weight = 100
-  url = "/"
-
-  [[menu.main]]
-  name = "Posts"
-  weight = 200
-  identifier = "posts"
-  url = "/post/"
-
-  [[menu.main]]
-  name = "About"
-  weight = 300
-  identifier = "about"
-  url = "/about/"
-
-  [[menu.main]]
-  name = "Contact"
-  weight = 400
-  identifier = "contact"
-  url = "/contact/"

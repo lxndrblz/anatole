@@ -22,3 +22,15 @@ other = "註解"
 
 [send]
 other = "發送"
+
+[read_more]
+other = "繼續閱讀"
+
+[name]
+other = "名稱"
+
+[email]
+other = "電子郵件"
+
+[message]
+other = "消息" 

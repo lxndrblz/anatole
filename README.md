@@ -16,6 +16,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Navigation items
 - Pagination
 - Multilingual
+- RTL support
 - Post Thumbnails (optional)
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
@@ -150,6 +151,13 @@ indexDateFormat = "Mon, Jan 2, 2006"
 listDateFormat = "Jan 2"
 ```
 
+### Read-more Links
+You can enable read-more links for truncated posts by setting the `readMore = true`. The length of the preview is controlled by Hugo's `summarylength`. Read-more links are disabled by default.
+```toml
+[params]
+  readMore = true
+```
+
 ### Have a static page as a home page
 If you prefer having a static page as your home page rather than a listing of the latest posts, then make sure you leave the `mainSections` parameter blank:
 ```toml
@@ -157,6 +165,16 @@ If you prefer having a static page as your home page rather than a listing of th
   mainSections = []
 ```
 Put any content into the `_index.md` file located in the content directory. If you want, you can also have some static text and the posts below. In such case, simply keep the `mainSections = ["post"]` and put any static content in the `_index.md`.
+
+### Rename post section
+If you want to have a different post section identifier, such as `/blog`, you can specify the section name using `postSectionName`:
+
+```toml
+[params]
+  postSectionName = "blog"
+```
+
+If the parameter is not set, it will default to `post`.
 
 ### Show full post content on the home page
 If you prefer the full content of your posts to appear on the home page rather than a summary of each post, then set the parameter `fullPostContent` to `true`.
@@ -216,6 +234,15 @@ url = "/de/about/"
 ```
 
 Anatole currently ships with support for some basic languages. Contributions for other language translations are welcome.
+
+### RTL suppourt 
+
+Anatole support RTL langauges and flip the whole theme for that. To enable the RTL mode for specific langauge it's enough to write the following code in the language params.
+
+```toml
+LanguageDirection = "rtl" 
+```
+
 
 ### :100: Google Lighthouse score
 

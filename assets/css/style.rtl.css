@@ -3,7 +3,7 @@
 :root {
     --bg-color: #fff;
     --secondary-bg-color: #eeeeee;
-    --heading-color: #464646;
+    --heading-color: #5f5f5f;
     --body-color: rgba(0, 0, 0, 0.7);
     --post-color: rgba(0, 0, 0, 0.44);
     --border-color: rgba(0, 0, 0, 0.15);
@@ -14,18 +14,17 @@
     --tag-color: #424242;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
-    --link-color: #0366d7;
     --thumbnail-height: 15em;
     scroll-padding-top: 100px;
 }
 
 html[data-theme='dark'] {
-    --bg-color: #010408;
-    --secondary-bg-color: rgb(56, 56, 56);;
-    --heading-color: #c9d1d9;
+    --bg-color: #292a2d;
+    --secondary-bg-color: #2c2d32;
+    --heading-color: rgb(169, 169, 179);
     --body-color: rgb(169, 169, 179);
     --post-color: rgba(0, 0, 0, 0.44);
-    --border-color: #30363d;
+    --border-color: rgb(38, 38, 38);
     --form-border-color: rgb(169, 169, 179);
     --form-button-hover-border-color: #fff;
     --pre-bg-color: rgb(33, 33, 45);
@@ -33,7 +32,6 @@ html[data-theme='dark'] {
     --tag-color: rgb(191, 191, 191);
     --blockquote-text-color: #808080;
     --blockquote-border-color: #424242;
-    --link-color: #58a6fe;
 }
 
 html {
@@ -43,7 +41,7 @@ html {
 
 body {
     color: var(--body-color);
-    font-family: 'PingHei', 'PingFang SC', Helvetica Neue, 'Work Sans', 'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif;
+    font-family: 'Verdana', sans-serif;
     font-size: 15px;
     width: 100%;
     margin: 0 auto 30px auto;
@@ -58,12 +56,11 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--link-color);
 }
 
 blockquote {
     padding: 0 1em;
-    border-left: .25em solid var(--blockquote-border-color);
+    border-right: .25em solid var(--blockquote-border-color);
     color: var(--blockquote-text-color);
 }
 
@@ -85,7 +82,7 @@ blockquote {
     display: inline-block;
     font-size: 15px;
     line-height: 1;
-    margin: 5px 8px 5px 0;
+    margin: 5px 0 5px 8px;
 }
 
 pre {
@@ -97,17 +94,18 @@ pre {
 
 .info i {
     opacity: 0.5;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 a:link,
 a:visited {
     opacity: 1;
+    color: var(--tag-color);
 }
 
 a:hover,
 a:active {
-    color: var(--link-color);
+    color: #2660ab;
 }
 
 /*basic styles ends*/
@@ -180,7 +178,7 @@ a:active {
 /*animation ends*/
 .content {
     height: auto;
-    float: right;
+    float: left;
     width: 60%;
     margin-top: 60px;
 }
@@ -188,7 +186,7 @@ a:active {
 .page-top {
     width: 60%;
     position: fixed;
-    right: 0;
+    left: 0;
     z-index: 3;
     background-color: var(--bg-color);
     height: 60px;
@@ -198,7 +196,7 @@ a:active {
 .page-top .nav {
     list-style: none;
     padding: 11px 30px;
-    float: left;
+    float: right;
     font-size: 12px;
     display: block;
     width: calc(100% - 30px);
@@ -207,7 +205,7 @@ a:active {
 .page-top .nav li {
     position: relative;
     display: initial;
-    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .page-top .nav a {
@@ -225,19 +223,19 @@ a:active {
 }
 
 .theme-switch-item {
-    float: right;
+    float: left;
     font-size: 2em;
     margin-top: -5px;
 }
 
 .page-top .information {
-    float: right;
+    float: left;
     padding-top: 12px;
-    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .page-top .information .avatar {
-    float: right;
+    float: left;
 }
 
 .page-top .information .avatar img {
@@ -247,14 +245,14 @@ a:active {
 }
 
 .page-top .information .back_btn {
-    float: left;
+    float: right;
     padding-top: 5px;
-    margin-right: -10px;
+    margin-left: -10px;
 }
 
 .page-top .information .back_btn li {
     display: initial;
-    padding-right: 40px;
+    padding-left: 40px;
 }
 
 .sidebar {
@@ -264,10 +262,10 @@ a:active {
     background-color: var(--bg-color);
     height: 100%;
     top: 0;
-    left: 0;
+    right: 0;
     position: fixed;
     z-index: 4;
-    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -318,7 +316,7 @@ a:active {
 }
 
 .sidebar .social-links i {
-    margin-right: 3px;
+    margin-left: 3px;
 }
 
 .sidebar .social-links li {
@@ -415,19 +413,19 @@ a:active {
 }
 
 .post .post-footer .meta .info {
-    float: left;
+    float: right;
     font-size: 12px;
     margin-bottom: 1em;
     color: var(--body-color);
 }
 
 .post .post-footer .info .separator a {
-    margin-right: 0.2em;
+    margin-left: 0.2em;
 }
 
 .post .post-footer .meta .info .date {
-    margin-right: 10px;
-    margin-left: 5px
+    margin-left: 10px;
+    margin-right: 5px
 }
 
 .post figure {
@@ -438,14 +436,14 @@ a:active {
 }
 
 .post figure.right {
-    float: right;
-    margin-left: 1.5em;
+    float: left;
+    margin-right: 1.5em;
     max-width: 50%;
 }
 
 .post figure.left {
-    float: left;
-    margin-right: 1.5em;
+    float: right;
+    margin-left: 1.5em;
     max-width: 50%;
 }
 
@@ -458,7 +456,7 @@ a:active {
 }
 
 .info span {
-    margin-right: 0.5em;
+    margin-left: 0.5em;
 }
 
 .post .post-footer .meta a {
@@ -471,7 +469,7 @@ a:active {
 }
 
 .post .post-footer .meta i {
-    margin-right: 6px;
+    margin-left: 6px;
 }
 
 .post .post-footer .tags {
@@ -489,7 +487,7 @@ a:active {
 .post .post-footer .tags ul li {
     list-style-type: none;
     margin: 0;
-    padding-right: 5px;
+    padding-left: 5px;
     display: inline;
 }
 
@@ -546,31 +544,31 @@ a:active {
 }
 
 .pagination .pre {
-    float: left;
+    float: right;
 }
 
 .pagination .next {
-    float: right;
+    float: left;
 }
 
 .like-reblog-buttons {
-    float: right;
+    float: left;
 }
 
 .like-button {
-    float: right;
-    padding: 0 0 0 10px;
+    float: left;
+    padding: 0 10px 0 0;
 }
 
 .reblog-button {
-    float: right;
+    float: left;
     padding: 0;
 }
 
 #install-btn {
     position: fixed;
     bottom: 0px;
-    right: 6px;
+    left: 6px;
 }
 
 #disqus_thread {
@@ -630,10 +628,10 @@ a:active {
 }
 
 .list-with-title .listing .listing-post .post-time {
-    float: right;
+    float: left;
     display: inline-block;
     max-width: 10%;
-    text-align: right;
+    text-align: left;
     color: #C5C5C5;
 }
 
@@ -658,7 +656,7 @@ a:active {
     height: 32px;
     border-radius: 300px;
     background-color: #3E3E3E;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .evernote a {
@@ -677,7 +675,7 @@ a:active {
     height: 32px;
     border-radius: 300px;
     background-color: #ED6243;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .weibo a {
@@ -694,7 +692,7 @@ a:active {
     height: 32px;
     border-radius: 300px;
     background-color: #59C0FD;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .twitter a {
@@ -744,8 +742,8 @@ a:active {
 .back-button {
     padding-top: 30px;
     max-width: 100px;
-    padding-left: 40px;
-    float: left;
+    padding-right: 40px;
+    float: right;
 }
 
 /* Facebook Comments */
@@ -818,7 +816,7 @@ a.btn {
 
 /* Menu */
 .menu {
-    float: right;
+    float: left;
     padding-top: 30px;
 }
 
@@ -872,7 +870,7 @@ a.btn {
     position: absolute;
     visibility: hidden;
     width: 100px;
-    float: right;
+    float: left;
 }
 
 .page_404 {
@@ -889,7 +887,7 @@ print {
     .sidebar {
         width: 100%;
         position: absolute;
-        border-right: none;
+        border-left: none;
         z-index: 1;
     }
 
@@ -977,14 +975,14 @@ print {
         height: 3.25rem;
         position: relative;
         width: 3.25rem;
-        margin-left: auto;
+        margin-right: auto;
     }
 
     .navbar-burger span {
         background-color: var(--heading-color);
         display: block;
         height: 1px;
-        left: calc(50% - 8px);
+        right: calc(50% - 8px);
         position: absolute;
         transform-origin: center;
         transition-duration: 86ms;
@@ -1022,9 +1020,9 @@ print {
 .medium-zoom-overlay {
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     opacity: 0;
     transition: opacity 300ms;
     will-change: opacity;
@@ -1070,11 +1068,11 @@ print {
 
 @media (min-width: 1921px){
     .content {
-        padding-right: 25%;
+        padding-left: 25%;
         width: 35%;
     }
     .sidebar {
-        padding-left: 15%;
+        padding-right: 15%;
         width: 25%;
     }
 }
@@ -1120,10 +1118,10 @@ print {
     width: 100%;
 }
 .form-style ul li input.align-left {
-    float:left;
+    float:right;
 }
 .form-style ul li input.align-right {
-    float:right;
+    float:left;
 }
 .form-style ul li textarea {
     background-color: var(--bg-color);

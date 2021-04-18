@@ -1,7 +1,1 @@
-<span class="separator">
-    {{- range $index, $el := . -}}
-    {{- $tag := replace . "#" "%23" -}}
-    {{- $tag = replace $tag "." "%2e" -}}
-    <a class="tag" href="{{ ( printf "tags/%s/" ( $tag | urlize ) ) | relLangURL }}">{{- . -}}</a>
-    {{- end -}}
-</span>
+{{ partial "taxonomy/template.html" (dict "items" . "linkClass" "tag" "linkBase" "tags") }}

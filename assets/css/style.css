@@ -3,7 +3,7 @@
 :root {
     --bg-color: #fff;
     --secondary-bg-color: #eeeeee;
-    --heading-color: #5f5f5f;
+    --heading-color: #464646;
     --body-color: rgba(0, 0, 0, 0.7);
     --post-color: rgba(0, 0, 0, 0.44);
     --border-color: rgba(0, 0, 0, 0.15);
@@ -14,17 +14,18 @@
     --tag-color: #424242;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
+    --link-color: #0366d7;
     --thumbnail-height: 15em;
     scroll-padding-top: 100px;
 }
 
 html[data-theme='dark'] {
-    --bg-color: #292a2d;
-    --secondary-bg-color: #2c2d32;
-    --heading-color: rgb(169, 169, 179);
+    --bg-color: #010408;
+    --secondary-bg-color: rgb(56, 56, 56);;
+    --heading-color: #c9d1d9;
     --body-color: rgb(169, 169, 179);
     --post-color: rgba(0, 0, 0, 0.44);
-    --border-color: rgb(38, 38, 38);
+    --border-color: #30363d;
     --form-border-color: rgb(169, 169, 179);
     --form-button-hover-border-color: #fff;
     --pre-bg-color: rgb(33, 33, 45);
@@ -32,6 +33,7 @@ html[data-theme='dark'] {
     --tag-color: rgb(191, 191, 191);
     --blockquote-text-color: #808080;
     --blockquote-border-color: #424242;
+    --link-color: #58a6fe;
 }
 
 html {
@@ -41,7 +43,7 @@ html {
 
 body {
     color: var(--body-color);
-    font-family: 'Verdana', sans-serif;
+    font-family: 'PingHei', 'PingFang SC', Helvetica Neue, 'Work Sans', 'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif;
     font-size: 15px;
     width: 100%;
     margin: 0 auto 30px auto;
@@ -56,6 +58,7 @@ p {
 
 a {
     text-decoration: none;
+    color: var(--link-color);
 }
 
 blockquote {
@@ -100,12 +103,11 @@ pre {
 a:link,
 a:visited {
     opacity: 1;
-    color: var(--tag-color);
 }
 
 a:hover,
 a:active {
-    color: #2660ab;
+    color: var(--link-color);
 }
 
 /*basic styles ends*/

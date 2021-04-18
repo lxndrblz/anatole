@@ -25,3 +25,12 @@ other = "发送"
 
 [read_more]
 other = "继续阅读"
+
+[name]
+other = "姓名"
+
+[email]
+other = "电子邮件"
+
+[message]
+other = "信息" 

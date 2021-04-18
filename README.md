@@ -16,6 +16,7 @@ Anatole's aims to be minimalistic and sleek, but still brings some great functio
 - Navigation items
 - Pagination
 - Multilingual
+- RTL support
 - Post Thumbnails (optional)
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)
@@ -233,6 +234,15 @@ url = "/de/about/"
 ```
 
 Anatole currently ships with support for some basic languages. Contributions for other language translations are welcome.
+
+### RTL suppourt 
+
+Anatole support RTL langauges and flip the whole theme for that. To enable the RTL mode for specific langauge it's enough to write the following code in the language params.
+
+```toml
+LanguageDirection = "rtl" 
+```
+
 
 ### :100: Google Lighthouse score
 

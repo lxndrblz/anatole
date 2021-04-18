@@ -25,3 +25,12 @@ other = "보내기"
 
 [read_more]
 other = "더 읽기"
+
+[name]
+other = "이름"
+
+[email]
+other = "이메일"
+
+[message]
+other = "메시지"

@@ -3,12 +3,15 @@
   <form class="form-style" method="POST" action="{{ .Site.Params.contactFormAction }}" data-toggle="validator">
     <ul>
       <li>
-        <input class="field-style field-full" type="text" name="username" id="username" placeholder="Name" required>
+        <label for="username">{{ i18n "name" }}</label>
+        <input class="field-style field-full" type="text" name="username" id="username" placeholder="{{ i18n "name" }}" required>
       </li>
       <li>
-        <input class="field-style field-full" type="email" id="email" name="email" placeholder="Email" required>
+        <label for="email">{{ i18n "email" }}</label>
+        <input class="field-style field-full" type="email" id="email" name="email" placeholder="{{i18n "email" }}" required>
       </li>
       <li>
+        <label for="message">{{ i18n "message" }}</label>
         <textarea class="field-style" name="message" id="message" rows="6" placeholder="{{ i18n "message" }}"></textarea>
       </li>
       <li>

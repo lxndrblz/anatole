@@ -43,9 +43,13 @@ function switchTheme() {
     }
 }
 
+// Manual Switch
 document.addEventListener('DOMContentLoaded', function () {
     const themeSwitcher = document.querySelector('.theme-switch');
     themeSwitcher.addEventListener('click', switchTheme, false);
 }, false);
+
+// Automatic Switching
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', switchTheme, false);
 
 init();

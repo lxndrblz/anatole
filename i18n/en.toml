@@ -23,6 +23,9 @@ other = "comments"
 [send]
 other = "Send"
 
+[read_more]
+other = "Read more"
+
 [name]
 other = "Name"
 
@@ -31,6 +34,3 @@ other = "Email"
 
 [message]
 other = "Message" 
-
-[read_more]
-other = "Read more"

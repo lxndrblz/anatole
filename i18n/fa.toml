@@ -25,3 +25,12 @@ other = "ارسال"
 
 [read_more]
 other = "ادامه خواندن"
+
+[name]
+other = "نام"
+
+[email]
+other = "پست الکترونیک"
+
+[message]
+other = "پیام" 

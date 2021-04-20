@@ -174,7 +174,7 @@ If you want to have a different post section identifier, such as `/blog`, you ca
   postSectionName = "blog"
 ```
 
-If the parameter is not set, it will default to `post`.
+If the parameter is not set, it will default to `post`. Be sure to check the name of the folder containing your post files and change it accordingly in order for links to reflect the new post section name.
 
 ### Show full post content on the home page
 If you prefer the full content of your posts to appear on the home page rather than a summary of each post, then set the parameter `fullPostContent` to `true`.

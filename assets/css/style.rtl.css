@@ -17,6 +17,13 @@
     --link-color: #0366d7;
     --thumbnail-height: 15em;
     scroll-padding-top: 100px;
+    --body-max-width: 1920px;
+    --content-ratio: {{ .Site.Params.contentratio | default 0.6 }};
+    --sidebar-ratio: calc(1 - var(--content-ratio));
+    --content-max-width: calc(var(--body-max-width) * var(--content-ratio));
+    --sidebar-max-width: calc(var(--body-max-width) - var(--content-max-width));
+    --content-width: calc(var(--content-ratio) * 100%);
+    --sidebar-width: calc(var(--sidebar-ratio) * 100%);
 }
 
 html[data-theme='dark'] {
@@ -181,12 +188,12 @@ a:active {
 .content {
     height: auto;
     float: left;
-    width: 60%;
+    width: var(--content-width);
     margin-top: 60px;
 }
 
 .page-top {
-    width: 60%;
+    width: var(--content-width);
     position: fixed;
     left: 0;
     z-index: 3;
@@ -258,13 +265,14 @@ a:active {
 }
 
 .sidebar {
-    width: 40%;
+    width: var(--sidebar-width);
     -webkit-background-size: cover;
     background-size: cover;
     background-color: var(--bg-color);
     height: 100%;
     top: 0;
     right: 0;
+    float: left;
     position: fixed;
     z-index: 4;
     border-left: 1px solid var(--border-color);
@@ -1070,12 +1078,24 @@ print {
 
 @media (min-width: 1921px){
     .content {
-        padding-left: 25%;
-        width: 35%;
+        padding-right: 25%;
+        width: var(--content-max-width);
     }
     .sidebar {
-        padding-right: 15%;
-        width: 25%;
+        width: var(--sidebar-max-width);
+        left: 50%;
+        margin-left: calc( -1 * var(--body-max-width)/2);
+    }
+
+    .page-top {
+        width: var(--content-max-width);
+        position: fixed;
+        left: 50%;
+        margin-left: calc(-1* (var(--body-max-width)/2 - var(--sidebar-max-width) ));
+        z-index: 3;
+        background-color: var(--bg-color);
+        height: 60px;
+        border-bottom: 1px solid var(--border-color);
     }
 }
 

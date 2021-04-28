@@ -403,6 +403,18 @@ a:active {
     max-width: 100%;
 }
 
+.post .post-content ul {
+    line-height: 1.9em;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.post .post-content ol {
+    line-height: 1.9em;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 .post .post-footer {
     padding: 0 0 10px 0;
     border-bottom: 1px solid var(--border-color);

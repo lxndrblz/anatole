@@ -507,6 +507,34 @@ Include the newly generated `syntax.css` like a standard custom CSS script:
 customCss = ["css/syntax.css"]
 ```
 
+### Socials
+
+You can add social media based icon links under your profile picture by using the `socialIcons` parameter.
+
+[Font Awesome](https://fontawesome.com/) is used for the icons.
+
+If you are using brand icons, prefix the icon value with `fab` if you are using a standard icon use `fas` instead.
+
+Ordering in the `config.toml` will determine the display order on the webpage.
+
+#### Example branded social entry
+
+```toml
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://de.linkedin.com/"
+```
+
+#### Example standard social entry
+
+```toml
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:mail@example.com"
+```
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

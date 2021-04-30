@@ -1,0 +1,36 @@
+[category]
+other = "カテゴリー"
+
+[tag]
+other = "タグ"
+
+[reading_time]
+one = "読む時間 1 分間"
+other = "読む時間 {{ .Count }} 分間"
+
+[page_not_found]
+other = "ページが見つかりません。"
+
+[page_does_not_exist]
+other = "指定されたページは存在しません。"
+
+[head_back]
+other = "<a href=\"{{ . }}\">ホーム</a>に戻る。"
+
+[comments]
+other = "コメント"
+
+[send]
+other = "送信"
+
+[read_more]
+other = "もっと読む"
+
+[name]
+other = "お名前"
+
+[email]
+other = "メールアドレス"
+
+[message]
+other = "メッセージ" 

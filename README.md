@@ -152,6 +152,13 @@ indexDateFormat = "Mon, Jan 2, 2006"
 listDateFormat = "Jan 2"
 ```
 
+### Changing the sidebar/content ratio
+By default, the content fills up 60% of the screen width on devices with a full HD resolution. If you want to change the ratio, adjust the `contentratio` variable. Let's, for example, set the content ratio to 70%:
+```toml
+[params]
+contentratio = 0.7
+```
+
 ### Read-more Links
 You can enable read-more links for truncated posts by setting the `readMore = true`. The length of the preview is controlled by Hugo's `summarylength`. Read-more links are disabled by default.
 ```toml

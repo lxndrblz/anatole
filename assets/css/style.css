@@ -43,7 +43,7 @@ html {
 
 body {
     color: var(--body-color);
-    font-family: 'PingHei', 'PingFang SC', Helvetica Neue, 'Work Sans', 'Hiragino Sans GB', 'Microsoft YaHei', SimSun, sans-serif;
+    font-family: 'PingHei', 'PingFang SC', 'Helvetica Neue', 'Work Sans', 'Hiragino Sans GB', sans-serif;
     font-size: 15px;
     width: 100%;
     margin: 0 auto 30px auto;

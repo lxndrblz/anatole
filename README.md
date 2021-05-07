@@ -59,7 +59,7 @@ git submodule update --remote --merge
 
 ## Modifying the config.toml
 
-Ìn this section I'll discuss the custom parameters available within the `config.toml`. The complete [sample](https://github.com/lxndrblz/anatole/tree/master/exampleSite/config/_default) can be found in the exampleSite folder.
+Ìn this section, I'll discuss the custom parameters available within the `config.toml`. The complete [sample](https://github.com/lxndrblz/anatole/tree/master/exampleSite/config/_default) can be found in the exampleSite folder.
 
 ### Profile picture and slogan
 
@@ -70,6 +70,7 @@ author = "Jane Doe"
 description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 ```
+Please note that the tile under the `[params]` only adjust the page title in the sidebar. If you wish to adjust the HTML title (i.e. name of the tab), you will have to adjust the Hugo's title variable, as shown in the `config.toml`.
 
 Please note that the slogan can be multi-lined (note the three quotes at the beginning and end):
 ```toml

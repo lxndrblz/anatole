@@ -1089,28 +1089,21 @@ print {
 }
 
 @media (min-width: 1921px){
-    .content {
-        padding-right: 25%;
-        width: var(--content-max-width);
-    }
     .sidebar {
-        width: var(--sidebar-max-width);
-        left: 50%;
-        margin-left: calc( -1 * var(--body-max-width)/2);
+        padding-left: 17%;
+        width: calc(var(--sidebar-width) - 20%);
+        padding-right: 3%;
     }
-
-    .page-top {
-        width: var(--content-max-width);
+    .content {
+        margin-left: calc(15% + var(--sidebar-width));
+        width: calc(var(--content-width) - 20%);
+        padding-right: 20%;
+    }
+    .page-top{
         position: fixed;
-        left: 50%;
-        margin-left: calc(-1* (var(--body-max-width)/2 - var(--sidebar-max-width) ));
-        z-index: 3;
-        background-color: var(--bg-color);
-        height: 60px;
-        border-bottom: 1px solid var(--border-color);
+        width: calc(var(--content-width));
     }
 }
-
 
 /* (CONTACT) FORM */
 

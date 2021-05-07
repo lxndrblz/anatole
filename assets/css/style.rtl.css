@@ -50,7 +50,7 @@ html {
 
 body {
     color: var(--body-color);
-    font-family: 'Verdana', sans-serif;
+    font-family: 'PingHei', 'PingFang SC', 'Helvetica Neue', 'Work Sans', 'Hiragino Sans GB', sans-serif;
     font-size: 15px;
     width: 100%;
     margin: 0 auto 30px auto;
@@ -409,6 +409,18 @@ a:active {
 
 .post .post-content img {
     max-width: 100%;
+}
+
+.post .post-content ul {
+    line-height: 1.9em;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.post .post-content ol {
+    line-height: 1.9em;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 .post .post-footer {

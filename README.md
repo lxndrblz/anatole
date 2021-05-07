@@ -59,7 +59,7 @@ git submodule update --remote --merge
 
 ## Modifying the config.toml
 
-Ìn this section I'll discuss the custom parameters available within the `config.toml`. The complete [sample](https://github.com/lxndrblz/anatole/blob/master/exampleSite/config.toml) can be found in the exampleSite folder.
+Ìn this section, I'll discuss the custom parameters available within the `config.toml`. The complete [sample](https://github.com/lxndrblz/anatole/tree/master/exampleSite/config/_default) can be found in the exampleSite folder.
 
 ### Profile picture and slogan
 
@@ -70,6 +70,7 @@ author = "Jane Doe"
 description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 ```
+Please note that the tile under the `[params]` only adjust the page title in the sidebar. If you wish to adjust the HTML title (i.e. name of the tab), you will have to adjust the Hugo's title variable, as shown in the `config.toml`.
 
 Please note that the slogan can be multi-lined (note the three quotes at the beginning and end):
 ```toml
@@ -174,7 +175,7 @@ If you want to have a different post section identifier, such as `/blog`, you ca
   postSectionName = "blog"
 ```
 
-If the parameter is not set, it will default to `post`.
+If the parameter is not set, it will default to `post`. Be sure to check the name of the folder containing your post files and change it accordingly in order for links to reflect the new post section name.
 
 ### Show full post content on the home page
 If you prefer the full content of your posts to appear on the home page rather than a summary of each post, then set the parameter `fullPostContent` to `true`.
@@ -505,6 +506,34 @@ Include the newly generated `syntax.css` like a standard custom CSS script:
 ```toml
 [params]
 customCss = ["css/syntax.css"]
+```
+
+### Socials
+
+You can add social media based icon links under your profile picture by using the `socialIcons` parameter.
+
+[Font Awesome](https://fontawesome.com/) is used for the icons.
+
+If you are using brand icons, prefix the icon value with `fab` if you are using a standard icon use `fas` instead.
+
+Ordering in the `config.toml` will determine the display order on the webpage.
+
+#### Example branded social entry
+
+```toml
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://de.linkedin.com/"
+```
+
+#### Example standard social entry
+
+```toml
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:mail@example.com"
 ```
 
 ## License

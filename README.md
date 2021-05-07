@@ -70,7 +70,7 @@ author = "Jane Doe"
 description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 ```
-Please note that the tile under the `[params]` only adjust the page title in the sidebar. If you wish to adjust the HTML title (i.e. name of the tab), you will have to adjust the Hugo's title variable, as shown in the `config.toml`.
+Please note that the title under the `[params]` only adjusts the page title in the sidebar. If you wish to adjust the HTML title (i.e. name of the tab), you will have to adjust the Hugo's title variable, as shown in the `config.toml`.
 
 Please note that the slogan can be multi-lined (note the three quotes at the beginning and end):
 ```toml

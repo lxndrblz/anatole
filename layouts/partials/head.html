@@ -13,14 +13,16 @@
     <!-- CSS -->
     
     {{ if eq .Site.Language.LanguageDirection "rtl"}}
-    {{ $style := resources.Get "css/style.rtl.css" | resources.Minify | resources.Fingerprint }}
+    {{ $templateStyle := resources.Get "css/style.rtl.css" }}
+    {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.css" . | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
           href="{{ $style.RelPermalink }}"
           integrity="{{ $style.Data.Integrity }}"
           crossorigin="anonymous"
           type="text/css">
     {{else}}
-    {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
+    {{ $templateStyle := resources.Get "css/style.css" }}
+    {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.css" . | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
         href="{{ $style.RelPermalink }}"
         integrity="{{ $style.Data.Integrity }}"

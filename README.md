@@ -59,7 +59,7 @@ git submodule update --remote --merge
 
 ## Modifying the config.toml
 
-Ìn this section I'll discuss the custom parameters available within the `config.toml`. The complete [sample](https://github.com/lxndrblz/anatole/tree/master/exampleSite/config/_default) can be found in the exampleSite folder.
+Ìn this section, I'll discuss the custom parameters available within the `config.toml`. The complete [sample](https://github.com/lxndrblz/anatole/tree/master/exampleSite/config/_default) can be found in the exampleSite folder.
 
 ### Profile picture and slogan
 
@@ -70,6 +70,7 @@ author = "Jane Doe"
 description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 ```
+Please note that the title under the `[params]` only adjusts the page title in the sidebar. If you wish to adjust the HTML title (i.e. name of the tab), you will have to adjust the Hugo's title variable, as shown in the `config.toml`.
 
 Please note that the slogan can be multi-lined (note the three quotes at the beginning and end):
 ```toml
@@ -149,6 +150,13 @@ You can change the default date formating for the `list.html`, the `single.html`
 singleDateFormat = "Mon, Jan 2, 2006"
 indexDateFormat = "Mon, Jan 2, 2006"
 listDateFormat = "Jan 2"
+```
+
+### Changing the sidebar/content ratio
+By default, the content fills up 60% of the screen width on devices with a full HD resolution. If you want to change the ratio, adjust the `contentratio` variable. Let's, for example, set the content ratio to 70%:
+```toml
+[params]
+contentratio = 0.7
 ```
 
 ### Read-more Links

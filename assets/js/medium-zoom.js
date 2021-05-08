@@ -1,4 +1,4 @@
-/*! medium-zoom 1.0.5 | MIT License | https://github.com/francoischalifour/medium-zoom */
+/*!medium-zoom 1.0.5 | MIT License | https://github.com/francoischalifour/medium-zoom*/
 (function (global, factory) {
     typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = global || self,
         global.mediumZoom = factory());

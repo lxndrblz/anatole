@@ -28,7 +28,7 @@
 
 html[data-theme='dark'] {
     --bg-color: #010408;
-    --secondary-bg-color: rgb(56, 56, 56);;
+    --secondary-bg-color: rgb(56, 56, 56);
     --heading-color: #c9d1d9;
     --body-color: rgb(169, 169, 179);
     --post-color: rgba(0, 0, 0, 0.44);
@@ -525,7 +525,7 @@ a:active {
 .post .post-thumbnail {
     width: 100%;
     padding-bottom: 1em;
-    box-shadow: black;
+    box-shadow: #000000;
     border-radius: 0.5em;
     overflow: hidden;
     transition: box-shadow .3s ease;

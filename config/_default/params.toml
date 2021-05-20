@@ -1,0 +1,75 @@
+title = "Muhammed Bilgin"
+author = "Muhammed Bilgin"
+#copyright = "2020-2021"
+description = """
+Research Scientist - NLP, Neural Systems
+"""
+profilePicture = "images/profile.JPG"
+keywords = ""
+favicon = "favicons/"
+# example ["css/custom.css"]
+customCss = []
+# example ["js/custom.js"]
+customJs = [] 
+mainSections = ["post", "publications"]
+images = ["images/site-feature-image.png"]
+doNotLoadAnimations = false
+
+# Form Spree Contact Form
+contactFormAction = "https://formspree.io/f/mvodkypz"
+
+# Google Site Verify
+#googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+singleDateFormat = "2/1/2006"
+indexDateFormat = "2/1/2006"
+listDateFormat = "2/1/2006"
+
+# Commento Comments
+# CommentoURL = "https://commento.example.com/js/commento.js"
+# Read More links for truncated summaries
+# readMore = true
+# postSectionName = "blog"
+
+
+[simpleAnalytics]
+# enable = true
+# customurl = "https://analytics.example.com"
+
+## Math settings
+[math]
+enable = true  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+use = "katex"  # options: "katex", "mathjax". default is "katex".
+
+## Social links
+# use 'fab' when brand icons, use 'fas' when standard solid icons.
+
+[[socialIcons]]
+    icon = "fab fa-twitter"
+    title = "twitter"
+    url = "https://twitter.com/itsmebilgin"
+
+[[socialIcons]]
+    icon = "fab fa-github"
+    title = "GitHub"
+    url = "https://github.com/mebilgin"
+
+[[socialIcons]]
+    icon = "ai ai-google-scholar-square"
+    title = "google-scholar"
+    url = "https://scholar.google.com/citations?user=IC-qlswAAAAJ&hl=en&authuser=2&oi=sra"
+
+[[socialIcons]]
+    icon = "ai ai-semantic-scholar"
+    title = "semantic-scholar"
+    url = "https://www.semanticscholar.org/author/Muhammed-Bilgin/34403949"
+
+[[socialIcons]]
+    icon = "ai ai-cv"
+    title = "cv"
+    url = "/Cv_EN.pdf"    
+
+[[socialIcons]]
+    icon = "fas fa-envelope"
+    title = "e-mail"
+    url = "mailto:m.emrebilgin@gmail.com"    

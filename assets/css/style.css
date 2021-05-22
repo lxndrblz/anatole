@@ -920,6 +920,7 @@ print {
 
     .sidebar .logo-title .title img {
         width: 100px;
+        height: 100px;
     }
 
     .sidebar .logo-title .title h3 {

@@ -543,6 +543,12 @@ title = "e-mail"
 url = "mailto:mail@example.com"
 ```
 
+### RSS
+
+Hugo natively supports RSS. To generate a feed for a given page, append `index.xml` to the page URL.
+
+Note that the RSS feed at the base of your website will include all of the pages on your website. To only include posts in your RSS feed, generate the feed within the `posts/` subdirectory with the URL `posts/index.xml`.
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

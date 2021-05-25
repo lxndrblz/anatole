@@ -267,7 +267,7 @@ url = "/de/about/"
 
 Anatole currently ships with support for some basic languages. Contributions for other language translations are welcome.
 
-### RTL suppourt
+### RTL support
 
 Anatole support RTL langauges and flip the whole theme for that. To enable the RTL mode for specific langauge it's enough to write the following code in the language params.
 

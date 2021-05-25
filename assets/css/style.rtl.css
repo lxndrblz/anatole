@@ -526,7 +526,7 @@ a:active {
 .post .post-thumbnail {
     width: 100%;
     padding-bottom: 1em;
-    box-shadow: #000000;
+    box-shadow: #000;
     border-radius: 0.5em;
     overflow: hidden;
     transition: box-shadow .3s ease;
@@ -919,6 +919,7 @@ print {
 
     .sidebar .logo-title .title img {
         width: 100px;
+        height: 100px;
     }
 
     .sidebar .logo-title .title h3 {

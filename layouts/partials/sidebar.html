@@ -18,6 +18,6 @@
         {{ end }}
     </ul>
     <div class="footer">
-        <div class="by_farbox">&copy; {{ .Site.Params.author }} {{ if isset .Site.Params "copyright" }} {{ .Site.Params.copyright }} {{ else }} {{ now.Format "2006"}} {{end}}</div>
+        <div class="by_farbox">&copy; {{ if isset .Site.Params "copyright" }} {{ replace .Site.Params.copyright "{{ YEAR }}" (now.Format "2006") | markdownify }} {{ else }} {{ .Site.Params.author }} {{ now.Format "2006"}} {{end}}</div>
     </div>
 </div>

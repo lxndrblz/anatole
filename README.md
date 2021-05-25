@@ -87,9 +87,9 @@ Blogging from Texas
 Add your own favicon in `static/favicons/favicon.ico`.
 
 ### Copyright
-By default, the copyright will show the authors name followed by the current year, but you can change this by configuring the `copyright` parameter.
+By default, the copyright will show the authors name followed by the current year, but you can change this by configuring the `copyright` parameter.  If this method is used, the string `{{ YEAR }}` will be replaced with the current year during site generation.
 ```toml
-copyright = "2020-2021"
+copyright = "2020-{{ YEAR }}"
 ```
 
 ### Navigation items

@@ -7,7 +7,7 @@ Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme ba
 
 ## Features
 
-Anatole's aims to be minimalistic and sleek, but still brings some great functionality.
+Anatole's aims to be minimalistic and sleek but still brings some great functionality.
 
 ### Features include
 
@@ -217,7 +217,7 @@ fullPostContent = true
 
 ### Multilingual support
 
-Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each language you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.
+Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each language, you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.
 
 ```toml
 [Languages]
@@ -233,7 +233,7 @@ Anatole supports multilingual page setups. All you need to do is to add the lang
   LanguageName = "DE"
 ```
 
-There are two ways of translating your content either by adding a suffix in the filename eg. `mypost.de.md` or by setting a contentDir (a certain directory) for each language. [Link to the Hugo documentation](https://gohugo.io/content-management/multilingual/). If you want to use the option with the `contentDir`, you will have to add the `contentDir` parameter for each language:
+There are two ways of translating your content, either by adding a suffix in the filename, eg. `mypost.de.md`, or by setting a contentDir (a certain directory) for each language. [Link to the Hugo documentation](https://gohugo.io/content-management/multilingual/). If you want to use the option with the `contentDir`, you will have to add the `contentDir` parameter for each language:
 
 ```toml
 [languages]
@@ -269,7 +269,7 @@ Anatole currently ships with support for some basic languages. Contributions for
 
 ### RTL support
 
-Anatole support RTL langauges and flip the whole theme for that. To enable the RTL mode for specific langauge it's enough to write the following code in the language params.
+Anatole supports RTL languages and flip the whole theme for that. To enable the RTL-mode for a specific language, it's enough to write the following code in the language params.
 
 ```toml
 LanguageDirection = "rtl"
@@ -303,7 +303,7 @@ theme= "preferred-color-scheme"
 Two notes on the security of Utteranc.es
 
 - If you are using a strict CSP, you'll have to add the domain to it.
-- The script currently has no built-in integrity check, due to limitations of [Utterances](https://github.com/utterance/utterances/issues/40).
+- The script currently has no built-in integrity check due to limitations of [Utterances](https://github.com/utterance/utterances/issues/40).
 
 ### Comments powered by Commento
 
@@ -326,7 +326,7 @@ To use Google Analytics, a valid tracking code has to be added. If you don't wan
 googleAnalytics = "UA-123-45"
 ```
 
-To use the modern Google Analytics 4, include the following under `[params]` replacing the id with your own.
+To use the modern Google Analytics 4, include the following under `[params]`, replacing the id with your own.
 
 ```toml
 [params]
@@ -438,7 +438,7 @@ You can add your custom JS files with the `customJs` parameter of the configurat
 customJs = ["js/hello.js", "js/world.js"]
 ```
 
-On the user-side it will look like this:
+On the user-side, it will look like this:
 
 ```text
 .
@@ -450,7 +450,7 @@ On the user-side it will look like this:
 
 `hello.js` and `world.js` will be bundled into a `custom.min.js`.
 
-You can also include links to remote javascript files (hosted on CDNs for example). But be aware, that integrity settings and minification won't be applied. Further make sure to adjust your CSP. You can load a remote script like this:
+You can also include links to remote javascript files (hosted on CDNs for example). But be aware that integrity settings and minification won't be applied. Further, make sure to adjust your CSP. You can load a remote script like this:
 
 ```toml
 [params]
@@ -475,7 +475,7 @@ enableMediumZoom = false
 
 ### Content Security Policy
 
-The theme is compliant with most strict CSP policies out of the box. A sample CSP for an Anatole-based site would look something like this:
+The theme is compliant with the most strict CSP policies out of the box. A sample CSP for an Anatole-based site would look something like this:
 
 ```text
 Content-Security-Policy "
@@ -515,7 +515,7 @@ You can configure the pages shown on the front page by altering the `mainSection
 
 ### Robots.txt
 
-If you want Hugo to generate a robots.txt, you will have to set the `enableRobotsTXT` in the `config.toml` to `true`. By default a robots.txt, which allows search engine crawlers to access to any page, will be generated. It will look like this:
+If you want Hugo to generate a robots.txt, you will have to set the `enableRobotsTXT` in the `config.toml` to `true`. By default, a robots.txt, which allows search engine crawlers to access to any page, will be generated. It will look like this:
 
 ```text
 User-agent: *
@@ -525,7 +525,7 @@ If certain sites should be excluded from being accessed, you might want to setup
 
 ### Syntax highlighting
 
-This theme has support for either Hugo's lightning-fast Chroma code highlighting. See the [Hugo docs](https://gohugo.io/content-management/syntax-highlighting/) for more information.
+This theme has support for Hugo's lightning-fast Chroma code highlighting. See the [Hugo docs](https://gohugo.io/content-management/syntax-highlighting/) for more information.
 
 To enable Chroma, add the following to your site parameters:
 
@@ -558,7 +558,7 @@ If you are using brand icons, prefix the icon value with `fab` if you are using 
 
 Ordering in the `config.toml` will determine the display order on the webpage.
 
-#### Example branded social entry
+#### Sample branded social entry
 
 ```toml
 [[params.socialIcons]]
@@ -567,7 +567,7 @@ title = "Linkedin"
 url = "https://de.linkedin.com/"
 ```
 
-#### Example standard social entry
+#### Sample standard social entry
 
 ```toml
 [[params.socialIcons]]
@@ -605,7 +605,7 @@ Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/
 
 ## Maintenance
 
-This theme is maintained by its author [Alexander Bilz](https://github.com/lxndrblz) and with the help from these awesome [contributors](https://github.com/lxndrblz/anatole/graphs/contributors). Please open an issue/pull request if you want to contribute to making this theme better and more feature-complete. For PRs please make sure that they align with theme's goals: minimalism, speed and elegance.
+This theme is maintained by its author [Alexander Bilz](https://github.com/lxndrblz) and with the help from these awesome [contributors](https://github.com/lxndrblz/anatole/graphs/contributors). Please open an issue/pull request if you want to contribute to making this theme better and more feature-complete. For PRs, please make sure that they align with the theme's goals: minimalism, speed and elegance.
 
 ## Sponsoring
 

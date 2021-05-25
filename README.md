@@ -559,6 +559,13 @@ To only generate an RSS feed for your posts, disable the RSS output for the othe
   term = ["HTML"]
 ```
 
+By default, the RSS feed contains a brief summary of each page. If you prefer to show the entire contents for each page, then use the `rssFullContent` parameter:
+
+```toml
+[params]
+rssFullContent = true
+```
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

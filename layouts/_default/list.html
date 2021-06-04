@@ -13,7 +13,7 @@
       {{ range .Pages }}
         <ul class="archive__list">
           <li class="archive__list-item">
-            <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+            <a class="archive__list-title" href="{{ if .Params.affiliatelink }} {{ .Params.affiliatelink }} {{ else }} {{ .RelPermalink }} {{ end }}" title="{{ .Title }}">{{ .Title }}</a>
             <div class="archive__list-date">
               {{ if isset .Site.Params "listdateformat" }}
                 {{ .Date.Format .Site.Params.listDateFormat }}

@@ -1,6 +1,7 @@
 {{ define "main" }}
     <div class="post {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
         <div class="post-title post-content">
+            <h1>{{ .Title }}</h1>
             {{ .Content }}
         </div>
 

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     {{ if .Params.redirectUrl }}
-    <meta http-equiv="refresh" content="0; url=https://registry.jsonresume.org/alexanderdavide" />
+    <meta http-equiv="refresh" content="0; url={{ .Params.redirectUrl }}" />
     {{ end }}
     {{- if .Site.Params.googleSiteVerify }}
     <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}">

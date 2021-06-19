@@ -6,5 +6,7 @@ description = "Usage of redirectUrl"
 tags = [
     "redirect",
 ]
-redirectUrl = "https://alexbilz.com"
+redirectUrl = "https://www.alexbilz.com"
 +++
+
+Forwarding to my [personal portfolio](https://www.alexbilz.com)..

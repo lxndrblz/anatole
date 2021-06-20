@@ -599,6 +599,13 @@ By default, the RSS feed contains a brief summary of each page. If you prefer to
 rssFullContent = true
 ```
 
+### External Redirect URLs
+You can create pages, which redirect to another (external) URL with a short delay. This can be useful for migrating previously indexed URLs, which no longer exist, or for communicating complex external URLs to your readers.
+
+You will have to define a `redirectUrl` in the markdown header of the post or page, which you want to forward. An example can be found in the [redirect.md](https://github.com/lxndrblz/anatole/blob/master/exampleSite/content/english/post/redirect.md). The page will be automatically redirected with a delay of one second.
+
+Additionally, you can include the `{{% loading %}}`  shortcode, which will display a spinner on the page that will be redirected. If it does not display, make sure that unsafe mode is enabled for `markup.goldmark.renderer`.
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

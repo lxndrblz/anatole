@@ -1,7 +1,7 @@
 +++
 author = "Hugo Authors"
 title = "Redirect"
-date = "2021-19-06"
+date = "2021-06-20"
 description = "Usage of redirectUrl"
 tags = [
     "redirect",

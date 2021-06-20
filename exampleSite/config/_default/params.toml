@@ -7,7 +7,7 @@ profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
 # example ["css/custom.css"]
-customCss = ["css/spinner.css"]
+customCss = []
 # example ["js/custom.js"]
 customJs = [] 
 mainSections = ["post"]

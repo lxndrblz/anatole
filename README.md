@@ -616,5 +616,6 @@ If you like this theme, give it a star on GitHub, and consider supporting its de
 ## Special Thanks 🎁
 
 - Go to [Cai Cai](https://github.com/hi-caicai), for the great Anatole Farbox theme that formed the foundation for this theme.
-- Go to [Kareya Saleh](https://unsplash.com/photos/tLKOj6cNwe0) for providing the profile picture in the exampleSite.
-- Go to [Ales Krivec](https://unsplash.com/photos/4miBe6zg5r0) for providing the thumbnail picture in the exampleSite post.
+- Go to [Kareya Saleh](https://unsplash.com/photos/tLKOj6cNwe0) for providing the [profile picture](https://github.com/lxndrblz/anatole/blob/master/exampleSite/static/images/profile.jpg) used in the exampleSite.
+- Go to [Ales Krivec](https://unsplash.com/photos/4miBe6zg5r0) for providing the thumbnail picture used in the exampleSite [image-test post](https://github.com/lxndrblz/anatole/blob/master/exampleSite/content/english/post/image-test.md).
+- Go to [Tobias Ahlin](https://github.com/tobiasahlin) for his [SpinKit](https://github.com/tobiasahlin/SpinKit) that is used in the exampleSite [redirect post](https://github.com/lxndrblz/anatole/blob/master/exampleSite/content/english/post/redirect.md).

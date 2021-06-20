@@ -6,7 +6,8 @@ description = "Usage of redirectUrl"
 tags = [
     "redirect", "redirectUrl",
 ]
-redirectUrl = "https://gohugo.io"
 +++
 
 Forwarding to [gohugo](https://gohugo.io) using `redirectUrl`
+
+{{% loading %}}

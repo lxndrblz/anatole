@@ -513,6 +513,9 @@ You can configure the pages shown on the front page by altering the `mainSection
   mainSections = ["post", "docs"]
 ```
 
+### _index.md and post section header
+You can place custom content, by creating `_index.md` markdown file within the content directory. An example can be found [here](https://github.com/lxndrblz/anatole/blob/exampleSite/content/english/_index.md). Uncomment the section as needed. This file `_index.md` also has a parameter called `mainSectionsTitle`, which lets you specify a header for the posts on the main page. This header will be styled and placed always after the content of the `_index.md` it self.  
+
 ### Robots.txt
 
 If you want Hugo to generate a robots.txt, you will have to set the `enableRobotsTXT` in the `config.toml` to `true`. By default, a robots.txt, which allows search engine crawlers to access to any page, will be generated. It will look like this:

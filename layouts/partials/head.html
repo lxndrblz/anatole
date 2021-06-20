@@ -6,6 +6,9 @@
     {{- hugo.Generator -}}
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ if .Params.redirectUrl }}
+    <meta http-equiv="refresh" content="1; url={{ .Params.redirectUrl }}" />
+    {{ end }}
     {{- if .Site.Params.googleSiteVerify }}
     <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}">
     {{- end -}}
@@ -48,7 +51,14 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
     crossorigin="anonymous" />
-
+    {{ if .Params.redirectUrl }}
+    {{ $style := resources.Get "css/spinner.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet"
+        href="{{ $style.RelPermalink }}"
+        integrity="{{ $style.Data.Integrity }}"
+        crossorigin="anonymous"
+        type="text/css">
+    {{- end -}}
     <!-- Favicons -->
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | relURL }}favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | relURL }}apple-touch-icon.png">

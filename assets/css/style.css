@@ -619,6 +619,18 @@ a:active {
     color: #2660ab;
 }
 
+.footer__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__item:not(:first-of-type)::before {
+  content: "\00B7";
+  padding: 4px;
+}
+
 /*for archive*/
 .archive {
     width: 100%;

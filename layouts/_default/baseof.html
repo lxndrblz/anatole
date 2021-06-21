@@ -13,7 +13,8 @@
     </div>
 </div>
 
-{{- partial "footer.html" . -}}
+{{- partial "footer.html" (dict "context" . "footerClassModifier" "base") -}}
+
 {{- if (eq .Site.Params.simpleAnalytics.enable true) -}}
     {{- partial "analytics/simpleanalytics.html" . -}}
 {{- end -}}

@@ -917,6 +917,10 @@ a.btn {
     display: none;
 }
 
+.footer--base {
+    display: none;
+}
+
 @media screen and (max-width: 960px),
 print {
     .sidebar {

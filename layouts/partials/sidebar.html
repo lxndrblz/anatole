@@ -17,24 +17,5 @@
             </li>
         {{ end }}
     </ul>
-    <div class="footer">        
-        <div class="by_farbox">
-            <ul class="footer__list">
-                <li class="footer__item">&copy;
-                    {{ if isset .Site.Params "copyright" }}
-                        {{ replace .Site.Params.copyright "{{ YEAR }}" (now.Format "2006") | markdownify }}
-                    {{ else }}
-                        {{ .Site.Params.author }} {{ now.Format "2006"}}
-                    {{end}}
-                </li>
-                {{ range .Site.Menus.footer }}
-                <li class="footer__item">
-                    <a href="{{ .URL }}" {{ if strings.HasPrefix .URL "http" }} target="_blank" rel="noopener noreferrer" {{ end }} title="{{ .Title }}">
-                        {{ .Name }}
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-        </div>
-    </div>
+    {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
 </div>

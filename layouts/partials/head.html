@@ -14,16 +14,6 @@
     {{- end -}}
 
     <!-- CSS -->
-    
-    {{ if eq .Site.Language.LanguageDirection "rtl"}}
-    {{ $templateStyle := resources.Get "css/style.rtl.css" }}
-    {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.css" . | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet"
-          href="{{ $style.RelPermalink }}"
-          integrity="{{ $style.Data.Integrity }}"
-          crossorigin="anonymous"
-          type="text/css">
-    {{else}}
     {{ $templateStyle := resources.Get "css/style.css" }}
     {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.css" . | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"
@@ -31,6 +21,14 @@
         integrity="{{ $style.Data.Integrity }}"
         crossorigin="anonymous"
         type="text/css">
+    {{ if eq .Site.Language.LanguageDirection "rtl"}}
+    {{ $templateStyle := resources.Get "css/style.rtl.css" }}
+    {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.rtl.css" . | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet"
+          href="{{ $style.RelPermalink }}"
+          integrity="{{ $style.Data.Integrity }}"
+          crossorigin="anonymous"
+          type="text/css">
     {{end}}
     {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet"

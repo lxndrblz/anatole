@@ -89,3 +89,15 @@ blockquote {
     }
     
 }
+
+@media (min-width: 1921px){
+    .sidebar {
+        padding-right: 17%;
+        padding-left: 3%;
+    }
+    .content {
+        padding-right: inherit;
+        padding-left: 20%;
+    }
+
+}

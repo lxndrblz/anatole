@@ -2,15 +2,18 @@
 <html  dir="{{ .Site.Language.LanguageDirection | default "ltr" }}" lang="{{- site.Language.Lang -}}" data-theme="{{- .Site.Params.displayMode -}}">
 {{- partial "head.html" . -}}
 <body>
-
-{{- partial "sidebar.html" . -}}
-<div class="main">
-    {{ partial "navbar.html" . }}
-    <div class="autopagerize_page_element">
-        <div class="content">
-            {{- block "main" . }}{{- end }}
+<header>{{ partial "navbar.html" . }}</header>
+<div class="wrapper">
+    <aside>
+        {{- partial "sidebar.html" . -}}
+    </aside>
+    <main>
+        <div class="autopagerize_page_element">
+            <div class="content">
+                {{- block "main" . }}{{- end }}
+            </div>
         </div>
-    </div>
+    </main>
 </div>
 
 {{- partial "footer.html" (dict "context" . "footerClassModifier" "base") -}}

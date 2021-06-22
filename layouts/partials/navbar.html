@@ -1,34 +1,38 @@
-<div class="page-top {{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
+<div class="page-top {{ with .Site.Params.doNotLoadAnimations }} . {{ else }}animated fadeInDown{{ end }}">
     <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
     </a>
-    <ul class="nav" id="navMenu">
-        {{ $url := .RelPermalink }}
-        {{ range .Site.Menus.main }}
-            {{ $active := eq $url .URL }}
-            <li><a {{if $active }}class="current"{{end}}
-                   href="{{ .URL }}"
-                        {{ if strings.HasPrefix .URL "http" }}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        {{ end }}
-                   title="{{ .Title }}">{{ .Name }}</a></li>
-        {{ end }}
-        {{ if .Site.IsMultiLingual }}
-            {{ range $.Site.Home.AllTranslations }}
-                <li><a href="{{ .RelPermalink }}"
-                       title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
-                </li>
-            {{ end }}
-        {{ end }}
-        {{ if not .Site.Params.disableThemeSwitcher }}
-            <li class="theme-switch-item">
+    <nav>
+        <ul class="nav__list" id="navMenu">
+            <div class="nav__links">
+                {{ $url := .RelPermalink }}
+                {{ range .Site.Menus.main }}
+                    {{ $active := eq $url .URL }}
+                    <li><a {{if $active }}class="current"{{end}}
+                        href="{{ .URL }}"
+                                {{ if strings.HasPrefix .URL "http" }}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                {{ end }}
+                        title="{{ .Title }}">{{ .Name }}</a></li>
+                {{ end }}
+                {{ if .Site.IsMultiLingual }}
+                    {{ range $.Site.Home.AllTranslations }}
+                        <li><a href="{{ .RelPermalink }}"
+                            title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
+                        </li>
+                    {{ end }}
+                {{ end }}
+            </div>
+            <li>
+                {{ if not .Site.Params.disableThemeSwitcher }}
                 <a class="theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a>
+                {{ end }}
             </li>
-        {{ end }}
-    </ul>
+        </ul>
+    </nav>
 </div>

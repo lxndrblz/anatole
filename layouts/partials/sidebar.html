@@ -1,23 +1,23 @@
 <div class="sidebar{{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
-    <div class="logo-title">
-        <div class="title">
-            <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture">
-            <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
-            <div class="description">
-                <p>{{ replace .Site.Params.description "\n" "<br>" | safeHTML }}</p>
+    <div class="sidebar__content">
+        <div class="logo-title">
+            <div class="title">
+                <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture">
+                <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
+                <div class="description">
+                    <p>{{ replace .Site.Params.description "\n" "<br>" | safeHTML }}</p>
+                </div>
             </div>
         </div>
+        <ul class="social-links">
+            {{ range $item := .Site.Params.socialIcons }}
+                <li>
+                    <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
+                        <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
     </div>
-    <ul class="social-links">
-        {{ range $item := .Site.Params.socialIcons }}
-            <li>
-                <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
-                    <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
-                </a>
-            </li>
-        {{ end }}
-    </ul>
-    <div class="footer">
-        <div class="by_farbox">&copy; {{ if isset .Site.Params "copyright" }} {{ replace .Site.Params.copyright "{{ YEAR }}" (now.Format "2006") | markdownify }} {{ else }} {{ .Site.Params.author }} {{ now.Format "2006"}} {{end}}</div>
-    </div>
+    {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
 </div>

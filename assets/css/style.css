@@ -217,10 +217,6 @@ header .nav__list li {
     display: initial;
 }
 
-header .nav__list li:not(:last-of-type) {
-    padding-right: 20px;
-}
-
 header .nav__list a {
     color: var(--nav-text-color);
 }
@@ -919,6 +915,10 @@ a.btn {
 @media screen and (min-width: 960px), print {
     header {
         border-bottom: 1px solid var(--border-color);
+    }
+    
+    header .nav__list li:not(:last-of-type) {
+        padding-right: 20px;
     }
 
     .sidebar {

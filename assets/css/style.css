@@ -959,8 +959,7 @@ a.btn {
     }
 }
 
-@media screen and (max-width: 960px),
-print {
+@media screen and (max-width: 960px) {
     aside {
         width: 100%;
     }

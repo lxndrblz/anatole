@@ -917,7 +917,7 @@ a.btn {
         border-bottom: 1px solid var(--border-color);
     }
     
-    header .nav__list li:not(:last-of-type) {
+    .nav__links li:not(:last-of-type) {
         padding-right: 20px;
     }
 

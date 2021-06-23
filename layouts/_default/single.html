@@ -5,7 +5,7 @@
             <img class="post-thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image">
             {{ end }}
             <div class="post-title">
-                <h3>{{ .Title }}</h3>
+                <h1>{{ .Title }}</h1>
                 {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>

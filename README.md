@@ -513,8 +513,9 @@ You can configure the pages shown on the front page by altering the `mainSection
   mainSections = ["post", "docs"]
 ```
 
-### _index.md and post section header
-You can place custom content, by creating `_index.md` markdown file within the content directory. An example can be found [here](https://github.com/lxndrblz/anatole/blob/exampleSite/content/english/_index.md). Uncomment the section as needed. This file `_index.md` also has a parameter called `mainSectionsTitle`, which lets you specify a header for the posts on the main page. This header will be styled and placed always after the content of the `_index.md` it self.  
+### \_index.md and post section header
+
+You can place custom content, by creating `_index.md` markdown file within the content directory. An example can be found [here](https://github.com/lxndrblz/anatole/blob/exampleSite/content/english/_index.md). Uncomment the section as needed. This file `_index.md` also has a parameter called `mainSectionsTitle`, which lets you specify a header for the posts on the main page. This header will be styled and placed always after the content of the `_index.md` it self.
 
 ### Robots.txt
 
@@ -603,11 +604,12 @@ rssFullContent = true
 ```
 
 ### External Redirect URLs
+
 You can create pages, which redirect to another (external) URL with a short delay. This can be useful for migrating previously indexed URLs, which no longer exist, or for communicating complex external URLs to your readers.
 
 You will have to define a `redirectUrl` in the markdown header of the post or page, which you want to forward. An example can be found in the [redirect.md](https://github.com/lxndrblz/anatole/blob/master/exampleSite/content/english/post/redirect.md). The page will be automatically redirected with a delay of one second.
 
-Additionally, you can include the `{{% loading %}}`  shortcode, which will display a spinner on the page that will be redirected. If it does not display, make sure that unsafe mode is enabled for `markup.goldmark.renderer`.
+Additionally, you can include the `{{% loading %}}` shortcode, which will display a spinner on the page that will be redirected. If it does not display, make sure that unsafe mode is enabled for `markup.goldmark.renderer`.
 
 ## License
 

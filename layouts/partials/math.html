@@ -1,44 +1,44 @@
 {{- if or (eq site.Params.math.enable true) (eq .Params.math true) -}}
-    {{- $use := "katex" -}}
+  {{- $use := "katex" -}}
 
-    {{- with site.Params.math -}}
-        {{- if and (isset . "use") (eq (.use | lower) "mathjax") -}}
-            {{- $use = "mathjax" -}}
-        {{- end -}}
+  {{- with site.Params.math -}}
+    {{- if and (isset . "use") (eq (.use | lower) "mathjax") -}}
+      {{- $use = "mathjax" -}}
+
+
     {{- end -}}
 
-    {{- if eq $use "mathjax" -}}
-        {{- $url := "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -}}
-        {{- $hash := "sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN" -}}
-        <script defer
-                type="text/javascript"
-                src="{{- $url -}}"
-                integrity="{{- $hash -}}"
-                crossorigin="anonymous"></script>
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-        </script>
-    {{- else -}}
-        {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" -}}
-        {{- $hash := "sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" -}}
-        <link rel="stylesheet"
-              href="{{- $url -}}"
-              integrity="{{- $hash -}}"
-              crossorigin="anonymous">
 
-        {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" -}}
-        {{- $hash := "sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" -}}
-        <script defer
-                src="{{- $url -}}"
-                integrity="{{- $hash -}}"
-                crossorigin="anonymous"></script>
+  {{- end -}}
 
-        {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" -}}
-        {{- $hash := "sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" -}}
-        <script defer
-                src="{{- $url -}}"
-                integrity="{{- $hash -}}"
-                crossorigin="anonymous"
-                onload="renderMathInElement(document.body);"></script>
-    {{- end -}}
+  {{- if eq $use "mathjax" -}}
+    {{- $url := "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML" -}}
+    {{- $hash := "sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN" -}}
+    <script defer type="text/javascript" src="{{- $url -}}" integrity="{{- $hash -}}" crossorigin="anonymous"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+
+  {{- else -}}
+    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" -}}
+    {{- $hash := "sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" -}}
+    <link rel="stylesheet" href="{{- $url -}}" integrity="{{- $hash -}}" crossorigin="anonymous" />
+
+    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" -}}
+    {{- $hash := "sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" -}}
+    <script defer src="{{- $url -}}" integrity="{{- $hash -}}" crossorigin="anonymous"></script>
+
+    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" -}}
+    {{- $hash := "sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" -}}
+    <script
+      defer
+      src="{{- $url -}}"
+      integrity="{{- $hash -}}"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+
+  {{- end -}}
+
+
 {{- end -}}

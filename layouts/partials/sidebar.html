@@ -1,23 +1,32 @@
-<div class="sidebar{{ with .Site.Params.doNotLoadAnimations }} . {{ else }} animated fadeInDown {{ end }}">
-    <div class="sidebar__content">
-        <div class="logo-title">
-            <div class="title">
-                <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture">
-                <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
-                <div class="description">
-                    <p>{{ replace .Site.Params.description "\n" "<br>" | safeHTML }}</p>
-                </div>
-            </div>
+<div
+  class="sidebar{{ with .Site.Params.doNotLoadAnimations }}
+    .
+
+  {{ else }}
+    animated fadeInDown
+
+  {{ end }}"
+>
+  <div class="sidebar__content">
+    <div class="logo-title">
+      <div class="title">
+        <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture" />
+        <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
+        <div class="description">
+          <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>
         </div>
-        <ul class="social-links">
-            {{ range $item := .Site.Params.socialIcons }}
-                <li>
-                    <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
-                        <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
-                    </a>
-                </li>
-            {{ end }}
-        </ul>
+      </div>
     </div>
-    {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
+    <ul class="social-links">
+      {{ range $item := .Site.Params.socialIcons }}
+        <li>
+          <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
+            <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      {{ end }}
+    </ul>
+  </div>
+  {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
 </div>

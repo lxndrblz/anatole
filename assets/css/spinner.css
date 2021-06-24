@@ -4,7 +4,7 @@
 }
 
 html[data-theme='dark'] {
-  --sk-color: rgb(169, 169, 179)
+  --sk-color: rgb(169, 169, 179);
 }
 
 .sk-wrapper {
@@ -29,7 +29,7 @@ html[data-theme='dark'] {
 }
 
 .sk-fold-cube:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -82,6 +82,4 @@ html[data-theme='dark'] {
     transform: perspective(140px) rotateY(180deg);
     opacity: 0;
   }
-
 }
-

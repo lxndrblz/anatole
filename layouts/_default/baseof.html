@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html  dir="{{ .Site.Language.LanguageDirection | default "ltr" }}" lang="{{- site.Language.Lang -}}" data-theme="{{- .Site.Params.displayMode -}}">
-{{- partial "head.html" . -}}
-<body>
-<header>{{ partial "navbar.html" . }}</header>
-<div class="wrapper">
-    <aside>
+<html
+  dir="{{ .Site.Language.LanguageDirection | default "ltr" }}"
+  lang="{{- site.Language.Lang -}}"
+  data-theme="{{- .Site.Params.displayMode -}}"
+>
+  {{- partial "head.html" . -}}
+  <body>
+    <header>{{ partial "navbar.html" . }}</header>
+    <div class="wrapper">
+      <aside>
         {{- partial "sidebar.html" . -}}
-    </aside>
-    <main>
+      </aside>
+      <main>
         <div class="autopagerize_page_element">
-            <div class="content">
-                {{- block "main" . }}{{- end }}
-            </div>
+          <div class="content">
+            {{- block "main" . }}{{- end }}
+          </div>
         </div>
-    </main>
-</div>
+      </main>
+    </div>
 
-{{- partial "footer.html" (dict "context" . "footerClassModifier" "base") -}}
+    {{- partial "footer.html" (dict "context" . "footerClassModifier" "base") -}}
 
-{{- if (eq .Site.Params.simpleAnalytics.enable true) -}}
-    {{- partial "analytics/simpleanalytics.html" . -}}
-{{- end -}}
-</body>
+    {{- if (eq .Site.Params.simpleAnalytics.enable true) -}}
+      {{- partial "analytics/simpleanalytics.html" . -}}
 
+
+    {{- end -}}
+  </body>
 </html>

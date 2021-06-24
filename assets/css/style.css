@@ -311,7 +311,7 @@ aside {
 .sidebar .logo-title .title a {
     text-decoration: none;
     color: var(--heading-color);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 
@@ -945,10 +945,6 @@ a.btn {
         justify-content: center;
         flex-grow: 1;
     }
-
-    .sidebar__content .title h2{
-        font-size: 2.6rem;
-    }
     
     .navbar {
         display: flex;
@@ -995,7 +991,7 @@ a.btn {
         height: 100px;
     }
 
-    .sidebar .logo-title .title h3 {
+    .sidebar .logo-title .title h1 {
         font-size: 2.2rem;
     }
 

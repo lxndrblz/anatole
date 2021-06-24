@@ -46,12 +46,13 @@ html[data-theme='dark'] {
 html {
     background-color: var(--bg-color);
     -webkit-font-smoothing: antialiased;
+    font-size: 62.5%;
 }
 
 body {
     color: var(--body-color);
     font-family: 'PingHei', 'PingFang SC', 'Helvetica Neue', 'Work Sans', 'Hiragino Sans GB', sans-serif;
-    font-size: 15px;
+    font-size: 1.5rem;
     width: 100%;
     margin: 0 auto;
     background-color: var(--bg-color);
@@ -60,7 +61,7 @@ body {
 p {
     line-height: 1.9em;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 a {
@@ -90,7 +91,7 @@ blockquote {
 .tag,
 .category {
     display: inline-block;
-    font-size: 15px;
+    font-size: 1.5rem;
     line-height: 1;
     margin: 5px 8px 5px 0;
 }
@@ -209,7 +210,7 @@ header {
 header .nav__list {
     list-style: none;
     padding: 20px 30px;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 header .nav__list li {
@@ -234,7 +235,7 @@ header .nav__list a.current {
 .theme-switch {
     margin-top: -5px;
     color: var(--nav-text-color);
-    font-size: 1rem;
+    font-size: 1.75rem;
 }
 
 header .information {
@@ -284,7 +285,7 @@ aside {
 }
 
 .sidebar .logo-title .description {
-    font-size: 14px;
+    font-size: 1.4rem;
     margin: 0 1em;
 }
 
@@ -300,7 +301,7 @@ aside {
 
 .sidebar .logo-title .title h3 {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
     letter-spacing: 2px;
     line-height: 1;
@@ -317,7 +318,7 @@ aside {
 .sidebar .social-links {
     list-style: none;
     padding: 0;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-align: center;
 }
 
@@ -346,7 +347,7 @@ aside {
 
 .post .post-title h1 {
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 3.0rem;
     letter-spacing: 1px;
     line-height: 1;
 }
@@ -354,7 +355,7 @@ aside {
 .post .post-title h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 28px;
+    font-size: 2.6rem;
     line-height: 1;
     font-weight: 600;
     color: var(--heading-color);
@@ -367,7 +368,7 @@ aside {
     font-weight: 600;
     /* color: #464646; */
     color: var(--heading-color);
-    font-size: 22px;
+    font-size: 2.2rem;
     margin: 0;
 }
 
@@ -393,14 +394,23 @@ aside {
     color: #2F69B3;
 }
 
-.post .post-content h3 {
-    font-size: 22px;
+.post .post-content h1 {
+    font-size: 3.0rem;
+}
+
+.post .post-content h2 {
+    font-size: 2.6rem;
     font-weight: 600;
+}
+
+.post .post-content h3 {
+    font-weight: 600;
+    font-size: 2.2rem;
 }
 
 .post .post-content h4 {
     /* color: var(--heading-color); */
-    font-size: 16px;
+    font-size:  1.6rem;
 }
 
 .post .post-content img {
@@ -410,13 +420,13 @@ aside {
 .post .post-content ul {
     line-height: 1.9em;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .post .post-content ol {
     line-height: 1.9em;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .post .post-footer {
@@ -432,7 +442,7 @@ aside {
 
 .post .post-footer .meta .info {
     float: left;
-    font-size: 12px;
+    font-size: 1.2rem;
     margin-bottom: 1em;
     color: var(--body-color);
 }
@@ -492,7 +502,7 @@ aside {
 
 .post .post-footer .tags {
     padding-bottom: 15px;
-    font-size: 13px;
+    font-size: 1.3rem;
 }
 
 .post .post-footer .tags ul {
@@ -597,7 +607,7 @@ aside {
 .footer {
     clear: both;
     text-align: center;
-    font-size: 10px;
+    font-size: 1rem;
     margin: 0 auto;
     bottom: 0;
     width: 100%;
@@ -632,7 +642,7 @@ aside {
 }
 
 .list-with-title {
-    font-size: 14px;
+    font-size: 1.4rem;
     margin: 30px;
     padding: 0;
 }
@@ -643,7 +653,7 @@ aside {
 }
 
 .list-with-title .listing-title {
-    font-size: 24px;
+    font-size: 2.4rem;
     color: #666666;
     font-weight: 600;
     line-height: 2.2em;
@@ -692,7 +702,7 @@ aside {
 .evernote a {
     color: #fff;
     padding: 11px;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 .evernote a:hover {
@@ -740,7 +750,7 @@ aside {
 }
 
 .about h3 {
-    font-size: 22px;
+    font-size: 2.2rem;
 }
 
 /* links*/
@@ -749,7 +759,7 @@ aside {
 }
 
 .links h3 {
-    font-size: 22px;
+    font-size: 2.2rem;
 }
 
 .links a {
@@ -766,7 +776,7 @@ aside {
 }
 
 .read_more {
-    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 .back-button {
@@ -797,7 +807,7 @@ a.btn {
     outline: 0;
     color: var(--post-color);
     background: transparent;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -814,7 +824,7 @@ a.btn {
     outline: 0px;
     color: #464545;
     background: transparent;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -866,7 +876,7 @@ a.btn {
     outline: 0;
     color: var(--post-color);
     background: transparent;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -884,7 +894,7 @@ a.btn {
     outline: 0;
     color: #fff;
     background: #3CBD10;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -936,6 +946,10 @@ a.btn {
         flex-grow: 1;
     }
 
+    .sidebar__content .title h2{
+        font-size: 2.6rem;
+    }
+    
     .navbar {
         display: flex;
         flex-direction: column;
@@ -982,7 +996,7 @@ a.btn {
     }
 
     .sidebar .logo-title .title h3 {
-        font-size: 20px;
+        font-size: 2.2rem;
     }
 
     header {
@@ -1183,7 +1197,7 @@ a.btn {
     box-sizing: border-box; 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box; 
-    font-size: 14px;
+    font-size: 1.4rem;
     padding: 8px;
     outline: none;
     background-color: var(--bg-color);

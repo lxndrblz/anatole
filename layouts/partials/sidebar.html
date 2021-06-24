@@ -3,7 +3,7 @@
         <div class="logo-title">
             <div class="title">
                 <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture">
-                <h3 title=""><a href="/">{{ .Site.Params.Title }}</a></h3>
+                <h1><a href="/">{{ .Site.Params.Title }}</a></h1>
                 <div class="description">
                     <p>{{ replace .Site.Params.description "\n" "<br>" | safeHTML }}</p>
                 </div>

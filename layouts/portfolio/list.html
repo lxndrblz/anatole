@@ -18,19 +18,20 @@
         {{ range $i, $p := .portfolioitem }}
           <div class="box-wrapper">
             {{ if .image }}
-            <div
-              class="box-image {{ if (modBool $i 2) }}
-                box-image--right
+              <div
+                class="box-image {{ if (modBool $i 2) }}
+                  box-image--right
 
-              {{ else }}
-                box-image--left
+                {{ else }}
+                  box-image--left
 
-              {{ end }}"
-            >
-              <a href="{{ .link }}">
-                <img src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
-              </a>
-            </div>
+                {{ end }}"
+              >
+                <a href="{{ .link }}">
+                  <img src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
+                </a>
+              </div>
+
             {{ end }}
             <div
               class="box {{ if (modBool $i 2) }}

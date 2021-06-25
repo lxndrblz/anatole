@@ -348,7 +348,7 @@ aside {
 
 .post .post-title h1 {
   text-transform: uppercase;
-  font-size: 3.0em;
+  font-size: 3em;
   letter-spacing: 1px;
   line-height: 1;
 }
@@ -806,6 +806,7 @@ a.btn {
   font-weight: 400;
   font-style: normal;
   border-radius: 999em;
+  padding: 5px;
 }
 
 .btn:hover {
@@ -842,6 +843,10 @@ a.btn {
 
 [role='tags'] {
   padding: 6px 12px;
+}
+
+.cta {
+  padding-bottom: 1em;
 }
 
 /* Menu */

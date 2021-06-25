@@ -1,0 +1,53 @@
+{{ define "main" }}
+
+  {{ range $index, $elemen:= .Site.Data.portfolio.portfolioitems }}
+    <div
+      class="post {{ with .Site.Params.doNotLoadAnimations }}
+        .
+
+      {{ else }}
+        animated fadeInDown
+
+      {{ end }}"
+    >
+      <div class="post-title post-content">
+        <h2>{{ .title }}</h2>
+      </div>
+    </div>
+    {{ range .portfolioitem }}
+      <div
+        class="post {{ with .Site.Params.doNotLoadAnimations }}
+          .
+
+        {{ else }}
+          animated fadeInDown
+
+        {{ end }}"
+      >
+        <div class="post-title">
+          <h3><a href="{{ .link | safeURL }}">{{ .name | markdownify }}</a></h3>
+        </div>
+        <div class="post-thumbnail">
+          <img src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
+        </div>
+        <div class="post-content">
+          <div class="p_part">
+            <p>{{ .description | markdownify }}</p>
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="{{ .link | safeURL }}" target="_blank">Visit Site</a>
+        </div>
+        <div class="post-footer">
+          <div class="meta">
+            {{ partial "taxonomy/template.html" (dict "items" .tags "linkClass" "tag" "linkBase" "tags") }}
+          </div>
+        </div>
+      </div>
+
+    {{ end }}
+
+  {{ end }}
+
+
+{{ end }}

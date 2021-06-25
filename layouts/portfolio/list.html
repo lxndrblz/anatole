@@ -18,7 +18,7 @@
         {{ range $i, $p := .portfolioitem }}
           <div class="box-wrapper">
             <div
-              class="box-image {{ if not (modBool $i 2) }}
+              class="box-image {{ if (modBool $i 2) }}
                 box-image--right
 
               {{ else }}
@@ -31,7 +31,7 @@
               </a>
             </div>
             <div
-              class="box {{ if not (modBool $i 2) }}
+              class="box {{ if (modBool $i 2) }}
                 box--left
 
               {{ else }}

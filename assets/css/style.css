@@ -385,13 +385,13 @@ aside {
 .post .post-content a {
   text-decoration: none;
   letter-spacing: 1px;
-  color: #2660ab;
+  color: var(--link-color);
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
 
 .post .post-content a:hover {
-  color: #2f69b3;
+  color: var(--link-color);
 }
 
 .post .post-content h3 {
@@ -1209,7 +1209,7 @@ a.btn {
 
   .box-image--left,
   .box-image--right {
-    padding: 0px;
+    padding: 32px 32px 0px 32px;
   }
 
   .box-wrapper {

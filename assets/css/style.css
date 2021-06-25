@@ -1010,7 +1010,7 @@ a.btn {
   }
 
   .box {
-    padding: 64px;
+    padding: 48px;
     box-shadow: 0 0 48px var(--border-color);
     background-color: #fff;
     border-radius: 0.5em;

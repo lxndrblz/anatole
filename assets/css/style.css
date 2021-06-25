@@ -806,7 +806,7 @@ a.btn {
   font-weight: 400;
   font-style: normal;
   border-radius: 999em;
-  padding: 5px;
+  padding: 10px;
 }
 
 .btn:hover {
@@ -845,8 +845,54 @@ a.btn {
   padding: 6px 12px;
 }
 
+/* Portfolio */
 .cta {
   padding-bottom: 1em;
+}
+
+.box-wrapper {
+  padding: 48px;
+  position: relative;
+  z-index: 0;
+}
+
+.box-image {
+  box-shadow: 0 0 16px rgb(0 0 0 / 25%);
+  display: block;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.box-image img {
+  width: 100%;
+  box-shadow: #000;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  object-fit: cover;
+  border-bottom: 0px;
+  display: block;
+}
+
+.box-image--right,
+.box-image--left {
+  margin-right: auto;
+  margin-left: auto;
+  width: calc(100% - 64px);
+  background-color: var(--bg-color);
+  max-width: 400px;
+}
+
+.box {
+  box-shadow: 0 0 48px rgb(0 0 0 / 25%);
+  background-color: var(--bg-color);
+  padding: 32px;
+}
+
+.box--left,
+.box--right {
+  margin-top: -24px;
 }
 
 /* Menu */
@@ -961,6 +1007,62 @@ a.btn {
 
   .footer--base {
     display: none;
+  }
+
+  .box {
+    padding: 64px;
+    box-shadow: 0 0 48px var(--border-color);
+    background-color: #fff;
+    border-radius: 0.5em;
+  }
+
+  .box-wrapper::before {
+    border: 1px solid var(--border-color);
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    bottom: 10%;
+    right: 10%;
+    background: transparent;
+    border-radius: 0.5em;
+  }
+
+  .box-image--right,
+  .box-image--left {
+    width: 60%;
+    object-fit: contain;
+    max-width: none;
+    z-index: 2;
+  }
+
+  .box-image--right {
+    margin-right: 0;
+    margin-left: auto;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+  }
+
+  .box-image--left {
+    margin-right: auto;
+    margin-left: 0;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+  }
+
+  .box--left,
+  .box--right {
+    width: 60%;
+    margin-top: -48px;
+    z-index: 3;
+    background: var(--blockquote-border-color);
+  }
+
+  .box--right {
+    margin-left: auto;
   }
 }
 
@@ -1098,6 +1200,23 @@ a.btn {
 
   .list-with-title .listing .listing-post a {
     width: 80%;
+  }
+
+  .box--right,
+  .box--left {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .box-image--left,
+  .box-image--right {
+    padding: 0px;
+  }
+
+  .box-wrapper {
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-bottom: 0px;
+    padding-top: 0px;
   }
 }
 

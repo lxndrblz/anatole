@@ -5,6 +5,30 @@ portfolioitems:
       - name: Project 1
         image: '/images/portfolio/code.jpg'
         link: https://gohugo.io/
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        tags:
+          - Tag 1
+          - Tag 2
+      - name: Project 2
+        image: '/images/portfolio/code.jpg'
+        link: https://gohugo.io/
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        tags:
+          - Tag 1
+          - Tag 2
+      - name: Project 3
+        image: '/images/portfolio/code.jpg'
+        link: https://gohugo.io/
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        tags:
+          - Tag 1
+          - Tag 2
+  # portfolio category
+  - title: Research
+    portfolioitem:
+      - name: Project 1
+        image: '/images/portfolio/code.jpg'
+        link: https://gohugo.io/
         description: 'A description'
         tags:
           - Tag 1

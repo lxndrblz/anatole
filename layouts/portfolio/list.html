@@ -10,42 +10,52 @@
 
       {{ end }}"
     >
-      <div class="post-title post-content">
-        <h2>{{ .title }}</h2>
+      <div class="post-content">
+        <div class="post-title">
+          <h2>{{ .title }}</h2>
+        </div>
+
+        {{ range $i, $p := .portfolioitem }}
+          <div class="box-wrapper">
+            <div
+              class="box-image {{ if not (modBool $i 2) }}
+                box-image--right
+
+              {{ else }}
+                box-image--left
+
+              {{ end }}"
+            >
+              <a href="{{ .link }}">
+                <img src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
+              </a>
+            </div>
+            <div
+              class="box {{ if not (modBool $i 2) }}
+                box--left
+
+              {{ else }}
+                box--right
+
+              {{ end }}"
+            >
+              <h2>{{ .name | markdownify }}</h2>
+              <div class="seperator">
+                {{ range .tags }}
+                  <p class="tag">{{ . }}</p>
+
+                {{ end }}
+              </div>
+              <p>{{ .description | markdownify }}</p>
+              <div class="cta">
+                <a class="btn" href="{{ .link | safeURL }}" target="_blank">Visit Site</a>
+              </div>
+            </div>
+          </div>
+
+        {{ end }}
       </div>
     </div>
-    {{ range .portfolioitem }}
-      <div
-        class="post {{ with .Site.Params.doNotLoadAnimations }}
-          .
-
-        {{ else }}
-          animated fadeInDown
-
-        {{ end }}"
-      >
-        <div class="post-title">
-          <h3><a href="{{ .link | safeURL }}">{{ .name | markdownify }}</a></h3>
-        </div>
-        <div class="post-thumbnail">
-          <img src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
-        </div>
-        <div class="post-content">
-          <div class="p_part">
-            <p>{{ .description | markdownify }}</p>
-          </div>
-        </div>
-        <div class="cta">
-          <a class="btn" href="{{ .link | safeURL }}" target="_blank">Visit Site</a>
-        </div>
-        <div class="post-footer">
-          <div class="meta">
-            {{ partial "taxonomy/template.html" (dict "items" .tags "linkClass" "tag" "linkBase" "tags") }}
-          </div>
-        </div>
-      </div>
-
-    {{ end }}
 
   {{ end }}
 

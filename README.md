@@ -315,6 +315,7 @@ CommentoURL = "https://commento.example.com/js/commento.js"
 ```
 
 ### Comments powered by Gitalk
+
 No comment section is shown on the `single.html` unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation](https://github.com/gitalk/gitalk).
 
 ```toml

@@ -314,6 +314,18 @@ You can use [Commento](https://commento.io/) as an alternative to Disqus. All yo
 CommentoURL = "https://commento.example.com/js/commento.js"
 ```
 
+### Comments powered by Gitalk
+No comment section is shown on the `single.html` unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation](https://github.com/gitalk/gitalk).
+
+```toml
+[params.gitalk]
+clientID = "GitHub Application Client ID"
+clientSecret = "GitHub Application Client Secret"
+repo = "Repository name to store issues"
+owner = "GitHub repo owner"
+admin = "GitHub repo owner and collaborators, only these guys can initialize gitHub issues"
+```
+
 ### Disabling Comments Per Page
 
 Comments can be disabled per page by setting `disableComments: true` on the pages [Front Matter](https://gohugo.io/content-management/front-matter/)

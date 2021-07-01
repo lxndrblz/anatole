@@ -1,8 +1,6 @@
 name: format
 
-on:
-  push:
-    branches: master
+on: workflow_dispatch
 
 jobs:
   format:

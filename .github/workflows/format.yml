@@ -3,6 +3,8 @@ name: format
 on:
   push:
     branches: master
+  pull-request:
+    branches: master
 
 jobs:
   format:

@@ -36,6 +36,11 @@
         {{ end }}
       </div>
 
+      {{- if (eq .Params.toc true) -}}
+        <h3>Table of Contents</h3>
+        {{ .TableOfContents }}
+      {{- end -}}
+
       {{ .Content }}
 
       {{- if (eq .Params.contact true) -}}

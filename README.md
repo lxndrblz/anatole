@@ -626,7 +626,7 @@ Additionally, you can include the `{{% loading %}}` shortcode, which will displa
 
 ### Enable Table of Contents
 
-You can enable a table of contents on a per post basis by adding the following into the front matter of the posts your want the table of contents to appear on. 
+You can enable a table of contents on a per post basis by adding the following into the front matter of the posts your want the table of contents to appear on.
 
 ```md
 +++

@@ -912,6 +912,30 @@ a.btn {
   display: none;
 }
 
+#TableOfContents {
+  display: block;
+  background: transparent;
+}
+
+#TableOfContents ul {
+  list-style: none;
+  line-height: 1.9em;
+  margin: 0;
+}
+
+#TableOfContents > ul {
+  padding-left: 0;
+}
+
+#TableOfContents li a {
+  display: inherit;
+  color: var(--link-color);
+}
+
+#TableOfContents li a:hover {
+  display: inherit;
+}
+
 @media screen and (min-width: 960px), print {
   header {
     border-bottom: 1px solid var(--border-color);

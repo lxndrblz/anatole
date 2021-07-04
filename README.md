@@ -624,6 +624,19 @@ You will have to define a `redirectUrl` in the markdown header of the post or pa
 
 Additionally, you can include the `{{% loading %}}` shortcode, which will display a spinner on the page that will be redirected. If it does not display, make sure that unsafe mode is enabled for `markup.goldmark.renderer`.
 
+### Enable Table of Contents
+
+You can enable a table of contents on a per post basis by adding the following into the front matter of the posts your want the table of contents to appear on. 
+
+```md
++++
+...
+toc = true
++++
+```
+
+Only "## H2 Headings" and "### H3 Headings" will appear in the table of contents.
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

@@ -351,6 +351,7 @@ aside {
   font-size: 3em;
   letter-spacing: 1px;
   line-height: 1;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .post .post-title h2 {
@@ -915,6 +916,7 @@ a.btn {
 #TableOfContents {
   display: block;
   background: transparent;
+  border-bottom: 1px solid var(--border-color);
 }
 
 #TableOfContents ul {

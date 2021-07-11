@@ -17,7 +17,7 @@
   --link-color: #0366d7;
   --thumbnail-height: 15em;
   scroll-padding-top: 100px;
-  --body-max-width: 1920px;
+  --body-max-width: 3840px;
   --sidebar-ratio: calc(1 - var(--content-ratio));
   --content-max-width: calc(var(--body-max-width) * var(--content-ratio));
   --sidebar-max-width: calc(var(--body-max-width) - var(--content-max-width));
@@ -1170,7 +1170,7 @@ a.btn {
   }
 }
 
-@media (min-width: 1921px) {
+@media (min-width: 3841px) {
   .sidebar {
     padding-left: 17%;
     padding-right: 3%;

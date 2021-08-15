@@ -34,6 +34,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Compliant to strict CSP
 - Syntax highlighting
 - Uses Hugo pipes to process assets
+- Series
 
 ## Preview the exampleSite
 
@@ -636,6 +637,27 @@ toc = true
 ```
 
 Please note that only "## H2 Headings" and "### H3 Headings" will appear in the table of contents.
+
+### Enabling Series
+
+You can enable series, which allows splitting up a huge post into a set of multiple blog posts that are still linked. This would also provide a unique link to the full series of blog posts. Each individual post in the series will also contain links to the other parts under the heading `Posts in this Series`.
+
+First, we need to enable the `series` taxonomy in the config.
+
+```toml
+[taxonomies]
+    category = "categories"
+    series = "series"
+    tag = "tags"
+```
+
+With this enabled, we can now proceed to specify the series in the Front Matter of each post of that series.
+
+```md
+series: - series-name
+```
+
+If you want to share the full series, you can do so by sharing the link `<base-url>/series/<series-name>`
 
 ## License
 

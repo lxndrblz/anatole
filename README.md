@@ -654,8 +654,7 @@ First, we need to enable the `series` taxonomy in the config.
 With this enabled, we can now proceed to specify the series in the Front Matter of each post of that series.
 
 ```md
-series:
-    - series-name
+series: - series-name
 ```
 
 If you want to share the full series, you can do so by sharing the link `<base-url>/series/<series-name>`

@@ -640,7 +640,7 @@ Please note that only "## H2 Headings" and "### H3 Headings" will appear in the 
 
 ### Enabling Series
 
-You can enable series to which allows to split up a huge post into a set of multiple blog posts that are still linked. This would also provide a unique link to the full series of blogposts.
+You can enable series which allows to split up a huge post into a set of multiple blog posts that are still linked. This would also provide a unique link to the full series of blogposts. Each individual post in the series will also contain links to the other parts under the heading `See Also`.
 
 First we need to enable the `series` taxonomy in the config.
 

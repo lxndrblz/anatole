@@ -37,4 +37,4 @@ series:
 ---
 ```
 
-Each individual post will now also show the other posts in the series under the `See Also` heading.
+Each individual post will now also show the other posts in the series under the `Posts in this Series` heading.

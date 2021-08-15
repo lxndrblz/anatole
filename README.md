@@ -640,9 +640,9 @@ Please note that only "## H2 Headings" and "### H3 Headings" will appear in the 
 
 ### Enabling Series
 
-You can enable series which allows to split up a huge post into a set of multiple blog posts that are still linked. This would also provide a unique link to the full series of blogposts. Each individual post in the series will also contain links to the other parts under the heading `Posts in this Series`.
+You can enable series, which allows splitting up a huge post into a set of multiple blog posts that are still linked. This would also provide a unique link to the full series of blog posts. Each individual post in the series will also contain links to the other parts under the heading `Posts in this Series`.
 
-First we need to enable the `series` taxonomy in the config.
+First, we need to enable the `series` taxonomy in the config.
 
 ```toml
 [taxonomies]
@@ -651,14 +651,14 @@ First we need to enable the `series` taxonomy in the config.
     tag = "tags"
 ```
 
-With this enabled we can now proceed to specify the series in the Front Matter of each post of that series.
+With this enabled, we can now proceed to specify the series in the Front Matter of each post of that series.
 
 ```md
 series:
     - series-name
 ```
 
-If you know want to share the full series you can do so by sharing the link `<base-url>/series/series-name>`
+If you want to share the full series, you can do so by sharing the link `<base-url>/series/<series-name>`
 
 ## License
 

@@ -45,16 +45,10 @@
 
       {{ .Content }}
 
-      {{ if isset .Params "series" }}
-        {{$related := where .Site.RegularPages ".Params.series" "intersect" .Params.series }}
+      {{- if isset .Params "series" -}}
+        {{- partial "series.html" . -}}  
 
-          <h3>Posts in this Series</h3>
-          <ul>
-            {{ range $related }}
-                <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
-            {{ end }}
-          </ul>
-      {{ end }}
+      {{- end -}}
 
       {{- if (eq .Params.contact true) -}}
         {{- partial "contact.html" . -}}

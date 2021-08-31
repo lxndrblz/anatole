@@ -233,6 +233,29 @@ header .nav__list a.current {
   border-bottom: 1px solid var(--nav-text-color);
 }
 
+header button {
+  color: var(--nav-text-color);
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+header .language-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+header .language-dropdown-options {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  z-index: 1;
+}
+
+header .language-dropdown:hover .language-dropdown-options {
+  display: block;
+}
+
 .theme-switch {
   margin-top: -5px;
   color: var(--nav-text-color);

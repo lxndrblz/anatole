@@ -43,9 +43,11 @@
                 {{ .Site.Language.LanguageName }}
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
               </button>
-              {{ range $.Translations }}
-                <li><a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a></li>
-              {{ end }}
+              <div class="language-dropdown-options">
+                {{ range $.Translations }}
+                  <li><a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a></li>
+                {{ end }}
+              </div>
           </ul>
             
         {{ end }}

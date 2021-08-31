@@ -39,17 +39,25 @@
       <li>
         {{ if and .Site.IsMultiLingual .IsTranslated }}
           <ul class="language-dropdown">
-              <button type="button" class="language-dropdown-current" aria-expanded="false" aria-controls="language-dropdown">
-                {{ .Site.Language.LanguageName }}
-                <i class="fa fa-angle-down" aria-hidden="true"></i>
-              </button>
-              <div class="language-dropdown-options">
-                {{ range $.Translations }}
-                  <li><a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a></li>
-                {{ end }}
-              </div>
+            <button
+              type="button"
+              class="language-dropdown-current"
+              aria-expanded="false"
+              aria-controls="language-dropdown"
+            >
+              {{ .Site.Language.LanguageName }}
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </button>
+            <div class="language-dropdown-options">
+              {{ range $.Translations }}
+                <li>
+                  <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
+                </li>
+
+              {{ end }}
+            </div>
           </ul>
-            
+
         {{ end }}
 
         {{ if not .Site.Params.disableThemeSwitcher }}

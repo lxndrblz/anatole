@@ -134,6 +134,7 @@ html[data-theme='dark'] {
 
 /* Background */
 .chroma {
+  direction: ltr;
   color: var(--chr-def-color);
   background-color: var(--chr-def-bg-color);
 }

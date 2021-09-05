@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+body {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.5rem;
+}
+
 blockquote {
   border-right: 0.25em solid var(--blockquote-border-color);
   border-left: inherit;

@@ -46,6 +46,11 @@
     type="text/css"
   />
   {{ if eq .Site.Language.LanguageDirection "rtl" }}
+    <!-- Arabic font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tajawal:300,500,700&display=swap&subset=arabic"
+    />
     {{ $templateStyle := resources.Get "css/style.rtl.css" }}
     {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.rtl.css" . | resources.Minify | resources.Fingerprint }}
     <link
@@ -94,6 +99,8 @@
     />
 
   {{- end -}}
+
+
   <!-- Favicons -->
   <link rel="shortcut icon" href="{{ .Site.Params.favicon | relURL }}favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | relURL }}apple-touch-icon.png" />

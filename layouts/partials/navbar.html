@@ -35,14 +35,35 @@
           </li>
 
         {{ end }}
-        {{ if .Site.IsMultiLingual }}
-          {{ range $.Site.Home.AllTranslations }}
-            <li><a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a></li>
+        <li>
+          {{ if and .Site.IsMultiLingual }}
+            <ul class="sl-nav" aria-label="Language switcher">
+              <li>
+                <b>{{ .Site.Language.LanguageName }}</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <div class="triangle"></div>
+                <ul>
+                  {{ range $.Translations }}
+
+                    <li>
+                      <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}"
+                        ><span
+                          {{ if eq . $.Site.Language }}
+                            class="active"
+
+                          {{ end }}
+                          aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
+                          >{{ .Language.LanguageName }}</span
+                        ></a
+                      >
+                    </li>
+
+                  {{ end }}
+                </ul>
+              </li>
+            </ul>
 
           {{ end }}
-
-
-        {{ end }}
+        </li>
       </div>
       <li>
         {{ if not .Site.Params.disableThemeSwitcher }}

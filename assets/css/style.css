@@ -281,6 +281,11 @@ Language Switch
   position: relative;
   display: inline;
 }
+
+.sl-nav a:hover {
+  cursor: pointer;
+}
+
 .sl-nav li {
   cursor: pointer;
   padding-bottom: 10px;

@@ -335,9 +335,6 @@ Language Switch
 .sl-nav li ul li:last-of-type {
   padding-bottom: 15px;
 }
-.sl-nav li ul li span {
-  padding-left: 5px;
-}
 .sl-nav li ul li span:hover,
 .sl-nav li ul li span.active {
   color: var(--tag-color);

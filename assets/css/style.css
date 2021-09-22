@@ -324,7 +324,7 @@ Language Switch
   color: var(--tag-color);
 }
 
-.sl-nav li:hover .triangle {
+#languagepicker:checked ~ .triangle {
   position: absolute;
   top: 15px;
   right: -10px;
@@ -334,7 +334,7 @@ Language Switch
   width: 30px;
   background: transparent;
 }
-.sl-nav li:hover .triangle:after {
+#languagepicker:checked ~ .triangle:after {
   content: '';
   display: block;
   z-index: 20;

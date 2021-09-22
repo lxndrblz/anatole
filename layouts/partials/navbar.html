@@ -42,8 +42,9 @@
               <li>
                 <input type="checkbox" id="languagepicker" aria-label="switch language" hidden></input>
                 <label for="languagepicker"><strong>{{ .Site.Language.LanguageName }}</strong></label> <i class="fa fa-angle-down" aria-hidden="true"></i>
-
+                <div class="triangle"></div>
                 <ul class="dropdown">
+
                   {{ range $.Translations }}
 
                     <li>

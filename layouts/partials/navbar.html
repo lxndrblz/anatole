@@ -35,8 +35,9 @@
           </li>
 
         {{ end }}
-        <li>
-          {{ if and .Site.IsMultiLingual }}
+      </div>
+      <li>
+        {{ if and .Site.IsMultiLingual }}
             <ul class="sl-nav" aria-label="Language switcher">
               <li>
                 <b>{{ .Site.Language.LanguageName }}</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -61,11 +62,7 @@
                 </ul>
               </li>
             </ul>
-
           {{ end }}
-        </li>
-      </div>
-      <li>
         {{ if not .Site.Params.disableThemeSwitcher }}
           <a class="theme-switch" title="Switch Theme">
             <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>

@@ -279,7 +279,7 @@ Language Switch
   padding: 0;
   list-style: none;
   position: relative;
-  display: inline-block;
+  display: inline;
 }
 .sl-nav li {
   cursor: pointer;
@@ -334,6 +334,7 @@ Language Switch
   width: 30px;
   background: transparent;
 }
+
 #languagepicker:checked ~ .triangle:after {
   content: '';
   display: block;
@@ -344,6 +345,8 @@ Language Switch
   background: #fff;
   border-radius: 2px 0px 0px 0px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  float: left;
+  display: block;
 }
 
 .sidebar {

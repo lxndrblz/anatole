@@ -291,7 +291,8 @@ Language Switch
   position: absolute;
   top: 29px;
   right: -15px;
-  background: #fff;
+  background:var(--pre-bg-color);
+  border-color: var(--border-color);
   padding-left: 0;
   padding-top: 0px;
   z-index: 1;
@@ -342,8 +343,9 @@ Language Switch
   width: 15px;
   transform: rotate(45deg) translateY(0px) translatex(10px);
   height: 15px;
-  background: #fff;
+  background: var(--pre-bg-color);
   border-radius: 2px 0px 0px 0px;
+  border-color: var(--border-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   float: left;
   display: block;

@@ -139,6 +139,15 @@
 
   {{ end }}
 
+  {{ $anatoleLanguageDropdown := resources.Get "js/anatole-language-dropdown.js" }}
+  {{ $secureLanguageDropdownJS := $anatoleLanguageDropdown |  resources.Minify | resources.Fingerprint }}
+  <script
+    type="text/javascript"
+    src="{{ $secureLanguageDropdownJS.RelPermalink }}"
+    integrity="{{ $secureLanguageDropdownJS.Data.Integrity }}"
+    crossorigin="anonymous"
+  ></script>
+
   {{- $js := "" -}}
   {{- range .Site.Params.customJs -}}
     {{- if or (in . "http://") (in . "https://") -}}

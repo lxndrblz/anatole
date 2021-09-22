@@ -38,10 +38,12 @@
         <li>
           {{ if and .Site.IsMultiLingual }}
             <ul class="sl-nav" aria-label="Language switcher">
+             
               <li>
-                <b>{{ .Site.Language.LanguageName }}</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
-                <div class="triangle"></div>
-                <ul>
+                <input type="checkbox" id="languagepicker" aria-label="switch language" hidden></input>
+                <label for="languagepicker"><strong>{{ .Site.Language.LanguageName }}</strong></label> <i class="fa fa-angle-down" aria-hidden="true"></i>
+
+                <ul class="dropdown">
                   {{ range $.Translations }}
 
                     <li>

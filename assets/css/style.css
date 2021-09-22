@@ -285,14 +285,12 @@ Language Switch
   cursor: pointer;
   padding-bottom: 10px;
 }
-.sl-nav li ul {
+
+.sl-nav li .dropdown {
   display: none;
-}
-.sl-nav li:hover ul {
   position: absolute;
   top: 29px;
   right: -15px;
-  display: block;
   background: #fff;
   padding-left: 0;
   padding-top: 0px;
@@ -300,6 +298,32 @@ Language Switch
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
+
+#languagepicker:checked ~ .dropdown {
+  display: block;
+}
+
+.sl-nav li .dropdown li {
+  position: relative;
+  text-align: left;
+  background: transparent;
+  padding: 15px 15px;
+  padding-bottom: 0;
+  z-index: 2;
+  font-size: 15px;
+  color: #3c3c3c;
+  display: block;
+}
+.sl-nav li .dropdown li:last-of-type {
+  padding-bottom: 15px;
+}
+.sl-nav li .dropdown li span {
+  padding-left: 5px;
+}
+.sl-nav li .dropdown li span.active {
+  color: var(--tag-color);
+}
+
 .sl-nav li:hover .triangle {
   position: absolute;
   top: 15px;
@@ -321,28 +345,6 @@ Language Switch
   border-radius: 2px 0px 0px 0px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
-.sl-nav li ul li {
-  position: relative;
-  text-align: left;
-  background: transparent;
-  padding: 15px 15px;
-  padding-bottom: 0;
-  z-index: 2;
-  font-size: 15px;
-  color: #3c3c3c;
-  display: block;
-}
-.sl-nav li ul li:last-of-type {
-  padding-bottom: 15px;
-}
-.sl-nav li ul li span {
-  padding-left: 5px;
-}
-.sl-nav li ul li span:hover,
-.sl-nav li ul li span.active {
-  color: var(--tag-color);
-}
-
 
 .sidebar {
   -webkit-background-size: cover;
@@ -414,8 +416,6 @@ Language Switch
 .sidebar .social-links a:hover {
   color: #2660ab;
 }
-
-
 
 .post {
   background-color: var(--bg-color);

@@ -23,6 +23,9 @@ function toggleDropdown() {
 document.addEventListener(
     'DOMContentLoaded',
     function () {
+    // Triangle should be hidden on page load
+    setDisplay(document.querySelectorAll('.sl-nav li .triangle'), 'none');
+
     document.querySelector('ul[class="sl-nav"]').addEventListener('click', function() {toggleDropdown();}, false);
 
     // window.onclick = function(event) {

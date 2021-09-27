@@ -28,6 +28,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Open Graph support
 - MIT License
 - Fontawesome 5.15.1 icons
+- Google Fonts support
 - Custom CSS (optional)
 - Custom JavaScript (optional)
 - Medium like zoom for images

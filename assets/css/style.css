@@ -1205,6 +1205,24 @@ a.btn {
   .list-with-title .listing .listing-post a {
     width: 80%;
   }
+
+  .triangle {
+    display: none;
+  }
+
+  .sl-nav li .dropdown {
+    right: inherit;
+    position: relative;
+    top: .75rem;
+  }
+
+  .sl-nav li .dropdown li {
+    text-align: center;
+  }
+
+  .sl-nav li label {
+    font-size: 0.75em;
+  }
 }
 
 /* Medium zoom */

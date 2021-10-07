@@ -1214,6 +1214,7 @@ a.btn {
     right: inherit;
     position: relative;
     top: .75rem;
+    padding-right: 0px;
   }
 
   .sl-nav li .dropdown li {

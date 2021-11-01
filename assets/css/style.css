@@ -1213,8 +1213,11 @@ a.btn {
   .sl-nav li .dropdown {
     right: inherit;
     position: relative;
-    top: .75rem;
+    top: inherit;
     padding-right: 0px;
+    background: none;
+    border-color: inherit;
+    box-shadow: none;
   }
 
   .sl-nav li .dropdown li {

@@ -325,6 +325,7 @@ Language Switch
 }
 .sl-nav li .dropdown li span {
   padding-left: 5px;
+  font-size: 1.2rem;
 }
 .sl-nav li .dropdown li span.active {
   color: var(--tag-color);

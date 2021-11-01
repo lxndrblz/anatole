@@ -96,7 +96,7 @@ blockquote {
 }
 
 .triangle {
-  display: inline-block;
+  display: none;
 }
 
 @media screen and (min-width: 960px), print {
@@ -110,6 +110,9 @@ blockquote {
   }
   header .nav__list li:not(:last-of-type) {
     padding-right: inherit;
+  }
+  .triangle {
+    display: inline-block;
   }
 }
 

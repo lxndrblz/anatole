@@ -91,6 +91,10 @@ blockquote {
   text-align: left;
 }
 
+.sl-nav li .dropdown {
+  padding-right: 0px;
+}
+
 @media screen and (min-width: 960px), print {
   header {
     position: fixed;

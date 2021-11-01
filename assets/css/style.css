@@ -316,16 +316,16 @@ Language Switch
   padding: 15px 15px;
   padding-bottom: 0;
   z-index: 2;
-  font-size: 15px;
   color: #3c3c3c;
   display: block;
+
 }
 .sl-nav li .dropdown li:last-of-type {
   padding-bottom: 15px;
 }
 .sl-nav li .dropdown li span {
   padding-left: 5px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .sl-nav li .dropdown li span.active {
   color: var(--tag-color);
@@ -1223,6 +1223,11 @@ a.btn {
 
   .sl-nav li .dropdown li {
     text-align: center;
+    padding: initial;
+  }
+
+  .sl-nav li .dropdown li span {
+    padding-left: initial;
   }
 
   .sl-nav li label {

@@ -95,6 +95,10 @@ blockquote {
   padding-right: 0px;
 }
 
+.triangle {
+  display: inline-block;
+}
+
 @media screen and (min-width: 960px), print {
   header {
     position: fixed;

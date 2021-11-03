@@ -99,7 +99,7 @@ blockquote {
   display: none;
 }
 
-@media screen and (min-width: 960px), print {
+@media screen and (min-width: 961px), print {
   header {
     position: fixed;
     left: 0;

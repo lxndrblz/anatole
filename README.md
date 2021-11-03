@@ -28,6 +28,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Open Graph support
 - MIT License
 - Fontawesome 5.15.1 icons
+- Google Fonts support
 - Custom CSS (optional)
 - Custom JavaScript (optional)
 - Medium like zoom for images
@@ -381,6 +382,18 @@ googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 ```
 
 Replace the hash with the one Google provided you.
+
+### Google Fonts
+
+You can enable any [Google Font](https://fonts.google.com/) by selecting a font on the Google Font website and adding the `family` parameter of the font url to the `googleFonts` option in `[params]`, e.g.:
+
+```toml
+[params]
+googleFonts = [
+  "Indie+Flower",
+  "Roboto:ital,wght@0,100;0,400;0,700;1,400"
+]
+```
 
 ### Beautiful math functions
 

@@ -1,0 +1,22 @@
+name: format
+
+on:
+  push:
+    branches: master
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: setup node
+        uses: actions/setup-node@v2
+      - name: install
+        run: npm ci
+      - name: format
+        run: npm run prettier
+      - name: commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'style: prettier format all files'

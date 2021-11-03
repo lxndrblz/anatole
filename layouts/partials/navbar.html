@@ -35,23 +35,49 @@
           </li>
 
         {{ end }}
-        {{ if .Site.IsMultiLingual }}
-          {{ range $.Site.Home.AllTranslations }}
-            <li><a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a></li>
-
-          {{ end }}
-
-
-        {{ end }}
       </div>
-      <li>
-        {{ if not .Site.Params.disableThemeSwitcher }}
-          <a class="theme-switch" title="Switch Theme">
-            <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-          </a>
+      <ul>
+        {{ if and .IsTranslated .Site.IsMultiLingual }}
+          <li>
+            <ul class="sl-nav" aria-label="Language switcher">
+              <li>
+                <input type="checkbox" id="languagepicker" aria-label="switch language" hidden />
+                <label for="languagepicker"><a>{{ .Site.Language.LanguageName }}</a></label>
+                <label for="languagepicker"><i class="fa fa-angle-down" aria-hidden="true"></i></label>
+                <div class="triangle"></div>
+
+                <ul class="dropdown">
+                  {{ range $.Translations }}
+
+                    <li>
+                      <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}"
+                        ><span
+                          {{ if eq . $.Site.Language }}
+                            class="active"
+
+                          {{ end }}
+                          aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
+                          >{{ .Language.LanguageName }}</span
+                        ></a
+                      >
+                    </li>
+
+                  {{ end }}
+                </ul>
+              </li>
+            </ul>
+          </li>
 
         {{ end }}
-      </li>
+        {{ if not .Site.Params.disableThemeSwitcher }}
+          <li>
+            <a class="theme-switch" title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </li>
+
+        {{ end }}
+      </ul>
     </ul>
   </nav>
 </div>

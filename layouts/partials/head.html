@@ -46,6 +46,11 @@
     type="text/css"
   />
   {{ if eq .Site.Language.LanguageDirection "rtl" }}
+    <!-- Arabic font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tajawal:300,500,700&display=swap&subset=arabic"
+    />
     {{ $templateStyle := resources.Get "css/style.rtl.css" }}
     {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.rtl.css" . | resources.Minify | resources.Fingerprint }}
     <link
@@ -94,6 +99,17 @@
     />
 
   {{- end -}}
+  {{ if .Site.Params.googleFonts }}
+    {{ $baseUrl := "https://fonts.googleapis.com/css2?family=" }}
+    {{ $fontParam := delimit .Site.Params.googleFonts "&family=" }}
+    {{ $url := printf "%s" "&display=swap" | printf "%s%s" $fontParam | printf "%s%s" $baseUrl | printf "%s" }}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="{{ $url }}" rel="stylesheet" />
+
+  {{- end -}}
+
+
   <!-- Favicons -->
   <link rel="shortcut icon" href="{{ .Site.Params.favicon | relURL }}favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | relURL }}apple-touch-icon.png" />
@@ -185,4 +201,8 @@
 
 
   {{- end }}
+
+
+  <!-- Schema.org-->
+  {{ partial "schema.html" . }}
 </head>

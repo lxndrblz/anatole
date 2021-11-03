@@ -14,9 +14,7 @@
   --chr-kp-color: #00a8c8;
   --chr-kr-color: #00a8c8;
   --chr-kt-color: #00a8c8;
-  --chr-n-color: #111111;
   --chr-na-color: #75af00;
-  --chr-nb-color: #111111;
   --chr-bp-color: #111111;
   --chr-nc-color: #75af00;
   --chr-no-color: #00a8c8;
@@ -26,11 +24,9 @@
   --chr-nf-color: #75af00;
   --chr-fm-color: #111111;
   --chr-nl-color: #111111;
-  --chr-nn-color: #111111;
   --chr-nx-color: #75af00;
   --chr-py-color: #111111;
   --chr-nt-color: #f92672;
-  --chr-nv-color: #111111;
   --chr-vc-color: #111111;
   --chr-vg-color: #111111;
   --chr-vi-color: #111111;
@@ -134,6 +130,7 @@ html[data-theme='dark'] {
 
 /* Background */
 .chroma {
+  direction: ltr;
   color: var(--chr-def-color);
   background-color: var(--chr-def-bg-color);
 }

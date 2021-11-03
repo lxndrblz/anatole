@@ -28,12 +28,14 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Open Graph support
 - MIT License
 - Fontawesome 5.15.1 icons
+- Google Fonts support
 - Custom CSS (optional)
 - Custom JavaScript (optional)
 - Medium like zoom for images
 - Compliant to strict CSP
 - Syntax highlighting
 - Uses Hugo pipes to process assets
+- Series
 
 ## Preview the exampleSite
 
@@ -164,6 +166,20 @@ You can change the default date formating for the `list.html`, the `single.html`
 singleDateFormat = "Mon, Jan 2, 2006"
 indexDateFormat = "Mon, Jan 2, 2006"
 listDateFormat = "Jan 2"
+```
+
+### Change the language names in the language dropdown
+
+The language names displayed on the main menu are controlled by the variables `LanguageName`. You can set these to shortcode, full name or a flag emoji by simply changing the parameter. In the following example English will be displayed as "EN" and Arabic will be displayed as "Arabic".
+
+```toml
+[languages]
+[en]
+LanguageName = "EN"
+
+
+[ar]
+LanguageName = "Arabic"
 ```
 
 ### Changing the sidebar/content ratio
@@ -314,6 +330,19 @@ You can use [Commento](https://commento.io/) as an alternative to Disqus. All yo
 CommentoURL = "https://commento.example.com/js/commento.js"
 ```
 
+### Comments powered by Gitalk
+
+No comment section is shown on the `single.html` unless a `repo` is specified in the `config.toml` file. If uncertain how parameter to configure, check out the official [documentation](https://github.com/gitalk/gitalk).
+
+```toml
+[params.gitalk]
+clientID = "GitHub Application Client ID"
+clientSecret = "GitHub Application Client Secret"
+repo = "Repository name to store issues"
+owner = "GitHub repo owner"
+admin = "GitHub repo owner and collaborators, only these guys can initialize gitHub issues"
+```
+
 ### Disabling Comments Per Page
 
 Comments can be disabled per page by setting `disableComments: true` on the pages [Front Matter](https://gohugo.io/content-management/front-matter/)
@@ -353,6 +382,18 @@ googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 ```
 
 Replace the hash with the one Google provided you.
+
+### Google Fonts
+
+You can enable any [Google Font](https://fonts.google.com/) by selecting a font on the Google Font website and adding the `family` parameter of the font url to the `googleFonts` option in `[params]`, e.g.:
+
+```toml
+[params]
+googleFonts = [
+  "Indie+Flower",
+  "Roboto:ital,wght@0,100;0,400;0,700;1,400"
+]
+```
 
 ### Beautiful math functions
 
@@ -610,6 +651,40 @@ You can create pages, which redirect to another (external) URL with a short dela
 You will have to define a `redirectUrl` in the markdown header of the post or page, which you want to forward. An example can be found in the [redirect.md](https://github.com/lxndrblz/anatole/blob/master/exampleSite/content/english/post/redirect.md). The page will be automatically redirected with a delay of one second.
 
 Additionally, you can include the `{{% loading %}}` shortcode, which will display a spinner on the page that will be redirected. If it does not display, make sure that unsafe mode is enabled for `markup.goldmark.renderer`.
+
+### Enable Table of Contents
+
+You can enable a table of contents on a per post basis by adding the following parameter into the front matter of the posts you want the table of contents to appear on.
+
+```md
++++
+...
+toc = true
++++
+```
+
+Please note that only "## H2 Headings" and "### H3 Headings" will appear in the table of contents.
+
+### Enabling Series
+
+You can enable series, which allows splitting up a huge post into a set of multiple blog posts that are still linked. This would also provide a unique link to the full series of blog posts. Each individual post in the series will also contain links to the other parts under the heading `Posts in this Series`.
+
+First, we need to enable the `series` taxonomy in the config.
+
+```toml
+[taxonomies]
+    category = "categories"
+    series = "series"
+    tag = "tags"
+```
+
+With this enabled, we can now proceed to specify the series in the Front Matter of each post of that series.
+
+```md
+series: - series-name
+```
+
+If you want to share the full series, you can do so by sharing the link `<base-url>/series/<series-name>`
 
 ## License
 

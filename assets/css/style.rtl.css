@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+body {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.5rem;
+}
+
 blockquote {
   border-right: 0.25em solid var(--blockquote-border-color);
   border-left: inherit;
@@ -24,6 +29,19 @@ blockquote {
 .sidebar .social-links i {
   margin-left: 3px;
   margin-right: inherit;
+}
+
+.sidebar .logo-title .title h3 {
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+}
+
+.post .post-title h1 {
+  text-transform: capitalize;
+}
+
+.post .post-title h3 {
+  text-transform: capitalize;
 }
 
 .post .post-footer .info .separator a {
@@ -73,7 +91,15 @@ blockquote {
   text-align: left;
 }
 
-@media screen and (min-width: 960px), print {
+.sl-nav li .dropdown {
+  padding-right: 0px;
+}
+
+.triangle {
+  display: none;
+}
+
+@media screen and (min-width: 961px), print {
   header {
     position: fixed;
     left: 0;
@@ -84,6 +110,9 @@ blockquote {
   }
   header .nav__list li:not(:last-of-type) {
     padding-right: inherit;
+  }
+  .triangle {
+    display: inline-block;
   }
 }
 

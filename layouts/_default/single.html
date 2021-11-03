@@ -36,7 +36,20 @@
         {{ end }}
       </div>
 
+      {{- if (eq .Params.toc true) -}}
+        <h3>Table of Contents</h3>
+        {{ .TableOfContents }}
+
+
+      {{- end -}}
+
       {{ .Content }}
+
+      {{- if isset .Params "series" -}}
+        {{- partial "series.html" . -}}
+
+
+      {{- end -}}
 
       {{- if (eq .Params.contact true) -}}
         {{- partial "contact.html" . -}}
@@ -79,6 +92,13 @@
         <div id="fb_comments_container">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/commento.html" . }}
+        </div>
+
+      {{- end -}}
+      {{- if .Site.Params.gitalk.repo -}}
+        <div id="fb_comments_container">
+          <h2>{{ i18n "comments" }}</h2>
+          {{ partial "comments/gitalk.html" . }}
         </div>
 
       {{- end -}}

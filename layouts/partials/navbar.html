@@ -35,8 +35,10 @@
           </li>
 
         {{ end }}
-        <li>
-          {{ if and .Site.IsMultiLingual }}
+      </div>
+      <ul>
+        {{ if and .IsTranslated .Site.IsMultiLingual }}
+          <li>
             <ul class="sl-nav" aria-label="Language switcher">
               <li>
                 <input type="checkbox" id="languagepicker" aria-label="switch language" hidden />
@@ -45,8 +47,7 @@
                 <div class="triangle"></div>
 
                 <ul class="dropdown">
-                  
-                  {{ range $.AllTranslations }}
+                  {{ range $.Translations }}
 
                     <li>
                       <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}"
@@ -65,18 +66,18 @@
                 </ul>
               </li>
             </ul>
-
-          {{ end }}
-        </li>
-      </div>
-      <li>
-        {{ if not .Site.Params.disableThemeSwitcher }}
-          <a class="theme-switch" title="Switch Theme">
-            <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-          </a>
+          </li>
 
         {{ end }}
-      </li>
+        {{ if not .Site.Params.disableThemeSwitcher }}
+          <li>
+            <a class="theme-switch" title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </li>
+
+        {{ end }}
+      </ul>
     </ul>
   </nav>
 </div>

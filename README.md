@@ -170,6 +170,7 @@ listDateFormat = "Jan 2"
 ### Change the language names in the language dropdown
 
 The language names displayed on the main menu are controlled by the variables `LanguageName`. You can set these to shortcode, full name or a flag emoji by simply changing the parameter. In the following example English will be displayed as "EN" and Arabic will be displayed as "Arabic".
+
 ```toml
 [languages]
 [en]

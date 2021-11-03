@@ -279,7 +279,8 @@ Language Switch
   padding: 0;
   list-style: none;
   position: relative;
-  display: inline;
+  display: inline-block;
+  padding-right: 20px;
 }
 
 .sl-nav a:hover {
@@ -296,7 +297,7 @@ Language Switch
   position: absolute;
   top: 29px;
   right: -15px;
-  background:var(--pre-bg-color);
+  background: var(--pre-bg-color);
   border-color: var(--border-color);
   padding-left: 0;
   padding-top: 0px;
@@ -318,7 +319,6 @@ Language Switch
   z-index: 2;
   color: #3c3c3c;
   display: block;
-
 }
 .sl-nav li .dropdown li:last-of-type {
   padding-bottom: 15px;
@@ -1161,6 +1161,10 @@ a.btn {
     font-size: 1.3em;
   }
 
+  header .nav__list ul {
+    padding: inherit;
+  }
+
   header .nav__list a.current {
     border-bottom: none;
   }
@@ -1209,6 +1213,10 @@ a.btn {
 
   .triangle {
     display: none;
+  }
+
+  .sl-nav {
+    padding-right: inherit;
   }
 
   .sl-nav li .dropdown {

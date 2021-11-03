@@ -945,7 +945,6 @@ a.btn {
 }
 
 .box-image {
-  box-shadow: 0 0 16px rgb(0 0 0 / 25%);
   display: block;
   background-color: #fff;
   position: relative;
@@ -973,7 +972,6 @@ a.btn {
 }
 
 .box {
-  box-shadow: 0 0 48px rgb(0 0 0 / 25%);
   background-color: var(--bg-color);
   padding: 32px;
 }
@@ -1326,13 +1324,14 @@ a.btn {
   .box-image--left,
   .box-image--right {
     padding: 32px 32px 0px 32px;
+    max-width: inherit;
   }
 
   .box-wrapper {
     padding-left: 48px;
     padding-right: 48px;
     padding-bottom: 0px;
-    padding-top: 0px;
+    padding-top: 48px;
   }
 
   .triangle {

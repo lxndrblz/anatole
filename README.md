@@ -168,6 +168,20 @@ indexDateFormat = "Mon, Jan 2, 2006"
 listDateFormat = "Jan 2"
 ```
 
+### Change the language names in the language dropdown
+
+The language names displayed on the main menu are controlled by the variables `LanguageName`. You can set these to shortcode, full name or a flag emoji by simply changing the parameter. In the following example English will be displayed as "EN" and Arabic will be displayed as "Arabic".
+
+```toml
+[languages]
+[en]
+LanguageName = "EN"
+
+
+[ar]
+LanguageName = "Arabic"
+```
+
 ### Changing the sidebar/content ratio
 
 By default, the content fills up 60% of the screen width on devices with a full HD resolution. If you want to change the ratio, adjust the `contentratio` variable. Let's, for example, set the content ratio to 70%:

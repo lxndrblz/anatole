@@ -91,6 +91,14 @@ blockquote {
   text-align: left;
 }
 
+.sl-nav li .dropdown {
+  padding-right: 0px;
+}
+
+.triangle {
+  display: none;
+}
+
 @media screen and (min-width: 961px), print {
   header {
     position: fixed;
@@ -102,6 +110,9 @@ blockquote {
   }
   header .nav__list li:not(:last-of-type) {
     padding-right: inherit;
+  }
+  .triangle {
+    display: inline-block;
   }
 }
 

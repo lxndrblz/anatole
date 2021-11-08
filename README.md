@@ -698,7 +698,7 @@ oldContentWarning = true
 oldContentDuration = 365
 ```
 
-You can optionally override the duration of a given post by adding the following parameter in the front matter:
+You can optionally override the trigger duration on a given post by adding the following parameter in the front matter:
 
 ```md
 +++

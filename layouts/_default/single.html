@@ -43,6 +43,22 @@
 
       {{- end -}}
 
+      {{- if (eq .Site.Params.oldContentWarning true) -}}
+        {{- $ageDays := div (sub now.Unix .Date.Unix) 86400 -}}
+        {{- $duration := .Site.Params.oldContentDuration -}}
+
+        {{- if (isset .Params "old_content_duration") -}}
+          {{- $duration = .Params.old_content_duration -}}
+        {{- end -}}
+
+        {{- if and (gt $ageDays $duration) (ne $duration 0) -}}
+          <div class="alert">
+            Warning: This post is over {{ $duration }} days old. The information may be out of date.
+          </div>
+        {{- end -}}
+
+      {{- end -}}
+
       {{ .Content }}
 
       {{- if isset .Params "series" -}}

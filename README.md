@@ -709,6 +709,8 @@ old_content_duration: 0
 
 A duration of 0 disables the warning.
 
+By default, this warning only shows on posts. You can override this behavior by setting the `old_content_duration` parameter in the front matter of pages you want this warning to be displayed on.
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

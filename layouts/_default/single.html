@@ -43,7 +43,7 @@
 
       {{- end -}}
 
-      {{- if (eq .Site.Params.oldContentWarning true) -}}
+      {{- if and (eq .Site.Params.oldContentWarning true) (eq .Type "post") -}}
         {{- $ageDays := div (sub now.Unix .Date.Unix) 86400 -}}
         {{- $duration := .Site.Params.oldContentDuration -}}
 

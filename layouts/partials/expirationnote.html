@@ -2,7 +2,7 @@
   {{- $ageDays := div (sub now.Unix .Date.Unix) 86400 -}}
   {{- $duration := .Site.Params.oldContentDuration -}}
 
-  {{- if (ne .Type "post") -}}
+  {{- if and (ne .Type "post") (ne .Type .Site.Params.postSectionName) -}}
     {{- $duration = 0 -}}
   {{- end -}}
 

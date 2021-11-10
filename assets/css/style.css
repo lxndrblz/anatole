@@ -1024,6 +1024,28 @@ a.btn {
   display: inherit;
 }
 
+.alert {
+  padding: 1rem;
+  border-radius: 1 px;
+  border-style: solid;
+  border-color: var(--blockquote-border-color);
+  border-radius: 0.25rem;
+  border-width: 2px;
+}
+
+.alert #indicator {
+  background-color: var(--secondary-bg-color);
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  text-align: center;
+  color: var(--blockquote-text-color);
+  font-weight: 800;
+  margin-right: 0.75rem;
+}
+
 @media screen and (min-width: 961px), print {
   header {
     border-bottom: 1px solid var(--border-color);

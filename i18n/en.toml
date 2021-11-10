@@ -9,8 +9,8 @@ one = "One-minute read"
 other = "{{ .Count }}-minute read"
 
 [old_content_warning]
-one = "Warning: This post is {{ .Count }} day old. The information may be out of date."
-other = "Warning: This post is {{ .Count }} days old. The information may be out of date."
+one = "Warning: This post is over {{ .Count }} day old. The information may be out of date."
+other = "Warning: This post is over {{ .Count }} days old. The information may be out of date."
 
 [page_not_found]
 other = "Page Not Found"

@@ -686,6 +686,31 @@ series: - series-name
 
 If you want to share the full series, you can do so by sharing the link `<base-url>/series/<series-name>`
 
+### Show warning for outdated content
+
+You can provide an outdated warning for viewers reading posts older than a certain number of days. This is useful if your posts have time-sensitive information that may become incorrect over time.
+
+Enable the warning in the configuration and specify the duration (in days):
+
+```toml
+[params]
+oldContentWarning = true
+oldContentDuration = 365
+```
+
+You can optionally override the trigger duration on a given post by adding the following parameter in the front matter:
+
+```md
++++
+...
+old_content_duration: 0
++++
+```
+
+A duration of 0 disables the warning.
+
+By default, this warning only shows on posts. You can override this behavior by setting the `old_content_duration` parameter in the front matter of pages you want this warning to be displayed on.
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

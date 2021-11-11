@@ -8,6 +8,10 @@ other = "Tag"
 one = "{{ .Count }} Minute zum Lesen"
 other = "{{ .Count }} Minuten zum Lesen"
 
+[old_content_warning]
+one = "Warnung: Dieser Beitrag ist über einen {{ .Count }} Tag alt. Die Information kann veraltet sein."
+other = "Warnung: Dieser Beitrag ist über {{ .Count }} Tage alt. Die Informationen können veraltet sein."
+
 [page_not_found]
 other = "Seite nicht gefunden"
 

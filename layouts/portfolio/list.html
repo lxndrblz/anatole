@@ -50,8 +50,8 @@
 
                 {{ end }}
                 {{ if .venue }}
-                <em class="fas fa-map-marker-alt"></em>
-                <span>{{ .venue }}</span>
+                  <em class="fas fa-map-marker-alt"></em>
+                  <span>{{ .venue }}</span>
 
                 {{ end }}
                 {{ if .start }}
@@ -66,17 +66,20 @@
                 {{ end }}
               </div>
               {{ if .authors }}
-              <div class="info">
-              {{ range .authors }}
-              <span>{{ . }}</span>
+                <div class="info">
+                  {{ range .authors }}
+                    <span>{{ . }}</span>
+
+                  {{ end }}
+                </div>
+
               {{ end }}
-             </div>
-              {{ end}}
               <p>{{ .description | markdownify }}</p>
               {{ if .link }}
-              <div class="cta">
-                <a class="btn" href="{{ .link | safeURL }}" target="_blank">Visit Site</a>
-              </div>
+                <div class="cta">
+                  <a class="btn" href="{{ .link | safeURL }}" target="_blank">Visit Site</a>
+                </div>
+
               {{ end }}
               <div class="seperator">
                 {{ range .tags }}

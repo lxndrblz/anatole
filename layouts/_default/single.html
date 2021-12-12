@@ -43,6 +43,8 @@
 
       {{- end -}}
 
+      {{- partial "expirationnote.html" . -}}
+
       {{ .Content }}
 
       {{- if isset .Params "series" -}}

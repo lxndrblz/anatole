@@ -11,7 +11,7 @@
     <div class="logo-title">
       <div class="title">
         <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture" />
-        <h3 title=""><a href="{{ .Site.BaseURL | relURL }}">{{ .Site.Params.Title }}</a></h3>
+        <h3 title=""><a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a></h3>
         <div class="description">
           <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>
         </div>
@@ -20,7 +20,7 @@
     <ul class="social-links">
       {{ range $item := .Site.Params.socialIcons }}
         <li>
-          <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
+          <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}">
             <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
           </a>
         </li>

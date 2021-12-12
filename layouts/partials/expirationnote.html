@@ -1,0 +1,26 @@
+{{- if (eq .Site.Params.oldContentWarning true) -}}
+  {{- $ageDays := div (sub now.Unix .Date.Unix) 86400 -}}
+  {{- $duration := .Site.Params.oldContentDuration -}}
+
+  {{- if and (ne .Type "post") (ne .Type .Site.Params.postSectionName) -}}
+    {{- $duration = 0 -}}
+
+
+  {{- end -}}
+
+  {{- if (isset .Params "old_content_duration") -}}
+    {{- $duration = .Params.old_content_duration -}}
+
+
+  {{- end -}}
+
+  {{- if and (gt $ageDays $duration) (ne $duration 0) -}}
+    <div class="alert">
+      <div id="indicator">!</div>
+      {{ i18n "old_content_warning" (dict "Count" $duration) }}
+    </div>
+
+  {{- end -}}
+
+
+{{- end -}}

@@ -971,6 +971,7 @@ a.btn {
   width: calc(100% - 64px);
   background-color: var(--bg-color);
   max-width: 400px;
+  z-index: -1;
 }
 
 .box {
@@ -1169,7 +1170,6 @@ a.btn {
     width: 60%;
     object-fit: contain;
     max-width: none;
-    z-index: 2;
   }
 
   .box-image--right {

@@ -17,6 +17,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Pagination
 - Multilingual
 - RTL support
+- Portfolio (optional)
 - Post Thumbnails (optional)
 - 100⁄100 Google Lighthouse score
 - Google Analytics (optional)

@@ -955,7 +955,7 @@ a.btn {
 }
 
 .box-image img {
-  width: 100%;
+  min-width: 100%;
   box-shadow: #000;
   overflow: hidden;
   transition: box-shadow 0.3s ease;

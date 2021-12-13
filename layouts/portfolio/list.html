@@ -27,7 +27,7 @@
 
                 {{ end }}"
               >
-                <a href="{{ .link }}">
+                <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
                   <img src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
                 </a>
               </div>
@@ -77,7 +77,7 @@
               <p>{{ .description | markdownify }}</p>
               {{ if .link }}
                 <div class="cta">
-                  <a class="btn" href="{{ .link | safeURL }}" target="_blank">Visit Site</a>
+                  <a class="btn" href="{{ .link | safeURL }}" target="_blank" rel="noopener">Visit Site</a>
                 </div>
 
               {{ end }}

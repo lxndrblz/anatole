@@ -285,13 +285,8 @@ Language Switch
   padding-right: 20px;
 }
 
-.sl-nav a:hover {
+.sl-nav li label {
   cursor: pointer;
-}
-
-.sl-nav li {
-  cursor: pointer;
-  padding-bottom: 10px;
 }
 
 .sl-nav li .dropdown {
@@ -1261,10 +1256,6 @@ a.btn {
 
   .sl-nav li .dropdown li span {
     padding-left: initial;
-  }
-
-  .sl-nav li label {
-    font-size: 0.75em;
   }
 }
 

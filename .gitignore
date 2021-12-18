@@ -4,3 +4,4 @@ demo/
 !.hugo/version
 .hugo_build.lock
 /node_modules
+.devcontainer

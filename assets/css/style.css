@@ -311,17 +311,13 @@ Language Switch
   position: relative;
   text-align: left;
   background: transparent;
-  padding: 15px 15px;
-  padding-bottom: 0;
+  padding: 12px;
   z-index: 2;
   color: #3c3c3c;
   display: block;
 }
-.sl-nav li .dropdown li:last-of-type {
-  padding-bottom: 15px;
-}
+
 .sl-nav li .dropdown li span {
-  font-size: 1.3rem;
   white-space: nowrap;
 }
 .sl-nav li .dropdown li span.active {
@@ -1283,7 +1279,7 @@ a.btn {
     position: relative;
     text-transform: uppercase;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.6rem;
   }
 
   header .nav__list ul {
@@ -1374,7 +1370,7 @@ a.btn {
 
   .sl-nav li .dropdown li {
     text-align: center;
-    padding: initial;
+    padding: 0.5rem 0.75rem;
   }
 
   .sl-nav li .dropdown li span {

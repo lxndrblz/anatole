@@ -1,9 +1,13 @@
-# Anatole ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/ee7a5df4-b944-4e03-853d-39219c96d484/deploy-status)](https://alexbilz.com/)
+# Anatole ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/1f4f2327-2b3f-428a-8f31-c4f921ebcc44/deploy-status)](https://app.netlify.com/sites/anatole-demo/deploys)
 
 Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme based on farbox-theme-Anatole.
 
 ![Screenshot Anatole Theme](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/screenshot.png)
 ![Screenshot Anatole Theme (dark)](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/screenshot_dark.png)
+
+## Demo
+
+[https://anatole-demo.netlify.app/](https://anatole-demo.netlify.app/)
 
 ## Features
 

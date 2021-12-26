@@ -1,0 +1,14 @@
+[build]
+  publish = "exampleSite/public"
+  command = "cd exampleSite && hugo --gc --minify --themesDir ../.."
+  
+[build.environment]
+  HUGO_VERSION = "0.69.0"
+  HUGO_ENV = "production"
+  HUGO_THEME = "repo"
+  HUGO_BASEURL = "https://anatole-demo.netlify.app"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+      Access-Control-Allow-Origin = "*"

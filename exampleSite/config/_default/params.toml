@@ -28,6 +28,7 @@ listDateFormat = "2/1/2006"
 # readMore = true
 # postSectionName = "blog"
 
+reversepagetitle = true # When set to 'true' the Window Title will be revesed to 'Title | Author' instead of default 'Author | Title'
 
 [simpleAnalytics]
 # enable = true

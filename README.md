@@ -743,9 +743,9 @@ portfolioitems:
 
 Please note that fields such as start, end, authors, and tags will only appear if they have been populated. The image path defined under `image` parameter is relative to the static folder, similarly to images included in the post.
 
-## Reverse Title
+## Reverse Page Title
 
-By default the Window title is 'Author | Title' and if you would like to switch the two, you can do that by setting the parameter  `reversepagetitle = true` in `config.toml`
+By default the title of pages is `Author | PageTitle` and if you instead would like to switch the two to be `PageTitle | Author`, you can do that by setting the parameter  `reversepagetitle` to `true` in `config.toml`
 
 
 ```toml

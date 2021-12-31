@@ -743,6 +743,16 @@ portfolioitems:
 
 Please note that fields such as start, end, authors, and tags will only appear if they have been populated. The image path defined under `image` parameter is relative to the static folder, similarly to images included in the post.
 
+### Reverse Page Title
+
+By default, the title of pages is `Author | PageTitle`. You can switch the order to `PageTitle | Author` by setting the parameter `reversepagetitle` to `true` in `config.toml`.
+
+```toml
+[params]
+reversepagetitle = true
+
+```
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

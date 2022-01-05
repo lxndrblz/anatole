@@ -1428,20 +1428,6 @@ a.btn {
   }
 }
 
-@media (min-width: 1921px) {
-  .sidebar {
-    padding-left: 17%;
-    padding-right: 3%;
-    width: calc(var(--sidebar-width) - 20%);
-  }
-  .content {
-    padding-right: 20%;
-  }
-  header {
-    position: fixed;
-    width: var(--content-width);
-  }
-}
 /* (CONTACT) FORM */
 
 .contact-form {

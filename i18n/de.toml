@@ -16,7 +16,7 @@ other = "Warnung: Dieser Beitrag ist über {{ .Count }} Tage alt. Die Informatio
 other = "Seite nicht gefunden"
 
 [page_does_not_exist]
-other = "Tut mir Leid, diese Seite existiert leider nicht."
+other = "Tut mir leid, diese Seite existiert leider nicht."
 
 [head_back]
 other = "Du kannst hier zurück zur <a href=\"{{ . }}\">Startseite</a>."

@@ -27,12 +27,12 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Google Analytics (optional)
 - Comments powered by Disqus, Commento or Utteranc.es (optional)
 - SimpleAnalytics (optional)
-- Katex support (optional)
+- KaTex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
 - Open Graph support
 - MIT License
-- Fontawesome 5.15.1 icons
+- Font Awesome 5.15.1 icons
 - Google Fonts support
 - Custom CSS (optional)
 - Custom JavaScript (optional)
@@ -164,7 +164,7 @@ doNotLoadAnimations = true # Animations are loaded by default
 
 ### Control the date Format
 
-You can change the default date formating for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
+You can change the default date formatting for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
 
 ```toml
 [params]

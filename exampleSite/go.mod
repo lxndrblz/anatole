@@ -1,3 +1,3 @@
 module github.com/lxndrblz/anatole-example
 
-go 1.17
+go 1.12

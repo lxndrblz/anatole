@@ -1,9 +1,13 @@
-# Anatole ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/ee7a5df4-b944-4e03-853d-39219c96d484/deploy-status)](https://alexbilz.com/)
+# Anatole ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/1f4f2327-2b3f-428a-8f31-c4f921ebcc44/deploy-status)](https://app.netlify.com/sites/anatole-demo/deploys)
 
 Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme based on farbox-theme-Anatole.
 
 ![Screenshot Anatole Theme](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/screenshot.png)
 ![Screenshot Anatole Theme (dark)](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/screenshot_dark.png)
+
+## Demo
+
+[https://anatole-demo.netlify.app/](https://anatole-demo.netlify.app/)
 
 ## Features
 
@@ -23,12 +27,12 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Google Analytics (optional)
 - Comments powered by Disqus, Commento or Utteranc.es (optional)
 - SimpleAnalytics (optional)
-- Katex support (optional)
+- KaTex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
 - Open Graph support
 - MIT License
-- Fontawesome 5.15.1 icons
+- Font Awesome 5.15.1 icons
 - Google Fonts support
 - Custom CSS (optional)
 - Custom JavaScript (optional)
@@ -54,7 +58,7 @@ hugo server --themesDir ../..
 
 ## Update your installation
 
-If you want to get the latest update of the `Anatole` theme please execute this command:
+If you want to get the latest update of the `Anatole` theme, please execute this command:
 
 ```shell
 git submodule update --remote --merge
@@ -74,7 +78,7 @@ description = "Call me Jane"
 profilePicture = "images/profile.jpg"
 ```
 
-Please note that the title under the `[params]` only adjusts the page title in the sidebar. If you wish to adjust the HTML title (i.e. name of the tab), you will have to adjust the Hugo's title variable, as shown in the `config.toml`.
+Please note that the title under the `[params]` only adjusts the page title in the sidebar. If you wish to adjust the HTML title (i.e. name of the tab), you will have to adjust Hugo's title variable, as shown in the `config.toml`.
 
 Please note that the slogan can be multi-lined (note the three quotes at the beginning and end):
 
@@ -88,7 +92,7 @@ Blogging from Texas
 
 ### Favicon
 
-Add your favicons to `static/favicons`. Anatole currently employs following favicon files:
+Add your favicons to `static/favicons`. Anatole currently employs the following favicon files:
 
 - `favicon.ico`
 - `favicon-16x16.png`
@@ -97,7 +101,7 @@ Add your favicons to `static/favicons`. Anatole currently employs following favi
 
 ### Copyright
 
-By default, the copyright will show the authors name followed by the current year, but you can change this by configuring the `copyright` parameter. If this method is used, the string `{{ YEAR }}` will be replaced with the current year during site generation.
+By default, the copyright will show the author's name followed by the current year, but you can change this by configuring the `copyright` parameter. If this method is used, the string `{{ YEAR }}` will be replaced with the current year during site generation.
 
 ```toml
 copyright = "2020-{{ YEAR }}"
@@ -160,7 +164,7 @@ doNotLoadAnimations = true # Animations are loaded by default
 
 ### Control the date Format
 
-You can change the default date formating for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
+You can change the default date formatting for the `list.html`, the `single.html` and the `index.html`. Simply configure the matching parameters.
 
 ```toml
 [params]
@@ -171,7 +175,7 @@ listDateFormat = "Jan 2"
 
 ### Change the language names in the language dropdown
 
-The language names displayed on the main menu are controlled by the variables `LanguageName`. You can set these to shortcode, full name or a flag emoji by simply changing the parameter. In the following example English will be displayed as "EN" and Arabic will be displayed as "Arabic".
+The language names displayed on the main menu are controlled by the variables `LanguageName`. You can set these to shortcode, full name or a flag emoji by simply changing the parameter. In the following example, English will be displayed as "EN" and Arabic will be displayed as "Arabic".
 
 ```toml
 [languages]
@@ -234,7 +238,7 @@ fullPostContent = true
 
 ### Multilingual support
 
-Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each language, you can set the custom options like title or description. It's important to include a `LanguageName`, as it will be displayed in the main menu.
+Anatole supports multilingual page setups. All you need to do is to add the languages to your 'config.toml'. For each language, you can set the custom options like title or description. It's important to include a `LanguageName` as it will be displayed in the main menu.
 
 ```toml
 [Languages]
@@ -250,7 +254,7 @@ Anatole supports multilingual page setups. All you need to do is to add the lang
   LanguageName = "DE"
 ```
 
-There are two ways of translating your content, either by adding a suffix in the filename, eg. `mypost.de.md`, or by setting a contentDir (a certain directory) for each language. [Link to the Hugo documentation](https://gohugo.io/content-management/multilingual/). If you want to use the option with the `contentDir`, you will have to add the `contentDir` parameter for each language:
+There are two ways of translating your content, either by adding a suffix in the filename, e.g. `mypost.de.md`, or by setting a contentDir (a certain directory) for each language. [Link to the Hugo documentation](https://gohugo.io/content-management/multilingual/). If you want to use the option with the `contentDir`, you will have to add the `contentDir` parameter for each language:
 
 ```toml
 [languages]
@@ -386,7 +390,7 @@ Replace the hash with the one Google provided you.
 
 ### Google Fonts
 
-You can enable any [Google Font](https://fonts.google.com/) by selecting a font on the Google Font website and adding the `family` parameter of the font url to the `googleFonts` option in `[params]`, e.g.:
+You can enable any [Google Font](https://fonts.google.com/) by selecting a font on the Google Font website and adding the `family` parameter of the font URL to the `googleFonts` option in `[params]`, e.g.:
 
 ```toml
 [params]
@@ -420,7 +424,7 @@ Step 2: Activate the `contact: true` or `contact=true` in the frontmatter of a p
 
 In order to use the full functionality of Twitter cards, you will have to define a couple of settings in the `config.toml` and the frontmatter of a page.
 
-In the `config.toml` you can configure a site feature image. This image will be displayed, if no image is defined in the frontmatter of a page.
+In the `config.toml` you can configure a site feature image. This image will be displayed if no image is defined in the frontmatter of a page.
 
 ```toml
 [params]
@@ -557,7 +561,7 @@ You can configure the pages shown on the front page by altering the `mainSection
 
 ### \_index.md and post section header
 
-You can place custom content, by creating `_index.md` markdown file within the content directory. An example can be found [here](https://github.com/lxndrblz/anatole/blob/exampleSite/content/english/_index.md). Uncomment the section as needed. This file `_index.md` also has a parameter called `mainSectionsTitle`, which lets you specify a header for the posts on the main page. This header will be styled and placed always after the content of the `_index.md` it self.
+You can place custom content by creating `_index.md` markdown file within the content directory. An example can be found [here](https://github.com/lxndrblz/anatole/blob/exampleSite/content/english/_index.md). Uncomment the section as needed. This file `_index.md` also has a parameter called `mainSectionsTitle`, which lets you specify a header for the posts on the main page. This header will be styled and always placed after the content of the `_index.md` itself.
 
 ### Robots.txt
 
@@ -567,7 +571,7 @@ If you want Hugo to generate a robots.txt, you will have to set the `enableRobot
 User-agent: *
 ```
 
-If certain sites should be excluded from being accessed, you might want to setup a custom robots.txt file within your `static` folder of your site.
+If certain sites should be excluded from being accessed, you might want to set up a custom robots.txt file within your `static` folder of your site.
 
 ### Syntax highlighting
 
@@ -596,7 +600,7 @@ customCss = ["css/syntax.css"]
 
 ### Socials
 
-You can add social media based icon links under your profile picture by using the `socialIcons` parameter.
+You can add social media-based icon links under your profile picture by using the `socialIcons` parameter.
 
 [Font Awesome](https://fontawesome.com/) is used for the icons.
 
@@ -738,6 +742,16 @@ portfolioitems:
 ```
 
 Please note that fields such as start, end, authors, and tags will only appear if they have been populated. The image path defined under `image` parameter is relative to the static folder, similarly to images included in the post.
+
+### Reverse Page Title
+
+By default, the title of pages is `Author | PageTitle`. You can switch the order to `PageTitle | Author` by setting the parameter `reversepagetitle` to `true` in `config.toml`.
+
+```toml
+[params]
+reversepagetitle = true
+
+```
 
 ## License
 

@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+  color: $primary;
+
+  &:hover {
+    color: $info;
+  }
+}
+
+blockquote {
+  padding: 0 1em;
+  border-left: 0.25em solid $primary;
+  color: $primary;
+}
+
+p {
+  line-height: 1.9em;
+  font-size: 1.4rem;
+}
+
+pre {
+  padding: 5px;
+  display: block;
+  overflow-x: auto;
+}

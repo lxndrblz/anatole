@@ -36,8 +36,10 @@
 
 
   <!-- CSS -->
-  {{ $templateStyle := resources.Get "css/style.css" }}
-  {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.css" . | resources.Minify | resources.Fingerprint }}
+  {{ $sassTemplate := resources.Get "scss/main.scss" }}
+  {{ $style := $sassTemplate | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+
+
   <link
     rel="stylesheet"
     href="{{ $style.RelPermalink }}"

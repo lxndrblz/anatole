@@ -12,30 +12,28 @@
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
   </a>
-  <nav>
+  <nav class="nav">
     <ul class="nav__list" id="navMenu">
-      <div class="nav__links">
-        {{ $url := .RelPermalink }}
-        {{ range .Site.Menus.main }}
-          {{ $active := eq $url .URL }}
-          <li>
-            <a
-              {{ if $active }}
-                class="current"
+      {{ $url := .RelPermalink }}
+      {{ range .Site.Menus.main }}
+        {{ $active := eq $url .URL }}
+        <li class="nav__list-item">
+          <a
+            {{ if $active }}
+              class="nav__link--active"
 
-              {{ end }}
-              href="{{ .URL }}"
-              {{ if strings.HasPrefix .URL "http" }}
-                target="_blank" rel="noopener noreferrer"
+            {{ end }}
+            href="{{ .URL }}"
+            {{ if strings.HasPrefix .URL "http" }}
+              target="_blank" rel="noopener noreferrer"
 
-              {{ end }}
-              title="{{ .Title }}"
-              >{{ .Name }}</a
-            >
-          </li>
+            {{ end }}
+            title="{{ .Title }}"
+            >{{ .Name }}</a
+          >
+        </li>
 
-        {{ end }}
-      </div>
+      {{ end }}
       <ul>
         {{ if and .IsTranslated .Site.IsMultiLingual }}
           <li>

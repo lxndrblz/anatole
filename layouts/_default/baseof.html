@@ -3,10 +3,11 @@
   dir="{{ .Site.Language.LanguageDirection | default "ltr" }}"
   lang="{{- site.Language.Lang -}}"
   data-theme="{{- .Site.Params.displayMode -}}"
+  class="html"
 >
   {{- partial "head.html" . -}}
-  <body>
-    <header>{{ partial "navbar.html" . }}</header>
+  <body class="body">
+    <header class="header">{{ partial "navbar.html" . }}</header>
     <div class="wrapper">
       <aside>
         {{- partial "sidebar.html" . -}}

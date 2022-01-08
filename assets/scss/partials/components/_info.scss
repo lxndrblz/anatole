@@ -1,0 +1,14 @@
+.info {
+  margin: 1em;
+
+  &__icon {
+    margin-right: 4px;
+    opacity: 0.5;
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+}

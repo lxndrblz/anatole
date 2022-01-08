@@ -1,0 +1,31 @@
+.header {
+  width: $content-width;
+  position: fixed;
+  right: 0;
+  z-index: 3;
+  background-color: $accent;
+}
+
+@media screen and (min-width: 961px), print {
+  .header {
+    border-bottom: 1px solid $primary;
+  }
+}
+@media screen and (max-width: 960px) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1921px) {
+  .header {
+    position: fixed;
+    width: $content-width;
+  }
+}
+
+@media print {
+  .header {
+    display: none;
+  }
+}

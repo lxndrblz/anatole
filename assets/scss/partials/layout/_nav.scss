@@ -1,0 +1,55 @@
+.nav {
+  /*display: none;*/
+
+  &--active {
+    display: block;
+  }
+
+  &__list {
+    margin: 0;
+    list-style: none;
+    padding: 20px 30px;
+    background-color: $primary-lighter;
+    box-shadow: $shadow;
+    width: 100%;
+
+    &-item {
+      position: relative;
+      display: initial;
+      display: block;
+      flex-grow: 0;
+      flex-shrink: 0;
+      line-height: 2.5;
+      padding: 0.5rem 0.75rem;
+      position: relative;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 1.3em;
+    }
+  }
+
+  &__link {
+    &--active {
+      border-bottom: 1px solid $primary;
+      padding-bottom: 22px;
+    }
+  }
+}
+
+@media screen and (min-width: 961px), print {
+  .nav {
+    &__list {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 0;
+
+      &-item {
+        &:not(:last-child) {
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}

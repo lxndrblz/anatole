@@ -74,8 +74,8 @@ hugo server --themesDir ../..
 
 ### Start up your site
 
-1. Configure your `config.toml`. Feel free to copy the demo `config.toml` and some content from the exampleSite.
-2. Build your site with `hugo serve` and admire the result at `http://localhost:1313/`.
+1. Configure your `config.toml`. Feel free to copy the demo [`config.toml`](https://github.com/lxndrblz/anatole/blob/master/exampleSite/config/_default/config.toml) and some content from the [exampleSite](https://github.com/lxndrblz/anatole/tree/master/exampleSite).
+2. Build your site with `hugo serve` and admire the result at [`http://localhost:1313/`](http://localhost:1313/).
 
 ## Update your installation
 

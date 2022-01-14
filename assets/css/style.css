@@ -274,10 +274,11 @@ header .information .back_btn li {
   display: initial;
   padding-right: 40px;
 }
-*/
+
 aside {
   width: var(--sidebar-width);
 }
+*/
 
 /*
 Language Switch
@@ -357,6 +358,7 @@ Language Switch
   display: block;
 }
 
+/*
 .sidebar {
   -webkit-background-size: cover;
   background-size: cover;
@@ -427,7 +429,7 @@ Language Switch
 .sidebar .social-links a:hover {
   color: #2660ab;
 }
-
+*/
 .post {
   background-color: var(--bg-color);
   margin: 30px;
@@ -681,7 +683,7 @@ Language Switch
   margin: 30px;
   border-bottom: 1px solid var(--border-color);
 }
-
+/*
 .footer {
   clear: both;
   text-align: center;
@@ -714,6 +716,7 @@ Language Switch
   padding: 4px;
 }
 
+*/
 /*for archive*/
 .archive {
   width: 100%;
@@ -1113,14 +1116,14 @@ a.btn {
     position: fixed;
     width: var(--sidebar-width);
   }
-
+/*
   .sidebar__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
   }
-
+*/
   .navbar {
     display: flex;
     flex-direction: column;
@@ -1386,49 +1389,6 @@ a.btn {
   }
 }
 
-/* Medium zoom */
-.medium-zoom-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 300ms;
-  will-change: opacity;
-  background: var(--bg-color);
-}
-
-.medium-zoom--opened .medium-zoom-overlay {
-  cursor: pointer;
-  cursor: zoom-out;
-  opacity: 1;
-}
-
-.medium-zoom-image {
-  cursor: pointer;
-  cursor: zoom-in;
-  /*
-      The `transition` is marked as "!important" for the animation to happen
-      even though it's overriden by another inline `transition` style attribute.
-      This is problematic with frameworks that generate inline styles on their
-      images (e.g. Gatsby).
-      See https://github.com/francoischalifour/medium-zoom/issues/110
-     */
-  transition: transform 300ms cubic-bezier(0.2, 0, 0.2, 1) !important;
-  z-index: 100;
-}
-
-.medium-zoom-image--hidden {
-  visibility: hidden;
-}
-
-.medium-zoom-image--opened {
-  position: relative;
-  cursor: pointer;
-  cursor: zoom-out;
-  will-change: transform;
-}
 /* 
 @media print {
   header {
@@ -1451,73 +1411,4 @@ a.btn {
   } */
 }
 
-/* (CONTACT) FORM */
 
-.contact-form {
-  margin-top: 30px;
-}
-.form-style {
-  width: 100%;
-}
-.form-style ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.form-style ul li {
-  display: block;
-  margin-bottom: 10px;
-  min-height: 35px;
-}
-.form-style ul li .field-style {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  font-size: 1.4rem;
-  padding: 8px;
-  outline: none;
-  background-color: var(--bg-color);
-  border: 1px solid var(--form-border-color);
-  color: var(--body-color);
-  font-family: inherit;
-}
-.form-style ul li .field-style:focus {
-  box-shadow: 0 0 5px;
-  border: 1px solid;
-}
-.form-style ul li .field-split {
-  width: 49%;
-}
-.form-style ul li .field-full {
-  width: 100%;
-}
-.form-style ul li input.align-left {
-  float: left;
-}
-.form-style ul li input.align-right {
-  float: right;
-}
-.form-style ul li textarea {
-  background-color: var(--bg-color);
-  border: 1px solid var(--form-border-color);
-  color: var(--body-color);
-  width: 100%;
-  height: auto;
-}
-.form-style ul li input[type='button'],
-.form-style ul li input[type='submit'] {
-  background-color: var(--bg-color);
-  border: 1px solid var(--form-border-color);
-  display: inline-block;
-  cursor: pointer;
-  color: var(--body-color);
-  text-decoration: none;
-  width: 100%;
-}
-.form-style ul li input[type='button']:hover,
-.form-style ul li input[type='submit']:hover {
-  background-color: var(--bg-color);
-  border: 1px solid var(--form-button-hover-border-color);
-}
-
-/* (CONTACT) FORM END */

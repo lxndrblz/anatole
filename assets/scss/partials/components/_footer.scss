@@ -1,0 +1,23 @@
+.footer {
+    clear: both;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    flex: 0;
+    position: relative;
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        }
+        
+    &__item:not(:first-of-type)::before {
+        content: '\00B7';
+        padding: 4px;
+    }
+  }

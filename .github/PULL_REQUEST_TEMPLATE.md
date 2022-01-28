@@ -10,11 +10,26 @@ _Describe the issue fixed here_
 -----------------------------------------------------------
 
 ### Checklist
-- [ ] Testing
+Yes, I included all necessary artefacts, including:
+- [ ] Tests
 - [ ] Documentation
-- [ ] New Feature
-- [ ] Bug Fix
-- [ ] Infrastructure
+- [ ] Implementation (Code and Ressources)
+- [ ] Example
+-----------------------------------------------------------
+
+###  Testing Checklist
+
+Yes, I ensured that all of the following scenarios were tested:
+- [ ] Desktop Light Mode (Default)
+- [ ] Desktop Dark Mode
+- [ ] Desktop Light RTL Mode
+- [ ] Desktop Dark RTL Mode
+- [ ] Mobile Light Mode
+- [ ] Mobile Dark Mode
+- [ ] Mobile Light RTL Mode
+- [ ] Mobile Dark RTL Mode
+
+
 -----------------------------------------------------------
 
 ### Notify the following users

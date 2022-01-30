@@ -34,6 +34,10 @@ reversepagetitle = true # When set to 'true', the Window Title will be reversed 
 # enable = true
 # customurl = "https://analytics.example.com"
 
+[plausibleAnalytics]
+# domain = "example.com"
+# serverURL = "https://analytics.example.com"
+
 ## Math settings
 [math]
 enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.

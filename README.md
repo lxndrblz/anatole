@@ -27,6 +27,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Google Analytics (optional)
 - Comments powered by Disqus, Commento or Utteranc.es (optional)
 - SimpleAnalytics (optional)
+- Plausible Analytics (optional)
 - KaTex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
@@ -404,6 +405,16 @@ To use Simple Analytics, it has to be enabled by setting the parameter to true. 
 [params.simpleAnalytics]
 enable = true
 # customurl = "https://analytics.example.com"
+```
+
+### Plausible Analytics
+
+To use Plausible Analytics, include the following section and change the domain to your site's domain. If you self-host Plausible, you can optionally specify the url of your own instance.
+
+```toml
+[params.plausibleAnalytics]
+domain = "example.com"
+# serverURL = "https://analytics.example.com"
 ```
 
 ### Google Site Verification

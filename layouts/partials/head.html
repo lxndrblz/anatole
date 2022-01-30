@@ -197,6 +197,9 @@
 
   {{- end -}}
 
+  {{ if and hugo.IsProduction .Site.Params.plausibleAnalytics .Site.Params.plausibleAnalytics.domain }}
+    {{- partial "analytics/plausible" . -}}
+  {{ end }}
 
   <!-- Twitter Cards -->
   {{ template "_internal/twitter_cards.html" . }}

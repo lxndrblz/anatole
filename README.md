@@ -28,6 +28,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Comments powered by Disqus, Commento or Utteranc.es (optional)
 - SimpleAnalytics (optional)
 - Plausible Analytics (optional)
+- Umami Analytics (optional)
 - KaTex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
@@ -409,12 +410,22 @@ enable = true
 
 ### Plausible Analytics
 
-To use Plausible Analytics, include the following section and change the domain to your site's domain. If you self-host Plausible, you can optionally specify the url of your own instance.
+To use Plausible Analytics, include the following section and change the domain to your site's domain. If you self-host Plausible, you can optionally specify the URL of your own instance.
 
 ```toml
 [params.plausibleAnalytics]
 domain = "example.com"
 # serverURL = "https://analytics.example.com"
+```
+
+### Umami Analytics
+
+To use Umami Analytics, include the following section and change the serverURL to your self-hosted Umami server URL. Additionally, you will need to provide your website ID.
+
+```toml
+[params.umami]
+serverURL = "example.com"
+id = "94db1cb1-74f4-4a40-ad6c-962362670409"
 ```
 
 ### Google Site Verification

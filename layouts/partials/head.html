@@ -200,6 +200,12 @@
   {{ if and hugo.IsProduction .Site.Params.plausibleAnalytics .Site.Params.plausibleAnalytics.domain }}
     {{- partial "analytics/plausible" . -}}
 
+
+  {{ end }}
+
+  {{ if and hugo.IsProduction .Site.Params.umami.serverURL .Site.Params.umami.id }}
+    {{- partial "analytics/umami" . -}}
+
   {{ end }}
 
 

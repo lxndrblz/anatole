@@ -625,7 +625,7 @@ Language Switch
   border: 1px solid var(--border-color);
   border-bottom: 0px;
 }
-
+/*
 .pagination {
   margin: 30px;
   padding: 0px 0 56px 0;
@@ -658,31 +658,7 @@ Language Switch
 .pagination .next {
   float: right;
 }
-
-.like-reblog-buttons {
-  float: right;
-}
-
-.like-button {
-  float: right;
-  padding: 0 0 0 10px;
-}
-
-.reblog-button {
-  float: right;
-  padding: 0;
-}
-
-#install-btn {
-  position: fixed;
-  bottom: 0px;
-  right: 6px;
-}
-
-#disqus_thread {
-  margin: 30px;
-  border-bottom: 1px solid var(--border-color);
-}
+*/
 /*
 .footer {
   clear: both;
@@ -1116,7 +1092,7 @@ a.btn {
     position: fixed;
     width: var(--sidebar-width);
   }
-/*
+  /*
   .sidebar__content {
     display: flex;
     flex-direction: column;
@@ -1410,5 +1386,3 @@ a.btn {
     width: var(--content-width);
   } */
 }
-
-

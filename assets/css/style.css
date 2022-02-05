@@ -1153,10 +1153,6 @@ a.btn {
     display: none;
   }
 
-  .share {
-    display: grid;
-  }
-
   /* nav {
     display: none;
   } */
@@ -1252,10 +1248,11 @@ a.btn {
     padding-bottom: 0px;
     padding-top: 48px;
   }
-
+  /*
   .triangle {
     display: none;
   }
+
 
   .sl-nav {
     padding-right: inherit;
@@ -1279,6 +1276,7 @@ a.btn {
   .sl-nav li .dropdown li span {
     padding-left: initial;
   }
+  */
 }
 
 /* 

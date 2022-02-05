@@ -1,82 +1,99 @@
 .languageswitch {
-
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  padding-right: 20px;
+  &__list {
     list-style: none;
-    position: relative;
-    display: inline-block;
-    padding-right: 20px;
-    &__list {
-        list-style: none;
-        label {
-            cursor: pointer;
-        }
+    label {
+      cursor: pointer;
+    }
+
+    &-item {
+      .dropdown__list {
+        display: none;
+        position: absolute;
+        top: 29px;
+        right: -15px;
+        background: $accent;
+        border-color: $primary;
+        padding-left: 0;
+        padding-top: 0px;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 
         &-item {
-            .dropdown__list {
-                display: none;
-                position: absolute;
-                top: 29px;
-                right: -15px;
-                background: $accent;
-                border-color: $primary;
-                padding-left: 0;
-                padding-top: 0px;
-                z-index: 1;
-                border-radius: 5px;
-                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-
-                &-item {
-                    position: relative;
-                    text-align: left;
-                    background: transparent;
-                    padding: 12px;
-                    z-index: 2;
-                    color: $primary;
-                    display: block;
-                    white-space: nowrap;
-                  }
-
-              }
-
-            #languagepicker:checked ~ .dropdown {
-                display: block;
-              }
-        
-            #languagepicker:checked ~ .triangle {
-                position: absolute;
-                top: 15px;
-                right: -10px;
-                z-index: 10;
-                height: 14px;
-                overflow: hidden;
-                width: 30px;
-                background: transparent;
-              }
-              
-              #languagepicker:checked ~ .triangle:after {
-                content: '';
-                display: block;
-                z-index: 20;
-                width: 15px;
-                transform: rotate(45deg) translateY(0px) translatex(10px);
-                height: 15px;
-                background: $primary-light;
-                border-radius: 2px 0px 0px 0px;
-                border-color: $primary;
-                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-                float: left;
-                display: block;
-              } 
+          position: relative;
+          text-align: left;
+          background: transparent;
+          padding: 12px;
+          z-index: 2;
+          color: $primary;
+          display: block;
+          white-space: nowrap;
         }
-    }  
+      }
+
+      #languagepicker:checked ~ .dropdown {
+        display: block;
+      }
+
+      #languagepicker:checked ~ .triangle {
+        position: absolute;
+        top: 15px;
+        right: -10px;
+        z-index: 10;
+        height: 14px;
+        overflow: hidden;
+        width: 30px;
+        background: transparent;
+      }
+
+      #languagepicker:checked ~ .triangle:after {
+        content: '';
+        z-index: 20;
+        width: 15px;
+        transform: rotate(45deg) translateY(0px) translatex(10px);
+        height: 15px;
+        background: $primary-light;
+        border-radius: 2px 0px 0px 0px;
+        border-color: $primary;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        float: left;
+        display: block;
+      }
+    }
+  }
 }
-
-
-  
-
-  
-
-  
-
-  
+@media screen and (max-width: 960px) {
+  .languageswitch {
+    &__list {
+      padding-right: inherit;
+      label {
+        cursor: pointer;
+      }
+      .triangle {
+        display: none;
+      }
+      &-item {
+        .dropdown__list {
+          right: inherit;
+          position: relative;
+          top: inherit;
+          padding-right: 0px;
+          background: none;
+          border-color: inherit;
+          box-shadow: none;
+          &-item {
+            text-align: center;
+            padding: 0.5rem 0.75rem;
+            padding-left: initial;
+          }
+        }
+      }
+    }
+  }
+}

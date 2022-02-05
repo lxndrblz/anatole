@@ -1,0 +1,39 @@
+.navbar-burger {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-burger {
+    cursor: pointer;
+    display: block;
+    height: 3.25rem;
+    position: relative;
+    width: 3.25rem;
+    margin-left: auto;
+
+    &__line {
+      background-color: $primary;
+      display: block;
+      height: 1px;
+      left: calc(50% - 8px);
+      position: absolute;
+      transform-origin: center;
+      transition-duration: 86ms;
+      transition-property: background-color, opacity, transform;
+      transition-timing-function: ease-out;
+      width: 16px;
+
+      &:nth-child(1) {
+        top: calc(50% - 6px);
+      }
+
+      &:nth-child(2) {
+        top: calc(50% - 1px);
+      }
+
+      &:nth-child(3) {
+        top: calc(50% + 4px);
+      }
+    }
+  }
+}

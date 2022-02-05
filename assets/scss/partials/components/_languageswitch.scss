@@ -5,6 +5,7 @@
   position: relative;
   display: inline-block;
   padding-right: 20px;
+
   &__list {
     list-style: none;
     label {
@@ -36,23 +37,25 @@
           white-space: nowrap;
         }
       }
+    }
+  }
 
-      #languagepicker:checked ~ .dropdown {
-        display: block;
-      }
+  &__picker:checked {
+    ~ .dropdown__list {
+      display: block;
+    }
 
-      #languagepicker:checked ~ .triangle {
-        position: absolute;
-        top: 15px;
-        right: -10px;
-        z-index: 10;
-        height: 14px;
-        overflow: hidden;
-        width: 30px;
-        background: transparent;
-      }
+    ~ .triangle {
+      position: absolute;
+      top: 15px;
+      right: -10px;
+      z-index: 10;
+      height: 14px;
+      overflow: hidden;
+      width: 30px;
+      background: transparent;
 
-      #languagepicker:checked ~ .triangle:after {
+      &:after {
         content: '';
         z-index: 20;
         width: 15px;
@@ -67,30 +70,34 @@
       }
     }
   }
-}
-@media screen and (max-width: 960px) {
-  .languageswitch {
-    &__list {
-      padding-right: inherit;
-      label {
-        cursor: pointer;
-      }
-      .triangle {
-        display: none;
-      }
-      &-item {
-        .dropdown__list {
-          right: inherit;
-          position: relative;
-          top: inherit;
-          padding-right: 0px;
-          background: none;
-          border-color: inherit;
-          box-shadow: none;
-          &-item {
-            text-align: center;
-            padding: 0.5rem 0.75rem;
-            padding-left: initial;
+
+  @media screen and (max-width: 960px) {
+    .languageswitch {
+      &__list {
+        padding-right: inherit;
+
+        label {
+          cursor: pointer;
+        }
+
+        .triangle {
+          display: none;
+        }
+
+        &-item {
+          .dropdown__list {
+            right: inherit;
+            position: relative;
+            top: inherit;
+            padding-right: 0px;
+            background: none;
+            border-color: inherit;
+            box-shadow: none;
+            &-item {
+              text-align: center;
+              padding: 0.5rem 0.75rem;
+              padding-left: initial;
+            }
           }
         }
       }

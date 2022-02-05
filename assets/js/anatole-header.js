@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
       $el.addEventListener('click', function () {
         var target = $el.dataset.target;
         var $target = document.getElementById(target);
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-        nav.classList.toggle('is-active');
+        $el.classList.toggle('nav--active');
+        $target.classList.toggle('nav--active');
+        nav.classList.toggle('nav--active');
       });
     });
   }

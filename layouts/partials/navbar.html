@@ -8,9 +8,9 @@
   {{ end }}"
 >
   <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
   </a>
   <nav class="nav">
     <ul class="nav__list" id="navMenu">
@@ -32,14 +32,14 @@
             >{{ .Name }}</a
           >
         </li>
-
       {{ end }}
-      <ul>
+      </ul>
+      <ul class="nav__list nav__list--end">
         {{ if and .IsTranslated .Site.IsMultiLingual }}
           <li class="languageswitch">
             <ul class="languageswitch__list" aria-label="Language switcher">
               <li class="languageswitch__list-item">
-                <input type="checkbox" id="languagepicker" aria-label="switch language" hidden />
+                <input class="languageswitch__picker" type="checkbox" id="languagepicker" aria-label="switch language" hidden />
                 <label for="languagepicker">{{ .Site.Language.LanguageName }}</label>
                 <label for="languagepicker"><i class="fa fa-angle-down" aria-hidden="true"></i></label>
                 <div class="triangle"></div>
@@ -68,8 +68,8 @@
 
         {{ end }}
         {{ if not .Site.Params.disableThemeSwitcher }}
-          <li>
-            <a class="theme-switch" title="Switch Theme">
+          <li class="themeswitch">
+            <a title="Switch Theme">
               <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a>
           </li>

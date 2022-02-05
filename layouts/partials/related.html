@@ -1,0 +1,9 @@
+﻿{{ $related := .Site.RegularPages.Related . | first .Site.Params.nrofrelatedposts }}
+{{ with $related }}
+<h3>Related posts</h3>
+<ul>
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+{{ end }}

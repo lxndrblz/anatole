@@ -804,6 +804,37 @@ reversepagetitle = true
 
 ```
 
+### Enable list of Related Posts
+
+`Related posts` are pages (identified by Hugo) with similar content by the Front Matter parameters.
+
+To enable a list of related pages added after the page content, add this to your `[params]` section:
+
+```toml
+[params]
+relatedposts = true
+nrofrelatedposts = 3
+````
+
+Where `nrofrelatedposts` is the number of related pages to link to.
+
+To configure the related posts more granularly [this page](https://gohugo.io/content-management/related/#configure-related-content) explains it in better detail.
+But a starting point would be to add this to your `config`-file:
+
+```toml
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+[[related.indices]]
+  name = 'keywords'
+  weight = 100
+[[related.indices]]
+  name = 'tags'
+  weight = 80
+  ````
+Where `ìncludeNewer = true` includes pages newer than the current page in the related content listing.
+
 ## License
 
 Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).

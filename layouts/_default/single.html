@@ -73,6 +73,11 @@
 
         {{ end }}
       </div>
+      {{ if (eq .Site.Params.relatedposts true) }}
+        <div>
+          {{ partial "related.html" . }}
+        </div>
+      {{- end -}}
     </div>
 
     {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}

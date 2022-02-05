@@ -77,28 +77,28 @@
 
     {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}
       {{- if .Site.DisqusShortname -}}
-        <div id="fb_comments_container">
+        <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ template "_internal/disqus.html" . }}
         </div>
 
       {{- end -}}
       {{- if .Site.Params.utterances.repo -}}
-        <div id="fb_comments_container">
+        <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/utterances.html" . }}
         </div>
 
       {{- end -}}
       {{- if .Site.Params.CommentoURL -}}
-        <div id="fb_comments_container">
+        <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/commento.html" . }}
         </div>
 
       {{- end -}}
       {{- if .Site.Params.gitalk.repo -}}
-        <div id="fb_comments_container">
+        <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/gitalk.html" . }}
         </div>

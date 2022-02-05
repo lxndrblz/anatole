@@ -198,9 +198,11 @@ a:active {
   margin: 0;
 } */
 
+/*
 main {
   width: var(--content-width);
 }
+*/
 /*
 .content {
   height: auto;
@@ -282,7 +284,6 @@ aside {
 
 /*
 Language Switch
-*/
 
 .sl-nav {
   margin: 0;
@@ -357,7 +358,7 @@ Language Switch
   float: left;
   display: block;
 }
-
+*/
 /*
 .sidebar {
   -webkit-background-size: cover;
@@ -659,6 +660,7 @@ Language Switch
   float: right;
 }
 */
+
 /*
 .footer {
   clear: both;
@@ -743,94 +745,6 @@ Language Switch
 }
 
 /* share */
-.share {
-  margin: 0px 30px;
-  display: inline-flex;
-}
-
-.evernote {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
-  background-color: #3e3e3e;
-  margin-right: 5px;
-}
-
-.evernote a {
-  color: #fff;
-  padding: 11px;
-  font-size: 1.2rem;
-}
-
-.evernote a:hover {
-  color: #ed6243;
-  padding: 11px;
-}
-
-.weibo {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
-  background-color: #ed6243;
-  margin-right: 5px;
-}
-
-.weibo a {
-  color: #fff;
-  padding: 9px;
-}
-
-.weibo a:hover {
-  color: #bd4226;
-}
-
-.twitter {
-  width: 32px;
-  height: 32px;
-  border-radius: 300px;
-  background-color: #59c0fd;
-  margin-right: 5px;
-}
-
-.twitter a {
-  color: #fff;
-  padding: 9px;
-}
-
-.twitter a:hover {
-  color: #4b9ece;
-}
-
-/* about */
-.about {
-  margin: 30px;
-}
-
-.about h3 {
-  font-size: 2.2rem;
-}
-
-/* links*/
-.links {
-  margin: 30px;
-}
-
-.links h3 {
-  font-size: 2.2rem;
-}
-
-.links a {
-  cursor: pointer;
-}
-
-/* Comments */
-.comment-count {
-  color: #666;
-}
-
-.tab-community {
-  color: #666;
-}
 
 .read_more {
   font-size: 1.4rem;
@@ -843,14 +757,16 @@ Language Switch
   float: left;
 }
 
-/* Facebook Comments */
+/*
 #fb_comments_container {
   margin: 30px;
 }
 
+
 .utterances {
   max-width: unset;
 }
+*/
 
 /* Buttons */
 a.btn {

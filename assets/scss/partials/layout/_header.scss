@@ -8,7 +8,7 @@
 
 @media screen and (min-width: 961px), print {
   .header {
-    border-bottom: 1px solid $primary-light;
+    border-bottom: $border;
   }
 }
 @media screen and (max-width: 960px) {

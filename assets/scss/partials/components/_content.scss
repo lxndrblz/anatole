@@ -2,3 +2,9 @@
   height: auto;
   margin-top: 80px;
 }
+
+@media (min-width: 1921px) {
+  .content {
+    padding-right: 20%;
+  }
+}

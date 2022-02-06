@@ -1,70 +1,82 @@
 .sidebar {
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-color: var(--bg-color);
-    height: 100%;
-    left: 0;
-    z-index: 4;
-    border-right: 1px solid var(--border-color);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-color: var(--bg-color);
+  height: 100%;
+  left: 0;
+  z-index: 4;
+  border-right: 1px solid var(--border-color);
 
-    &__list {
-        list-style: none;
-        padding: 0;
-        font-size: 1.4rem;
-        text-align: center;
-    
-        &-item {
-            display: inline;
-            padding: 0 4px;
-            line-height: 0;
+  &__list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.4rem;
+    text-align: center;
 
-            i {
-                margin-right: 3px;
-            }
-              
-            li {
-            display: inline;
-            padding: 0 4px;
-            line-height: 0;
-            }
-        }
+    &-item {
+      display: inline;
+      padding: 0 4px;
+      line-height: 0;
+
+      i {
+        margin-right: 3px;
       }
 
-    &__title  {
-        top: 40%;
-        text-align: center;
+      li {
+        display: inline;
+        padding: 0 4px;
+        line-height: 0;
+      }
+    }
+  }
 
-        &-description {
-            font-size: 1.4rem;
-            margin: 0 1em;
-        }
+  &__title {
+    top: 40%;
+    text-align: center;
 
-        img {
-            width: 127px;
-            height: 127px;
-            border-radius: 50%;
-          }
-          
-         h3 {
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 2px;
-            line-height: 1;
-            margin: 1em;
-          }
+    &-description {
+      font-size: 1.4rem;
+      margin: 0 1em;
     }
 
-    @media screen and (min-width: 961px), print {
-        &__content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            flex-grow: 1;
-        }
+    img {
+      width: 127px;
+      height: 127px;
+      border-radius: 50%;
+    }
 
+    h3 {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+      line-height: 1;
+      margin: 1em;
     }
   }
 
 
+}
 
-  
+@media screen and (min-width: 961px), print {
+  .sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: $sidebar-width;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
+    }
+  }
+}
+
+@media (min-width: 1921px) {
+  .sidebar {
+    padding-left: 17%;
+    padding-right: 3%;
+    width: calc(var(--sidebar-width) - 20%);
+  }
+}

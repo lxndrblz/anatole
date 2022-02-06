@@ -749,12 +749,6 @@ Language Switch
   font-size: 1.4rem;
 }
 
-.back-button {
-  padding-top: 30px;
-  max-width: 100px;
-  padding-left: 40px;
-  float: left;
-}
 
 /*
 #fb_comments_container {
@@ -827,7 +821,7 @@ a.btn {
   padding: 6px 12px;
 }
 
-/* Portfolio */
+/* 
 .cta {
   padding-bottom: 1em;
 }
@@ -875,6 +869,7 @@ a.btn {
 .box--right {
   margin-top: -24px;
 }
+*/
 
 /* Menu */
 .menu {
@@ -934,16 +929,16 @@ a.btn {
   width: 100px;
   float: right;
 }
-
+/*
 .page_404 {
   text-align: center;
   padding-top: 50px;
 }
-/*
+
 .navbar-burger {
   display: none;
 }
-*/
+
 
 #TableOfContents {
   display: block;
@@ -969,6 +964,7 @@ a.btn {
   display: inherit;
 }
 
+
 .alert {
   padding: 1rem;
   border-radius: 1 px;
@@ -991,6 +987,7 @@ a.btn {
   font-weight: 800;
   margin-right: 0.75rem;
 }
+*/
 
 @media screen and (min-width: 961px), print {
   /* header {
@@ -999,7 +996,7 @@ a.btn {
 
   /* .nav__links li:not(:last-of-type) {
     padding-right: 20px;
-  } */
+  } 
 
   .sidebar {
     height: 100vh;
@@ -1008,7 +1005,6 @@ a.btn {
     position: fixed;
     width: var(--sidebar-width);
   }
-  /*
   .sidebar__content {
     display: flex;
     flex-direction: column;
@@ -1033,7 +1029,7 @@ a.btn {
   .wrapper {
     display: flex;
   }
-*/
+
 
   .footer--base {
     display: none;
@@ -1093,6 +1089,7 @@ a.btn {
   .box--right {
     margin-left: auto;
   }
+  */
 }
 
 @media screen and (max-width: 960px) {
@@ -1148,13 +1145,13 @@ a.btn {
     max-width: 100%;
     margin: 0;
   }
-  */
+
 
   .footer--sidebar {
     display: none;
   }
 
-  /* nav {
+   nav {
     display: none;
   } */
 
@@ -1233,7 +1230,7 @@ a.btn {
   .list-with-title .listing .listing-post a {
     width: 80%;
   }
-
+/*
   .box--right,
   .box--left {
     border-bottom: 1px solid var(--border-color);
@@ -1251,6 +1248,7 @@ a.btn {
     padding-bottom: 0px;
     padding-top: 48px;
   }
+  */
   /*
   .triangle {
     display: none;
@@ -1287,7 +1285,7 @@ a.btn {
   header {
     display: none;
   }
-} */
+} 
 
 @media (min-width: 1921px) {
   .sidebar {
@@ -1298,8 +1296,9 @@ a.btn {
   .content {
     padding-right: 20%;
   }
-  /* header {
+  header {
     position: fixed;
     width: var(--content-width);
-  } */
+  } 
 }
+*/

@@ -1,0 +1,127 @@
+
+  
+  .box-wrapper {
+    padding: 48px;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .box-image {
+    display: block;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &--right,
+    &--left {
+      margin-right: auto;
+      margin-left: auto;
+      width: calc(100% - 64px);
+      background-color: $accent;
+      max-width: 400px;
+      z-index: -1;
+    }
+    img {
+        min-width: 100%;
+        box-shadow: #000;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+        object-fit: cover;
+        border-bottom: 0px;
+        display: block;
+      }
+  }
+  
+  .box {
+    background-color: $primary-lighter;
+    padding: 32px;
+    &--left, &--right {
+        margin-top: -24px;
+    }
+  }
+  
+  .cta {
+    padding-bottom: 1em;
+  }
+
+@media screen and (min-width: 961px), print {
+    .box {
+        padding: 48px;
+        box-shadow: $shadow;
+        background-color: $accent;
+        border-radius: 0.5em;
+
+        &--left,
+        &--right {
+          width: 60%;
+          margin-top: -48px;
+          z-index: 3;
+          background: $primary-lighter;
+        }
+      
+        &--right {
+          margin-left: auto;
+      }
+      }
+    
+      .box-wrapper::before {
+        border: $border;
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        bottom: 10%;
+        right: 10%;
+        background: transparent;
+        border-radius: 0.5em;
+      }
+    
+      .box-image{
+        &--right, &--left {
+            width: 60%;
+            object-fit: contain;
+            max-width: none;
+            border-top-right-radius: 0.5em;
+            border-top-left-radius: 0.5em;
+          }
+
+          &--right {
+            margin-right: 0;
+            margin-left: auto;
+            border-bottom-right-radius: 0.5em;
+          }
+        
+          &--left {
+            margin-right: auto;
+            margin-left: 0;
+            border-bottom-left-radius: 0.5em;
+          }
+        
+      }
+}
+
+@media screen and (max-width: 960px) {
+
+.box {
+    &--right, &--left {
+      border-bottom:$border;
+    }
+}
+
+
+  
+    .box-image{
+        &--left, &--right {
+        padding: 32px 32px 0px 32px;
+        max-width: inherit;
+        }
+    }
+  
+    .box-wrapper {
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-bottom: 0px;
+      padding-top: 48px;
+    }
+}

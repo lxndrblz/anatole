@@ -26,6 +26,10 @@
     &--base {
       display: none;
     }
+  }
+}
+@media screen and (max-width: 960px) {
+  .footer {
     &--sidebar {
       display: none;
     }

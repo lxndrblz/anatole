@@ -1,6 +1,5 @@
 .alert {
     padding: 1rem;
-    border-radius: 1 px;
     border-style: solid;
     border-color:$alert;
     border-radius: 0.25rem;
@@ -11,7 +10,6 @@
         display: inline-block;
         border-radius: 9999px;
         padding: 0.5rem;
-        height: 1.5rem;
         width: 2.5rem;
         height: 2.5rem;
         text-align: center;

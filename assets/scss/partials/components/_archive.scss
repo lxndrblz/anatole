@@ -1,0 +1,40 @@
+.archive {
+    width: 100%;
+
+    &__list {
+        font-size: 1.4rem;
+        margin: 30px;
+        padding: 0;
+        &-item{
+            padding-bottom: 5px;
+            list-style-type: none;
+
+            .post-time {
+                float: right;
+                display: inline-block;
+                max-width: 10%;
+                text-align: right;
+                color: $primary-light;
+            }
+            a {
+                color: $primary;
+                width: 90%;
+                display: inline-block;
+              }
+              
+              a:hover {
+                color: $info;
+              }
+        }
+        &-title{
+            font-size: 2.4rem;
+            color: $primary;
+            font-weight: 600;
+            line-height: 2.2em;
+        }
+    }
+
+}
+
+
+

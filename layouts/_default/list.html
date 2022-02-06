@@ -8,13 +8,12 @@
 
     {{ end }}"
   >
-    <ul class="list-with-title">
+    <ul class="archive__list">
       {{ range .Data.Pages.GroupByDate "2006" }}
-        <div class="listing-title">{{ .Key }}</div>
+        <div class="archive__list-title">{{ .Key }}</div>
         {{ range .Pages }}
-          <ul class="listing">
-            <div class="listing-item">
-              <div class="listing-post">
+          <ul>
+            <li class="archive__list-item">
                 <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
                 <div class="post-time">
                   <span class="date"
@@ -29,8 +28,7 @@
                     {{ end }}</span
                   >
                 </div>
-              </div>
-            </div>
+            </li>
           </ul>
 
         {{ end }}

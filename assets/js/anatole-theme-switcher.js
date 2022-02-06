@@ -46,7 +46,7 @@ function switchTheme() {
 document.addEventListener(
   'DOMContentLoaded',
   function () {
-    const themeSwitcher = document.querySelector('.theme-switch');
+    const themeSwitcher = document.querySelector('.themeswitch');
     themeSwitcher.addEventListener('click', switchTheme, false);
   },
   false,

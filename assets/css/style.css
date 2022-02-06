@@ -557,7 +557,7 @@ Language Switch
 .post figure.big {
   max-width: 100vw;
 }
-*/
+
 .info {
   margin: 1em;
 }
@@ -565,7 +565,7 @@ Language Switch
 .info span {
   margin-right: 0.5em;
 }
-/*
+
 .post .post-footer .meta a {
   text-decoration: none;
   color: var(--body-color);
@@ -624,8 +624,7 @@ Language Switch
   border: 1px solid var(--border-color);
   border-bottom: 0px;
 }
-*/
-/*
+
 .pagination {
   margin: 30px;
   padding: 0px 0 56px 0;
@@ -658,9 +657,7 @@ Language Switch
 .pagination .next {
   float: right;
 }
-*/
 
-/*
 .footer {
   clear: both;
   text-align: center;
@@ -693,11 +690,12 @@ Language Switch
   padding: 4px;
 }
 
-*/
-/*for archive*/
+
+
 .archive {
   width: 100%;
 }
+
 
 .list-with-title {
   font-size: 1.4rem;
@@ -742,13 +740,12 @@ Language Switch
 .list-with-title .listing .listing-post a:hover {
   color: #2660ab;
 }
-
+*/
 /* share */
 
 .read_more {
   font-size: 1.4rem;
 }
-
 
 /*
 #fb_comments_container {
@@ -1230,7 +1227,7 @@ a.btn {
   .list-with-title .listing .listing-post a {
     width: 80%;
   }
-/*
+  /*
   .box--right,
   .box--left {
     border-bottom: 1px solid var(--border-color);

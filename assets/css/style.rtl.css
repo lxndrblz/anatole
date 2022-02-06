@@ -105,7 +105,7 @@ blockquote {
     left: 0;
     right: auto;
   }
-  header .nav__list li {
+  /* header .nav__list li {
     padding-left: 20px;
   }
   header .nav__list li:not(:last-of-type) {
@@ -113,7 +113,7 @@ blockquote {
   }
   .triangle {
     display: inline-block;
-  }
+  } */
 }
 
 @media (min-width: 1921px) {

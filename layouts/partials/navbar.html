@@ -32,50 +32,55 @@
             >{{ .Name }}</a
           >
         </li>
+
       {{ end }}
-      </ul>
-      <ul class="nav__list nav__list--end">
-        {{ if and .IsTranslated .Site.IsMultiLingual }}
-          <li class="languageswitch">
-            <ul class="languageswitch__list" aria-label="Language switcher">
-              <li class="languageswitch__list-item">
-                <input class="languageswitch__picker" type="checkbox" id="languagepicker" aria-label="switch language" hidden />
-                <label for="languagepicker">{{ .Site.Language.LanguageName }}</label>
-                <label for="languagepicker"><i class="fa fa-angle-down" aria-hidden="true"></i></label>
-                <div class="triangle"></div>
+    </ul>
+    <ul class="nav__list nav__list--end">
+      {{ if and .IsTranslated .Site.IsMultiLingual }}
+        <li class="nav__list-item">
+          <div class="languageswitch">
+            <input
+              class="languageswitch__picker"
+              type="checkbox"
+              id="languagepicker"
+              aria-label="switch language"
+              hidden
+            />
+            <label class="languageswitch__label" for="languagepicker"
+              >{{ .Site.Language.LanguageName }} <i class="fa fa-angle-down" aria-hidden="true"></i
+            ></label>
+            <div class="languageswitch__triangle"></div>
+            <ul class="languageswitch__list">
+              {{ range $.Translations }}
+                <li class="languageswitch__list-item">
+                  <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}"
+                    ><span
+                      {{ if eq . $.Site.Language }}
+                        class="active"
 
-                <ul class="dropdown__list">
-                  {{ range $.Translations }}
+                      {{ end }}
+                      aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
+                      >{{ .Language.LanguageName }}</span
+                    >
+                  </a>
+                </li>
 
-                    <li class="dropdown__list-item">
-                      <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}"
-                        ><span
-                          {{ if eq . $.Site.Language }}
-                            class="active"
-
-                          {{ end }}
-                          aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
-                          >{{ .Language.LanguageName }}</span
-                        ></a
-                      >
-                    </li>
-
-                  {{ end }}
-                </ul>
-              </li>
+              {{ end }}
             </ul>
-          </li>
+          </div>
+        </li>
 
-        {{ end }}
-        {{ if not .Site.Params.disableThemeSwitcher }}
-          <li class="themeswitch">
+      {{ end }}
+      {{ if not .Site.Params.disableThemeSwitcher }}
+        <li class="nav__list-item">
+          <div class="themeswitch">
             <a title="Switch Theme">
               <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a>
-          </li>
+          </div>
+        </li>
 
-        {{ end }}
-      </ul>
+      {{ end }}
     </ul>
   </nav>
 </div>

@@ -759,7 +759,7 @@ Language Switch
 */
 
 /* Buttons */
-a.btn {
+/* a.btn {
   color: #868686;
   font-weight: 400;
 }
@@ -798,7 +798,7 @@ a.btn {
   font-style: normal;
   border-radius: 999em;
 }
-
+ */
 [role='back'] {
   padding: 0.5em 1.25em;
   line-height: 1.666em;

@@ -1,127 +1,150 @@
+.portfolio {
+  position: relative;
+  z-index: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-top: 48px;
 
-  
-  .box-wrapper {
+  @media screen and (min-width: 961px), print {
     padding: 48px;
-    position: relative;
-    z-index: 0;
   }
-  
-  .box-image {
-    display: block;
-    background-color: #fff;
-    position: relative;
-    z-index: 1;
+
+  &::before {
+    border: $border;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    bottom: 10%;
+    right: 10%;
+    background: transparent;
+    border-radius: 0.5em;
+  }
+
+  &__image {
+    min-width: 100%;
+    box-shadow: #000;
     overflow: hidden;
-    &--right,
-    &--left {
-      margin-right: auto;
-      margin-left: auto;
-      width: calc(100% - 64px);
-      background-color: $accent;
-      max-width: 400px;
-      z-index: -1;
-    }
-    img {
-        min-width: 100%;
-        box-shadow: #000;
-        overflow: hidden;
-        transition: box-shadow 0.3s ease;
-        object-fit: cover;
-        border-bottom: 0px;
-        display: block;
-      }
-  }
-  
-  .box {
-    background-color: $accent;
-    padding: 32px;
-    &--left, &--right {
-        margin-top: -24px;
-    }
-  }
-  
-  .cta {
-    padding-bottom: 1em;
-  }
+    transition: box-shadow 0.3s ease;
+    object-fit: cover;
+    border-bottom: 0px;
+    display: block;
 
-@media screen and (min-width: 961px), print {
-    .box {
-        padding: 48px;
-        box-shadow: $shadow;
+    &-wrapper {
+      display: block;
+      background-color: #fff;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+
+      &--right,
+      &--left {
+        margin-right: auto;
+        margin-left: auto;
+        width: calc(100% - 64px);
         background-color: $accent;
-        border-radius: 0.5em;
-
-        &--left,
-        &--right {
-          width: 60%;
-          margin-top: -48px;
-          z-index: 3;
-          background: $primary-lighter;
-        }
-      
-        &--right {
-          margin-left: auto;
-      }
-      }
-    
-      .box-wrapper::before {
-        border: $border;
-        content: '';
         z-index: -1;
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        bottom: 10%;
-        right: 10%;
-        background: transparent;
-        border-radius: 0.5em;
-      }
-    
-      .box-image{
-        &--right, &--left {
-            width: 60%;
-            object-fit: contain;
-            max-width: none;
-            border-top-right-radius: 0.5em;
-            border-top-left-radius: 0.5em;
-          }
-
-          &--right {
-            margin-right: 0;
-            margin-left: auto;
-            border-bottom-right-radius: 0.5em;
-          }
-        
-          &--left {
-            margin-right: auto;
-            margin-left: 0;
-            border-bottom-left-radius: 0.5em;
-          }
-        
-      }
-}
-
-@media screen and (max-width: 960px) {
-
-.box {
-    &--right, &--left {
-      border-bottom:$border;
-    }
-}
-
-
-  
-    .box-image{
-        &--left, &--right {
         padding: 32px 32px 0px 32px;
         max-width: inherit;
+
+        @media screen and (min-width: 961px), print {
+          max-width: 400px;
+          width: 60%;
+          object-fit: contain;
+          max-width: none;
+          border-top-right-radius: 0.5em;
+          border-top-left-radius: 0.5em;
+          padding: 0;
         }
+      }
+
+      &--left {
+        @media screen and (min-width: 961px), print {
+          margin-right: auto;
+          margin-left: 0;
+          border-bottom-left-radius: 0.5em;
+        }
+      }
+
+      &--right {
+        @media screen and (min-width: 961px), print {
+          margin-right: 0;
+          margin-left: auto;
+          border-bottom-right-radius: 0.5em;
+        }
+      }
     }
-  
-    .box-wrapper {
-      padding-left: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-      padding-top: 48px;
+  }
+
+  &__description {
+    background-color: $accent;
+    padding: 32px;
+    @media screen and (min-width: 961px), print {
+      padding: 48px;
+      box-shadow: $shadow;
+      background-color: $accent;
+      border-radius: 0.5em;
     }
+
+    &--left,
+    &--right {
+      margin-top: -24px;
+      border-bottom: $border;
+
+      @media screen and (min-width: 961px), print {
+        border-bottom: 0px;
+        width: 60%;
+        margin-top: -48px;
+        z-index: 3;
+        background: $primary-lighter;
+      }
+    }
+
+    &--right {
+      @media screen and (min-width: 961px), print {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__button {
+    font-weight: 400;
+    display: inline-block;
+    position: relative;
+    outline: 0;
+    color: $info;
+    background: transparent;
+    font-size: 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid $primary-light;
+    white-space: nowrap;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 999em;
+    padding: 10px;
+
+    &:hover {
+      display: inline-block;
+      position: relative;
+      outline: 0px;
+      background: transparent;
+      font-size: 1.4rem;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid $primary;
+      white-space: nowrap;
+      font-weight: 400;
+      font-style: normal;
+      border-radius: 999em;
+    }
+
+    &-wrapper {
+      padding-bottom: 1em;
+    }
+  }
 }

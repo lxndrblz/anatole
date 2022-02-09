@@ -16,29 +16,29 @@
         </div>
 
         {{ range $i, $p := .portfolioitem }}
-          <div class="box-wrapper">
+          <div class="portfolio">
             {{ if .image }}
               <div
-                class="box-image {{ if (modBool $i 2) }}
-                  box-image--right
+                class="portfolio__image-wrapper {{ if (modBool $i 2) }}
+                  portfolio__image-wrapper--right
 
                 {{ else }}
-                  box-image--left
+                  portfolio__image-wrapper--left
 
                 {{ end }}"
               >
                 <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
-                  <img src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
+                  <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
                 </a>
               </div>
 
             {{ end }}
             <div
-              class="box {{ if (modBool $i 2) }}
-                box--left
+              class="portfolio__description {{ if (modBool $i 2) }}
+                portfolio__description--left
 
               {{ else }}
-                box--right
+                portfolio__description--right
 
               {{ end }}"
             >
@@ -76,8 +76,10 @@
               {{ end }}
               <p>{{ .description | markdownify }}</p>
               {{ if .link }}
-                <div class="cta">
-                  <a class="btn" href="{{ .link | safeURL }}" target="_blank" rel="noopener">Visit Site</a>
+                <div class="portfolio__button-wrapper">
+                  <a class="portfolio__button" href="{{ .link | safeURL }}" target="_blank" rel="noopener"
+                    >Visit Site</a
+                  >
                 </div>
 
               {{ end }}

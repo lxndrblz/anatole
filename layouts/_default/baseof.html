@@ -9,16 +9,8 @@
   <body class="body">
     <header class="header">{{ partial "navbar.html" . }}</header>
     <div class="wrapper">
-      <aside class="aside">
-        {{- partial "sidebar.html" . -}}
-      </aside>
-      <main class="main">
-        <div class="autopagerize_page_element">
-          <div class="content">
-            {{- block "main" . }}{{- end }}
-          </div>
-        </div>
-      </main>
+      {{- partial "sidebar.html" . -}}
+      {{- block "main" . }}{{- end }}
     </div>
 
     {{- partial "footer.html" (dict "context" . "footerClassModifier" "base") -}}

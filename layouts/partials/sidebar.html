@@ -1,30 +1,32 @@
-<div
-  class="sidebar{{ with .Site.Params.doNotLoadAnimations }}
-    .
+<aside class="sidebar-wrapper">
+  <div
+    class="sidebar{{ with .Site.Params.doNotLoadAnimations }}
+      .
 
-  {{ else }}
-    animated fadeInDown
+    {{ else }}
+      animated fadeInDown
 
-  {{ end }}"
->
-  <div class="sidebar__content">
-    <div class="sidebar__title">
+    {{ end }}"
+  >
+    <div class="sidebar__content">
+      <div class="sidebar__title">
         <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture" />
         <h3 title=""><a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a></h3>
         <div class="sidebar__title-description">
           <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>
         </div>
-    </div>
-    <ul class="sidebar__list">
-      {{ range $item := .Site.Params.socialIcons }}
-        <li class="sidebar__list-item">
-          <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}">
-            <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
+      </div>
+      <ul class="sidebar__list">
+        {{ range $item := .Site.Params.socialIcons }}
+          <li class="sidebar__list-item">
+            <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}">
+              <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+            </a>
+          </li>
 
-      {{ end }}
-    </ul>
+        {{ end }}
+      </ul>
+    </div>
+    {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
   </div>
-  {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
-</div>
+</aside>

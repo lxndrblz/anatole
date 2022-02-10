@@ -742,10 +742,10 @@ Language Switch
 }
 */
 /* share */
-
+/* 
 .read_more {
   font-size: 1.4rem;
-}
+} */
 
 /*
 #fb_comments_container {
@@ -869,7 +869,7 @@ Language Switch
 */
 
 /* Menu */
-.menu {
+/* .menu {
   float: right;
   padding-top: 30px;
 }
@@ -925,7 +925,7 @@ Language Switch
   visibility: hidden;
   width: 100px;
   float: right;
-}
+} */
 /*
 .page_404 {
   text-align: center;
@@ -1090,9 +1090,9 @@ Language Switch
 }
 
 @media screen and (max-width: 960px) {
-  aside {
+  /* aside {
     width: 100%;
-  }
+  } */
 
   .sidebar {
     width: 100%;

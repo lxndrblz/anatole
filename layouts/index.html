@@ -1,26 +1,5 @@
 {{ define "main" }}
-  <div
-    class="post {{ with .Site.Params.doNotLoadAnimations }}
-      .
-
-    {{ else }}
-      animated fadeInDown
-
-    {{ end }}"
-  >
-    <div class="post-title post-content">
-      {{ .Content }}
-    </div>
-
-    <!-- (Optional) Home
-            -- on top of `mainSections` content (aka posts) ;
-            -- as declared in content/_index.md
-
-            One can set `mainSections = [""]` and have the content/_index.md specified here
-        -->
-  </div>
-
-  {{ if .Params.mainSectionsTitle }}
+  <main class="post-wrapper">
     <div
       class="post {{ with .Site.Params.doNotLoadAnimations }}
         .
@@ -31,90 +10,113 @@
       {{ end }}"
     >
       <div class="post-title post-content">
-        <h2>{{ .Params.mainSectionsTitle }}</h2>
+        {{ .Content }}
       </div>
+
+      <!-- (Optional) Home
+            -- on top of `mainSections` content (aka posts) ;
+            -- as declared in content/_index.md
+
+            One can set `mainSections = [""]` and have the content/_index.md specified here
+        -->
     </div>
 
-  {{ end }}
+    {{ if .Params.mainSectionsTitle }}
+      <div
+        class="post {{ with .Site.Params.doNotLoadAnimations }}
+          .
 
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-  {{ range $paginator.Pages }}
-    <div
-      class="post {{ with .Site.Params.doNotLoadAnimations }}
-        .
+        {{ else }}
+          animated fadeInDown
 
-      {{ else }}
-        animated fadeInDown
-
-      {{ end }}"
-    >
-      {{ if .Params.thumbnail }}
-        <div class="post-thumbnail">
-          <a href="{{ .RelPermalink }}">
-            <img src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" loading="lazy" />
-          </a>
-        </div>
-
-      {{ end }}
-      <div class="post-title">
-        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      </div>
-      <div class="post-content">
-        <div class="p_part">
-          <p>
-            {{ if .Site.Params.fullPostContent }}
-              {{ .Content }}
-
-
-            {{ else }}
-              {{ .Summary }}
-
-
-            {{ end }}
-          </p>
-          <!-- add read more -->
-          {{- if and (.Truncated) (.Site.Params.readMore) -}}
-            <a href="{{ .RelPermalink }}" class="read_more">{{ i18n "read_more" }}</a>
-
-          {{- end -}}
+        {{ end }}"
+      >
+        <div class="post-title post-content">
+          <h2>{{ .Params.mainSectionsTitle }}</h2>
         </div>
       </div>
 
-      <!--  -->
-      <div class="post-footer">
-        <div class="meta">
-          <div class="info">
-            <em class="fas fa-calendar-day"></em>
-            <span class="date"
-              >{{ if isset .Site.Params "indexdateformat" }}
-                {{ .Date.Format .Site.Params.indexDateFormat }}
+    {{ end }}
+
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+    {{ range $paginator.Pages }}
+      <div
+        class="post {{ with .Site.Params.doNotLoadAnimations }}
+          .
+
+        {{ else }}
+          animated fadeInDown
+
+        {{ end }}"
+      >
+        {{ if .Params.thumbnail }}
+          <div class="post-thumbnail">
+            <a href="{{ .RelPermalink }}">
+              <img src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" loading="lazy" />
+            </a>
+          </div>
+
+        {{ end }}
+        <div class="post-title">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        </div>
+        <div class="post-content">
+          <div class="p_part">
+            <p>
+              {{ if .Site.Params.fullPostContent }}
+                {{ .Content }}
 
 
               {{ else }}
-                {{ .Date.Format "Mon, Jan 2, 2006" }}
+                {{ .Summary }}
 
 
-              {{ end }}</span
-            >
-            {{ with .Page.Params.Categories }}
-              {{ partial "taxonomy/categories.html" . }}
+              {{ end }}
+            </p>
+            <!-- add read more -->
+            {{- if and (.Truncated) (.Site.Params.readMore) -}}
+              <a href="{{ .RelPermalink }}" class="post__more">{{ i18n "read_more" }}</a>
+
+            {{- end -}}
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="post-footer">
+          <div class="meta">
+            <div class="info">
+              <em class="fas fa-calendar-day"></em>
+              <span class="date"
+                >{{ if isset .Site.Params "indexdateformat" }}
+                  {{ .Date.Format .Site.Params.indexDateFormat }}
 
 
-            {{ end }}
-
-            {{ with .Page.Params.Tags }}
-              {{ partial "taxonomy/tags.html" . }}
+                {{ else }}
+                  {{ .Date.Format "Mon, Jan 2, 2006" }}
 
 
-            {{ end }}
+                {{ end }}</span
+              >
+              {{ with .Page.Params.Categories }}
+                {{ partial "taxonomy/categories.html" . }}
+
+
+              {{ end }}
+
+              {{ with .Page.Params.Tags }}
+                {{ partial "taxonomy/tags.html" . }}
+
+
+              {{ end }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-  {{ end }}
-  <div class="pagination">
-    {{ template "partials/pagination.html" . }}
-  </div>
+    {{ end }}
+    <div class="pagination">
+      {{ template "partials/pagination.html" . }}
+    </div>
+  </main>
 
 {{ end }}

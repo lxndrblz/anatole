@@ -2,10 +2,39 @@
   -webkit-background-size: cover;
   background-size: cover;
   background-color: var(--bg-color);
-  height: 100%;
-  left: 0;
-  z-index: 4;
-  border-right: 1px solid var(--border-color);
+
+  @media screen and (min-width: 961px), print {
+    border-right: 1px solid $primary-lighter;
+    z-index: 3;
+    height: 100vh;
+    position: fixed;
+    width: $sidebar-width;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include widescreen {
+    padding-left: 17%;
+    padding-right: 3%;
+    width: calc(var(--sidebar-width) - 20%);
+  }
+
+  &-wrapper {
+    width: 100%;
+
+    @media screen and (min-width: 961px), print {
+      width: $sidebar-width;
+    }
+  }
+
+  &__content {
+    @media screen and (min-width: 961px), print {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+    }
+  }
 
   &__list {
     list-style: none;
@@ -52,31 +81,5 @@
       line-height: 1;
       margin: 1em;
     }
-  }
-
-
-}
-
-@media screen and (min-width: 961px), print {
-  .sidebar {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: $sidebar-width;
-    &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-grow: 1;
-    }
-  }
-}
-
-@media (min-width: 1921px) {
-  .sidebar {
-    padding-left: 17%;
-    padding-right: 3%;
-    width: calc(var(--sidebar-width) - 20%);
   }
 }

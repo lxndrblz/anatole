@@ -13,7 +13,6 @@ A live demo of the theme can be found under the following domain:
 
 Anatole's aims to be minimalistic and sleek but still brings some great functionality, including:
 
-- Profile picture and slogan
 - Dark mode
 - Multilingual
 - RTL support
@@ -22,17 +21,14 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - 100⁄100 Google Lighthouse score
 - Analytics powered by Google Analytics, Simple Analytics and Umami (optional)
 - Comments powered by Disqus, Commento, Gitalk or Utteranc.es (optional)
-- SimpleAnalytics (optional)
-- Katex support (optional)
+- KaTex support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
 - Open Graph support
 - Google Fonts support
-- Custom CSS (optional)
-- Custom JavaScript (optional)
+- Custom JavaScript and CSS (optional)
 - Compliant to strict CSP
-- Syntax highlighting
-- Series
+- Post Series
 
 ## Preview the exampleSite
 
@@ -43,7 +39,10 @@ hugo server --themesDir ../..
 ```
 
 ## Documentation
-The latest documentation for the theme can be found within the [Wiki Tab](https://github.com/lxndrblz/anatole/wiki).
+
+🚧 The documentation has moved!
+
+The latest documentation for the theme can be found within the [Wiki Tab on GitHub](https://github.com/lxndrblz/anatole/wiki).
 
 ## License
 

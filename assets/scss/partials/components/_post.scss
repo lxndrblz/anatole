@@ -2,6 +2,18 @@
   background-color: $accent;
   margin: 30px;
 
+  &-wrapper {
+    width: 100%;
+
+    @media screen and (min-width: 961px), print {
+      width: $content-width;
+    }
+  }
+
+  &__more {
+    font-size: 1.4rem;
+  }
+
   .post-title {
     h1 {
       text-transform: uppercase;

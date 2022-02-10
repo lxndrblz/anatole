@@ -50,7 +50,6 @@
         max-width: inherit;
 
         @media screen and (min-width: 961px), print {
-          max-width: 400px;
           width: 60%;
           object-fit: contain;
           max-width: none;
@@ -122,7 +121,6 @@
     cursor: pointer;
     border: 1px solid $primary-light;
     white-space: nowrap;
-    font-weight: 400;
     font-style: normal;
     border-radius: 999em;
     padding: 10px;

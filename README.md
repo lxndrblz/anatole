@@ -6,14 +6,12 @@ Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme ba
 ![Screenshot Anatole Theme (dark)](https://raw.githubusercontent.com/lxndrblz/anatole/master/images/screenshot_dark.png)
 
 ## Demo
-
+A live demo of the theme can be found under the following domain:
 [https://anatole-demo.netlify.app/](https://anatole-demo.netlify.app/)
 
 ## Features
 
-Anatole's aims to be minimalistic and sleek but still brings some great functionality.
-
-### Features include
+Anatole's aims to be minimalistic and sleek but still brings some great functionality, including:
 
 - Profile picture and slogan
 - Dark mode
@@ -22,8 +20,8 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Portfolio (optional)
 - Post Thumbnails (optional)
 - 100⁄100 Google Lighthouse score
-- Google Analytics (optional)
-- Comments powered by Disqus, Commento or Utteranc.es (optional)
+- Analytics powered by Google Analytics, Simple Analytics and Umami (optional)
+- Comments powered by Disqus, Commento, Gitalk or Utteranc.es (optional)
 - SimpleAnalytics (optional)
 - Katex support (optional)
 - Formspree Contact Form (optional)
@@ -42,20 +40,6 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 git clone https://github.com/lxndrblz/anatole.git anatole
 cd anatole/exampleSite
 hugo server --themesDir ../..
-```
-
-## Quick Start
-
-1. Add the repository into your Hugo Project repository as a submodule: `git submodule add https://github.com/lxndrblz/anatole.git themes/anatole`.
-2. Configure your `config.toml`. Feel free to copy the demo `config.toml` and some content from the exampleSite.
-3. Build your site with `hugo serve` and admire the result at `http://localhost:1313/`.
-
-## Update your installation
-
-If you want to get the latest update of the `Anatole` theme, please execute this command:
-
-```shell
-git submodule update --remote --merge
 ```
 
 ## Documentation

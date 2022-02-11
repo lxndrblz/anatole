@@ -1,4 +1,4 @@
-# Anatole ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/1f4f2327-2b3f-428a-8f31-c4f921ebcc44/deploy-status)](https://app.netlify.com/sites/anatole-demo/deploys)
+# Anatole Hugo Theme ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/1f4f2327-2b3f-428a-8f31-c4f921ebcc44/deploy-status)](https://app.netlify.com/sites/anatole-demo/deploys)
 
 Anatole is a beautiful minimalist two-column [hugo](https://gohugo.io/) theme based on farbox-theme-Anatole.
 
@@ -31,7 +31,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Compliant to strict CSP
 - Post Series
 
-## Preview the exampleSite
+## Preview the Example Site
 
 ```shell
 git clone https://github.com/lxndrblz/anatole.git anatole
@@ -52,6 +52,11 @@ Anatole is licensed under the [MIT license](https://github.com/lxndrblz/anatole/
 ## Maintenance
 
 This theme is maintained by its author [Alexander Bilz](https://github.com/lxndrblz) and with the help from these awesome [contributors](https://github.com/lxndrblz/anatole/graphs/contributors). Please open an issue/pull request if you want to contribute to making this theme better and more feature-complete. For PRs, please make sure that they align with the theme's goals: minimalism, speed, and elegance.
+
+## Contributions
+All contributions (including features, translations, code cleanups, improved documentation & bugs reporting) are welcome.
+
+Read the [guidelines](https://github.com/lxndrblz/anatole/blob/master/.github/CONTRIBUTING.md) for more information about contributing to this project.
 
 ## Sponsoring
 

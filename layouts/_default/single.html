@@ -1,112 +1,114 @@
 {{ define "main" }}
-  <div
-    class="post {{ with .Site.Params.doNotLoadAnimations }}
-      .
+  <div class="post-wrapper">
+    <div
+      class="post {{ with .Site.Params.doNotLoadAnimations }}
+        .
 
-    {{ else }}
-      animated fadeInDown
+      {{ else }}
+        animated fadeInDown
 
-    {{ end }}"
-  >
-    <div class="post-content">
-      {{ if .Params.thumbnail }}
-        <img class="post-thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
+      {{ end }}"
+    >
+      <div class="post-content">
+        {{ if .Params.thumbnail }}
+          <img class="post-thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
 
-      {{ end }}
-      <div class="post-title">
-        <h1>{{ .Title }}</h1>
-        {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
-          <div class="info">
-            <em class="fas fa-calendar-day info__icon"></em>
-            <span class="date info__text"
-              >{{ if isset .Site.Params "singledateformat" }}
-                {{ .Date.Format .Site.Params.singleDateFormat }}
-
-
-              {{ else }}
-                {{ .Date.Format "Mon, Jan 2, 2006" }}
+        {{ end }}
+        <div class="post-title">
+          <h1>{{ .Title }}</h1>
+          {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
+            <div class="info">
+              <em class="fas fa-calendar-day info__icon"></em>
+              <span class="date info__text"
+                >{{ if isset .Site.Params "singledateformat" }}
+                  {{ .Date.Format .Site.Params.singleDateFormat }}
 
 
-              {{ end }}</span
-            >
-            <em class="fas fa-stopwatch info__icon"></em>
-            <span class="reading-time info__text">{{ i18n "reading_time" .ReadingTime }}</span>
+                {{ else }}
+                  {{ .Date.Format "Mon, Jan 2, 2006" }}
+
+
+                {{ end }}</span
+              >
+              <em class="fas fa-stopwatch info__icon"></em>
+              <span class="reading-time info__text">{{ i18n "reading_time" .ReadingTime }}</span>
+            </div>
+
+          {{ end }}
+        </div>
+
+        {{- partial "expirationnote.html" . -}}
+
+        {{- if (eq .Params.toc true) -}}
+          <h3>Table of Contents</h3>
+          {{ .TableOfContents }}
+
+
+        {{- end -}}
+
+        {{ .Content }}
+
+        {{- if isset .Params "series" -}}
+          {{- partial "series.html" . -}}
+
+
+        {{- end -}}
+
+        {{- if (eq .Params.contact true) -}}
+          {{- partial "contact.html" . -}}
+
+
+        {{- end -}}
+      </div>
+      <div class="post-footer">
+        <div class="info">
+          {{ with .Page.Params.Categories }}
+            {{ partial "taxonomy/categories.html" . }}
+
+
+          {{ end }}
+
+          {{ with .Page.Params.Tags }}
+            {{ partial "taxonomy/tags.html" . }}
+
+
+          {{ end }}
+        </div>
+      </div>
+
+      {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}
+        {{- if .Site.DisqusShortname -}}
+          <div id="comment">
+            <h2>{{ i18n "comments" }}</h2>
+            {{ template "_internal/disqus.html" . }}
           </div>
 
-        {{ end }}
-      </div>
+        {{- end -}}
+        {{- if .Site.Params.utterances.repo -}}
+          <div id="comment">
+            <h2>{{ i18n "comments" }}</h2>
+            {{ partial "comments/utterances.html" . }}
+          </div>
 
-      {{- partial "expirationnote.html" . -}}
+        {{- end -}}
+        {{- if .Site.Params.CommentoURL -}}
+          <div id="comment">
+            <h2>{{ i18n "comments" }}</h2>
+            {{ partial "comments/commento.html" . }}
+          </div>
 
-      {{- if (eq .Params.toc true) -}}
-        <h3>Table of Contents</h3>
-        {{ .TableOfContents }}
+        {{- end -}}
+        {{- if .Site.Params.gitalk.repo -}}
+          <div id="comment">
+            <h2>{{ i18n "comments" }}</h2>
+            {{ partial "comments/gitalk.html" . }}
+          </div>
 
-
-      {{- end -}}
-
-      {{ .Content }}
-
-      {{- if isset .Params "series" -}}
-        {{- partial "series.html" . -}}
-
-
-      {{- end -}}
-
-      {{- if (eq .Params.contact true) -}}
-        {{- partial "contact.html" . -}}
+        {{- end -}}
 
 
-      {{- end -}}
+      {{ end }}
     </div>
-    <div class="post-footer">
-      <div class="info">
-        {{ with .Page.Params.Categories }}
-          {{ partial "taxonomy/categories.html" . }}
-
-
-        {{ end }}
-
-        {{ with .Page.Params.Tags }}
-          {{ partial "taxonomy/tags.html" . }}
-
-
-        {{ end }}
-      </div>
-    </div>
-
-    {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}
-      {{- if .Site.DisqusShortname -}}
-        <div id="comment">
-          <h2>{{ i18n "comments" }}</h2>
-          {{ template "_internal/disqus.html" . }}
-        </div>
-
-      {{- end -}}
-      {{- if .Site.Params.utterances.repo -}}
-        <div id="comment">
-          <h2>{{ i18n "comments" }}</h2>
-          {{ partial "comments/utterances.html" . }}
-        </div>
-
-      {{- end -}}
-      {{- if .Site.Params.CommentoURL -}}
-        <div id="comment">
-          <h2>{{ i18n "comments" }}</h2>
-          {{ partial "comments/commento.html" . }}
-        </div>
-
-      {{- end -}}
-      {{- if .Site.Params.gitalk.repo -}}
-        <div id="comment">
-          <h2>{{ i18n "comments" }}</h2>
-          {{ partial "comments/gitalk.html" . }}
-        </div>
-
-      {{- end -}}
-
-
-    {{ end }}
   </div>
 
 {{ end }}

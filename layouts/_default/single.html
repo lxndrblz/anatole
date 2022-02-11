@@ -61,19 +61,17 @@
         {{- end -}}
       </div>
       <div class="post-footer">
-        <div class="info">
-          {{ with .Page.Params.Categories }}
-            {{ partial "taxonomy/categories.html" . }}
+        {{ with .Page.Params.Categories }}
+          {{ partial "taxonomy/categories.html" . }}
 
 
-          {{ end }}
+        {{ end }}
 
-          {{ with .Page.Params.Tags }}
-            {{ partial "taxonomy/tags.html" . }}
+        {{ with .Page.Params.Tags }}
+          {{ partial "taxonomy/tags.html" . }}
 
 
-          {{ end }}
-        </div>
+        {{ end }}
       </div>
 
       {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}

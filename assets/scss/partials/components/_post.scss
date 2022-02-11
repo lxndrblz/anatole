@@ -96,65 +96,14 @@
     }
   }
 
-  .post-footer {
-    padding: 0 0 10px 0;
+  &-footer {
     border-bottom: $border;
-    .meta {
-      max-width: 100%;
-      display: flex;
-      color: #bbbbbb;
-      .info {
-        float: left;
-        font-size: 1.2rem;
-        margin-bottom: 1em;
-        color: $primary;
-        .date {
-          margin-right: 10px;
-          margin-left: 5px;
-        }
-      }
-      a {
-        text-decoration: none;
-        color: $primary;
-        &:hover {
-          color: #2660ab;
-        }
-      }
-      i {
-        margin-right: 6px;
-      }
-    }
-    .info {
-      .separator a {
-        margin-right: 0.2em;
-      }
-    }
-    .tags {
-      padding-bottom: 15px;
-      font-size: 1.3rem;
+    font-size: 1.2rem;
+    padding: 12px 0;
 
-      ul {
-        list-style-type: none;
-        display: inline;
-        margin: 0;
-        padding: 0;
-      }
-
-      ul li {
-        list-style-type: none;
-        margin: 0;
-        padding-right: 5px;
-        display: inline;
-      }
-
-      a {
-        text-decoration: none;
-        color: $primary;
-        font-weight: 400;
-        &:hover {
-          text-decoration: none;
-        }
-      }
+    &__date {
+      margin-right: 10px;
+      margin-left: 5px;
     }
   }
 }

@@ -85,33 +85,29 @@
 
         <!--  -->
         <div class="post-footer">
-          <div class="meta">
-            <div class="info">
-              <em class="fas fa-calendar-day"></em>
-              <span class="date"
-                >{{ if isset .Site.Params "indexdateformat" }}
-                  {{ .Date.Format .Site.Params.indexDateFormat }}
+          <em class="fas fa-calendar-day"></em>
+          <span class="post-footer__date"
+            >{{ if isset .Site.Params "indexdateformat" }}
+              {{ .Date.Format .Site.Params.indexDateFormat }}
 
 
-                {{ else }}
-                  {{ .Date.Format "Mon, Jan 2, 2006" }}
+            {{ else }}
+              {{ .Date.Format "Mon, Jan 2, 2006" }}
 
 
-                {{ end }}</span
-              >
-              {{ with .Page.Params.Categories }}
-                {{ partial "taxonomy/categories.html" . }}
+            {{ end }}</span
+          >
+          {{ with .Page.Params.Categories }}
+            {{ partial "taxonomy/categories.html" . }}
 
 
-              {{ end }}
+          {{ end }}
 
-              {{ with .Page.Params.Tags }}
-                {{ partial "taxonomy/tags.html" . }}
+          {{ with .Page.Params.Tags }}
+            {{ partial "taxonomy/tags.html" . }}
 
 
-              {{ end }}
-            </div>
-          </div>
+          {{ end }}
         </div>
       </div>
 

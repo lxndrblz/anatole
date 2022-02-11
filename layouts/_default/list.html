@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div
-    class="archive {{ with .Site.Params.doNotLoadAnimations }}
+    class="post post-wrapper archive {{ with .Site.Params.doNotLoadAnimations }}
       .
 
     {{ else }}
@@ -10,24 +10,22 @@
   >
     <ul class="archive__list">
       {{ range .Data.Pages.GroupByDate "2006" }}
-        <div class="archive__list-title">{{ .Key }}</div>
+        <div class="archive__list-heading">{{ .Key }}</div>
         {{ range .Pages }}
           <ul>
             <li class="archive__list-item">
-                <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
-                <div class="post-time">
-                  <span class="date"
-                    >{{ if isset .Site.Params "listdateformat" }}
-                      {{ .Date.Format .Site.Params.listDateFormat }}
+              <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+              <div class="archive__list-date">
+                {{ if isset .Site.Params "listdateformat" }}
+                  {{ .Date.Format .Site.Params.listDateFormat }}
 
 
-                    {{ else }}
-                      {{ .Date.Format "Jan 2" }}
+                {{ else }}
+                  {{ .Date.Format "Jan 2" }}
 
 
-                    {{ end }}</span
-                  >
-                </div>
+                {{ end }}
+              </div>
             </li>
           </ul>
 

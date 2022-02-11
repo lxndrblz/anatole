@@ -5,7 +5,7 @@
     border-radius: 0.25rem;
     border-width: 2px;
 
-    #indicator {
+    &__indicator {
         background-color: $alert;
         display: inline-block;
         border-radius: 9999px;

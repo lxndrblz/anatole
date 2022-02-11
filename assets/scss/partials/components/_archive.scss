@@ -1,4 +1,10 @@
 .archive {
+  width: 100%;
+
+  @media screen and (min-width: 961px), print {
+    width: $content-width;
+  }
+
   &__list {
     font-size: 1.4rem;
     margin: 30px;

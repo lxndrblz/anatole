@@ -96,12 +96,12 @@
     }
   }
 
-  &-footer {
+  &__footer {
     border-bottom: $border;
     font-size: 1.2rem;
     padding: 12px 0;
 
-    &__date {
+    &-date {
       margin-right: 10px;
       margin-left: 5px;
     }

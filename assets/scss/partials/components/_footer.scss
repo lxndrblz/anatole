@@ -20,17 +20,22 @@
     content: '\00B7';
     padding: 4px;
   }
-}
-@media screen and (min-width: 961px), print {
-  .footer {
-    &--base {
-      display: none;
+
+  &__sidebar {
+    display: none;
+    @include desktop{
+      display: inline-block;
+    }
+    @include print{
+      display: inline-block;
     }
   }
-}
-@media screen and (max-width: 960px) {
-  .footer {
-    &--sidebar {
+
+  &__base {
+    @include desktop{
+      display: none;
+    }
+    @include print{
       display: none;
     }
   }

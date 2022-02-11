@@ -1,3 +1,4 @@
+
 @mixin desktop {
   @media screen and (min-width: 961px) {
     @content;
@@ -6,6 +7,12 @@
 
 @mixin widescreen {
   @media screen and (min-width: 1921px) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
     @content;
   }
 }

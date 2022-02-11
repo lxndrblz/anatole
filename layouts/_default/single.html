@@ -9,33 +9,33 @@
 
       {{ end }}"
     >
-      <div class="post-content">
-        {{ if .Params.thumbnail }}
-          <img class="post-thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
+      {{ if .Params.thumbnail }}
+        <div class="post__thumbnail-wrapper">
+          <img class="post__thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
+        </div>
+
+      {{ end }}
+      <div class="post__content">
+        <h1>{{ .Title }}</h1>
+        {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
+          <div class="info">
+            <em class="fas fa-calendar-day info__icon"></em>
+            <span class="date info__text"
+              >{{ if isset .Site.Params "singledateformat" }}
+                {{ .Date.Format .Site.Params.singleDateFormat }}
+
+
+              {{ else }}
+                {{ .Date.Format "Mon, Jan 2, 2006" }}
+
+
+              {{ end }}</span
+            >
+            <em class="fas fa-stopwatch info__icon"></em>
+            <span class="reading-time info__text">{{ i18n "reading_time" .ReadingTime }}</span>
+          </div>
 
         {{ end }}
-        <div class="post-title">
-          <h1>{{ .Title }}</h1>
-          {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
-            <div class="info">
-              <em class="fas fa-calendar-day info__icon"></em>
-              <span class="date info__text"
-                >{{ if isset .Site.Params "singledateformat" }}
-                  {{ .Date.Format .Site.Params.singleDateFormat }}
-
-
-                {{ else }}
-                  {{ .Date.Format "Mon, Jan 2, 2006" }}
-
-
-                {{ end }}</span
-              >
-              <em class="fas fa-stopwatch info__icon"></em>
-              <span class="reading-time info__text">{{ i18n "reading_time" .ReadingTime }}</span>
-            </div>
-
-          {{ end }}
-        </div>
 
         {{- partial "expirationnote.html" . -}}
 

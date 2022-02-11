@@ -9,7 +9,7 @@
 
       {{ end }}"
     >
-      <div class="post-title post-content">
+      <div class="post__content">
         {{ .Content }}
       </div>
 
@@ -31,7 +31,7 @@
 
         {{ end }}"
       >
-        <div class="post-title post-content">
+        <div class="post__content">
           <h2>{{ .Params.mainSectionsTitle }}</h2>
         </div>
       </div>
@@ -50,36 +50,38 @@
         {{ end }}"
       >
         {{ if .Params.thumbnail }}
-          <div class="post-thumbnail">
+          <div class="post__thumbnail-wrapper">
             <a href="{{ .RelPermalink }}">
-              <img src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" loading="lazy" />
+              <img
+                class="post__thumbnail"
+                src="{{ .Params.thumbnail | relURL }}"
+                alt="Thumbnail image"
+                loading="lazy"
+              />
             </a>
           </div>
 
         {{ end }}
-        <div class="post-title">
+        <div class="post__content">
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         </div>
-        <div class="post-content">
-          <div class="p_part">
-            <p>
-              {{ if .Site.Params.fullPostContent }}
-                {{ .Content }}
+        <p>
+          {{ if .Site.Params.fullPostContent }}
+            {{ .Content }}
 
 
-              {{ else }}
-                {{ .Summary }}
+          {{ else }}
+            {{ .Summary }}
 
 
-              {{ end }}
-            </p>
-            <!-- add read more -->
-            {{- if and (.Truncated) (.Site.Params.readMore) -}}
-              <a href="{{ .RelPermalink }}" class="post__more">{{ i18n "read_more" }}</a>
+          {{ end }}
+        </p>
+        <!-- add read more -->
+        {{- if and (.Truncated) (.Site.Params.readMore) -}}
+          <a href="{{ .RelPermalink }}" class="post__more">{{ i18n "read_more" }}</a>
 
-            {{- end -}}
-          </div>
-        </div>
+        {{- end -}}
+
 
         <!--  -->
         <div class="post-footer">

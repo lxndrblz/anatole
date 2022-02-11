@@ -23,6 +23,14 @@
     border-radius: 0.5em;
   }
 
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2.6rem;
+    line-height: 1;
+    font-weight: 600;
+  }
+
   &__image {
     max-width: 100%;
     min-width: 100%;

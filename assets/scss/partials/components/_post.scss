@@ -14,20 +14,36 @@
     font-size: 1.4rem;
   }
 
-  .post-title {
+  &__thumbnail {
+    width: 100%;
+    height: $thumbnail-height;
+    object-fit: cover;
+    display: block;
+
+    &-wrapper {
+      border-radius: 0.5em;
+      width: 100%;
+      margin-bottom: 1em;
+      box-shadow: $shadow;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+  }
+
+  &__content {
     h1 {
       text-transform: uppercase;
       font-size: 3em;
       letter-spacing: 1px;
       line-height: 1;
     }
+
     h2 {
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 2.6rem;
       line-height: 1;
       font-weight: 600;
-      color: $primary;
     }
 
     h3 {
@@ -35,22 +51,17 @@
       letter-spacing: 1px;
       line-height: 1;
       font-weight: 600;
-      color: $primary;
       font-size: 2.2rem;
       margin: 0;
     }
-    color: $primary;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .post-content {
+
     ul,
     ol {
       line-height: 1.9em;
       font-weight: 400;
       font-size: 1.4rem;
     }
+
     img {
       display: block;
       margin-left: auto;
@@ -58,6 +69,7 @@
       width: 65%;
       max-width: 100%;
     }
+
     figure {
       max-width: 100%;
       height: auto;
@@ -141,23 +153,6 @@
           text-decoration: none;
         }
       }
-    }
-  }
-
-  .post-thumbnail {
-    width: 100%;
-    padding-bottom: 1em;
-    box-shadow: #000;
-    border-radius: 0.5em;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-
-    img {
-      width: 100%;
-      height: $thumbnail-height;
-      object-fit: cover;
-      border: $border;
-      border-bottom: 0px;
     }
   }
 }

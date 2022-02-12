@@ -6,7 +6,7 @@
   padding-bottom: 0px;
   padding-top: 48px;
 
-  @media screen and (min-width: 961px), print {
+  @include desktop_and_print {
     padding: 48px;
   }
 
@@ -58,7 +58,7 @@
         padding: 32px 32px 0px 32px;
         max-width: inherit;
 
-        @media screen and (min-width: 961px), print {
+        @include desktop_and_print {
           width: 60%;
           object-fit: contain;
           max-width: none;
@@ -69,7 +69,7 @@
       }
 
       &--left {
-        @media screen and (min-width: 961px), print {
+        @include desktop_and_print {
           margin-right: auto;
           margin-left: 0;
           border-bottom-left-radius: 0.5em;
@@ -77,7 +77,7 @@
       }
 
       &--right {
-        @media screen and (min-width: 961px), print {
+        @include desktop_and_print {
           margin-right: 0;
           margin-left: auto;
           border-bottom-right-radius: 0.5em;
@@ -89,7 +89,7 @@
   &__description {
     background-color: $accent;
     padding: 32px;
-    @media screen and (min-width: 961px), print {
+    @include desktop_and_print {
       padding: 48px;
       box-shadow: $shadow;
       background-color: $accent;
@@ -101,7 +101,7 @@
       margin-top: -24px;
       border-bottom: $border;
 
-      @media screen and (min-width: 961px), print {
+      @include desktop_and_print {
         border-bottom: 0px;
         width: 60%;
         margin-top: -48px;
@@ -111,7 +111,7 @@
     }
 
     &--right {
-      @media screen and (min-width: 961px), print {
+      @include desktop_and_print {
         margin-left: auto;
       }
     }

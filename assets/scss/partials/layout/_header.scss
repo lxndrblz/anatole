@@ -1,31 +1,16 @@
 .header {
-  width: $content-width;
+  width: 100%;
   position: fixed;
   right: 0;
   z-index: 3;
   background-color: $accent;
-}
 
-@media screen and (min-width: 961px), print {
-  .header {
+  @include desktop {
     border-bottom: $border;
-  }
-}
-@media screen and (max-width: 960px) {
-  .header {
-    width: 100%;
-  }
-}
-
-@media (min-width: 1921px) {
-  .header {
-    position: fixed;
     width: $content-width;
   }
-}
 
-@media print {
-  .header {
+  @include print {
     display: none;
   }
 }

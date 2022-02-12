@@ -23,19 +23,13 @@
 
   &__sidebar {
     display: none;
-    @include desktop{
-      display: inline-block;
-    }
-    @include print{
+    @include desktop_and_print{
       display: inline-block;
     }
   }
 
   &__base {
-    @include desktop{
-      display: none;
-    }
-    @include print{
+    @include desktop_and_print{
       display: none;
     }
   }

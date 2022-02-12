@@ -1,7 +1,7 @@
 .archive {
   width: 100%;
 
-  @media screen and (min-width: 961px), print {
+  @include desktop_and_print {
     width: $content-width;
   }
 

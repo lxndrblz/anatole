@@ -34,7 +34,7 @@
   }
 }
 
-@media screen and (min-width: 961px), print {
+@include desktop_and_print {
   .nav {
     display: flex;
     justify-content: space-between;

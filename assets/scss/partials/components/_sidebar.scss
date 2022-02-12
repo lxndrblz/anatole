@@ -3,7 +3,7 @@
   background-size: cover;
   background-color: var(--bg-color);
 
-  @media screen and (min-width: 961px), print {
+  @include desktop_and_print {
     border-right: 1px solid $primary-lighter;
     z-index: 3;
     height: 100vh;
@@ -22,13 +22,13 @@
   &-wrapper {
     width: 100%;
 
-    @media screen and (min-width: 961px), print {
+    @include desktop_and_print {
       width: $sidebar-width;
     }
   }
 
   &__content {
-    @media screen and (min-width: 961px), print {
+    @include desktop_and_print {
       display: flex;
       flex-direction: column;
       flex-grow: 1;

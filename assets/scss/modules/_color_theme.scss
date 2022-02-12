@@ -6,7 +6,8 @@ $themes: (
     primary-lighter: $primary-lighter--lightmode,
     info: $info,
     shadow: $shadow--lightmode,
-    border: 1px solid $primary-lighter--lightmode
+    border: 1px solid $primary-lighter--lightmode,
+    alert: $alert
   ),
   dark: (
     accent: $accent--darkmode,
@@ -15,7 +16,8 @@ $themes: (
     primary-lighter: $primary-lighter--darkmode,
     info: $info,
     shadow: $shadow--darkmode,
-    border: 1px solid $primary-lighter--darkmode
+    border: 1px solid $primary-lighter--darkmode,
+    alert: $alert
   ),
 );
 

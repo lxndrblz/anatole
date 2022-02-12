@@ -9,8 +9,12 @@
   <body class="body">
     <header class="header">{{ partial "navbar.html" . }}</header>
     <div class="wrapper">
-      {{- partial "sidebar.html" . -}}
-      {{- block "main" . }}{{- end }}
+      <aside class="wrapper__sidebar">
+        {{- partial "sidebar.html" . -}}
+      </aside>
+      <main class="wrapper__main">
+        {{- block "main" . }}{{- end }}
+      </main>
     </div>
 
     {{- partial "footer.html" (dict "context" . "footerClassModifier" "base") -}}

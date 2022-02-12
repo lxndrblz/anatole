@@ -5,4 +5,20 @@
   @include desktop {
     flex-direction: row;
   }
+
+  &__main {
+    width: 100%;
+
+    @include desktop_and_print {
+      width: $content-width;
+    }
+  }
+
+  &__sidebar {
+    width: 100%;
+
+    @include desktop_and_print {
+      width: $sidebar-width;
+    }
+  }
 }

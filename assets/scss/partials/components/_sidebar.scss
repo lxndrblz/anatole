@@ -19,14 +19,6 @@
     width: calc(var(--sidebar-width) - 20%);
   }
 
-  &-wrapper {
-    width: 100%;
-
-    @include desktop_and_print {
-      width: $sidebar-width;
-    }
-  }
-
   &__content {
     @include desktop_and_print {
       display: flex;

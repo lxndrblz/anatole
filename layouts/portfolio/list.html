@@ -1,97 +1,94 @@
 {{ define "main" }}
-  <div class="post-wrapper">
-    {{ range $index, $elemen:= .Site.Data.portfolio.portfolioitems }}
-      <div
-        class="post {{ with .Site.Params.doNotLoadAnimations }}
-          .
+  {{ range $index, $elemen:= .Site.Data.portfolio.portfolioitems }}
+    <div
+      class="post {{ with .Site.Params.doNotLoadAnimations }}
+        .
 
-        {{ else }}
-          animated fadeInDown
+      {{ else }}
+        animated fadeInDown
 
-        {{ end }}"
-      >
-        <h2 class="portfolio__title">{{ .title }}</h2>
-        {{ range $i, $p := .portfolioitem }}
-          <div class="portfolio">
-            {{ if .image }}
-              <div
-                class="portfolio__image-wrapper {{ if (modBool $i 2) }}
-                  portfolio__image-wrapper--right
-
-                {{ else }}
-                  portfolio__image-wrapper--left
-
-                {{ end }}"
-              >
-                <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
-                  <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
-                </a>
-              </div>
-
-            {{ end }}
+      {{ end }}"
+    >
+      <h2 class="portfolio__title">{{ .title }}</h2>
+      {{ range $i, $p := .portfolioitem }}
+        <div class="portfolio">
+          {{ if .image }}
             <div
-              class="portfolio__description {{ if (modBool $i 2) }}
-                portfolio__description--left
+              class="portfolio__image-wrapper {{ if (modBool $i 2) }}
+                portfolio__image-wrapper--right
 
               {{ else }}
-                portfolio__description--right
+                portfolio__image-wrapper--left
 
               {{ end }}"
             >
-              <h2>{{ .name | markdownify }}</h2>
+              <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+                <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
+              </a>
+            </div>
+
+          {{ end }}
+          <div
+            class="portfolio__description {{ if (modBool $i 2) }}
+              portfolio__description--left
+
+            {{ else }}
+              portfolio__description--right
+
+            {{ end }}"
+          >
+            <h2>{{ .name | markdownify }}</h2>
+            <div class="info">
+              {{ if .status }}
+                <em class="fas fa-flag-checkered"></em>
+                <span>{{ .status }}</span>
+
+              {{ end }}
+              {{ if .venue }}
+                <em class="fas fa-map-marker-alt"></em>
+                <span>{{ .venue }}</span>
+
+              {{ end }}
+              {{ if .start }}
+                <span>Start:</span>
+                <span>{{ .start }}</span>
+
+              {{ end }}
+              {{ if .end }}
+                <span>End:</span>
+                <span>{{ .end }}</span>
+
+              {{ end }}
+            </div>
+            {{ if .authors }}
               <div class="info">
-                {{ if .status }}
-                  <em class="fas fa-flag-checkered"></em>
-                  <span>{{ .status }}</span>
-
-                {{ end }}
-                {{ if .venue }}
-                  <em class="fas fa-map-marker-alt"></em>
-                  <span>{{ .venue }}</span>
-
-                {{ end }}
-                {{ if .start }}
-                  <span>Start:</span>
-                  <span>{{ .start }}</span>
-
-                {{ end }}
-                {{ if .end }}
-                  <span>End:</span>
-                  <span>{{ .end }}</span>
+                {{ range .authors }}
+                  <span>{{ . }}</span>
 
                 {{ end }}
               </div>
-              {{ if .authors }}
-                <div class="info">
-                  {{ range .authors }}
-                    <span>{{ . }}</span>
 
-                  {{ end }}
-                </div>
-
-              {{ end }}
-              <p>{{ .description | markdownify }}</p>
-              {{ if .link }}
-                <div class="portfolio__button-wrapper">
-                  <a class="portfolio__button" href="{{ .link | safeURL }}" target="_blank" rel="noopener"
-                    >Visit Site</a
-                  >
-                </div>
-
-              {{ end }}
-              <div class="seperator">
-                {{ range .tags }}
-                  <p class="tag">{{ . }}</p>
-
-                {{ end }}
+            {{ end }}
+            <p>{{ .description | markdownify }}</p>
+            {{ if .link }}
+              <div class="portfolio__button-wrapper">
+                <a class="portfolio__button" href="{{ .link | safeURL }}" target="_blank" rel="noopener">Visit Site</a>
               </div>
+
+            {{ end }}
+            <div class="seperator">
+              {{ range .tags }}
+                <p class="tag">{{ . }}</p>
+
+              {{ end }}
             </div>
           </div>
+        </div>
 
-        {{ end }}
-      </div>
+      {{ end }}
+    </div>
 
-    {{ end }}
-  </div>
+  {{ end }}
+
 
 {{ end }}

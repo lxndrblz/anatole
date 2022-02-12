@@ -2,14 +2,6 @@
   background-color: $accent;
   margin: 30px;
 
-  &-wrapper {
-    width: 100%;
-
-    @include desktop_and_print {
-      width: $content-width;
-    }
-  }
-
   &__more {
     font-size: 1.4rem;
   }

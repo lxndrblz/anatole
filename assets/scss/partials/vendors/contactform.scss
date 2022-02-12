@@ -18,7 +18,7 @@
   @include themed() {
     background-color: t('accent');
     color: t('primary');
-    broder: t('border');
+    border: t('border');
   }
 }
 .form-style ul li .field-style {

@@ -1,7 +1,4 @@
 .nav {
-  @include themed() {
-    box-shadow: t('shadow');
-  }
   display: none;
 
   &__list {

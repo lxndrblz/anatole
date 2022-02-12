@@ -14,9 +14,8 @@
 
     @include desktop {
       @include themed() {
-        background: t(accent);
-        border-color: t(primary);
-        box-shadow: t(shadow);
+        background: t('primary-lighter');
+        box-shadow: t('shadow');
       }
       border-radius: 5px;
       position: absolute;
@@ -45,9 +44,9 @@
 
     &::before {
       @include themed() {
-        background: t('accent');
+        background: t('primary-lighter');
         box-shadow: t('shadow');
-        border-color: t('primary');
+        border-color: t('primary-lighter');
       }
       content: '';
       border-radius: 2px 0px 0px 0px;

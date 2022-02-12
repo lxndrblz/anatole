@@ -20,7 +20,8 @@ When deciding if I merge a pull request, I look at the following things:
 - Does it follow Anatole's paramount goal of being a minimalistic and visually pleasant Hugo theme? In other words, make sure it does not bloat the theme.
 - Is it of good quality?
 
-The Anatole repository ships with a prettier-config to ensure common code formatting criteria. Please run `npm run prettier` before submitting your PR, as this helps keep the formatting of the code consistent across the project. Let me know if you had trouble running prettier.
+The Anatole repository ships with a configuration for [prettier](https://prettier.io/) (`.prettierrc`) which also makes use of [prettier-plugin-go-template](https://github.com/NiklasPor/prettier-plugin-go-template) to ensure common code formatting criteria. Please make sure your PR is formatted using the prettier configuration as this helps reviewing and keeping code formatting consistent. For this prettier configuration, it is required to have [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) and the Anatole's project dependencies (`npm install`) ready. After, you can enable automatic code formatting with the [Prettier extension for Visual Studio Code
+](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) or use the one-off prettier script provided with `package.json` (`npm run prettier`). Be aware that the one-off script has to be executed every time before pushing code to the upstream repository.
 
 ## Thank You
 

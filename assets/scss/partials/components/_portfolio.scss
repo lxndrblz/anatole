@@ -11,7 +11,9 @@
   }
 
   &::before {
-    border: $border;
+    @include themed() {
+      border: t('border');
+    }
     content: '';
     z-index: -1;
     position: absolute;
@@ -50,10 +52,12 @@
 
       &--right,
       &--left {
+        @include themed() {
+          background-color: t('accent');
+        }
         margin-right: auto;
         margin-left: auto;
         width: calc(100% - 64px);
-        background-color: $accent;
         z-index: -1;
         padding: 32px 32px 0px 32px;
         max-width: inherit;
@@ -87,26 +91,33 @@
   }
 
   &__description {
-    background-color: $accent;
+    @include themed() {
+      background-color: t('accent');
+    }
     padding: 32px;
     @include desktop_and_print {
+      @include themed() {
+        box-shadow: t('shadow');
+      }
       padding: 48px;
-      box-shadow: $shadow;
-      background-color: $accent;
       border-radius: 0.5em;
     }
 
     &--left,
     &--right {
+      @include themed() {
+        border-bottom: t('border');
+      }
       margin-top: -24px;
-      border-bottom: $border;
 
       @include desktop_and_print {
+        @include themed() {
+          background: t('primary-lighter');
+        }
         border-bottom: 0px;
         width: 60%;
         margin-top: -48px;
         z-index: 3;
-        background: $primary-lighter;
       }
     }
 
@@ -118,23 +129,28 @@
   }
 
   &__button {
+    @include themed() {
+      border: 1px solid t('primary-light');
+      color: t('info');
+    }
     font-weight: 400;
     display: inline-block;
     position: relative;
     outline: 0;
-    color: $info;
     background: transparent;
     font-size: 1.4rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    border: 1px solid $primary-light;
     white-space: nowrap;
     font-style: normal;
     border-radius: 999em;
     padding: 10px;
 
     &:hover {
+      @include themed() {
+        border: 1px solid t('primary');
+      }
       display: inline-block;
       position: relative;
       outline: 0px;
@@ -143,7 +159,6 @@
       text-align: center;
       text-decoration: none;
       cursor: pointer;
-      border: 1px solid $primary;
       white-space: nowrap;
       font-weight: 400;
       font-style: normal;

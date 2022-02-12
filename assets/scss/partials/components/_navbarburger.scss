@@ -7,7 +7,9 @@
   margin-left: auto;
 
   &__line {
-    background-color: $primary;
+    @include themed() {
+      background-color: t('primary');
+    }
     display: block;
     height: 1px;
     left: calc(50% - 8px);

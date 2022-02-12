@@ -15,23 +15,31 @@
     }
 
     &-date {
+      @include themed() {
+        color: t('primary-light');
+      }
       float: right;
       max-width: 10%;
       text-align: right;
-      color: $primary-light;
     }
     &-title {
-      color: $primary;
+      @include themed() {
+        color: t('primary');
+      }
       width: 90%;
       display: inline-block;
       &:hover {
-        color: $info;
+        @include themed() {
+          color: t('info');
+        }
       }
     }
 
     &-heading {
+      @include themed() {
+        color: t('primary');
+      }
       font-size: 2.4rem;
-      color: $primary;
       font-weight: 600;
       line-height: 2.2em;
     }

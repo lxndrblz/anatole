@@ -9,11 +9,13 @@
     padding: 0;
     height: 13px;
     &-item {
+      @include themed() {
+        color: t('primary');
+      }
       margin: 0 2px 0 2px;
       display: inline;
       line-height: 1;
       text-decoration: none;
-      color: $primary;
     }
   }
 }

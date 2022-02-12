@@ -1,11 +1,15 @@
 .nav {
+  @include themed() {
+    box-shadow: t('shadow');
+  }
   display: none;
-  box-shadow: $shadow;
 
   &__list {
+    @include themed() {
+      background-color: t('primary-lighter');
+    }
     margin: 0;
     list-style: none;
-    background-color: $primary-lighter;
     width: 100%;
 
     &-item {
@@ -23,7 +27,10 @@
   &__link {
     &--active {
       @include desktop {
-        border-bottom: 1px solid $primary;
+        @include themed() {
+          border-bottom: 1px solid t('primary');
+        }
+
         padding-bottom: 22px;
       }
     }
@@ -42,8 +49,10 @@
     box-shadow: none;
 
     &__list {
+      @include themed() {
+        background-color: t('accent');
+      }
       display: flex;
-      background-color: $accent;
 
       &-item {
         &:not(:last-child) {

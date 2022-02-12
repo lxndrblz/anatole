@@ -1,12 +1,21 @@
-/* Newly defined variables */
-$accent: #fff;
+/* Strings used for mapping variables */
 $primary: #464646;
-$primary-light: #9f9f9f;
-$primary-lighter: #eeeeee;
-$info: #0366d7;
-$shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-$border: 1px solid rgba(0, 0, 0, 0.15);
+
+/* Newly defined variables */
+$accent--lightmode: #fff;
+$primary--lightmode: #464646;
+$primary-light--lightmode: #9f9f9f;
+$primary-lighter--lightmode: #eeeeee;
+$shadow--lightmode: 0 8px 16px rgba(10, 10, 10, 0.1);
+
+$accent--darkmode: #152028;
+$primary--darkmode: #eeeeee;
+$primary-light--darkmode: #9f9f9f;
+$primary-lighter--darkmode: #464646;
+$shadow--darkmode: 0 8px 16px rgba(10, 10, 10, 0.1);
+
 $alert: #ffc107;
+$info: #0366d7;
 
 /* Former variables*/
 $secondary-bg-color: #eeeeee;

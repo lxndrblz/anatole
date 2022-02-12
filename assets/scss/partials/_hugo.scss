@@ -1,16 +1,22 @@
 a {
   text-decoration: none;
-  color: $primary;
+  @include themed() {
+    color: t('primary');
+  }
 
   &:hover {
-    color: $info;
+    @include themed() {
+      color: t('info');
+    }
   }
 }
 
 blockquote {
+  @include themed() {
+    color: t('primary');
+    border-left: t('border');
+  }
   padding: 0 1em;
-  border-left: 0.25em solid $primary;
-  color: $primary;
 }
 
 p {

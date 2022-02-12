@@ -1,12 +1,16 @@
 .header {
+  @include themed() {
+    background-color: t('accent');
+  }
   width: 100%;
   position: fixed;
   right: 0;
   z-index: 3;
-  background-color: $accent;
 
   @include desktop {
-    border-bottom: $border;
+    @include themed() {
+      border-bottom: t('border');
+    }
     width: $content-width;
   }
 

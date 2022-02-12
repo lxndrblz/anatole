@@ -13,17 +13,21 @@
     position: relative;
 
     @include desktop {
-      background: $accent;
-      border-color: $primary;
+      @include themed() {
+        background: t(accent);
+        border-color: t(primary);
+        box-shadow: t(shadow);
+      }
       border-radius: 5px;
-      box-shadow: $shadow;
       position: absolute;
       top: 40px;
     }
 
     &-item {
+      @include themed() {
+        color: t('primary');
+      }
       background: transparent;
-      color: $primary;
       display: block;
       line-height: 1;
       padding: 0.5rem 0.75rem 0.5rem 0;
@@ -40,10 +44,12 @@
     display: none;
 
     &::before {
+      @include themed() {
+        background: t('accent');
+        box-shadow: t('shadow');
+        border-color: t('primary');
+      }
       content: '';
-      background: $accent;
-      box-shadow: $shadow;
-      border-color: $primary;
       border-radius: 2px 0px 0px 0px;
       height: 14px;
       bottom: 0px;

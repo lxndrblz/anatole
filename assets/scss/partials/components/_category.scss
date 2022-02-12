@@ -1,9 +1,11 @@
 .category {
+  @include themed() {
+    border: t('border');
+    background-color: t('primary-lighter');
+    color: t('primary') !important;
+  }
   padding: 4px 6px;
   border-radius: 3px;
-  color: $tag-color !important;
-  background-color: $primary-lighter;
-  border: 1px solid $primary-light;
   display: inline-block;
   font-size: 1.5rem;
   line-height: 1;

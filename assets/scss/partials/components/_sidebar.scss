@@ -4,7 +4,10 @@
   background-color: var(--bg-color);
 
   @include desktop_and_print {
-    border-right: 1px solid $primary-lighter;
+    @include themed() {
+      border-right: 1px solid t('primary-lighter');
+    }
+
     z-index: 3;
     height: 100vh;
     position: fixed;

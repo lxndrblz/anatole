@@ -1,5 +1,7 @@
 .post {
-  background-color: $accent;
+  @include themed() {
+    background-color: t('accent');
+  }
   margin: 30px;
 
   &__more {
@@ -13,10 +15,12 @@
     display: block;
 
     &-wrapper {
+      @include themed() {
+        box-shadow: t('shadow');
+      }
       border-radius: 0.5em;
       width: 100%;
       margin-bottom: 1em;
-      box-shadow: $shadow;
       overflow: hidden;
       transition: box-shadow 0.3s ease;
     }
@@ -89,7 +93,9 @@
   }
 
   &__footer {
-    border-bottom: $border;
+    @include themed() {
+      border-bottom: t('border');
+    }
     font-size: 1.2rem;
     padding: 12px 0;
 

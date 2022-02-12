@@ -12,16 +12,20 @@
   list-style: none;
 }
 .form-style ul li {
-  display: block;
-  margin-bottom: 10px;
-  min-height: 35px;
   @include themed() {
     background-color: t('accent');
     color: t('primary');
-    border: t('border');
   }
+  display: block;
+  margin-bottom: 10px;
+  min-height: 35px;
 }
 .form-style ul li .field-style {
+  @include themed() {
+    border: t('border');
+    background-color: t('accent');
+    color: t('primary');
+  }
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

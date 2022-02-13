@@ -2,13 +2,14 @@
   display: none;
 
   &__list {
-    @include themed() {
-      background-color: t('primary-lighter');
-    }
     margin: 0;
     list-style: none;
     padding: 0;
     width: 100%;
+
+    @include themed() {
+      background-color: t('primary-lighter');
+    }
 
     &-item {
       line-height: 2.5;
@@ -24,12 +25,12 @@
 
   &__link {
     &--active {
+      padding-bottom: 22px;
+
       @include desktop {
         @include themed() {
           border-bottom: 1px solid t('primary');
         }
-
-        padding-bottom: 22px;
       }
     }
   }
@@ -47,10 +48,11 @@
     box-shadow: none;
 
     &__list {
+      display: flex;
+
       @include themed() {
         background-color: t('accent');
       }
-      display: flex;
 
       &-item {
         &:not(:last-child) {

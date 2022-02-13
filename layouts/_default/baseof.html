@@ -6,7 +6,15 @@
   class="html"
 >
   {{- partial "head.html" . -}}
-  <body class="body theme--light">
+  <body
+    {{ if eq .Params.displayMode "dark" }}
+      class="body theme--dark"
+
+    {{ else }}
+      class="body theme--light"
+
+    {{ end }}
+  >
     <div class="wrapper">
       <aside class="wrapper__sidebar">
         {{- partial "sidebar.html" . -}}

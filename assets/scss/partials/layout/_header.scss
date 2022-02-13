@@ -4,14 +4,15 @@
   }
   width: 100%;
   position: fixed;
-  right: 0;
-  z-index: 3;
+  z-index: 1;
+  top: 0;
 
   @include desktop {
+    position: sticky;
+
     @include themed() {
       border-bottom: t('border');
     }
-    width: $content-width;
   }
 
   @include print {

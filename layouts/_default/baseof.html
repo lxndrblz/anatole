@@ -7,12 +7,12 @@
 >
   {{- partial "head.html" . -}}
   <body class="body theme--light">
-    <header class="header">{{ partial "navbar.html" . }}</header>
     <div class="wrapper">
       <aside class="wrapper__sidebar">
         {{- partial "sidebar.html" . -}}
       </aside>
       <main class="wrapper__main">
+        <header class="header">{{ partial "navbar.html" . }}</header>
         {{- block "main" . }}{{- end }}
       </main>
     </div>

@@ -1,6 +1,5 @@
 .portfolio {
   position: relative;
-  z-index: 0;
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
@@ -15,7 +14,6 @@
       border: t('border');
     }
     content: '';
-    z-index: -1;
     position: absolute;
     top: 10%;
     left: 10%;
@@ -47,7 +45,6 @@
       display: block;
       background-color: #fff;
       position: relative;
-      z-index: 1;
       overflow: hidden;
 
       &--right,
@@ -58,7 +55,6 @@
         margin-right: auto;
         margin-left: auto;
         width: calc(100% - 64px);
-        z-index: -1;
         padding: 32px 32px 0px 32px;
         max-width: inherit;
 
@@ -117,7 +113,6 @@
         border-bottom: 0px;
         width: 60%;
         margin-top: -48px;
-        z-index: 3;
       }
     }
 

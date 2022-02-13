@@ -1,10 +1,6 @@
 .archive {
   width: 100%;
 
-  @include desktop_and_print {
-    width: $content-width;
-  }
-
   &__list {
     font-size: 1.4rem;
     margin: 30px;

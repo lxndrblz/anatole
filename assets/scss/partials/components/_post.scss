@@ -76,17 +76,31 @@
 
       &.right {
         @include desktop {
-          float: right;
-          margin-left: 1.5em;
           max-width: 50%;
+          @include ltr {
+            float: right;
+            margin-left: 1.5em;
+          }    
+      
+          @include rtl {
+            float: left;
+            margin-right: 1.5em;
+          }
         }
       }
 
       &.left {
         @include desktop {
-          float: left;
-          margin-right: 1.5em;
           max-width: 50%;
+          @include ltr {
+            float: left;
+            margin-right: 1.5em;
+          }    
+      
+          @include rtl {
+            float: right;
+            margin-left: 1.5em;
+          }
         }
       }
     }
@@ -100,8 +114,14 @@
     padding: 12px 0;
 
     &-date {
-      margin-right: 10px;
-      margin-left: 5px;
+      @include ltr {
+        margin-right: 10px;
+        margin-left: 5px;
+      }
+      @include rtl {
+        margin-left: 10px;
+        margin-right: 5px;
+      }
     }
   }
 }

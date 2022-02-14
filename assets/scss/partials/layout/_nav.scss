@@ -56,7 +56,13 @@
 
       &-item {
         &:not(:last-child) {
-          padding-right: 20px;
+          @include ltr {
+            padding-right: 20px;
+          }
+          @include rtl {
+            padding-left: 20px;
+          }
+          
         }
       }
 

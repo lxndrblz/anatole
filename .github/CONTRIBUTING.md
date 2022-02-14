@@ -12,16 +12,15 @@ When you create an issue to report a bug or ask a question, please fill out the 
 
 Pull requests are a great way to get your ideas into this repository.
 
-In order to ensure the maintainability and quality of the project we have defined a set of common guidelines, which we adhere to. Please make sure you follow these practices when creating a pull request:
+In order to ensure the maintainability and quality of the project, a set of common guidelines has been defined. Please make sure you follow these practices when creating a pull request:
 
 1. When you create a pull request, please fill out the [pull request template](https://github.com/lxndrblz/anatole/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and ensure your PR is well-tested and documented.
 
 2. Please commit any pull requests against the `master` branch.
 
-3. Use semantic commit messages whenever you commit changes to your branch as these help me to better understand your contribution and track your changes. If you are not yet familiar with semantic commit messages, you can find a good introduction under this link. Please refrain from using non-descriptive commit messages or filing large changes as a single commit.
+3. Use semantic commit messages whenever you commit changes, as these help me understand your contribution better and track your changes. If you are not familiar with semantic commit messages, you can find a good introduction under [this](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) link. Please refrain from using non-descriptive commit messages or filing large changes as a single commit.
 
 4. When deciding if I merge a pull request, I look at the following things:
-
     * Does it provide a clear benefit to other users (i. e. does it solve a clearly defined and common problem)
     * Does it follow Anatole's paramount goal of being a minimalistic and visually pleasant Hugo theme? In other words, make sure it does not bloat the theme.
     * Is it of good quality?

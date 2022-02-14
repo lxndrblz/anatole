@@ -12,15 +12,21 @@ When you create an issue to report a bug or ask a question, please fill out the 
 
 Pull requests are a great way to get your ideas into this repository.
 
-When you create a pull request, please fill out the [pull request template](https://github.com/lxndrblz/anatole/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and ensure your PR is well-tested and documented.
+In order to ensure the maintainability and quality of the project we have defined a set of common guidelines, which we adhere to. Please make sure you follow these practices when creating a pull request:
 
-When deciding if I merge a pull request, I look at the following things:
+1. When you create a pull request, please fill out the [pull request template](https://github.com/lxndrblz/anatole/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and ensure your PR is well-tested and documented.
 
-- Does it provide a clear benefit to other users (i. e. does it solve a clear problem)
-- Does it follow Anatole's paramount goal of being a minimalistic and visually pleasant Hugo theme? In other words, make sure it does not bloat the theme.
-- Is it of good quality?
+2. Please commit any pull requests against the `master` branch.
 
-The Anatole repository ships with a configuration for [prettier](https://prettier.io/) (`.prettierrc`) which also makes use of [prettier-plugin-go-template](https://github.com/NiklasPor/prettier-plugin-go-template) to ensure common code formatting criteria. Please make sure your PR is formatted using the prettier configuration as this helps reviewing and keeping code formatting consistent. For this prettier configuration, it is required to have [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) and the Anatole's project dependencies (`npm install`) ready. After, you can enable automatic code formatting with the [Prettier extension for Visual Studio Code
+3. Use semantic commit messages whenever you commit changes to your branch as these help me to better understand your contribution and track your changes. If you are not yet familiar with semantic commit messages, you can find a good introduction under this link. Please refrain from using non-descriptive commit messages or filing large changes as a single commit.
+
+4. When deciding if I merge a pull request, I look at the following things:
+
+    * Does it provide a clear benefit to other users (i. e. does it solve a clearly defined and common problem)
+    * Does it follow Anatole's paramount goal of being a minimalistic and visually pleasant Hugo theme? In other words, make sure it does not bloat the theme.
+    * Is it of good quality?
+
+5. The Anatole repository ships with a configuration for [prettier](https://prettier.io/) (`.prettierrc`) which also makes use of [prettier-plugin-go-template](https://github.com/NiklasPor/prettier-plugin-go-template) to ensure common code formatting criteria. Please make sure your PR is formatted using the prettier configuration as this helps reviewing and keeping code formatting consistent. For this prettier configuration, it is required to have [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) and the Anatole's project dependencies (`npm install`) ready. After, you can enable automatic code formatting with the [Prettier extension for Visual Studio Code
 ](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) or use the one-off prettier script provided with `package.json` (`npm run prettier`). Be aware that the one-off script has to be executed every time before pushing code to the upstream repository.
 
 ## Thank You

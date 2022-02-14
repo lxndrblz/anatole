@@ -21,12 +21,13 @@ In order to ensure the maintainability and quality of the project, a set of comm
 3. Use semantic commit messages whenever you commit changes, as these help me understand your contribution better and track your changes. If you are not familiar with semantic commit messages, you can find a good introduction under [this](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) link. Please refrain from using non-descriptive commit messages or filing large changes as a single commit.
 
 4. When deciding if I merge a pull request, I look at the following things:
-    * Does it provide a clear benefit to other users (i. e. does it solve a clearly defined and common problem)
-    * Does it follow Anatole's paramount goal of being a minimalistic and visually pleasant Hugo theme? In other words, make sure it does not bloat the theme.
-    * Is it of good quality?
+
+   - Does it provide a clear benefit to other users (i. e. does it solve a clearly defined and common problem)
+   - Does it follow Anatole's paramount goal of being a minimalistic and visually pleasant Hugo theme? In other words, make sure it does not bloat the theme.
+   - Is it of good quality?
 
 5. The Anatole repository ships with a configuration for [prettier](https://prettier.io/) (`.prettierrc`) which also makes use of [prettier-plugin-go-template](https://github.com/NiklasPor/prettier-plugin-go-template) to ensure common code formatting criteria. Please make sure your PR is formatted using the prettier configuration as this helps reviewing and keeping code formatting consistent. For this prettier configuration, it is required to have [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) and the Anatole's project dependencies (`npm install`) ready. After, you can enable automatic code formatting with the [Prettier extension for Visual Studio Code
-](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) or use the one-off prettier script provided with `package.json` (`npm run prettier`). Be aware that the one-off script has to be executed every time before pushing code to the upstream repository.
+   ](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) or use the one-off prettier script provided with `package.json` (`npm run prettier`). Be aware that the one-off script has to be executed every time before pushing code to the upstream repository.
 
 ## Thank You
 

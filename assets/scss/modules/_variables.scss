@@ -35,7 +35,7 @@ $warning-alert-color: #ffc107;
 $thumbnail-height: 15em;
 $scroll-padding-top: 100px;
 $body-max-width: 1920px;
-$content-ratio: 0.6;
+
 $sidebar-ratio: calc(1 - #{$content-ratio});
 $content-max-width: calc(#{$body-max-width} * #{$content-ratio});
 $sidebar-max-width: calc(#{$body-max-width} - #{$content-max-width});

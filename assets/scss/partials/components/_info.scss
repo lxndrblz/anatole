@@ -3,7 +3,7 @@
 
   &__icon {
     opacity: 0.5;
-    @include ltr{
+    @include ltr {
       margin-right: 4px;
     }
     @include rtl {
@@ -13,13 +13,12 @@
 
   &__text {
     &:not(:last-child) {
-      @include ltr{
+      @include ltr {
         margin-right: 4px;
       }
       @include rtl {
         margin-left: 4px;
       }
-      
     }
   }
 }

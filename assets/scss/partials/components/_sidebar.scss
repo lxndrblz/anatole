@@ -14,28 +14,24 @@
     flex-direction: column;
 
     @include themed() {
-      
       @include ltr {
         margin-right: 4px;
         border-right: t('border');
-      }    
+      }
 
       @include rtl {
         margin-left: 4px;
         border-left: t('border');
       }
-      
     }
   }
 
   @include widescreen {
-
-    
     width: calc(var(--sidebar-width) - 20%);
     @include ltr {
       padding-left: 17%;
       padding-right: 3%;
-    }    
+    }
 
     @include rtl {
       padding-right: 17%;
@@ -66,12 +62,11 @@
       i {
         @include ltr {
           margin-right: 3px;
-        }    
-  
+        }
+
         @include rtl {
           margin-left: 3px;
         }
-
       }
 
       li {

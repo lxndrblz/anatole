@@ -28,13 +28,13 @@
 $layout-direction: ltr !default;
 
 @mixin ltr {
-    @if $layout-direction == ltr {
-        @content;
-    }
+  @if $layout-direction == ltr {
+    @content;
+  }
 }
 
 @mixin rtl {
-    @if $layout-direction == rtl {
-        @content;
-    }
+  @if $layout-direction == rtl {
+    @content;
+  }
 }

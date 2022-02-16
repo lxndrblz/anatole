@@ -1,7 +1,14 @@
 .nav {
+  $py-desktop: 28px;
+
   display: none;
 
-  $py-desktop: 28px;
+  @include desktop_and_print {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+  }
 
   &__list {
     margin: 0;
@@ -9,12 +16,22 @@
     padding: 0;
     width: 100%;
 
-    @include desktop {
-      padding: $py-desktop 30px;
-    }
-
     @include themed() {
       background-color: t('primary-lighter');
+    }
+
+    @include desktop_and_print {
+      display: flex;
+      padding: $py-desktop 30px;
+
+      @include themed() {
+        background-color: t('accent');
+      }
+
+      &--end {
+        flex-shrink: 1;
+        justify-content: flex-end;
+      }
     }
 
     &-item {
@@ -52,27 +69,5 @@
 
   &--active {
     display: block;
-  }
-}
-
-@include desktop_and_print {
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: none;
-
-    &__list {
-      display: flex;
-
-      @include themed() {
-        background-color: t('accent');
-      }
-
-      &--end {
-        flex-shrink: 1;
-        justify-content: flex-end;
-      }
-    }
   }
 }

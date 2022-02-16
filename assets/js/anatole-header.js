@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navbarBurgers.length < 1) return;
   navbarBurgers.forEach((navbarBurger) => {
     navbarBurger.addEventListener('click', () => {
-      const target = document.getElementById(navbarBurger.dataset.target);
-      target.classList.toggle('nav--active');
       navbarBurger.classList.toggle('nav--active');
       nav.classList.toggle('nav--active');
     });

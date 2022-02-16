@@ -1,31 +1,46 @@
 .nav {
   display: none;
 
+  $py-desktop: 28px;
+
   &__list {
     margin: 0;
     list-style: none;
     padding: 0;
     width: 100%;
 
+    @include desktop {
+      padding: $py-desktop 30px;
+    }
+
     @include themed() {
       background-color: t('primary-lighter');
     }
 
     &-item {
-      line-height: 2.5;
-      padding: 0.5rem 0.75rem;
+      padding: 16px 0;
       text-transform: uppercase;
       text-align: center;
-    }
 
-    @include desktop {
-      padding: 20px 30px;
+      @include desktop {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        &:not(:last-child) {
+          @include ltr {
+            padding-right: 20px;
+          }
+          @include rtl {
+            padding-left: 20px;
+          }
+        }
+      }
     }
   }
 
   &__link {
     &--active {
-      padding-bottom: 22px;
+      padding-bottom: $py-desktop;
 
       @include desktop {
         @include themed() {
@@ -52,17 +67,6 @@
 
       @include themed() {
         background-color: t('accent');
-      }
-
-      &-item {
-        &:not(:last-child) {
-          @include ltr {
-            padding-right: 20px;
-          }
-          @include rtl {
-            padding-left: 20px;
-          }
-        }
       }
 
       &--end {

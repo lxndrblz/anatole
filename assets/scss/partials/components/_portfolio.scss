@@ -10,9 +10,6 @@
   }
 
   &::before {
-    @include themed() {
-      border: t('border');
-    }
     content: '';
     position: absolute;
     top: 10%;
@@ -21,6 +18,12 @@
     right: 10%;
     background: transparent;
     border-radius: 0.5em;
+
+    @include desktop_and_print {
+      @include themed() {
+        border: t('border');
+      }
+    }
   }
 
   &__title {
@@ -34,12 +37,13 @@
   &__image {
     max-width: 100%;
     min-width: 100%;
-    box-shadow: #000;
+    box-shadow: t('shadow');
     overflow: hidden;
     transition: box-shadow 0.3s ease;
     object-fit: cover;
     border-bottom: 0px;
     display: block;
+    position: relative;
 
     &-wrapper {
       display: block;
@@ -49,21 +53,21 @@
 
       &--right,
       &--left {
-        @include themed() {
-          background-color: t('accent');
-        }
         margin-right: auto;
         margin-left: auto;
         width: calc(100% - 64px);
         padding: 32px 32px 0px 32px;
         max-width: inherit;
 
+        @include themed() {
+          background-color: t('accent');
+        }
+
         @include desktop_and_print {
           width: 60%;
           object-fit: contain;
           max-width: none;
-          border-top-right-radius: 0.5em;
-          border-top-left-radius: 0.5em;
+          border-radius: 0.5em;
           padding: 0;
         }
       }
@@ -72,7 +76,6 @@
         @include desktop_and_print {
           margin-right: auto;
           margin-left: 0;
-          border-bottom-left-radius: 0.5em;
         }
       }
 
@@ -80,31 +83,35 @@
         @include desktop_and_print {
           margin-right: 0;
           margin-left: auto;
-          border-bottom-right-radius: 0.5em;
         }
       }
     }
   }
 
   &__description {
+    padding: 32px;
+    position: relative;
+
     @include themed() {
       background-color: t('accent');
     }
-    padding: 32px;
+
     @include desktop_and_print {
+      padding: 48px;
+      border-radius: 0.5em;
+
       @include themed() {
         box-shadow: t('shadow');
       }
-      padding: 48px;
-      border-radius: 0.5em;
     }
 
     &--left,
     &--right {
+      margin-top: -24px;
+
       @include themed() {
         border-bottom: t('border');
       }
-      margin-top: -24px;
 
       @include desktop_and_print {
         @include themed() {
@@ -124,10 +131,6 @@
   }
 
   &__button {
-    @include themed() {
-      border: 1px solid t('primary-light');
-      color: t('info');
-    }
     font-weight: 400;
     display: inline-block;
     position: relative;
@@ -142,10 +145,12 @@
     border-radius: 999em;
     padding: 10px;
 
+    @include themed() {
+      border: 1px solid t('primary-light');
+      color: t('info');
+    }
+
     &:hover {
-      @include themed() {
-        border: 1px solid t('primary');
-      }
       display: inline-block;
       position: relative;
       outline: 0px;

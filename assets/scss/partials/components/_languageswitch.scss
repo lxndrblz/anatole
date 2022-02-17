@@ -19,7 +19,7 @@
       }
       border-radius: 5px;
       position: absolute;
-      top: 40px;
+      top: 32px;
     }
 
     &-item {
@@ -29,12 +29,22 @@
       background: transparent;
       display: block;
       line-height: 1;
-      padding: 0.5rem 0.75rem 0.5rem 0;
+      bottom: 0;
       text-align: center;
       white-space: nowrap;
+      padding: 20px 0;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
 
       @include desktop {
-        padding: 1.2rem;
+        $p-desktop: 12px;
+        padding: $p-desktop;
+
+        &:last-child {
+          padding-bottom: $p-desktop;
+        }
       }
     }
   }
@@ -51,7 +61,6 @@
       content: '';
       border-radius: 2px 0px 0px 0px;
       height: 14px;
-      bottom: 0px;
       left: calc(50% / 2);
       overflow: hidden;
       position: absolute;

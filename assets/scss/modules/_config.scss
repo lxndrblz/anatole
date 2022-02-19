@@ -26,13 +26,13 @@
 }
 
 @mixin ltr {
-  @if $text-direction = "ltr" {
+  @if $text-direction == ltr {
     @content;
   }
 }
 
 @mixin rtl {
-  @if $text-direction = "rtl" {
+  @if $text-direction == rtl {
     @content;
   }
 }

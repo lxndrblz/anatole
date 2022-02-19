@@ -1,6 +1,3 @@
-$content-ratio: {{- .Site.Params.contentratio | default 0.6 -}};
-$text-direction: {{- .Site.Language.LanguageDirection | default "ltr" -}};
-
 @import './modules/variables';
 @import './modules/config';
 @import './modules/color_theme';

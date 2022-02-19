@@ -45,19 +45,28 @@
 
   {{- end -}}
 
-
   <!-- CSS -->
-  {{ $sassTemplate := resources.Get "scss/main.scss" }}
-  {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-
-
+  {{ if eq .Site.Language.LanguageDirection "rtl" }}
+  {{ $sassTemplate := resources.Get "scss/anatole.rtl.scss" }}
+  {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.rtl.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
   <link
-    rel="stylesheet"
-    href="{{ $style.RelPermalink }}"
-    integrity="{{ $style.Data.Integrity }}"
-    crossorigin="anonymous"
-    type="text/css"
-  />
+  rel="stylesheet"
+  href="{{ $style.RelPermalink }}"
+  integrity="{{ $style.Data.Integrity }}"
+  crossorigin="anonymous"
+  type="text/css"
+/>
+  {{ else }}
+  {{ $sassTemplate := resources.Get "scss/anatole.scss" }}
+  {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link
+  rel="stylesheet"
+  href="{{ $style.RelPermalink }}"
+  integrity="{{ $style.Data.Integrity }}"
+  crossorigin="anonymous"
+  type="text/css"
+/>
+  {{ end }}
 
   {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
   <link

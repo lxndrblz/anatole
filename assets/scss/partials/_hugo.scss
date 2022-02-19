@@ -1,13 +1,8 @@
 a {
   text-decoration: none;
+
   @include themed() {
     color: t('primary');
-  }
-
-  &:hover {
-    @include themed() {
-      color: t('info');
-    }
   }
 }
 

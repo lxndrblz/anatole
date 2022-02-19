@@ -25,16 +25,14 @@
   }
 }
 
-$layout-direction: ltr !default;
-
 @mixin ltr {
-  @if $layout-direction == ltr {
+  @if $text-direction == ltr {
     @content;
   }
 }
 
 @mixin rtl {
-  @if $layout-direction == rtl {
+  @if $text-direction == rtl {
     @content;
   }
 }

@@ -1,5 +1,5 @@
-$layout-direction: {{ .Site.Language.LanguageDirection | default "ltr" }};
-$content-ratio: {{ .Site.Params.contentratio | default 0.6 }};
+$content-ratio: {{- .Site.Params.contentratio | default 0.6 -}};
+$text-direction: {{- .Site.Language.LanguageDirection | default "ltr" -}};
 
 @import './modules/variables';
 @import './modules/config';

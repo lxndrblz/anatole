@@ -6,4 +6,3 @@ demo/
 /node_modules
 .devcontainer
 exampleSite/public/
-exampleSite/resources/

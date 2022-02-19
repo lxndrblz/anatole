@@ -3,14 +3,19 @@
   font-size: 1.5rem;
   line-height: 1;
 
+  @include themed() {
+    color: t('primary-light');
+  }
+
   @include ltr {
     margin: 5px 8px 5px 0;
   }
+
   @include rtl {
     margin: 5px 0 5px 8px;
   }
+
   &::before {
     content: '#';
-    opacity: 0.5;
   }
 }

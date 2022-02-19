@@ -8,32 +8,30 @@
 
     {{ end }}"
   >
-    <ul class="archive__list">
-      {{ range .Data.Pages.GroupByDate "2006" }}
-        <div class="archive__list-heading">{{ .Key }}</div>
-        {{ range .Pages }}
-          <ul>
-            <li class="archive__list-item">
-              <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
-              <div class="archive__list-date">
-                {{ if isset .Site.Params "listdateformat" }}
-                  {{ .Date.Format .Site.Params.listDateFormat }}
+    {{ range .Data.Pages.GroupByDate "2006" }}
+      <div class="archive__heading">{{ .Key }}</div>
+      {{ range .Pages }}
+        <ul class="archive__list">
+          <li class="archive__list-item">
+            <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+            <div class="archive__list-date">
+              {{ if isset .Site.Params "listdateformat" }}
+                {{ .Date.Format .Site.Params.listDateFormat }}
 
 
-                {{ else }}
-                  {{ .Date.Format "Jan 2" }}
+              {{ else }}
+                {{ .Date.Format "Jan 2" }}
 
 
-                {{ end }}
-              </div>
-            </li>
-          </ul>
-
-        {{ end }}
-
+              {{ end }}
+            </div>
+          </li>
+        </ul>
 
       {{ end }}
-    </ul>
+
+
+    {{ end }}
   </div>
 
 {{ end }}

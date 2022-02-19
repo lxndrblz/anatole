@@ -1,43 +1,47 @@
 .archive {
-  width: 100%;
+  margin: 30px;
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 2.2em;
+
+    @include themed() {
+      color: t('primary');
+    }
+  }
 
   &__list {
     font-size: 1.4rem;
-    margin: 30px;
     padding: 0;
+
     &-item {
+      display: flex;
+      justify-content: space-between;
       padding-bottom: 5px;
       list-style-type: none;
     }
 
     &-date {
+      max-width: 10%;
+      text-align: right;
+
       @include themed() {
         color: t('primary-light');
       }
-      float: right;
-      max-width: 10%;
-      text-align: right;
     }
     &-title {
+      width: 90%;
+      display: inline-block;
+
       @include themed() {
         color: t('primary');
       }
-      width: 90%;
-      display: inline-block;
       &:hover {
         @include themed() {
           color: t('info');
         }
       }
-    }
-
-    &-heading {
-      @include themed() {
-        color: t('primary');
-      }
-      font-size: 2.4rem;
-      font-weight: 600;
-      line-height: 2.2em;
     }
   }
 }

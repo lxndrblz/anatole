@@ -23,16 +23,16 @@
     }
 
     &-date {
-      max-width: 10%;
       text-align: right;
 
       @include themed() {
         color: t('primary-light');
       }
     }
+
     &-title {
-      width: 90%;
       display: inline-block;
+      flex: 0.96;
 
       @include themed() {
         color: t('primary');

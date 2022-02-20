@@ -13,38 +13,31 @@
     position: relative;
 
     @include desktop {
+      border-radius: 5px;
+      position: absolute;
+      top: 32px;
+
       @include themed() {
         background: t('primary-lighter');
         box-shadow: t('shadow');
       }
-      border-radius: 5px;
-      position: absolute;
-      top: 32px;
     }
 
     &-item {
-      @include themed() {
-        color: t('primary');
-      }
       background: transparent;
       display: block;
       line-height: 1;
       bottom: 0;
       text-align: center;
       white-space: nowrap;
-      padding: 20px 0;
+      padding-top: 24px;
 
-      &:last-child {
-        padding-bottom: 0;
+      @include themed() {
+        color: t('primary');
       }
 
       @include desktop {
-        $p-desktop: 12px;
-        padding: $p-desktop;
-
-        &:last-child {
-          padding-bottom: $p-desktop;
-        }
+        padding: 12px;
       }
     }
   }
@@ -53,11 +46,6 @@
     display: none;
 
     &::before {
-      @include themed() {
-        background: t('primary-lighter');
-        box-shadow: t('shadow');
-        border-color: t('primary-lighter');
-      }
       content: '';
       border-radius: 2px 0px 0px 0px;
       height: 14px;
@@ -66,6 +54,12 @@
       position: absolute;
       transform: rotate(45deg) translateY(0px) translatex(10px);
       width: 14px;
+
+      @include themed() {
+        background: t('primary-lighter');
+        box-shadow: t('shadow');
+        border-color: t('primary-lighter');
+      }
     }
   }
 

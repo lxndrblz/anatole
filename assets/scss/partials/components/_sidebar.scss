@@ -1,7 +1,4 @@
 .sidebar {
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-color: var(--bg-color);
   margin-top: 40px;
 
   @include desktop_and_print {
@@ -9,7 +6,7 @@
     position: fixed;
     height: 100%;
     margin-top: 0;
-    width: $sidebar-width;
+    width: inherit;
     display: flex;
     flex-direction: column;
 
@@ -23,19 +20,6 @@
         margin-left: 4px;
         border-left: t('border');
       }
-    }
-  }
-
-  @include widescreen {
-    width: calc(var(--sidebar-width) - 20%);
-    @include ltr {
-      padding-left: 17%;
-      padding-right: 3%;
-    }
-
-    @include rtl {
-      padding-right: 17%;
-      padding-left: 3%;
     }
   }
 
@@ -58,26 +42,10 @@
       display: inline;
       padding: 0 4px;
       line-height: 0;
-
-      i {
-        @include ltr {
-          margin-right: 3px;
-        }
-
-        @include rtl {
-          margin-left: 3px;
-        }
-      }
-
-      li {
-        display: inline;
-        padding: 0 4px;
-        line-height: 0;
-      }
     }
   }
 
-  &__title {
+  &__introduction {
     top: 40%;
     text-align: center;
 
@@ -86,13 +54,13 @@
       margin: 0 1em;
     }
 
-    img {
+    &-profileimage {
       width: 127px;
       height: 127px;
       border-radius: 50%;
     }
 
-    h3 {
+    &-title {
       text-transform: uppercase;
       font-weight: bold;
       letter-spacing: 2px;

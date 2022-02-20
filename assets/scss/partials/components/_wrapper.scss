@@ -6,11 +6,18 @@
     flex-direction: row;
   }
 
+  @include widescreen {
+    justify-content: center;
+  }
+
   &__main {
     width: 100%;
 
     @include desktop_and_print {
       width: $content-width;
+    }
+    @include widescreen {
+      width: calc(#{$content-ratio} * 80%);
     }
   }
 
@@ -19,6 +26,10 @@
 
     @include desktop_and_print {
       width: $sidebar-width;
+    }
+
+    @include widescreen {
+      width: calc(#{$sidebar-ratio} * 80%);
     }
   }
 }

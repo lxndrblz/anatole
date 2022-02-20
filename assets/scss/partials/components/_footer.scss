@@ -1,7 +1,7 @@
 .footer {
-  clear: both;
+  $font-size-footer: 1.4rem;
+
   text-align: center;
-  font-size: 1rem;
   margin: 0 auto;
   bottom: 0;
   width: 100%;
@@ -16,9 +16,17 @@
     justify-content: center;
   }
 
-  &__item:not(:first-of-type)::before {
-    content: '\00B7';
-    padding: 4px;
+  &__item {
+    font-size: $font-size-footer;
+
+    &:not(:first-of-type)::before {
+      content: '\00B7';
+      padding: 4px;
+    }
+
+    a {
+      font-size: $font-size-footer;
+    }
   }
 
   &__sidebar {

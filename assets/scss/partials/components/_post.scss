@@ -1,8 +1,9 @@
 .post {
+  margin: 30px;
+
   @include themed() {
     background-color: t('accent');
   }
-  margin: 30px;
 
   &__more {
     font-size: 1.4rem;
@@ -15,14 +16,15 @@
     display: block;
 
     &-wrapper {
-      @include themed() {
-        box-shadow: t('shadow');
-      }
       border-radius: 0.5em;
       width: 100%;
       margin-bottom: 1em;
       overflow: hidden;
       transition: box-shadow 0.3s ease;
+
+      @include themed() {
+        box-shadow: t('shadow');
+      }
     }
   }
 
@@ -121,6 +123,7 @@
       &.right {
         @include desktop {
           max-width: 50%;
+
           @include ltr {
             float: right;
             margin-left: 1.5em;
@@ -136,6 +139,7 @@
       &.left {
         @include desktop {
           max-width: 50%;
+
           @include ltr {
             float: left;
             margin-right: 1.5em;
@@ -151,11 +155,12 @@
   }
 
   &__footer {
+    font-size: 1.2rem;
+    padding: 12px 0;
+
     @include themed() {
       border-bottom: t('border');
     }
-    font-size: 1.2rem;
-    padding: 12px 0;
 
     &-date {
       @include ltr {

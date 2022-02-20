@@ -7,9 +7,6 @@
   margin-left: auto;
 
   &__line {
-    @include themed() {
-      background-color: t('primary');
-    }
     display: block;
     height: 1px;
     left: calc(50% - 8px);
@@ -19,6 +16,10 @@
     transition-property: background-color, opacity, transform;
     transition-timing-function: ease-out;
     width: 16px;
+
+    @include themed() {
+      background-color: t('primary');
+    }
 
     &:nth-child(1) {
       top: calc(50% - 6px);
@@ -32,6 +33,7 @@
       top: calc(50% + 4px);
     }
   }
+
   @include desktop {
     display: none;
   }

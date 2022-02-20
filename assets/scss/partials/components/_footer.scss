@@ -23,6 +23,7 @@
 
   &__sidebar {
     display: none;
+
     @include desktop_and_print {
       display: inline-block;
     }

@@ -20,6 +20,7 @@
   @include desktop {
     @content;
   }
+
   @include print {
     @content;
   }

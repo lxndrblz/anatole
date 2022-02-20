@@ -16,6 +16,7 @@
     @include desktop_and_print {
       width: $content-width;
     }
+
     @include widescreen {
       width: calc(#{$content-ratio} * 80%);
     }

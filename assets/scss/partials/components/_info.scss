@@ -3,9 +3,11 @@
 
   &__icon {
     opacity: 0.5;
+
     @include ltr {
       margin-right: 4px;
     }
+
     @include rtl {
       margin-left: 4px;
     }
@@ -16,6 +18,7 @@
       @include ltr {
         margin-right: 4px;
       }
+
       @include rtl {
         margin-left: 4px;
       }

@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+
   @include themed() {
     color: t('primary');
   }
@@ -12,16 +13,19 @@ a {
 }
 
 blockquote {
+  padding: 0 1em;
+
   @include themed() {
     color: t('primary');
+
     @include ltr {
       border-left: t('border');
     }
+
     @include rtl {
       border-right: t('border');
     }
   }
-  padding: 0 1em;
 }
 
 p {

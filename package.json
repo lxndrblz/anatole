@@ -3,8 +3,9 @@
   "version": "1.1.0",
   "description": "Anatole is a beautiful minimalist two-column hugo theme based on farbox-theme-Anatole.",
   "scripts": {
-    "prettier": "npx prettier --write .",
-    "build": "hugo --themesDir=../.. --source=exampleSite && shx rm -rf ./resources && shx cp -r ./exampleSite/resources ./resources && shx echo Done building resources."
+    "build": "hugo --themesDir=../.. --source=exampleSite && shx rm -rf ./resources && shx cp -r ./exampleSite/resources ./resources && shx echo Done building resources.",
+    "dev": "hugo serve --themesDir=../.. --source=exampleSite",
+    "prettier": "npx prettier --write ."
   },
   "repository": {
     "type": "git",

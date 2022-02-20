@@ -24,9 +24,11 @@
 
   &__sidebar {
     width: 100%;
+    padding: 16px 0;
 
     @include desktop_and_print {
       width: $sidebar-width;
+      padding: 0;
     }
 
     @include widescreen {

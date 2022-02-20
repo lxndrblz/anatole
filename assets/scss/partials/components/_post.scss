@@ -86,12 +86,16 @@
     }
 
     h1 {
+      $font-size-h1: 3.6rem;
+
+      font-size: $font-size-h1;
       text-transform: uppercase;
-      font-size: 3em;
       letter-spacing: 1px;
       line-height: 1;
 
       a {
+        font-size: $font-size-h1;
+
         @include themed() {
           color: t('primary');
         }
@@ -99,13 +103,17 @@
     }
 
     h2 {
+      $font-size-h2: 2.4rem;
+
+      font-size: $font-size-h2;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-size: 2.6rem;
       line-height: 1;
-      font-weight: 600;
 
       a {
+        font-size: $font-size-h2;
+
         @include themed() {
           color: t('primary');
         }
@@ -113,13 +121,17 @@
     }
 
     h3 {
+      $font-size-h3: 2rem;
+
+      font-size: $font-size-h3;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
       line-height: 1;
-      font-weight: 600;
 
       a {
-        font-size: 2rem;
+        font-size: $font-size-h3;
+
         @include themed() {
           color: t('primary');
         }

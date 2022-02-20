@@ -17,22 +17,26 @@
     <div class="post__content">
       <h1>{{ .Title }}</h1>
       {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
-        <div class="info">
-          <em class="fas fa-calendar-day info__icon"></em>
-          <span class="date info__text"
-            >{{ if isset .Site.Params "singledateformat" }}
-              {{ .Date.Format .Site.Params.singleDateFormat }}
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >{{ if isset .Site.Params "singledateformat" }}
+                {{ .Date.Format .Site.Params.singleDateFormat }}
 
 
-            {{ else }}
-              {{ .Date.Format "Mon, Jan 2, 2006" }}
+              {{ else }}
+                {{ .Date.Format "Mon, Jan 2, 2006" }}
 
 
-            {{ end }}</span
-          >
-          <em class="fas fa-stopwatch info__icon"></em>
-          <span class="reading-time info__text">{{ i18n "reading_time" .ReadingTime }}</span>
-        </div>
+              {{ end }}
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">{{ i18n "reading_time" .ReadingTime }}</span>
+          </li>
+        </ul>
 
       {{ end }}
 

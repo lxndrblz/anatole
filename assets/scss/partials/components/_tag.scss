@@ -1,7 +1,6 @@
 .tag {
   display: inline-block;
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 1.4rem;
 
   @include themed() {
     color: t('primary-light');

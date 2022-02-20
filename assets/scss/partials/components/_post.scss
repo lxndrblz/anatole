@@ -130,7 +130,6 @@
     ol {
       line-height: 1.9em;
       font-weight: 400;
-      font-size: 1.4rem;
     }
 
     img {
@@ -185,7 +184,6 @@
   }
 
   &__footer {
-    font-size: 1.2rem;
     padding: 12px 0;
 
     @include themed() {
@@ -193,10 +191,13 @@
     }
 
     &-date {
+      font-size: 1.4rem;
+
       @include ltr {
         margin-right: 10px;
         margin-left: 5px;
       }
+
       @include rtl {
         margin-left: 10px;
         margin-right: 5px;

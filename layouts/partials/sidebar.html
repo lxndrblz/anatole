@@ -9,8 +9,14 @@
 >
   <div class="sidebar__content">
     <div class="sidebar__introduction">
-      <img class="sidebar__introduction-profileimage" src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture" />
-      <h1 class="sidebar__introduction-title" title=""><a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a></h1>
+      <img
+        class="sidebar__introduction-profileimage"
+        src="{{ .Site.Params.profilePicture | relURL }}"
+        alt="profile picture"
+      />
+      <h1 class="sidebar__introduction-title">
+        <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
+      </h1>
       <div class="sidebar__introduction-description">
         <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>
       </div>

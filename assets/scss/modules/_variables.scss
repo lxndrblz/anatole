@@ -1,7 +1,3 @@
-/* Strings used for mapping variables */
-$primary: #464646;
-
-/* Newly defined variables */
 $accent--lightmode: #fff;
 $primary--lightmode: #464646;
 $primary-light--lightmode: #9f9f9f;
@@ -17,23 +13,7 @@ $shadow--darkmode: 0 8px 16px rgba(226, 226, 226, 0.1);
 $alert: #ffc107;
 $info: #0366d7;
 
-/* Former variables*/
-$secondary-bg-color: #eeeeee;
-$heading-color: #464646;
-$body-color: rgba(0, 0, 0, 0.7);
-$post-color: rgba(0, 0, 0, 0.44);
-$border-color: rgba(0, 0, 0, 0.15);
-$form-border-color: #9f9f9f;
-$form-button-hover-border-color: #000;
-$pre-bg-color: #f9f9fd;
-$nav-text-color: #5a5a5a;
-$tag-color: #424242;
-$blockquote-text-color: #858585;
-$blockquote-border-color: #dfe2e5;
-$link-color: #0366d7;
-$warning-alert-color: #ffc107;
 $thumbnail-height: 15em;
-$scroll-padding-top: 100px;
 $body-max-width: 1920px;
 
 $sidebar-ratio: calc(1 - #{$content-ratio});
@@ -41,20 +21,3 @@ $content-max-width: calc(#{$body-max-width} * #{$content-ratio});
 $sidebar-max-width: calc(#{$body-max-width} - #{$content-max-width});
 $content-width: calc(#{$content-ratio} * 100%);
 $sidebar-width: calc(#{$sidebar-ratio} * 100%);
-
-/* Dark Mode */
-$bg-color-dark: #010408;
-$secondary-bg-color-dark: rgb(56, 56, 56);
-$heading-color-dark: #c9d1d9;
-$body-color-dark: rgb(169, 169, 179);
-$post-color-dark: rgba(0, 0, 0, 0.44);
-$border-color-dark: #30363d;
-$form-border-color-dark: rgb(169, 169, 179);
-$form-button-hover-border-color-dark: #fff;
-$pre-bg-color-dark: rgb(33, 33, 45);
-$nav-text-color-dark: rgb(191, 191, 191);
-$tag-color-dark: rgb(191, 191, 191);
-$blockquote-text-color-dark: #808080;
-$blockquote-border-color-dark: #424242;
-$link-color-dark: #58a6fe;
-$warning-alert-color-dark: #4d00c9c7;

@@ -5,8 +5,38 @@
     background-color: t('accent');
   }
 
-  &__more {
-    font-size: 1.4rem;
+  &__meta {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 1.25rem;
+      }
+    }
+
+    &-icon {
+      @include ltr {
+        margin-right: 2px;
+      }
+
+      @include rtl {
+        margin-left: 2px;
+      }
+    }
+
+    &-text {
+      &:not(:last-child) {
+        @include ltr {
+          margin-right: 4px;
+        }
+
+        @include rtl {
+          margin-left: 4px;
+        }
+      }
+    }
   }
 
   &__thumbnail {

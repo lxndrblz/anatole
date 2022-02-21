@@ -65,6 +65,14 @@
       }
     }
 
+    .chroma {
+      @include themed() {
+        background-color: t('primary-lighter');
+        display: block;
+        border-bottom: 1px solid t('primary-lighter');
+      }
+    }
+
     code {
       font-family: monospace;
       padding: 0 2px;

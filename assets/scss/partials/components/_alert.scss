@@ -1,0 +1,27 @@
+.alert {
+  padding: 1rem;
+  border-style: solid;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  margin-top: 1rem;
+
+  @include themed() {
+    border-color: t('alert');
+  }
+
+  &__indicator {
+    display: inline-block;
+    border-radius: 9999px;
+    padding: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    font-weight: 800;
+    margin-right: 0.75rem;
+
+    @include themed() {
+      color: t('accent');
+      background-color: t('alert');
+    }
+  }
+}

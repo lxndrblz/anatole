@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+
+  @include themed() {
+    color: t('primary');
+  }
+
+  &:hover {
+    @include themed() {
+      color: t('info');
+    }
+  }
+}
+
+blockquote {
+  padding: 0 1em;
+
+  @include themed() {
+    color: t('primary');
+
+    @include ltr {
+      border-left: t('border');
+    }
+
+    @include rtl {
+      border-right: t('border');
+    }
+  }
+}
+
+p {
+  line-height: 1.9em;
+}

@@ -1,0 +1,21 @@
+.header {
+  @include themed() {
+    background-color: t('accent');
+  }
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+
+  @include desktop {
+    position: sticky;
+
+    @include themed() {
+      border-bottom: t('border');
+    }
+  }
+
+  @include print {
+    display: none;
+  }
+}

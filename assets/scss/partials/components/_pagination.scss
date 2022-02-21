@@ -1,0 +1,23 @@
+.pagination {
+  margin: 30px;
+  padding: 0px 0 56px 0;
+  text-align: center;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 13px;
+
+    &-item {
+      margin: 0 2px 0 2px;
+      display: inline;
+      line-height: 1;
+      text-decoration: none;
+
+      @include themed() {
+        color: t('primary');
+      }
+    }
+  }
+}

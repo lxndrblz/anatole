@@ -1,0 +1,64 @@
+/* (CONTACT) FORM */
+
+.contact-form {
+  margin-top: 30px;
+}
+.form-style {
+  width: 100%;
+}
+.form-style ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.form-style ul li {
+  @include themed() {
+    background-color: t('accent');
+    color: t('primary');
+  }
+  display: block;
+  margin-bottom: 10px;
+  min-height: 35px;
+}
+.form-style ul li .field-style {
+  @include themed() {
+    border: t('border');
+    background-color: t('accent');
+    color: t('primary');
+  }
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  padding: 8px;
+  outline: none;
+  font-family: inherit;
+}
+.form-style ul li .field-style:focus {
+  box-shadow: 0 0 5px;
+  border: 1px solid;
+}
+.form-style ul li .field-split {
+  width: 49%;
+}
+.form-style ul li .field-full {
+  width: 100%;
+}
+.form-style ul li input.align-left {
+  float: left;
+}
+.form-style ul li input.align-right {
+  float: right;
+}
+.form-style ul li textarea {
+  width: 100%;
+  height: auto;
+}
+.form-style ul li input[type='button'],
+.form-style ul li input[type='submit'] {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+}
+/* (CONTACT) FORM END */

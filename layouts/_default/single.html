@@ -8,17 +8,19 @@
 
     {{ end }}"
   >
-    <div class="post-content">
-      {{ if .Params.thumbnail }}
-        <img class="post-thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
+    {{ if .Params.thumbnail }}
+      <div class="post__thumbnail-wrapper">
+        <img class="post__thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
+      </div>
 
-      {{ end }}
-      <div class="post-title">
-        <h1>{{ .Title }}</h1>
-        {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
-          <div class="info">
-            <em class="fas fa-calendar-day"></em>
-            <span class="date"
+    {{ end }}
+    <div class="post__content">
+      <h1>{{ .Title }}</h1>
+      {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
               >{{ if isset .Site.Params "singledateformat" }}
                 {{ .Date.Format .Site.Params.singleDateFormat }}
 
@@ -27,14 +29,16 @@
                 {{ .Date.Format "Mon, Jan 2, 2006" }}
 
 
-              {{ end }}</span
-            >
-            <em class="fas fa-stopwatch"></em>
-            <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
-          </div>
+              {{ end }}
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">{{ i18n "reading_time" .ReadingTime }}</span>
+          </li>
+        </ul>
 
-        {{ end }}
-      </div>
+      {{ end }}
 
       {{- partial "expirationnote.html" . -}}
 
@@ -59,46 +63,44 @@
 
       {{- end -}}
     </div>
-    <div class="post-footer">
-      <div class="info">
-        {{ with .Page.Params.Categories }}
-          {{ partial "taxonomy/categories.html" . }}
+    <div class="post__footer">
+      {{ with .Page.Params.Categories }}
+        {{ partial "taxonomy/categories.html" . }}
 
 
-        {{ end }}
+      {{ end }}
 
-        {{ with .Page.Params.Tags }}
-          {{ partial "taxonomy/tags.html" . }}
+      {{ with .Page.Params.Tags }}
+        {{ partial "taxonomy/tags.html" . }}
 
 
-        {{ end }}
-      </div>
+      {{ end }}
     </div>
 
     {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}
       {{- if .Site.DisqusShortname -}}
-        <div id="fb_comments_container">
+        <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ template "_internal/disqus.html" . }}
         </div>
 
       {{- end -}}
       {{- if .Site.Params.utterances.repo -}}
-        <div id="fb_comments_container">
+        <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/utterances.html" . }}
         </div>
 
       {{- end -}}
       {{- if .Site.Params.CommentoURL -}}
-        <div id="fb_comments_container">
+        <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/commento.html" . }}
         </div>
 
       {{- end -}}
       {{- if .Site.Params.gitalk.repo -}}
-        <div id="fb_comments_container">
+        <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/gitalk.html" . }}
         </div>

@@ -1,0 +1,23 @@
+$accent--lightmode: #fff;
+$primary--lightmode: #464646;
+$primary-light--lightmode: #9f9f9f;
+$primary-lighter--lightmode: #eeeeee;
+$shadow--lightmode: 0 8px 16px rgba(10, 10, 10, 0.1);
+
+$accent--darkmode: #152028;
+$primary--darkmode: #eeeeee;
+$primary-light--darkmode: #9f9f9f;
+$primary-lighter--darkmode: #464646;
+$shadow--darkmode: 0 8px 16px rgba(226, 226, 226, 0.1);
+
+$alert: #ffc107;
+$info: #0366d7;
+
+$thumbnail-height: 15em;
+$body-max-width: 1920px;
+
+$sidebar-ratio: calc(1 - #{$content-ratio});
+$content-max-width: calc(#{$body-max-width} * #{$content-ratio});
+$sidebar-max-width: calc(#{$body-max-width} - #{$content-max-width});
+$content-width: calc(#{$content-ratio} * 100%);
+$sidebar-width: calc(#{$sidebar-ratio} * 100%);

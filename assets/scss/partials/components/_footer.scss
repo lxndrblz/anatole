@@ -1,0 +1,45 @@
+.footer {
+  $font-size-footer: 1.4rem;
+
+  text-align: center;
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 20px;
+  flex: 0;
+  position: relative;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    font-size: $font-size-footer;
+
+    &:not(:first-of-type)::before {
+      content: '\00B7';
+      padding: 4px;
+    }
+
+    a {
+      font-size: $font-size-footer;
+    }
+  }
+
+  &__sidebar {
+    display: none;
+
+    @include desktop_and_print {
+      display: inline-block;
+    }
+  }
+
+  &__base {
+    @include desktop_and_print {
+      display: none;
+    }
+  }
+}

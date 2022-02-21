@@ -1,9 +1,9 @@
 {{ if gt .Paginator.TotalPages 1 }}
-  <ul class="pagination">
+  <ul class="pagination__list">
     {{ $.Scratch.Set "hasPrevDots" false }}
     {{ $.Scratch.Set "hasNextDots" false }}
     {{ if .Paginator.HasPrev }}
-      <li class="page-item">
+      <li class="pagination__list-item">
         <a class="page-link" href="{{ .Paginator.Prev.URL }}">
           <i class="fa fa-angle-left" aria-label="Previous"></i>
         </a>
@@ -12,14 +12,14 @@
     {{ end }}
     {{ range .Paginator.Pagers }}
       {{ if eq . $.Paginator }}
-        <li class="page-item">
+        <li class="pagination__list-item">
           <span class="page-link current">
             {{- .PageNumber -}}
           </span>
         </li>
 
       {{ else if or (or (eq . $.Paginator.First) (eq . $.Paginator.Prev)) (or  (eq . $.Paginator.Next) (eq . $.Paginator.Last )) }}
-        <li class="page-item">
+        <li class="pagination__list-item">
           <a class="page-link" href="{{ .URL }}">
             {{- .PageNumber -}}
           </a>
@@ -42,7 +42,7 @@
 
     {{ end }}
     {{ if .Paginator.HasNext }}
-      <li class="page-item">
+      <li class="pagination__list-item">
         <a class="page-link" href="{{ .Paginator.Next.URL }}">
           <i class="fa fa-angle-right" aria-label="Next"></i>
         </a>

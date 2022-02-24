@@ -1,0 +1,73 @@
+.nav {
+  $py-desktop: 24px;
+
+  display: none;
+
+  @include desktop_and_print {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+  }
+
+  &__list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    @include themed() {
+      background-color: t('primary-lighter');
+    }
+
+    @include desktop_and_print {
+      display: flex;
+      padding: $py-desktop 30px;
+
+      @include themed() {
+        background-color: t('accent');
+      }
+
+      &--end {
+        flex-shrink: 1;
+        justify-content: flex-end;
+      }
+    }
+
+    &-item {
+      padding: 16px 0;
+      text-transform: uppercase;
+      text-align: center;
+
+      @include desktop {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        &:not(:last-child) {
+          @include ltr {
+            padding-right: 20px;
+          }
+          @include rtl {
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    &--active {
+      padding-bottom: $py-desktop;
+
+      @include desktop {
+        @include themed() {
+          border-bottom: 1px solid t('primary');
+        }
+      }
+    }
+  }
+
+  &--active {
+    display: block;
+  }
+}

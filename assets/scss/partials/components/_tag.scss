@@ -1,0 +1,20 @@
+.tag {
+  display: inline-block;
+  font-size: 1.4rem;
+
+  @include themed() {
+    color: t('primary-light');
+  }
+
+  @include ltr {
+    margin: 5px 8px 5px 0;
+  }
+
+  @include rtl {
+    margin: 5px 0 5px 8px;
+  }
+
+  &::before {
+    content: '#';
+  }
+}

@@ -1,0 +1,39 @@
+@mixin desktop {
+  @media screen and (min-width: 961px) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media screen and (min-width: 1921px) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+@mixin desktop_and_print {
+  @include desktop {
+    @content;
+  }
+
+  @include print {
+    @content;
+  }
+}
+
+@mixin ltr {
+  @if $text-direction == ltr {
+    @content;
+  }
+}
+
+@mixin rtl {
+  @if $text-direction == rtl {
+    @content;
+  }
+}

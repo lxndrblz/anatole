@@ -504,4 +504,4 @@
   return mediumZoom;
 });
 
-mediumZoom(document.querySelectorAll('div.post-content img'));
+mediumZoom(document.querySelectorAll('div.post__content img'));

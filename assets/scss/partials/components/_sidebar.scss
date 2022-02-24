@@ -1,0 +1,74 @@
+.sidebar {
+  margin-top: 40px;
+
+  @include desktop_and_print {
+    z-index: 2;
+    position: fixed;
+    height: 100%;
+    margin-top: 0;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+
+    @include themed() {
+      @include ltr {
+        margin-right: 4px;
+        border-right: t('border');
+      }
+
+      @include rtl {
+        margin-left: 4px;
+        border-left: t('border');
+      }
+    }
+  }
+
+  &__content {
+    @include desktop_and_print {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    text-align: center;
+
+    &-item {
+      display: inline;
+      padding: 0 4px;
+      line-height: 0;
+    }
+  }
+
+  &__introduction {
+    top: 40%;
+    text-align: center;
+
+    &-description {
+      margin: 0 1em;
+    }
+
+    &-profileimage {
+      width: 127px;
+      height: 127px;
+      border-radius: 50%;
+    }
+
+    &-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+      line-height: 1;
+      margin: 1em;
+
+      a {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}

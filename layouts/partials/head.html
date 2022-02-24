@@ -47,23 +47,20 @@
 
 
   <!-- CSS -->
-  {{ $templateStyle := resources.Get "css/style.css" }}
-  {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.css" . | resources.Minify | resources.Fingerprint }}
-  <link
-    rel="stylesheet"
-    href="{{ $style.RelPermalink }}"
-    integrity="{{ $style.Data.Integrity }}"
-    crossorigin="anonymous"
-    type="text/css"
-  />
   {{ if eq .Site.Language.LanguageDirection "rtl" }}
-    <!-- Arabic font -->
+    {{ $sassTemplate := resources.Get "scss/anatole.rtl.scss" }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.rtl.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Tajawal:300,500,700&display=swap&subset=arabic"
+      href="{{ $style.RelPermalink }}"
+      integrity="{{ $style.Data.Integrity }}"
+      crossorigin="anonymous"
+      type="text/css"
     />
-    {{ $templateStyle := resources.Get "css/style.rtl.css" }}
-    {{ $style := $templateStyle  | resources.ExecuteAsTemplate "css/main.rtl.css" . | resources.Minify | resources.Fingerprint }}
+
+  {{ else }}
+    {{ $sassTemplate := resources.Get "scss/anatole.scss" }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link
       rel="stylesheet"
       href="{{ $style.RelPermalink }}"
@@ -73,6 +70,7 @@
     />
 
   {{ end }}
+
   {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
   <link
     rel="stylesheet"

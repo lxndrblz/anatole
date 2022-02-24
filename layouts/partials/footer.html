@@ -1,35 +1,34 @@
-<footer class="footer footer--{{ .footerClassModifier }}">
-  <div class="by_farbox">
-    <ul class="footer__list">
-      <li class="footer__item">
-        &copy;
-        {{ if isset .context.Site.Params "copyright" }}
-          {{ replace .context.Site.Params.copyright "{{ YEAR }}" (now.Format "2006") | markdownify }}
+<footer class="footer footer__{{ .footerClassModifier }}">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      {{ if isset .context.Site.Params "copyright" }}
+        {{ replace .context.Site.Params.copyright "{{ YEAR }}" (now.Format "2006") | markdownify }}
 
-        {{ else }}
-          {{ .context.Site.Params.author }}
-          {{ now.Format "2006" }}
+      {{ else }}
+        {{ .context.Site.Params.author }}
+        {{ now.Format "2006" }}
 
-
-        {{ end }}
-      </li>
-      {{ range .context.Site.Menus.footer }}
-        <li class="footer__item">
-          <a
-            href="{{ .URL }}"
-            {{ if strings.HasPrefix .URL "http" }}
-              target="_blank" rel="noopener noreferrer"
-
-            {{ end }}
-            title="{{ .Title }}"
-          >
-            {{ .Name }}
-          </a>
-        </li>
 
       {{ end }}
-    </ul>
-  </div>
+    </li>
+    {{ range .context.Site.Menus.footer }}
+      <li class="footer__item">
+        <a
+          class="link"
+          href="{{ .URL }}"
+          {{ if strings.HasPrefix .URL "http" }}
+            target="_blank" rel="noopener noreferrer"
+
+          {{ end }}
+          title="{{ .Title }}"
+        >
+          {{ .Name }}
+        </a>
+      </li>
+
+    {{ end }}
+  </ul>
 </footer>
 {{- partial "medium-zoom.html" .context -}}
 {{- partial "math.html" .context -}}

@@ -1,0 +1,46 @@
+$themes: (
+  light: (
+    accent: $accent--lightmode,
+    primary: $primary--lightmode,
+    primary-light: $primary-light--lightmode,
+    primary-lighter: $primary-lighter--lightmode,
+    info: $info,
+    shadow: $shadow--lightmode,
+    border: 1px solid $primary-lighter--lightmode,
+    alert: $alert,
+  ),
+  dark: (
+    accent: $accent--darkmode,
+    primary: $primary--darkmode,
+    primary-light: $primary-light--darkmode,
+    primary-lighter: $primary-lighter--darkmode,
+    info: $info,
+    shadow: $shadow--darkmode,
+    border: 1px solid $primary-lighter--darkmode,
+    alert: $alert,
+  ),
+);
+
+$theme-map: ();
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: ();
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

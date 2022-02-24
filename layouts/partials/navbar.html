@@ -1,5 +1,5 @@
 <div
-  class="page-top {{ with .Site.Params.doNotLoadAnimations }}
+  class="{{ with .Site.Params.doNotLoadAnimations }}
     .
 
   {{ else }}
@@ -8,76 +8,79 @@
   {{ end }}"
 >
   <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
   </a>
-  <nav>
+  <nav class="nav">
     <ul class="nav__list" id="navMenu">
-      <div class="nav__links">
-        {{ $url := .RelPermalink }}
-        {{ range .Site.Menus.main }}
-          {{ $active := eq $url .URL }}
-          <li>
-            <a
-              {{ if $active }}
-                class="current"
+      {{ $url := .RelPermalink }}
+      {{ range .Site.Menus.main }}
+        {{ $active := eq $url .URL }}
+        <li class="nav__list-item">
+          <a
+            {{ if $active }}
+              class="nav__link--active"
+
+            {{ end }}
+            href="{{ .URL }}"
+            {{ if strings.HasPrefix .URL "http" }}
+              target="_blank" rel="noopener noreferrer"
+
+            {{ end }}
+            title="{{ .Title }}"
+            >{{ .Name }}</a
+          >
+        </li>
+
+      {{ end }}
+    </ul>
+    <ul class="nav__list nav__list--end">
+      {{ if and .IsTranslated .Site.IsMultiLingual }}
+        <li class="nav__list-item">
+          <div class="languageswitch">
+            <input
+              class="languageswitch__picker"
+              type="checkbox"
+              id="languagepicker"
+              aria-label="switch language"
+              hidden
+            />
+            <label class="languageswitch__label" for="languagepicker"
+              >{{ .Site.Language.LanguageName }} <i class="fa fa-angle-down" aria-hidden="true"></i
+            ></label>
+            <div class="languageswitch__triangle"></div>
+            <ul class="languageswitch__list">
+              {{ range $.Translations }}
+                <li class="languageswitch__list-item">
+                  <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}"
+                    ><span
+                      {{ if eq . $.Site.Language }}
+                        class="active"
+
+                      {{ end }}
+                      aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
+                      >{{ .Language.LanguageName }}</span
+                    >
+                  </a>
+                </li>
 
               {{ end }}
-              href="{{ .URL }}"
-              {{ if strings.HasPrefix .URL "http" }}
-                target="_blank" rel="noopener noreferrer"
-
-              {{ end }}
-              title="{{ .Title }}"
-              >{{ .Name }}</a
-            >
-          </li>
-
-        {{ end }}
-      </div>
-      <ul>
-        {{ if and .IsTranslated .Site.IsMultiLingual }}
-          <li>
-            <ul class="sl-nav" aria-label="Language switcher">
-              <li>
-                <input type="checkbox" id="languagepicker" aria-label="switch language" hidden />
-                <label for="languagepicker">{{ .Site.Language.LanguageName }}</label>
-                <label for="languagepicker"><i class="fa fa-angle-down" aria-hidden="true"></i></label>
-                <div class="triangle"></div>
-
-                <ul class="dropdown">
-                  {{ range $.Translations }}
-
-                    <li>
-                      <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}"
-                        ><span
-                          {{ if eq . $.Site.Language }}
-                            class="active"
-
-                          {{ end }}
-                          aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
-                          >{{ .Language.LanguageName }}</span
-                        ></a
-                      >
-                    </li>
-
-                  {{ end }}
-                </ul>
-              </li>
             </ul>
-          </li>
+          </div>
+        </li>
 
-        {{ end }}
-        {{ if not .Site.Params.disableThemeSwitcher }}
-          <li>
-            <a class="theme-switch" title="Switch Theme">
+      {{ end }}
+      {{ if not .Site.Params.disableThemeSwitcher }}
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
               <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a>
-          </li>
+          </div>
+        </li>
 
-        {{ end }}
-      </ul>
+      {{ end }}
     </ul>
   </nav>
 </div>

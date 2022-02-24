@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+  }
+
+  @include widescreen {
+    justify-content: center;
+  }
+
+  &__main {
+    width: 100%;
+
+    @include desktop_and_print {
+      width: $content-width;
+    }
+
+    @include widescreen {
+      width: calc(#{$content-ratio} * 80%);
+    }
+  }
+
+  &__sidebar {
+    width: 100%;
+    padding: 16px 0;
+
+    @include desktop_and_print {
+      width: $sidebar-width;
+      padding: 0;
+    }
+
+    @include widescreen {
+      width: calc(#{$sidebar-ratio} * 80%);
+    }
+  }
+}

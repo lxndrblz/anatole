@@ -3,20 +3,25 @@
   dir="{{ .Site.Language.LanguageDirection | default "ltr" }}"
   lang="{{- site.Language.Lang -}}"
   data-theme="{{- .Site.Params.displayMode -}}"
+  class="html"
 >
   {{- partial "head.html" . -}}
-  <body>
-    <header>{{ partial "navbar.html" . }}</header>
+  <body
+    {{ if eq .Params.displayMode "dark" }}
+      class="body theme--dark"
+
+    {{ else }}
+      class="body theme--light"
+
+    {{ end }}
+  >
     <div class="wrapper">
-      <aside>
+      <aside class="wrapper__sidebar">
         {{- partial "sidebar.html" . -}}
       </aside>
-      <main>
-        <div class="autopagerize_page_element">
-          <div class="content">
-            {{- block "main" . }}{{- end }}
-          </div>
-        </div>
+      <main class="wrapper__main">
+        <header class="header">{{ partial "navbar.html" . }}</header>
+        {{- block "main" . }}{{- end }}
       </main>
     </div>
 

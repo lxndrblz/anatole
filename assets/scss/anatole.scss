@@ -1,0 +1,4 @@
+$content-ratio: {{ .Site.Params.contentratio | default 0.6 }};
+$text-direction: "ltr";
+
+@import 'main.scss';

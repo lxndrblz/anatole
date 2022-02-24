@@ -1,0 +1,52 @@
+.animated {
+  transition: top 0.8s linear;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  -webkit-animation-name: fadeInDown;
+  -moz-animation-name: fadeInDown;
+  -o-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+
+  @-webkit-keyframes fadeInDown {
+    0% {
+      -webkit-transform: translateY(-20px);
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+    }
+  }
+
+  @-moz-keyframes fadeInDown {
+    0% {
+      -moz-transform: translateY(-20px);
+    }
+
+    100% {
+      -moz-transform: translateY(0);
+    }
+  }
+
+  @-o-keyframes fadeInDown {
+    0% {
+      -o-transform: translateY(-20px);
+    }
+
+    100% {
+      -o-transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    0% {
+      transform: translateY(-20px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

@@ -3,7 +3,7 @@
   --sk-color: #333;
 }
 
-html[data-theme='dark'] {
+body.theme--dark {
   --sk-color: rgb(169, 169, 179);
 }
 

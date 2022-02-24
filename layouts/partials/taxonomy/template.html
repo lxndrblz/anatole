@@ -2,7 +2,7 @@
 {{- $linkBase := .linkBase -}}
 
 
-<span class="separator">
+<span>
   {{- range $index, $el := .items -}}
     <!-- Replace certain special characters with their URL encoded counterparts -->
     {{- $item := replace . "#" "%23" -}}

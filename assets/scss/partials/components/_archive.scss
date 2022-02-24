@@ -1,0 +1,46 @@
+.archive {
+  margin: 30px;
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 2.2em;
+
+    @include themed() {
+      color: t('primary');
+    }
+  }
+
+  &__list {
+    padding: 0;
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 5px;
+      list-style-type: none;
+    }
+
+    &-date {
+      text-align: right;
+
+      @include themed() {
+        color: t('primary-light');
+      }
+    }
+
+    &-title {
+      display: inline-block;
+      flex: 0.96;
+
+      @include themed() {
+        color: t('primary');
+      }
+      &:hover {
+        @include themed() {
+          color: t('info');
+        }
+      }
+    }
+  }
+}

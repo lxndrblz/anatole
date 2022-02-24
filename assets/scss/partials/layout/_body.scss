@@ -1,0 +1,13 @@
+.body {
+  width: 100%;
+  margin: 0 auto;
+  // work around to style body
+  &.theme--dark {
+    color: $primary--darkmode;
+    background-color: $accent--darkmode;
+  }
+  &.theme--light {
+    color: $primary--lightmode;
+    background-color: $accent--lightmode;
+  }
+}

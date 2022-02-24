@@ -8,16 +8,16 @@
 
     {{ end }}"
   >
-    <div class="post-title post-content">
+    <div class="post__content">
       {{ .Content }}
     </div>
 
     <!-- (Optional) Home
-            -- on top of `mainSections` content (aka posts) ;
-            -- as declared in content/_index.md
+          -- on top of `mainSections` content (aka posts) ;
+          -- as declared in content/_index.md
 
-            One can set `mainSections = [""]` and have the content/_index.md specified here
-        -->
+          One can set `mainSections = [""]` and have the content/_index.md specified here
+      -->
   </div>
 
   {{ if .Params.mainSectionsTitle }}
@@ -30,7 +30,7 @@
 
       {{ end }}"
     >
-      <div class="post-title post-content">
+      <div class="post__content">
         <h2>{{ .Params.mainSectionsTitle }}</h2>
       </div>
     </div>
@@ -49,66 +49,58 @@
       {{ end }}"
     >
       {{ if .Params.thumbnail }}
-        <div class="post-thumbnail">
+        <div class="post__thumbnail-wrapper">
           <a href="{{ .RelPermalink }}">
-            <img src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" loading="lazy" />
+            <img class="post__thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" loading="lazy" />
           </a>
         </div>
 
       {{ end }}
-      <div class="post-title">
+      <div class="post__content">
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      </div>
-      <div class="post-content">
-        <div class="p_part">
-          <p>
-            {{ if .Site.Params.fullPostContent }}
-              {{ .Content }}
+        <p>
+          {{ if .Site.Params.fullPostContent }}
+            {{ .Content }}
 
 
-            {{ else }}
-              {{ .Summary }}
+          {{ else }}
+            {{ .Summary }}
 
 
-            {{ end }}
-          </p>
-          <!-- add read more -->
-          {{- if and (.Truncated) (.Site.Params.readMore) -}}
-            <a href="{{ .RelPermalink }}" class="read_more">{{ i18n "read_more" }}</a>
+          {{ end }}
+        </p>
+        <!-- add read more -->
+        {{- if and (.Truncated) (.Site.Params.readMore) -}}
+          <a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a>
 
-          {{- end -}}
-        </div>
+        {{- end -}}
       </div>
 
       <!--  -->
-      <div class="post-footer">
-        <div class="meta">
-          <div class="info">
-            <em class="fas fa-calendar-day"></em>
-            <span class="date"
-              >{{ if isset .Site.Params "indexdateformat" }}
-                {{ .Date.Format .Site.Params.indexDateFormat }}
+      <div class="post__footer">
+        <em class="fas fa-calendar-day"></em>
+        <span class="post__footer-date"
+          >{{ if isset .Site.Params "indexdateformat" }}
+            {{ .Date.Format .Site.Params.indexDateFormat }}
 
 
-              {{ else }}
-                {{ .Date.Format "Mon, Jan 2, 2006" }}
+          {{ else }}
+            {{ .Date.Format "Mon, Jan 2, 2006" }}
 
 
-              {{ end }}</span
-            >
-            {{ with .Page.Params.Categories }}
-              {{ partial "taxonomy/categories.html" . }}
+          {{ end }}</span
+        >
+        {{ with .Page.Params.Categories }}
+          {{ partial "taxonomy/categories.html" . }}
 
 
-            {{ end }}
+        {{ end }}
 
-            {{ with .Page.Params.Tags }}
-              {{ partial "taxonomy/tags.html" . }}
+        {{ with .Page.Params.Tags }}
+          {{ partial "taxonomy/tags.html" . }}
 
 
-            {{ end }}
-          </div>
-        </div>
+        {{ end }}
       </div>
     </div>
 

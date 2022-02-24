@@ -1,0 +1,23 @@
+#TableOfContents {
+  display: block;
+  background: transparent;
+}
+
+#TableOfContents ul {
+  list-style: none;
+  line-height: 1.9em;
+  margin: 0;
+}
+
+#TableOfContents > ul {
+  padding-left: 0;
+}
+
+#TableOfContents li a {
+  display: inherit;
+  color: $info;
+}
+
+#TableOfContents li a:hover {
+  display: inherit;
+}

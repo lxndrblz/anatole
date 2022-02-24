@@ -8,7 +8,7 @@ _Describe the issue fixed here_
 
 ---
 
-### Aditional Information (Optional)
+### Additional Information (Optional)
 
 - _Here goes any Additional Information you would like to add._
 

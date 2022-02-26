@@ -68,3 +68,4 @@ If you like this theme, give it a star on GitHub, and consider supporting its de
 - Go to [Petri R](https://unsplash.com/photos/jLn20MzqfdE) for providing the [portfolio picture](https://github.com/lxndrblz/anatole/blob/master/exampleSite/static/images/portfolio/code.jpg) used in the exampleSite.
 - Go to [Ales Krivec](https://unsplash.com/photos/4miBe6zg5r0) for providing the thumbnail picture used in the exampleSite [image-test post](https://github.com/lxndrblz/anatole/blob/master/exampleSite/content/english/post/image-test.md).
 - Go to [Tobias Ahlin](https://github.com/tobiasahlin) for his [SpinKit](https://github.com/tobiasahlin/SpinKit) that is used in the exampleSite [redirect post](https://github.com/lxndrblz/anatole/blob/master/exampleSite/content/english/post/redirect.md).
+- Go to [FontAwseome](https://fontawesome.com/) for providing the icons used in this project.

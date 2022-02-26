@@ -39,12 +39,7 @@
       {{ if and .IsTranslated .Site.IsMultiLingual }}
         <li class="nav__list-item">
           <div class="languageswitch">
-            <input
-              class="languageswitch__picker"
-              type="checkbox"
-              id="languagepicker"
-              hidden
-            />
+            <input class="languageswitch__picker" type="checkbox" id="languagepicker" hidden />
             <label class="languageswitch__label" for="languagepicker"
               >{{ .Site.Language.LanguageName }} <i class="fa fa-angle-down" aria-hidden="true"></i
             ></label>

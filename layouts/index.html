@@ -58,7 +58,6 @@
       {{ end }}
       <div class="post__content">
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p>
           {{ if .Site.Params.fullPostContent }}
             {{ .Content }}
 
@@ -68,7 +67,6 @@
 
 
           {{ end }}
-        </p>
         <!-- add read more -->
         {{- if and (.Truncated) (.Site.Params.readMore) -}}
           <a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a>

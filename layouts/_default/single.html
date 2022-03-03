@@ -15,7 +15,7 @@
 
     {{ end }}
     <div class="post__content">
-      <h1>{{ .Title }}</h1>
+      <h1>{{ title .Title }}</h1>
       {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
         <ul class="post__meta">
           <li class="post__meta-item">

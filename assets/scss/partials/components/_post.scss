@@ -165,19 +165,19 @@
       margin: 0 auto;
       text-align: center;
 
-      &.full {
+      &.big {
         max-width: 100%;
       }
 
-      &.lg {
+      &.medium {
         max-width: 75%;
       }
 
-      &.md {
+      &.small {
         max-width: 50%;
       }
 
-      &.sm {
+      &.tiny {
         max-width: 25%;
       }
 

@@ -135,6 +135,7 @@
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
+    row-gap: 0.8rem;
 
     &-item {
       &:not(:last-child) {

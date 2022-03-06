@@ -9,7 +9,7 @@
 
       {{ end }}"
     >
-      <h2 class="portfolio__title">{{ .title }}</h2>
+      <h2 class="portfolio__title">{{ title .title }}</h2>
       {{ range $i, $p := .portfolioitem }}
         <div class="portfolio">
           {{ if .image }}

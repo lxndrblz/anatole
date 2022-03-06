@@ -129,6 +129,20 @@
     }
   }
 
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    row-gap: 0.8rem;
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 1.25rem;
+      }
+    }
+  }
+
   &__button {
     font-weight: 400;
     display: inline-block;

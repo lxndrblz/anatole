@@ -37,38 +37,48 @@
 
             {{ end }}"
           >
-            <h2>{{ title .name | markdownify }}</h2>
-            <div class="info">
+            <h2>{{ .name | markdownify }}</h2>
+            <ul class="portfolio__meta">
               {{ if .status }}
-                <em class="fas fa-flag-checkered"></em>
-                <span>{{ .status }}</span>
+                <li class="portfolio__meta-item">
+                  <em class="fas fa-flag-checkered"></em>
+                  <span>{{ .status }}</span>
+                </li>
 
               {{ end }}
               {{ if .venue }}
-                <em class="fas fa-map-marker-alt"></em>
-                <span>{{ .venue }}</span>
+                <li class="portfolio__meta-item">
+                  <em class="fas fa-map-marker-alt"></em>
+                  <span>{{ .venue }}</span>
+                </li>
 
               {{ end }}
               {{ if .start }}
-                <span>Start:</span>
-                <span>{{ .start }}</span>
+                <li class="portfolio__meta-item">
+                  <em class="fas fa-arrow-up"></em>
+                  <span>{{ .start }}</span>
+                </li>
 
               {{ end }}
               {{ if .end }}
-                <span>End:</span>
-                <span>{{ .end }}</span>
+                <li class="portfolio__meta-item">
+                  <em class="fas fa-arrow-down"></em>
+                  <span>{{ .end }}</span>
+                </li>
 
               {{ end }}
-            </div>
-            {{ if .authors }}
-              <div class="info">
+              {{ if .authors }}
                 {{ range .authors }}
-                  <span>{{ . }}</span>
+                  <li class="portfolio__meta-item">
+                    <em class="fas fa-at"></em>
+                    <span>{{ . }}</span>
+                  </li>
 
                 {{ end }}
-              </div>
 
-            {{ end }}
+
+              {{ end }}
+            </ul>
             <p>{{ .description | markdownify }}</p>
             {{ if .link }}
               <div class="portfolio__button-wrapper">

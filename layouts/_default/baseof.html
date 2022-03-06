@@ -16,10 +16,26 @@
     {{ end }}
   >
     <div class="wrapper">
-      <aside class="wrapper__sidebar">
+      <aside
+        {{ if and ( or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (eq .Site.Params.hidesidebar true) }}
+          class="wrapper__sidebar--sidebarhidden"
+
+        {{ else }}
+          class="wrapper__sidebar"
+
+        {{ end }}
+      >
         {{- partial "sidebar.html" . -}}
       </aside>
-      <main class="wrapper__main">
+      <main
+        {{ if and ( or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (eq .Site.Params.hidesidebar true) }}
+          class="wrapper__main--sidebarhidden"
+
+        {{ else }}
+          class="wrapper__main"
+
+        {{ end }}
+      >
         <header class="header">{{ partial "navbar.html" . }}</header>
         {{- block "main" . }}{{- end }}
       </main>

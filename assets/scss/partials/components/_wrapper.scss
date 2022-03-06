@@ -20,6 +20,10 @@
     @include widescreen {
       width: calc(#{$content-ratio} * 80%);
     }
+
+    &--sidebarhidden {
+      width: 100%;
+    }
   }
 
   &__sidebar {
@@ -33,6 +37,10 @@
 
     @include widescreen {
       width: calc(#{$sidebar-ratio} * 80%);
+    }
+
+    &--sidebarhidden {
+      display: none;
     }
   }
 }

@@ -4,7 +4,7 @@
 <h3>Posts in this Series</h3>
 <ul>
   {{ range $related }}
-    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+    <li><a href="{{ .Page.RelPermalink }}">{{ title .Page.Title }}</a></li>
 
   {{ end }}
 </ul>

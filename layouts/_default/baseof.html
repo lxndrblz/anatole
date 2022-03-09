@@ -7,7 +7,7 @@
 >
   {{- partial "head.html" . -}}
   <body
-    {{ if eq .Params.displayMode "dark" }}
+    {{ if eq .Site.Params.displayMode "dark" }}
       class="body theme--dark"
 
     {{ else }}

@@ -12,6 +12,9 @@ portfolioitems:
         status: 'Finished'
         start: '2020'
         end: '2021'
+        authors:
+          - lxndrblz
+          - alexanderdavide
       - name: Project 2
         image: '/images/portfolio/code.jpg'
         link: https://gohugo.io/

@@ -8,7 +8,8 @@
   },
   "github": {
     "release": true,
-    "releaseName": "v${version}"
+    "releaseName": "v${version}",
+    "web": true
   },
   "plugins": {
     "@release-it/conventional-changelog": {

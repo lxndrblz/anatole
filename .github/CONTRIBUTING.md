@@ -18,7 +18,7 @@ In order to ensure the maintainability and quality of the project, a set of comm
 
 2. Please commit any pull requests against the `master` branch.
 
-3. Use semantic commit messages whenever you commit changes, as these help me understand your contribution better and track your changes. If you are not familiar with semantic commit messages, you can find a good introduction under [this](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) link. Please refrain from using non-descriptive commit messages or filing large changes as a single commit.
+3. Use conventional commit messages whenever you commit changes, as these help me understand your contribution better and track your changes. If you are not familiar with conventional commit messages, you can find a good introduction under [this](https://www.conventionalcommits.org/en/v1.0.0/) link. Please refrain from using non-descriptive commit messages or filing large changes as a single commit. All commits will be checked for conformity using Git Hooks and [Husky](https://github.com/typicode/husky). For setting up Husky in your Anatole project, you will have to run `npm run setup` once. This step will set up all the necessary dependencies and configuration files.
 
 4. When deciding if I merge a pull request, I look at the following things:
 

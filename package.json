@@ -7,7 +7,8 @@
     "dev": "hugo serve --themesDir=../.. --source=exampleSite",
     "prettier": "npx prettier --write .",
     "prepare": "husky install",
-    "release": "release-it"
+    "release": "release-it",
+    "setup": "npm install && npm run prepare"
   },
   "repository": {
     "type": "git",

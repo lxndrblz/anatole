@@ -5,7 +5,8 @@
   "scripts": {
     "build": "hugo --themesDir=../.. --source=exampleSite && shx rm -rf ./resources && shx cp -r ./exampleSite/resources ./resources && shx echo Done building resources.",
     "dev": "hugo serve --themesDir=../.. --source=exampleSite",
-    "prettier": "npx prettier --write ."
+    "prettier": "npx prettier --write .",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,10 @@
   "homepage": "https://github.com/lxndrblz/anatole#readme",
   "dependencies": {},
   "devDependencies": {
+    "@release-it/conventional-changelog": "^4.2.2",
     "prettier": "~2.2.1",
     "prettier-plugin-go-template": "^0.0.11-beta.13",
+    "release-it": "^14.12.5",
     "shx": "^0.3.4"
   }
 }

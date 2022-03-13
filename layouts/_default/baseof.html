@@ -17,7 +17,7 @@
   >
     <div class="wrapper">
       <aside
-        {{ if and ( or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (eq .Site.Params.hidesidebar true) }}
+        {{ if and (not .IsHome) (eq .Site.Params.hidesidebar true) }}
           class="wrapper__sidebar--sidebarhidden"
 
         {{ else }}
@@ -28,7 +28,7 @@
         {{- partial "sidebar.html" . -}}
       </aside>
       <main
-        {{ if and ( or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (eq .Site.Params.hidesidebar true) }}
+        {{ if and (not .IsHome) (eq .Site.Params.hidesidebar true) }}
           class="wrapper__main--sidebarhidden"
 
         {{ else }}

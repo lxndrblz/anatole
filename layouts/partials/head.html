@@ -231,15 +231,7 @@
 
 
   <!-- Open Graph -->
-  {{- if isset .Site.Taxonomies "series" }}
-    {{- if not (eq (len .Site.Taxonomies.series) 0) -}}
-      {{ template "_internal/opengraph.html" . }}
-
-
-    {{- end -}}
-
-
-  {{- end }}
+  {{ template "_internal/opengraph.html" . }}
 
 
   <!-- Schema.org-->

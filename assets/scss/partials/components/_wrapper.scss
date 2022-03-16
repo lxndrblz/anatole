@@ -13,13 +13,13 @@
   &__main {
     width: 100%;
 
-    &--sidebarhidden {
+    &--fullscreen {
       margin-top: 20px;
     }
 
     @include desktop_and_print {
       width: $content-width;
-      &--sidebarhidden {
+      &--fullscreen {
         margin-top: 0px;
         width: 100%;
       }
@@ -27,7 +27,7 @@
 
     @include widescreen {
       width: calc(#{$content-ratio} * 80%);
-      &--sidebarhidden {
+      &--fullscreen {
         width: $body-max-width;
       }
     }
@@ -46,7 +46,7 @@
       width: calc(#{$sidebar-ratio} * 80%);
     }
 
-    &--sidebarhidden {
+    &--hidden {
       display: none;
     }
   }

@@ -19,6 +19,7 @@
 
     @include desktop_and_print {
       width: $content-width;
+      
       &--fullscreen {
         margin-top: 0px;
         width: 100%;
@@ -27,6 +28,7 @@
 
     @include widescreen {
       width: calc(#{$content-ratio} * 80%);
+
       &--fullscreen {
         width: $body-max-width;
       }

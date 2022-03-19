@@ -37,4 +37,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'chore: build resources'
-          file_pattern: resources/**
+          file_pattern: resources/** exampleSite/resources/**

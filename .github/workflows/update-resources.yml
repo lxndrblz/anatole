@@ -17,7 +17,7 @@ jobs:
           extended: true
           hugo-version: 0.91.2
       - name: setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 14
       - name: install

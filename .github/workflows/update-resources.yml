@@ -1,9 +1,6 @@
 name: update resources
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
   build:

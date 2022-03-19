@@ -38,3 +38,12 @@ other = "이메일"
 
 [message]
 other = "메시지"
+
+[warning]
+other = "경고"
+
+[info]
+other = "경고"
+
+[update]
+other = "업데이트"

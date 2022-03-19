@@ -8,6 +8,9 @@ $themes: (
     shadow: $shadow--lightmode,
     border: 1px solid $primary-lighter--lightmode,
     alert: $alert,
+    notice-info: $notice-info--lightmode,
+    notice-update: $notice-update--lightmode,
+    notice-warning: $notice-warning--lightmode,
   ),
   dark: (
     accent: $accent--darkmode,
@@ -18,6 +21,9 @@ $themes: (
     shadow: $shadow--darkmode,
     border: 1px solid $primary-lighter--darkmode,
     alert: $alert,
+    notice-info: $notice-info--darkmode,
+    notice-update: $notice-update--darkmode,
+    notice-warning: $notice-warning--darkmode,
   ),
 );
 

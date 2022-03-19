@@ -61,11 +61,8 @@
         {{ if .Site.Params.fullPostContent }}
           <p>{{ .Content | markdownify }}</p>
 
-
         {{ else }}
-          <p>{{ .Summary | markdownify}}</p>
-
-
+          <p>{{ .Summary | markdownify }}</p>
 
         {{ end }}
         <!-- add read more -->

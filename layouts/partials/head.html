@@ -24,6 +24,7 @@
   <meta charset="utf-8" />
   {{- hugo.Generator -}}
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="{{ .Site.Params.author }}" />
   <meta
     name="description"
     content="{{ if .Params.description }}
@@ -231,15 +232,7 @@
 
 
   <!-- Open Graph -->
-  {{- if isset .Site.Taxonomies "series" }}
-    {{- if not (eq (len .Site.Taxonomies.series) 0) -}}
-      {{ template "_internal/opengraph.html" . }}
-
-
-    {{- end -}}
-
-
-  {{- end }}
+  {{ template "_internal/opengraph.html" . }}
 
 
   <!-- Schema.org-->

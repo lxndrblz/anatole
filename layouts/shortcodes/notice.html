@@ -9,7 +9,7 @@
 
   {{ end }}"
 >
-  <div
+  <span
     class="notice__title{{ if eq $noticeType "warning" }}
       notice__title--warning
 
@@ -19,7 +19,7 @@
     {{ end }}"
   >
     {{- i18n $noticeType -}}
-  </div>
+</span>
   {{- $noteContent := (markdownify .Inner | chomp) -}}
   <div class="notice__content">
     {{ $noteContent }}

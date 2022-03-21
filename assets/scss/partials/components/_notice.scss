@@ -1,17 +1,19 @@
 .notice {
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
+  display:  flex;
+  flex-direction: column;
+
   @include themed() {
     background-color: t('notice-info');
   }
 
   &--update {
+
     @include themed() {
       background-color: t('notice-update');
     }
   }
   &--warning {
+
     @include themed() {
       background-color: t('notice-warning');
     }
@@ -19,13 +21,11 @@
 
   &__title {
     background-color: rgb(96, 134, 180);
-    float: right;
+    align-self: flex-end;
     font-weight: 300;
     letter-spacing: 0.025em;
-    margin-bottom: 0.25rem;
-    margin-left: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+
     @include themed() {
       color: t('accent');
     }
@@ -39,13 +39,8 @@
   }
 
   &__content {
-    margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
     max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    margin: 0px 1.5rem auto auto;
+    padding: 8px 8px 1rem 1rem;
   }
 }

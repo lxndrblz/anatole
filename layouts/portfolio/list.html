@@ -9,7 +9,8 @@
 
       {{ end }}"
     >
-      <h2 class="portfolio__title">{{ title .title }}</h2>
+      {{ $anchorTitle := delimit (split .title " ") "" }}
+      <h2 class="portfolio__title" id="{{ $anchorTitle | lower }}">{{ title .title }}</h2>
       {{ range $i, $p := .portfolioitem }}
         <div class="portfolio">
           {{ if .image }}
@@ -22,9 +23,13 @@
 
               {{ end }}"
             >
+            {{ if .link }}
               <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
                 <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
               </a>
+            {{ else }}
+              <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
+            {{ end }}
             </div>
 
           {{ end }}
@@ -82,7 +87,13 @@
             <p>{{ .description | markdownify }}</p>
             {{ if .link }}
               <div class="portfolio__button-wrapper">
-                <a class="portfolio__button" href="{{ .link | safeURL }}" target="_blank" rel="noopener">Visit Site</a>
+                <a class="portfolio__button" href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+                  {{- if .linktext -}}
+                    {{ .linktext | markdownify }}
+                  {{- else -}}
+                    "Visit Site"
+                  {{- end -}}
+                </a>
               </div>
 
             {{ end }}

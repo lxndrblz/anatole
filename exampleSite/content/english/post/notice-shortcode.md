@@ -9,7 +9,7 @@ tags:
 
 The notice shortcode supports three different types of disclaimers. These are as following:
 
-## Info Box
+## Info Notice
 
 ```
 {{%/* notice info */%}}
@@ -21,7 +21,7 @@ Lorem Impsum..
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 {{< /notice >}}
 
-## Update Box
+## Update Notice
 
 ```
 {{%/* notice update */%}}
@@ -33,7 +33,7 @@ Lorem Impsum..
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 {{< /notice >}}
 
-## Danger Box
+## Warning Notice
 
 ```
 {{%/* notice warning */%}}

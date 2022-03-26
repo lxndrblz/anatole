@@ -20,6 +20,19 @@
     @include widescreen {
       width: calc(#{$content-ratio} * 80%);
     }
+
+    &--fullscreen {
+      margin-top: 20px;
+
+      @include desktop_and_print {
+        width: 100%;
+        margin-top: 0px;
+      }
+
+      @include widescreen {
+        width: $body-max-width;
+      }
+    }
   }
 
   &__sidebar {
@@ -33,6 +46,10 @@
 
     @include widescreen {
       width: calc(#{$sidebar-ratio} * 80%);
+    }
+
+    &--hidden {
+      display: none;
     }
   }
 }

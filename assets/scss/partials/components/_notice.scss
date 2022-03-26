@@ -3,24 +3,24 @@
   flex-direction: column;
 
   @include themed() {
-    background-color: t('notice-info');
+    background-color: mix(t('info'), t('accent'), 40%);
   }
 
   &--update {
 
     @include themed() {
-      background-color: t('notice-update');
+      background-color: mix(t('success'), t('accent'), 40%);
     }
   }
   &--warning {
 
     @include themed() {
-      background-color: t('notice-warning');
+      background-color: mix(t('danger'), t('accent'), 40%);
     }
   }
 
   &__title {
-    background-color: rgb(96, 134, 180);
+    background-color: t('info');
     align-self: flex-end;
     font-weight: 300;
     letter-spacing: 0.025em;
@@ -31,10 +31,10 @@
     }
 
     &--update {
-      background-color: rgb(81, 216, 138);
+      background-color: t('success');
     }
     &--warning {
-      background-color: rgb(239, 87, 83);
+      background-color: t('danger');
     }
   }
 

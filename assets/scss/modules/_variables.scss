@@ -10,15 +10,10 @@ $primary-light--darkmode: #9f9f9f;
 $primary-lighter--darkmode: #464646;
 $shadow--darkmode: 0 8px 16px rgba(226, 226, 226, 0.1);
 
-$alert: #ffc107;
-$info: #0366d7;
-
-$notice-info--lightmode: rgb(239, 248, 255);
-$notice-info--darkmode: rgb(28, 55, 87);
-$notice-update--lightmode: rgb(227, 252, 236);
-$notice-update--darkmode: rgb(21, 68, 38);
-$notice-warning--lightmode: rgb(252, 235, 234);
-$notice-warning--darkmode: rgb(119, 36, 32);
+$warning: #ffc107;
+$info: #6086b4;
+$success: #51d88a;
+$danger: #ef5753;
 
 $thumbnail-height: 15em;
 $body-max-width: 1920px;

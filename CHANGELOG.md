@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.9.0](https://github.com/lxndrblz/anatole/compare/v1.8.0...v1.9.0) (2022-03-27)
+
+
+### Features
+
+* add a notice shortcode ([212d6cc](https://github.com/lxndrblz/anatole/commit/212d6ccae4ac6a029352fba397219eaf1d30e623))
+* Add option to display related posts ([#300](https://github.com/lxndrblz/anatole/issues/300)) ([6ad4d7a](https://github.com/lxndrblz/anatole/commit/6ad4d7aea163240dbb76ed405125c7e3eeda2605))
+* add the option to hide the sidebar on post pages ([a9d3b1d](https://github.com/lxndrblz/anatole/commit/a9d3b1dd926dfc3ba5aacb0928b811fc318309e8))
+* added meta author HTML tag ([1a063c8](https://github.com/lxndrblz/anatole/commit/1a063c8d5dcf3f6960f9df1de465c832f51b6d53))
+* avoid wrapping text of navigation items ([4ba5593](https://github.com/lxndrblz/anatole/commit/4ba5593c7282720fed7fc0eada17c025cba4089f))
+* layout improvements for portfolio ([3685a7d](https://github.com/lxndrblz/anatole/commit/3685a7dfa6d3f62670f0d2cd57cc80dbfcca00fe))
+* set open graph meta tags without requiring series taxonomy ([579d768](https://github.com/lxndrblz/anatole/commit/579d7682f2c91dc7d36e5f028ee999e91c3e8265))
+
+
+### Bug Fixes
+
+* enable sidebar by default ([36ea4a8](https://github.com/lxndrblz/anatole/commit/36ea4a8ca1e5d0abe795419dd0555ee0b1b583b5))
+* increase padding on the x-axis ([fbecf7f](https://github.com/lxndrblz/anatole/commit/fbecf7ff34a8435eb72479cdba59468c5863270e))
+* minify fontawesome files format to resolve integrity check errors ([#335](https://github.com/lxndrblz/anatole/issues/335)) ([0e03d3f](https://github.com/lxndrblz/anatole/commit/0e03d3fc86c1bcb7fa99c9a87a041643d71cb1e6))
+* mobile and ultrawide views ([799d134](https://github.com/lxndrblz/anatole/commit/799d134e57a67c477bcb455d5e4dbe97e3a65b90))
+* non styled summary ([f345853](https://github.com/lxndrblz/anatole/commit/f345853fe8d314f612e218e6c035d75271846eae))
+* refactor SCSS according to BEM standards ([342ffd3](https://github.com/lxndrblz/anatole/commit/342ffd371483bdba81ca130a18ec162378e53cae))
+* refactor sidebar SCSS ([14af37f](https://github.com/lxndrblz/anatole/commit/14af37f0df41a0abcd691bc3d2c759f74e5db42e))
+* removed obsolete css properties ([e985a59](https://github.com/lxndrblz/anatole/commit/e985a599598c12b344848850c6897bace6060e99))
+* show sidebar only on homepage ([3db4bb0](https://github.com/lxndrblz/anatole/commit/3db4bb0f8eb2f47076ec1858cb19cdf7148f07db))
+
+
+### Reverts
+
+* Revert "ci: temporarily invoke workflow for testing purposes" ([a6aa3e4](https://github.com/lxndrblz/anatole/commit/a6aa3e487419fab865c3ab3286eeefc49dc9e9f4))
+* Revert "ci: temporarily invoke workflow for testing purposes" ([b3011c1](https://github.com/lxndrblz/anatole/commit/b3011c10efc2344873bb85696854fbe6bcfc91e9))
+* Revert "ci: temporarily invoke workflow for testing purposes" ([1ff8217](https://github.com/lxndrblz/anatole/commit/1ff82174fb1bb6003725fe52f4c650eb807006e7))
+
 ## [1.8.0](https://github.com/lxndrblz/anatole/compare/v1.7.0...v1.8.0) (2022-03-10)
 
 ### Features

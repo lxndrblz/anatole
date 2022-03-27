@@ -33,4 +33,13 @@ other = "Nimi"
 other = "Sähköposti"
 
 [message]
-other = "Viesti" 
+other = "Viesti"
+
+[warning]
+other = "Varoitus"
+
+[info]
+other = "Tietoja"
+
+[update]
+other = "Päivitys"

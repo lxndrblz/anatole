@@ -7,7 +7,10 @@ $themes: (
     info: $info,
     shadow: $shadow--lightmode,
     border: 1px solid $primary-lighter--lightmode,
-    alert: $alert,
+    alert: $warning,
+    success: $success,
+    warning: $warning,
+    danger: $danger,
   ),
   dark: (
     accent: $accent--darkmode,
@@ -17,7 +20,10 @@ $themes: (
     info: $info,
     shadow: $shadow--darkmode,
     border: 1px solid $primary-lighter--darkmode,
-    alert: $alert,
+    alert: $warning,
+    success: $success,
+    warning: $warning,
+    danger: $danger,
   ),
 );
 

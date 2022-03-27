@@ -33,4 +33,13 @@ other = "名稱"
 other = "電子郵件"
 
 [message]
-other = "消息" 
+other = "消息"
+
+[warning]
+other = "警告"
+
+[info]
+other = "關於"
+
+[update]
+other = "關於"

@@ -58,7 +58,8 @@
       {{- end -}}
 
       {{- if (eq .Site.Params.relatedPosts true) -}}
-          {{- partial "related.html" . -}}
+        {{- partial "related.html" . -}}
+
       {{- end -}}
 
       {{- if (eq .Params.contact true) -}}
@@ -78,8 +79,7 @@
         {{ partial "taxonomy/tags.html" . }}
 
 
-        {{ end }}
-      </div>
+      {{ end }}
     </div>
 
     {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}

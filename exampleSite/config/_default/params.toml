@@ -33,6 +33,8 @@ listDateFormat = "2/1/2006"
 
 reversepagetitle = true # When set to 'true', the Window Title will be reversed to 'Title | Author' instead of the default 'Author | Title'
 
+# hidesidebar = true
+
 [simpleAnalytics]
 # enable = true
 # customurl = "https://analytics.example.com"

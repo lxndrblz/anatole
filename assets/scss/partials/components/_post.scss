@@ -97,7 +97,6 @@
       $font-size-h1: 3.6rem;
 
       font-size: $font-size-h1;
-      text-transform: uppercase;
       letter-spacing: 1px;
       line-height: 1;
 
@@ -115,7 +114,6 @@
 
       font-size: $font-size-h2;
       font-weight: 600;
-      text-transform: uppercase;
       letter-spacing: 1px;
       line-height: 1;
 
@@ -133,7 +131,6 @@
 
       font-size: $font-size-h3;
       font-weight: 600;
-      text-transform: uppercase;
       letter-spacing: 1px;
       line-height: 1;
 
@@ -162,11 +159,23 @@
     figure {
       max-width: 100%;
       height: auto;
-      margin: 0;
+      margin: 0 auto;
       text-align: center;
 
       &.big {
-        max-width: 100vw;
+        max-width: 87.5%;
+      }
+
+      &.medium {
+        max-width: 75%;
+      }
+
+      &.small {
+        max-width: 50%;
+      }
+
+      &.tiny {
+        max-width: 25%;
       }
 
       &.right {
@@ -175,12 +184,12 @@
 
           @include ltr {
             float: right;
-            margin-left: 1.5em;
+            margin: 0 0 0 1.5em;
           }
 
           @include rtl {
             float: left;
-            margin-right: 1.5em;
+            margin: 0 1.5em 0 0;
           }
         }
       }

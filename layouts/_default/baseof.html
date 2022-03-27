@@ -7,7 +7,7 @@
 >
   {{- partial "head.html" . -}}
   <body
-    {{ if eq .Params.displayMode "dark" }}
+    {{ if eq .Site.Params.displayMode "dark" }}
       class="body theme--dark"
 
     {{ else }}
@@ -16,10 +16,26 @@
     {{ end }}
   >
     <div class="wrapper">
-      <aside class="wrapper__sidebar">
+      <aside
+        {{ if and (not .IsHome) (eq .Site.Params.hidesidebar true) }}
+          class="wrapper__sidebar wrapper__sidebar--hidden"
+
+        {{ else }}
+          class="wrapper__sidebar"
+
+        {{ end }}
+      >
         {{- partial "sidebar.html" . -}}
       </aside>
-      <main class="wrapper__main">
+      <main
+        {{ if and (not .IsHome) (eq .Site.Params.hidesidebar true) }}
+          class="wrapper__main wrapper__main--fullscreen"
+
+        {{ else }}
+          class="wrapper__main"
+
+        {{ end }}
+      >
         <header class="header">{{ partial "navbar.html" . }}</header>
         {{- block "main" . }}{{- end }}
       </main>

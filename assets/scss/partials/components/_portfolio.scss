@@ -27,7 +27,6 @@
   }
 
   &__title {
-    text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 2.6rem;
     line-height: 1;
@@ -126,6 +125,20 @@
     &--right {
       @include desktop_and_print {
         margin-left: auto;
+      }
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    row-gap: 0.8rem;
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 1.25rem;
       }
     }
   }

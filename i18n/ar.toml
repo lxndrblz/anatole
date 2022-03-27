@@ -34,4 +34,13 @@ other = "الاسم"
 other = "البريد الالكتروني"
 
 [message]
-other = "الرسالة" 
+other = "الرسالة"
+
+[warning]
+other = "تحذير"
+
+[info]
+other = "حول"
+
+[update]
+other = "تحديث"

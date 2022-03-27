@@ -33,4 +33,13 @@ other = "Nome"
 other = "Email"
 
 [message]
-other = "Messaggio" 
+other = "Messaggio"
+
+[warning]
+other = "Avviso"
+
+[info]
+other = "Informazioni"
+
+[update]
+other = "Aggiorna"

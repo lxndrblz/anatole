@@ -24,6 +24,7 @@
   <meta charset="utf-8" />
   {{- hugo.Generator -}}
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="{{ .Site.Params.author }}" />
   <meta
     name="description"
     content="{{ if .Params.description }}
@@ -91,11 +92,29 @@
     />
 
   {{ end }}
+  {{ $style := resources.Get "fontawesome/css/fontawesome.min.css" | resources.Fingerprint }}
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
     crossorigin="anonymous"
+    type="text/css"
+  />
+  {{ $style := resources.Get "fontawesome/css/solid.min.css" | resources.Fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  {{ $style := resources.Get "fontawesome/css/brands.min.css" | resources.Fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+    crossorigin="anonymous"
+    type="text/css"
   />
   {{ if .Params.redirectUrl }}
     {{ $style := resources.Get "css/spinner.css" | resources.Minify | resources.Fingerprint }}
@@ -213,15 +232,7 @@
 
 
   <!-- Open Graph -->
-  {{- if isset .Site.Taxonomies "series" }}
-    {{- if not (eq (len .Site.Taxonomies.series) 0) -}}
-      {{ template "_internal/opengraph.html" . }}
-
-
-    {{- end -}}
-
-
-  {{- end }}
+  {{ template "_internal/opengraph.html" . }}
 
 
   <!-- Schema.org-->

@@ -57,18 +57,14 @@
 
       {{ end }}
       <div class="post__content">
-        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p>
-          {{ if .Site.Params.fullPostContent }}
-            {{ .Content }}
+        <h3><a href="{{ .RelPermalink }}">{{ upper .Title }}</a></h3>
+        {{ if .Site.Params.fullPostContent }}
+          <p>{{ .Content | markdownify }}</p>
 
+        {{ else }}
+          <p>{{ .Summary | markdownify }}</p>
 
-          {{ else }}
-            {{ .Summary }}
-
-
-          {{ end }}
-        </p>
+        {{ end }}
         <!-- add read more -->
         {{- if and (.Truncated) (.Site.Params.readMore) -}}
           <a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a>

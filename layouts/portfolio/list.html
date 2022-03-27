@@ -9,7 +9,8 @@
 
       {{ end }}"
     >
-      <h2 class="portfolio__title">{{ .title }}</h2>
+      {{ $anchorTitle := delimit (split .title " ") "" }}
+      <h2 class="portfolio__title" id="{{ $anchorTitle | lower }}">{{ title .title }}</h2>
       {{ range $i, $p := .portfolioitem }}
         <div class="portfolio">
           {{ if .image }}
@@ -22,9 +23,15 @@
 
               {{ end }}"
             >
-              <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+              {{ if .link }}
+                <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+                  <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
+                </a>
+
+              {{ else }}
                 <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
-              </a>
+
+              {{ end }}
             </div>
 
           {{ end }}
@@ -38,41 +45,60 @@
             {{ end }}"
           >
             <h2>{{ .name | markdownify }}</h2>
-            <div class="info">
+            <ul class="portfolio__meta">
               {{ if .status }}
-                <em class="fas fa-flag-checkered"></em>
-                <span>{{ .status }}</span>
+                <li class="portfolio__meta-item">
+                  <em class="fas fa-flag-checkered"></em>
+                  <span>{{ .status }}</span>
+                </li>
 
               {{ end }}
               {{ if .venue }}
-                <em class="fas fa-map-marker-alt"></em>
-                <span>{{ .venue }}</span>
+                <li class="portfolio__meta-item">
+                  <em class="fas fa-map-marker-alt"></em>
+                  <span>{{ .venue }}</span>
+                </li>
 
               {{ end }}
               {{ if .start }}
-                <span>Start:</span>
-                <span>{{ .start }}</span>
+                <li class="portfolio__meta-item">
+                  <em class="fas fa-arrow-up"></em>
+                  <span>{{ .start }}</span>
+                </li>
 
               {{ end }}
               {{ if .end }}
-                <span>End:</span>
-                <span>{{ .end }}</span>
+                <li class="portfolio__meta-item">
+                  <em class="fas fa-arrow-down"></em>
+                  <span>{{ .end }}</span>
+                </li>
 
               {{ end }}
-            </div>
-            {{ if .authors }}
-              <div class="info">
+              {{ if .authors }}
                 {{ range .authors }}
-                  <span>{{ . }}</span>
+                  <li class="portfolio__meta-item">
+                    <em class="fas fa-at"></em>
+                    <span>{{ . }}</span>
+                  </li>
 
                 {{ end }}
-              </div>
 
-            {{ end }}
+
+              {{ end }}
+            </ul>
             <p>{{ .description | markdownify }}</p>
             {{ if .link }}
               <div class="portfolio__button-wrapper">
-                <a class="portfolio__button" href="{{ .link | safeURL }}" target="_blank" rel="noopener">Visit Site</a>
+                <a class="portfolio__button" href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+                  {{- if .linktext -}}
+                    {{ .linktext | markdownify }}
+
+
+                  {{- else -}}
+                    Visit Site
+
+                  {{- end -}}
+                </a>
               </div>
 
             {{ end }}

@@ -19,7 +19,7 @@
     {{ end }}"
   >
     {{- i18n $noticeType -}}
-</span>
+  </span>
   {{- $noteContent := (markdownify .Inner | chomp) -}}
   <div class="notice__content">
     {{ $noteContent }}

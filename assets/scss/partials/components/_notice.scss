@@ -1,5 +1,5 @@
 .notice {
-  display:  flex;
+  display: flex;
   flex-direction: column;
 
   @include themed() {
@@ -7,13 +7,12 @@
   }
 
   &--update {
-
     @include themed() {
       background-color: mix(t('success'), t('accent'), 40%);
     }
   }
-  &--warning {
 
+  &--warning {
     @include themed() {
       background-color: mix(t('danger'), t('accent'), 40%);
     }
@@ -33,6 +32,7 @@
     &--update {
       background-color: t('success');
     }
+    
     &--warning {
       background-color: t('danger');
     }

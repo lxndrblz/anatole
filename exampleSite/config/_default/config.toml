@@ -32,3 +32,14 @@ pygmentsCodefencesGuessSyntax = true
     category = "categories"
     series = "series"
     tag = "tags"
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+[[related.indices]]
+  name = 'keywords'
+  weight = 100
+[[related.indices]]
+  name = 'tags'
+  weight = 80

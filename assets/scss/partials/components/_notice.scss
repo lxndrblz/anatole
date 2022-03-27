@@ -24,7 +24,7 @@
     align-self: flex-end;
     font-weight: 300;
     letter-spacing: 0.025em;
-    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
 
     @include themed() {
       color: t('accent');

@@ -23,13 +23,15 @@
 
               {{ end }}"
             >
-            {{ if .link }}
-              <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+              {{ if .link }}
+                <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+                  <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
+                </a>
+
+              {{ else }}
                 <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
-              </a>
-            {{ else }}
-              <img class="portfolio__image" src="{{ .image | relURL }}" alt="{{ .name | markdownify }}" />
-            {{ end }}
+
+              {{ end }}
             </div>
 
           {{ end }}
@@ -90,8 +92,10 @@
                 <a class="portfolio__button" href="{{ .link | safeURL }}" target="_blank" rel="noopener">
                   {{- if .linktext -}}
                     {{ .linktext | markdownify }}
+
                   {{- else -}}
                     Visit Site
+
                   {{- end -}}
                 </a>
               </div>

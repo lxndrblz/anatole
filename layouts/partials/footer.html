@@ -32,7 +32,11 @@
 </footer>
 {{- partial "medium-zoom.html" .context -}}
 {{- partial "math.html" .context -}}
-{{- template "_internal/google_analytics_async.html" .context -}}
+{{- if (hasPrefix .context.Site.GoogleAnalytics "G-") -}}
+  {{- template "_internal/google_analytics.html" .context -}}
+{{- else -}}
+  {{- template "_internal/google_analytics_async.html" .context -}}
+{{- end -}}
 {{- if and (hugo.IsProduction) (.context.Site.Params.gtagId) -}}
   {{ partial "google-analytics-gtag-async.html" .context }}
 

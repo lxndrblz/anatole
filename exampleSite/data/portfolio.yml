@@ -5,6 +5,7 @@ portfolioitems:
       - name: Project 1
         image: '/images/portfolio/code.jpg'
         link: https://gohugo.io/
+        linktext: 'Visit project website'
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         tags:
           - Tag 1
@@ -35,15 +36,14 @@ portfolioitems:
     portfolioitem:
       - name: Project 1
         image: '/images/portfolio/code.jpg'
-        link: https://gohugo.io/
-        description: 'A description'
+        description: 'This project does not have a link attribute'
         tags:
           - Tag 1
           - Tag 2
       - name: Project 2
         image: '/images/portfolio/code.jpg'
         link: https://gohugo.io/
-        description: 'A description'
+        description: 'You can click on [**this link**](#codingprojects) to scroll to my Coding Projects portfolio'
         tags:
           - Tag 1
           - Tag 2

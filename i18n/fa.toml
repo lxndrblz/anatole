@@ -33,4 +33,13 @@ other = "نام"
 other = "پست الکترونیک"
 
 [message]
-other = "پیام" 
+other = "پیام"
+
+[warning]
+other = "هشدار"
+
+[info]
+other = "درباره"
+
+[update]
+other = "به روز رسانی"

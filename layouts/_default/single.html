@@ -57,6 +57,12 @@
 
       {{- end -}}
 
+      {{- if (eq .Site.Params.relatedPosts true) -}}
+        {{- partial "related.html" . -}}
+
+
+      {{- end -}}
+
       {{- if (eq .Params.contact true) -}}
         {{- partial "contact.html" . -}}
 

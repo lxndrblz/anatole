@@ -38,3 +38,12 @@ other = "E-Mail Adresse"
 
 [message]
 other = "Nachricht" 
+
+[warning]
+other = "Warnung"
+
+[info]
+other = "Info"
+
+[update]
+other = "Aktualisierung"

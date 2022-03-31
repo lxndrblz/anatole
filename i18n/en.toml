@@ -38,3 +38,12 @@ other = "Email"
 
 [message]
 other = "Message" 
+
+[warning]
+other = "Warning"
+
+[info]
+other = "Info"
+
+[update]
+other = "Update"

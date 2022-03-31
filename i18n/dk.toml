@@ -34,3 +34,12 @@ other = "e-mail-adresse"
 
 [message]
 other = "besked" 
+
+[warning]
+other = "Advarsel"
+
+[info]
+other = "Om"
+
+[update]
+other = "Opdatering"

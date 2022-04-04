@@ -35,8 +35,10 @@
 {{- if (hasPrefix .context.Site.GoogleAnalytics "G-") -}}
   {{- template "_internal/google_analytics.html" .context -}}
 
+
 {{- else -}}
   {{- template "_internal/google_analytics_async.html" .context -}}
+
 
 {{- end -}}
 {{- if and (hugo.IsProduction) (.context.Site.Params.gtagId) -}}

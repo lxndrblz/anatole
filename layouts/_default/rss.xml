@@ -34,6 +34,8 @@
       <guid>{{ .Permalink }}</guid>
       {{ if eq .Site.Params.rssFullContent true }}
         <description>{{ .Content | html }}</description>
+      {{ else if .Description }}
+        <description>{{ .Description }}</description>
       {{ else }}
         <description>{{ .Summary | html }}</description>
       {{ end }}

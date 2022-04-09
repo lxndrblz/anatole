@@ -1,0 +1,27 @@
+{{/* Available notice types: danger, info, update */}}
+{{- $noticeType := .Get 0 -}}
+<div
+  class="notice{{ if eq $noticeType "warning" }}
+    notice--warning
+
+  {{ else if eq $noticeType "update" }}
+    notice--update
+
+  {{ end }}"
+>
+  <span
+    class="notice__title{{ if eq $noticeType "warning" }}
+      notice__title--warning
+
+    {{ else if eq $noticeType "update" }}
+      notice__title--update
+
+    {{ end }}"
+  >
+    {{- i18n $noticeType -}}
+  </span>
+  {{- $noteContent := (markdownify .Inner | chomp) -}}
+  <div class="notice__content">
+    {{ $noteContent }}
+  </div>
+</div>

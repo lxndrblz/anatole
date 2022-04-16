@@ -15,13 +15,15 @@
         alt="profile picture"
       />
       {{ if .IsHome }}
-      <h1 class="sidebar__introduction-title">
-        <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
-      </h1>
+        <h1 class="sidebar__introduction-title">
+          <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
+        </h1>
+
       {{ else }}
-      <div class="sidebar__introduction-title">
-        <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
-      </div>      
+        <div class="sidebar__introduction-title">
+          <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
+        </div>
+
       {{ end }}
       <div class="sidebar__introduction-description">
         <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>

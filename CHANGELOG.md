@@ -2,16 +2,14 @@
 
 ## [1.10.0](https://github.com/lxndrblz/anatole/compare/v1.9.0...v1.10.0) (2022-04-16)
 
-
 ### Features
 
-* use front matter description as rss item description ([89c8c65](https://github.com/lxndrblz/anatole/commit/89c8c6558702bf29fc1b07137d29ce80ab06ed5f))
-
+- use front matter description as rss item description ([89c8c65](https://github.com/lxndrblz/anatole/commit/89c8c6558702bf29fc1b07137d29ce80ab06ed5f))
 
 ### Bug Fixes
 
-* loading the correct internal Google Analytics template for v4 token ([ec0175a](https://github.com/lxndrblz/anatole/commit/ec0175a4ed4131f4cf26d723c243d388b421d7eb)), closes [#339](https://github.com/lxndrblz/anatole/issues/339)
-* remove double h1 tags ([#347](https://github.com/lxndrblz/anatole/issues/347)) ([849a2f2](https://github.com/lxndrblz/anatole/commit/849a2f2d9bca2928df6e86e98576e4ec2988d65f))
+- loading the correct internal Google Analytics template for v4 token ([ec0175a](https://github.com/lxndrblz/anatole/commit/ec0175a4ed4131f4cf26d723c243d388b421d7eb)), closes [#339](https://github.com/lxndrblz/anatole/issues/339)
+- remove double h1 tags ([#347](https://github.com/lxndrblz/anatole/issues/347)) ([849a2f2](https://github.com/lxndrblz/anatole/commit/849a2f2d9bca2928df6e86e98576e4ec2988d65f))
 
 ## [1.9.0](https://github.com/lxndrblz/anatole/compare/v1.8.0...v1.9.0) (2022-03-27)
 

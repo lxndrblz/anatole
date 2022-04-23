@@ -1,4 +1,4 @@
-.languageswitch {
+.optionswitch {
   position: relative;
 
   &__label {
@@ -65,7 +65,7 @@
 
   &__picker {
     &:checked {
-      ~ .languageswitch {
+      ~ .optionswitch {
         &__list {
           display: block;
         }

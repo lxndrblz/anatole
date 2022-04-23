@@ -23,8 +23,27 @@
   url = "/about/"
 
   [[main]]
-  name = "Contact"
+  name = "Accomplishments"
   weight = 500
+  identifier = "accomplishments"
+
+  [[main]]
+  name = "Awards"
+  weight = 510
+  identifier = "awards"
+  url = "/awards/"
+  parent = "accomplishments"  
+
+  [[main]]
+  name = "Certifications"
+  weight = 520
+  identifier = "certifications"
+  url = "/certifications/"
+  parent = "accomplishments"
+
+  [[main]]
+  name = "Contact"
+  weight = 600
   identifier = "contact"
   url = "/contact/"
 

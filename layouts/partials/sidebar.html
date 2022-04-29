@@ -32,7 +32,7 @@
     <ul class="sidebar__list">
       {{ range $item := .Site.Params.socialIcons }}
         <li class="sidebar__list-item">
-          <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}">
+          <a href="{{ $item.url }}" rel="me" target="_blank" aria-label="{{ $item.title }}" title="{{ $item.title }}">
             <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
           </a>
         </li>

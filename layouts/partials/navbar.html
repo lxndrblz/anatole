@@ -28,9 +28,12 @@
                 {{ if eq $url .URL }}
                   {{ $labelClass = "optionswitch__label nav__link--active" }}
 
+
                 {{ end }}
 
+
               {{ end }}
+
 
               <label class="{{ $labelClass }}" for="menuoptionpicker"
                 >{{ .Name }} <i class="fa fa-angle-down" aria-hidden="true"></i

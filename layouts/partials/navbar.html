@@ -18,26 +18,28 @@
       {{ $current := . }}
       {{ range .Site.Menus.main }}
         {{ $active := eq $url .URL }}
-        
         {{ if .HasChildren }}
-          <li class="nav__list-item">            
+          <li class="nav__list-item">
             <div class="optionswitch">
               {{ $menuId := delimit (shuffle (seq 1 9)) "" }}
               <input class="optionswitch__picker" type="checkbox" id="{{ $menuId }}" hidden />
-              <label
-                {{ range .Children }}
-                  {{ if in $current.RelPermalink .URL }}
-                    class="optionswitch__label nav__link--active"
 
-                  {{ else }}
-                    class="optionswitch__label"
+              {{ $labelClass := "optionswitch__label" }}
+              {{ range .Children }}
+                {{ if eq $url .URL }}
+                  {{ $labelClass = "optionswitch__label nav__link--active" }}
 
-                  {{ end }}
 
                 {{ end }}
-                for="{{ $menuId }}"
+
+
+              {{ end }}
+
+
+              <label class="{{ $labelClass }}" for="{{ $menuId }}"
                 >{{ .Name }} <i class="fa fa-angle-down" aria-hidden="true"></i
               ></label>
+
               <div class="optionswitch__triangle"></div>
               <ul class="optionswitch__list">
                 {{ range .Children }}

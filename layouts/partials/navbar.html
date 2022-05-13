@@ -16,9 +16,9 @@
     <ul class="nav__list" id="navMenu">
       {{ $url := .RelPermalink }}
       {{ range $menuId, $menuItem := .Site.Menus.main }}
-        {{ $active := eq $url $menuItem.URL }}        
+        {{ $active := eq $url $menuItem.URL }}
         {{ if $menuItem.HasChildren }}
-          
+
           <li class="nav__list-item">
             <div class="optionswitch">
               <input class="optionswitch__picker" type="checkbox" id="{{ $menuId }}" hidden />
@@ -28,9 +28,12 @@
                 {{ if eq $url .URL }}
                   {{ $labelClass = "optionswitch__label nav__link--active" }}
 
+
                 {{ end }}
 
+
               {{ end }}
+
 
               <label class="{{ $labelClass }}" for="{{ $menuId }}"
                 >{{ $menuItem.Name }} <i class="fa fa-angle-down" aria-hidden="true"></i

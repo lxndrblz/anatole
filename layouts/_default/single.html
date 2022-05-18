@@ -51,13 +51,6 @@
 
       {{ .Content }}
 
-      {{ if .Page.Store.Get "hasMermaid" }}
-        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-        <script>
-          mermaid.initialize({ startOnLoad: true });
-        </script>
-      {{ end }}
-
       {{- if isset .Params "series" -}}
         {{- partial "series.html" . -}}
 
@@ -124,4 +117,10 @@
     {{ end }}
   </div>
 
+      {{ if .Page.Store.Get "hasMermaid" }}
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+          mermaid.initialize({ startOnLoad: true });
+        </script>
+      {{ end }}
 {{ end }}

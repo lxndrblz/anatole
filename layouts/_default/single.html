@@ -66,6 +66,10 @@
       {{- if (eq .Params.contact true) -}}
         {{- partial "contact.html" . -}}
 
+      {{- end -}}
+
+      {{- if (eq .Site.Params.mermaid.enable true) -}}
+        {{- partial "mermaid.html" . -}}
 
       {{- end -}}
     </div>
@@ -116,11 +120,4 @@
 
     {{ end }}
   </div>
-
-      {{ if .Page.Store.Get "hasMermaid" }}
-        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-        <script>
-          mermaid.initialize({ startOnLoad: true });
-        </script>
-      {{ end }}
 {{ end }}

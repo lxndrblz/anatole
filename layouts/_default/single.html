@@ -66,10 +66,12 @@
       {{- if (eq .Params.contact true) -}}
         {{- partial "contact.html" . -}}
 
+
       {{- end -}}
 
       {{- if (eq .Site.Params.mermaid.enable true) -}}
         {{- partial "mermaid.html" . -}}
+
 
       {{- end -}}
     </div>
@@ -120,4 +122,5 @@
 
     {{ end }}
   </div>
+
 {{ end }}

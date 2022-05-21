@@ -3,7 +3,7 @@
     {
       "@context": "http://schema.org",
       "@type": "WebSite",
-      "name": "{{ .Site.Title }}",
+      "name": {{ .Site.Title | jsonify | safeJS }},
       "url": "{{ .Site.BaseURL }}",
       "description": "{{ .Site.Params.description }}",
       "thumbnailUrl": "{{ .Site.Params.Logo | absURL }}",

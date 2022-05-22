@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.11.0](https://github.com/lxndrblz/anatole/compare/v1.10.0...v1.11.0) (2022-05-13)
+
+### Features
+
+- added support for navigation menu dropdown ([#344](https://github.com/lxndrblz/anatole/issues/344)) ([6c55d42](https://github.com/lxndrblz/anatole/commit/6c55d4282e1e460afb56a19e70058f05d738e85d))
+
+### Bug Fixes
+
+- apply active class to submenu items ([#350](https://github.com/lxndrblz/anatole/issues/350)) ([ec5066b](https://github.com/lxndrblz/anatole/commit/ec5066bdb57e8927150cb9e1b37ad0cedb047716))
+- incorrect display of submenu items when multiple menu dropdowns are implemented ([#354](https://github.com/lxndrblz/anatole/issues/354)) ([1959fa6](https://github.com/lxndrblz/anatole/commit/1959fa6d400511da65044c29f1bc7c7030a31ca6)), closes [#352](https://github.com/lxndrblz/anatole/issues/352)
+- open social links in a new tab ([#353](https://github.com/lxndrblz/anatole/issues/353)) ([81c4208](https://github.com/lxndrblz/anatole/commit/81c4208b6778ad3a730f7f654106942a9a1e7ff9))
+
 ## [1.10.0](https://github.com/lxndrblz/anatole/compare/v1.9.0...v1.10.0) (2022-04-16)
 
 ### Features

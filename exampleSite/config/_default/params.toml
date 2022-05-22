@@ -73,3 +73,6 @@ url = "https://www.instagram.com/"
 icon = "fas fa-envelope"
 title = "e-mail"
 url = "mailto:mail@example.com"
+
+[mermaid]
+# enable = true

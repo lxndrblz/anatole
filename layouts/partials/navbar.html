@@ -15,16 +15,16 @@
   <nav class="nav">
     <ul class="nav__list" id="navMenu">
       {{ $url := .RelPermalink }}
-      {{ $current := . }}
-      {{ range .Site.Menus.main }}
-        {{ $active := eq $url .URL }}
-        {{ if .HasChildren }}
+      {{ range $menuId, $menuItem := .Site.Menus.main }}
+        {{ $active := eq $url $menuItem.URL }}
+        {{ if $menuItem.HasChildren }}
+
           <li class="nav__list-item">
             <div class="optionswitch">
-              <input class="optionswitch__picker" type="checkbox" id="menuoptionpicker" hidden />
+              <input class="optionswitch__picker" type="checkbox" id="{{ $menuId }}" hidden />
 
               {{ $labelClass := "optionswitch__label" }}
-              {{ range .Children }}
+              {{ range $menuItem.Children }}
                 {{ if eq $url .URL }}
                   {{ $labelClass = "optionswitch__label nav__link--active" }}
 
@@ -35,13 +35,13 @@
               {{ end }}
 
 
-              <label class="{{ $labelClass }}" for="menuoptionpicker"
-                >{{ .Name }} <i class="fa fa-angle-down" aria-hidden="true"></i
+              <label class="{{ $labelClass }}" for="{{ $menuId }}"
+                >{{ $menuItem.Name }} <i class="fa fa-angle-down" aria-hidden="true"></i
               ></label>
 
               <div class="optionswitch__triangle"></div>
               <ul class="optionswitch__list">
-                {{ range .Children }}
+                {{ range $menuItem.Children }}
                   <li class="optionswitch__list-item">
                     <a
                       href="{{ .URL }}"
@@ -72,7 +72,7 @@
 
               {{ end }}
               title="{{ .Title }}"
-              >{{ .Name }}</a
+              >{{ $menuItem.Name }}</a
             >
           </li>
 

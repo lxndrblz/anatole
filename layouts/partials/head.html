@@ -1,11 +1,22 @@
 <head>
-  <title>{{ if (eq .Site.Params.reversepagetitle true) }}
+  <title>
+    {{ if (eq .Site.Params.reversepagetitle true) }}
       {{ with .Title }}
         {{ . }} |
+
       {{ end }}
       {{- .Site.Params.author -}}
+
     {{ else }}
-      {{- .Site.Params.author -}}{{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
+      {{- .Site.Params.author -}}{{ with .Title }}
+        | {{ . }}
+
+      {{ end }}
+
+
+    {{ end }}
+
+  </title>
 
   <!-- Meta -->
   <meta charset="utf-8" />
@@ -16,8 +27,10 @@
     name="description"
     content="{{ if .Params.description }}
       {{- .Params.description -}}
+
     {{ else }}
       {{- .Site.Params.description -}}
+
     {{ end }}"
   />
   {{ if .Params.redirectUrl }}

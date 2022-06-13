@@ -15,6 +15,9 @@
         <textarea class="field-style" name="message" id="message" rows="6" placeholder="{{ i18n "message" }}"></textarea>
       </li>
       <li>
+        <div class="g-recaptcha" data-sitekey="{{ .Site.Params.contactFormReCaptcha }}"></div>
+      </li>
+      <li>
         <input class="field-style" type="submit" value="{{ i18n "send" }}" />
       </li>
       <li>

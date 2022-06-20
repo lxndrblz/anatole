@@ -5,8 +5,8 @@ other = "categoria"
 other = "tag"
 
 [reading_time]
-one = "Tempo di lettura: un minuto"
-other = "Tempo di lettura: {{ .Count }} Minuti"
+one = "Tempo di lettura: un minuto."
+other = "Tempo di lettura: {{ .Count }} minuti."
 
 [page_not_found]
 other = "Pagina non trovata"

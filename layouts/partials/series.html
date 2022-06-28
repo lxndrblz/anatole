@@ -1,7 +1,7 @@
 {{ $related := where .Site.RegularPages ".Params.series" "intersect" .Params.series }}
 
 
-<h3>Posts in this Series</h3>
+<h3>{{ i18n "series_posts" }}</h3>
 <ul>
   {{ range $related }}
     <li><a href="{{ .Page.RelPermalink }}">{{ title .Page.Title }}</a></li>

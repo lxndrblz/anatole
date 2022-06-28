@@ -43,3 +43,6 @@ other = "Informazioni"
 
 [update]
 other = "Aggiorna"
+
+[series_posts]
+other = "Messaggi di questa serie"

@@ -43,3 +43,6 @@ other = "Om"
 
 [update]
 other = "Opdatering"
+
+[series_posts]
+other = "Indlæg i denne serie"

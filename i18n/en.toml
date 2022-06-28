@@ -47,3 +47,6 @@ other = "Info"
 
 [update]
 other = "Update"
+
+[series_posts]
+other = "Posts in this series"

@@ -109,6 +109,14 @@
     crossorigin="anonymous"
     type="text/css"
   />
+  {{ $style := resources.Get "fontawesome/css/regular.min.css" | resources.Fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+    crossorigin="anonymous"
+    type="text/css"
+  />
   {{ $style := resources.Get "fontawesome/css/brands.min.css" | resources.Fingerprint }}
   <link
     rel="stylesheet"

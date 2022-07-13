@@ -25,8 +25,10 @@
                 {{ if .Site.Params.localizedDates }}
                   {{ time.Format .Site.Params.singleDateFormat .Date }}
 
+
                 {{ else }}
                   {{ .Date.Format .Site.Params.singleDateFormat }}
+
 
                 {{ end }}
 
@@ -35,8 +37,10 @@
                 {{ if .Site.Params.localizedDates }}
                   {{ time.Format "Mon, Jan 2, 2006" .Date }}
 
+
                 {{ else }}
                   {{ .Date.Format "Mon, Jan 2, 2006" }}
+
 
                 {{ end }}
 

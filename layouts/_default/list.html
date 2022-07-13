@@ -19,8 +19,10 @@
                 {{ if .Site.Params.localizedDates }}
                   {{ time.Format .Site.Params.listDateFormat .Date }}
 
+
                 {{ else }}
                   {{ .Date.Format .Site.Params.listDateFormat }}
+
 
                 {{ end }}
 
@@ -29,8 +31,10 @@
                 {{ if .Site.Params.localizedDates }}
                   {{ time.Format "Jan 2" .Date }}
 
+
                 {{ else }}
                   {{ .Date.Format "Jan 2" }}
+
 
                 {{ end }}
 

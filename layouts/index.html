@@ -79,16 +79,22 @@
           >{{ if isset .Site.Params "indexdateformat" }}
             {{ if .Site.Params.localizedDates }}
               {{ time.Format .Site.Params.indexDateFormat .Date }}
+
             {{ else }}
               {{ .Date.Format .Site.Params.indexDateFormat }}
+
             {{ end }}
+
 
           {{ else }}
             {{ if .Site.Params.localizedDates }}
               {{ time.Format "Mon, Jan 2, 2006" .Date }}
+
             {{ else }}
               {{ .Date.Format "Mon, Jan 2, 2006" }}
+
             {{ end }}
+
 
           {{ end }}</span
         >

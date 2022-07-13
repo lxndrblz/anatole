@@ -18,16 +18,22 @@
               {{ if isset .Site.Params "listdateformat" }}
                 {{ if .Site.Params.localizedDates }}
                   {{ time.Format .Site.Params.listDateFormat .Date }}
+
                 {{ else }}
                   {{ .Date.Format .Site.Params.listDateFormat }}
+
                 {{ end }}
+
 
               {{ else }}
                 {{ if .Site.Params.localizedDates }}
                   {{ time.Format "Jan 2" .Date }}
+
                 {{ else }}
                   {{ .Date.Format "Jan 2" }}
+
                 {{ end }}
+
 
               {{ end }}
             </div>

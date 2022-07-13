@@ -77,11 +77,23 @@
         <em class="fas fa-calendar-day"></em>
         <span class="post__footer-date"
           >{{ if isset .Site.Params "indexdateformat" }}
-            {{ .Date.Format .Site.Params.indexDateFormat }}
+            {{ if .Site.Params.localizedDates }}
+              {{ time.Format .Site.Params.indexDateFormat .Date }}
+
+            {{ else }}
+              {{ .Date.Format .Site.Params.indexDateFormat }}
+
+            {{ end }}
 
 
           {{ else }}
-            {{ .Date.Format "Mon, Jan 2, 2006" }}
+            {{ if .Site.Params.localizedDates }}
+              {{ time.Format "Mon, Jan 2, 2006" .Date }}
+
+            {{ else }}
+              {{ .Date.Format "Mon, Jan 2, 2006" }}
+
+            {{ end }}
 
 
           {{ end }}</span

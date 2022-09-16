@@ -39,6 +39,10 @@
       text-transform: uppercase;
       text-align: center;
       white-space: nowrap;
+      
+      themeswitch {
+        cursor: pointer; 
+      }
 
       @include desktop {
         padding-top: 0;

@@ -43,3 +43,6 @@ other = "概要"
 
 [update]
 other = "更新"
+
+[series_posts]
+other = "このシリーズの投稿"

@@ -22,11 +22,27 @@
             <em class="fas fa-calendar-day post__meta-icon"></em>
             <span class="post__meta-text"
               >{{ if isset .Site.Params "singledateformat" }}
-                {{ .Date.Format .Site.Params.singleDateFormat }}
+                {{ if .Site.Params.localizedDates }}
+                  {{ time.Format .Site.Params.singleDateFormat .Date }}
+
+
+                {{ else }}
+                  {{ .Date.Format .Site.Params.singleDateFormat }}
+
+
+                {{ end }}
 
 
               {{ else }}
-                {{ .Date.Format "Mon, Jan 2, 2006" }}
+                {{ if .Site.Params.localizedDates }}
+                  {{ time.Format "Mon, Jan 2, 2006" .Date }}
+
+
+                {{ else }}
+                  {{ .Date.Format "Mon, Jan 2, 2006" }}
+
+
+                {{ end }}
 
 
               {{ end }}
@@ -65,6 +81,12 @@
 
       {{- if (eq .Params.contact true) -}}
         {{- partial "contact.html" . -}}
+
+
+      {{- end -}}
+
+      {{- if (eq .Site.Params.mermaid.enable true) -}}
+        {{- partial "mermaid.html" . -}}
 
 
       {{- end -}}

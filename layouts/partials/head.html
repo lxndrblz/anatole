@@ -5,11 +5,11 @@
         {{ . }} |
 
       {{ end }}
-      {{ .Site.Params.author }}
+      {{- .Site.Params.author -}}
 
 
     {{ else }}
-      {{ .Site.Params.author }}{{ with .Title }}
+      {{- .Site.Params.author -}}{{ with .Title }}
         |
         {{ . }}
 
@@ -18,6 +18,7 @@
 
 
     {{ end }}
+
   </title>
 
   <!-- Meta -->
@@ -28,11 +29,11 @@
   <meta
     name="description"
     content="{{ if .Params.description }}
-      {{ .Params.description }}
+      {{- .Params.description -}}
 
 
     {{ else }}
-      {{ .Site.Params.description }}
+      {{- .Site.Params.description -}}
 
 
     {{ end }}"
@@ -101,6 +102,14 @@
     type="text/css"
   />
   {{ $style := resources.Get "fontawesome/css/solid.min.css" | resources.Fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  {{ $style := resources.Get "fontawesome/css/regular.min.css" | resources.Fingerprint }}
   <link
     rel="stylesheet"
     href="{{ $style.RelPermalink }}"

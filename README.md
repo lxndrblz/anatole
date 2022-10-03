@@ -30,6 +30,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Custom JavaScript and CSS (optional)
 - Compliant to strict CSP
 - Post Series
+- Mermaid diagram support (optional)
 
 ## Preview the Example Site
 

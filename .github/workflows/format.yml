@@ -15,7 +15,9 @@ jobs:
         with:
           node-version: 14
       - name: install
-        run: npm ci
+        run: |
+          npm ci
+          npm run prepare
       - name: format
         run: npm run prettier
       - name: commit changes

@@ -19,7 +19,7 @@
       {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
         <ul class="post__meta">
           <li class="post__meta-item">
-            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <em class="icon-calendar post__meta-icon"></em>
             <span class="post__meta-text"
               >{{ if isset .Site.Params "singledateformat" }}
                 {{ if .Site.Params.localizedDates }}
@@ -49,7 +49,7 @@
             </span>
           </li>
           <li class="post__meta-item">
-            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <em class="icon-stopwatch post__meta-icon"></em>
             <span class="post__meta-text">{{ i18n "reading_time" .ReadingTime }}</span>
           </li>
         </ul>

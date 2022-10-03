@@ -54,24 +54,24 @@ enable = false  # options: true, false. Enable math support globally, default: f
 use = "katex"  # options: "katex", "mathjax". default is "katex".
 
 ## Social links
-# use 'fab' when brand icons, use 'fas' when standard solid icons.
+# To use other icons, you have to create another custom icon font via icomoon
 [[socialIcons]]
-icon = "fab fa-linkedin"
+icon = "icon-linkedin"
 title = "Linkedin"
 url = "https://de.linkedin.com/"
 
 [[socialIcons]]
-icon = "fab fa-github"
+icon = "icon-github"
 title = "GitHub"
 url = "https://github.com/lxndrblz/anatole/"
 
 [[socialIcons]]
-icon = "fab fa-instagram"
+icon = "icon-instagram"
 title = "instagram"
 url = "https://www.instagram.com/"
 
 [[socialIcons]]
-icon = "fas fa-envelope"
+icon = "icon-envelope"
 title = "e-mail"
 url = "mailto:mail@example.com"
 

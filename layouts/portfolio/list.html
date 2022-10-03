@@ -48,28 +48,28 @@
             <ul class="portfolio__meta">
               {{ if .status }}
                 <li class="portfolio__meta-item">
-                  <em class="fas fa-flag-checkered"></em>
+                  <em class="icon-flag-checkered"></em>
                   <span>{{ .status }}</span>
                 </li>
 
               {{ end }}
               {{ if .venue }}
                 <li class="portfolio__meta-item">
-                  <em class="fas fa-map-marker-alt"></em>
+                  <em class="icon-location"></em>
                   <span>{{ .venue }}</span>
                 </li>
 
               {{ end }}
               {{ if .start }}
                 <li class="portfolio__meta-item">
-                  <em class="fas fa-arrow-up"></em>
+                  <em class="icon-arrow-up2"></em>
                   <span>{{ .start }}</span>
                 </li>
 
               {{ end }}
               {{ if .end }}
                 <li class="portfolio__meta-item">
-                  <em class="fas fa-arrow-down"></em>
+                  <em class="icon-arrow-down2"></em>
                   <span>{{ .end }}</span>
                 </li>
 
@@ -77,7 +77,7 @@
               {{ if .authors }}
                 {{ range .authors }}
                   <li class="portfolio__meta-item">
-                    <em class="fas fa-at"></em>
+                    <em class="icon-at"></em>
                     <span>{{ . }}</span>
                   </li>
 

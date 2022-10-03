@@ -93,38 +93,6 @@
     />
 
   {{ end }}
-  {{ $style := resources.Get "fontawesome/css/fontawesome.min.css" | resources.Fingerprint }}
-  <link
-    rel="stylesheet"
-    href="{{ $style.RelPermalink }}"
-    integrity="{{ $style.Data.Integrity }}"
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  {{ $style := resources.Get "fontawesome/css/solid.min.css" | resources.Fingerprint }}
-  <link
-    rel="stylesheet"
-    href="{{ $style.RelPermalink }}"
-    integrity="{{ $style.Data.Integrity }}"
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  {{ $style := resources.Get "fontawesome/css/regular.min.css" | resources.Fingerprint }}
-  <link
-    rel="stylesheet"
-    href="{{ $style.RelPermalink }}"
-    integrity="{{ $style.Data.Integrity }}"
-    crossorigin="anonymous"
-    type="text/css"
-  />
-  {{ $style := resources.Get "fontawesome/css/brands.min.css" | resources.Fingerprint }}
-  <link
-    rel="stylesheet"
-    href="{{ $style.RelPermalink }}"
-    integrity="{{ $style.Data.Integrity }}"
-    crossorigin="anonymous"
-    type="text/css"
-  />
   {{ if .Params.redirectUrl }}
     {{ $style := resources.Get "css/spinner.css" | resources.Minify | resources.Fingerprint }}
     <link
@@ -136,6 +104,14 @@
     />
 
   {{- end -}}
+  {{ $style := resources.Get "css/font.css" | resources.Minify | resources.Fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $style.RelPermalink }}"
+    integrity="{{ $style.Data.Integrity }}"
+    crossorigin="anonymous"
+    type="text/css"
+  />
   {{ if .Site.Params.googleFonts }}
     {{ $baseUrl := "https://fonts.googleapis.com/css2?family=" }}
     {{ $fontParam := delimit .Site.Params.googleFonts "&family=" }}

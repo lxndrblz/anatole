@@ -4,8 +4,9 @@ portfolioitems:
     portfolioitem:
       - name: Project 1
         image: '/images/portfolio/code.jpg'
-        link: https://gohugo.io/
-        linktext: 'Visit project website'
+        links:
+          - url: https://gohugo.io/
+            text: 'Visit project website'
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         tags:
           - Tag 1
@@ -18,14 +19,20 @@ portfolioitems:
           - alexanderdavide
       - name: Project 2
         image: '/images/portfolio/code.jpg'
-        link: https://gohugo.io/
+        links: 
+          - url: https://github.com/
+            icon: 'fab fa-github'
+            text: 'Github repo'
+          - url: https://gohugo.io/
+            text: 'Project site'
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         status: 'On Hold'
         tags:
           - Tag 1
           - Tag 2
       - name: Project 3
-        link: https://gohugo.io/
+        links:
+          - url: https://gohugo.io/
         status: 'Finished'
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         tags:
@@ -42,14 +49,16 @@ portfolioitems:
           - Tag 2
       - name: Project 2
         image: '/images/portfolio/code.jpg'
-        link: https://gohugo.io/
+        links:
+          - url: https://gohugo.io/
         description: 'You can click on [**this link**](#codingprojects) to scroll to my Coding Projects portfolio'
         tags:
           - Tag 1
           - Tag 2
       - name: Project 3
         image: '/images/portfolio/code.jpg'
-        link: https://gohugo.io/
+        links:
+          - url: https://gohugo.io/
         description: 'A description'
         tags:
           - Tag 1

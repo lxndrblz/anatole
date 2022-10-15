@@ -3,17 +3,17 @@
   dir="{{ .Site.Language.LanguageDirection | default "ltr" }}"
   lang="{{- site.Language.Lang -}}"
   data-theme="{{- .Site.Params.displayMode -}}"
-  class="html"
+    {{ if eq .Site.Params.displayMode "dark" }}
+      class="html theme--dark"
+
+    {{ else }}
+      class="html theme--light"
+
+    {{ end }}
 >
   {{- partial "head.html" . -}}
   <body
-    {{ if eq .Site.Params.displayMode "dark" }}
-      class="body theme--dark"
-
-    {{ else }}
-      class="body theme--light"
-
-    {{ end }}
+      class="body"
   >
     <div class="wrapper">
       <aside

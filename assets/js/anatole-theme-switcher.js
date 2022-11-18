@@ -28,7 +28,6 @@ const switchTheme = () => {
   }
 };
 
-
 document.addEventListener(
   'DOMContentLoaded',
   () => {

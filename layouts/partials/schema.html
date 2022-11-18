@@ -10,7 +10,6 @@
       "license": "{{ .Site.Params.Copyright }}"
     }
   </script>
-
 {{ else if .IsPage }}
   {{ $author :=  or (.Params.author) (.Site.Params.author) }}
   {{ $favicon := .Site.Params.favicon | absURL }}
@@ -117,5 +116,4 @@
     {{ end }}]
     }
   </script>
-
 {{ end }}

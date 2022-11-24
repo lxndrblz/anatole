@@ -6,7 +6,7 @@ other = "برچسب"
 
 [reading_time]
 one = "یک دقیقه زمان برای مطالعه"
-other = "{{ .Count }}-دقیقه زمان باقی مانده است"
+other = "{{ .Count }}-دقیقه زمان برای مطالعه"
 
 [page_not_found]
 other = "صفحه پیدا نشد"

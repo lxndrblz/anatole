@@ -1,0 +1,52 @@
+[category]
+other = "Kategori"
+
+[tag]
+other = "Etiket"
+
+[reading_time]
+one = "Bir dakikalık okuma"
+other = "{{ .Count }}-dakikalık okuma"
+
+[old_content_warning]
+one = "Uyarı: Bu gönderi en fazla {{ .Count }} gün eski. Bilgiler eski olabilir."
+other = "Uyarı: Bu gönderi en fazla {{ .Count }} gün eski. Bilgiler eski olabilir."
+
+[page_not_found]
+other = "Sayfa bulunamadı"
+
+[page_does_not_exist]
+other = "Üzgünüz, bu sayfa mevcut değil."
+
+[head_back]
+other = "<a href=\"{{ . }}\">ana sayfaya</a> geri dönebilirsiniz."
+
+[comments]
+other = "Yorumlar"
+
+[send]
+other = "gönder"
+
+[read_more]
+other = "Devamını oku"
+
+[name]
+other = "Isim"
+
+[email]
+other = "e-posta"
+
+[message]
+other = "Mesaj" 
+
+[warning]
+other = "Uyarı"
+
+[info]
+other = "Bilgi"
+
+[update]
+other = "Güncelleme"
+
+[series_posts]
+other = "Bu serideki gönderiler"

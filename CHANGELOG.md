@@ -2,26 +2,24 @@
 
 ## [1.12.0](https://github.com/lxndrblz/anatole/compare/v1.11.0...v1.12.0) (2022-11-26)
 
-
 ### Features
 
-* Add reCAPTCHA to the contact form ([#365](https://github.com/lxndrblz/anatole/issues/365)) ([06847f3](https://github.com/lxndrblz/anatole/commit/06847f35a19834ff26c60b691522107fa201a7a5))
-* add rel-me to social links ([#394](https://github.com/lxndrblz/anatole/issues/394)) ([210f632](https://github.com/lxndrblz/anatole/commit/210f6321cac602c948bc6c92344743e6d8cf4cfd))
-* added mermaid support for displaying diagrams ([#359](https://github.com/lxndrblz/anatole/issues/359)) ([d511a6f](https://github.com/lxndrblz/anatole/commit/d511a6f520bcc2ffab10ce009239904774ed6bb0))
-* added TR language ([#401](https://github.com/lxndrblz/anatole/issues/401)) ([b2faf30](https://github.com/lxndrblz/anatole/commit/b2faf30d428b37fb45025c08e3ef42eb2a3006f6))
-* localized dates ([#373](https://github.com/lxndrblz/anatole/issues/373)) ([c097ab9](https://github.com/lxndrblz/anatole/commit/c097ab90ab82e257d961b4122e690d25aeb1f6ea))
-* translate series label ([#372](https://github.com/lxndrblz/anatole/issues/372)) ([2fbe51c](https://github.com/lxndrblz/anatole/commit/2fbe51c98f2669eadeef8c1c2d00ee158d67a440))
-* trim the whitespace from the HTML meta tags ([#367](https://github.com/lxndrblz/anatole/issues/367)) ([6747495](https://github.com/lxndrblz/anatole/commit/67474957d7cfd7da342df3c4908b1162effc5e2d))
-* update Font Awesome and add Regular variant ([#375](https://github.com/lxndrblz/anatole/issues/375)) ([1d18d09](https://github.com/lxndrblz/anatole/commit/1d18d09bd63421735aff63f065ba36d4a41e6684))
-
+- Add reCAPTCHA to the contact form ([#365](https://github.com/lxndrblz/anatole/issues/365)) ([06847f3](https://github.com/lxndrblz/anatole/commit/06847f35a19834ff26c60b691522107fa201a7a5))
+- add rel-me to social links ([#394](https://github.com/lxndrblz/anatole/issues/394)) ([210f632](https://github.com/lxndrblz/anatole/commit/210f6321cac602c948bc6c92344743e6d8cf4cfd))
+- added mermaid support for displaying diagrams ([#359](https://github.com/lxndrblz/anatole/issues/359)) ([d511a6f](https://github.com/lxndrblz/anatole/commit/d511a6f520bcc2ffab10ce009239904774ed6bb0))
+- added TR language ([#401](https://github.com/lxndrblz/anatole/issues/401)) ([b2faf30](https://github.com/lxndrblz/anatole/commit/b2faf30d428b37fb45025c08e3ef42eb2a3006f6))
+- localized dates ([#373](https://github.com/lxndrblz/anatole/issues/373)) ([c097ab9](https://github.com/lxndrblz/anatole/commit/c097ab90ab82e257d961b4122e690d25aeb1f6ea))
+- translate series label ([#372](https://github.com/lxndrblz/anatole/issues/372)) ([2fbe51c](https://github.com/lxndrblz/anatole/commit/2fbe51c98f2669eadeef8c1c2d00ee158d67a440))
+- trim the whitespace from the HTML meta tags ([#367](https://github.com/lxndrblz/anatole/issues/367)) ([6747495](https://github.com/lxndrblz/anatole/commit/67474957d7cfd7da342df3c4908b1162effc5e2d))
+- update Font Awesome and add Regular variant ([#375](https://github.com/lxndrblz/anatole/issues/375)) ([1d18d09](https://github.com/lxndrblz/anatole/commit/1d18d09bd63421735aff63f065ba36d4a41e6684))
 
 ### Bug Fixes
 
-* move theme class to root node to prevent white flash ([#392](https://github.com/lxndrblz/anatole/issues/392)) ([c36e1d8](https://github.com/lxndrblz/anatole/commit/c36e1d8fff70ab6a817e00aa053b996342554681))
-* prettier error with go template ([#398](https://github.com/lxndrblz/anatole/issues/398)) ([549a722](https://github.com/lxndrblz/anatole/commit/549a722314ac6d8397ffa1802426480641c92064))
-* properly escape title in schema ([#358](https://github.com/lxndrblz/anatole/issues/358)) ([c0c367c](https://github.com/lxndrblz/anatole/commit/c0c367c2de79783614b926a0661e287fc401af20))
-* resolve dependency conflict conventional changelog release it ([#388](https://github.com/lxndrblz/anatole/issues/388)) ([b86ecc7](https://github.com/lxndrblz/anatole/commit/b86ecc78a16aa7348fdc9c4175d3daca16bd4fe8))
-* update FA translation ([#400](https://github.com/lxndrblz/anatole/issues/400)) ([24afb94](https://github.com/lxndrblz/anatole/commit/24afb94d40460a32eef5b3458e73197eca89901e))
+- move theme class to root node to prevent white flash ([#392](https://github.com/lxndrblz/anatole/issues/392)) ([c36e1d8](https://github.com/lxndrblz/anatole/commit/c36e1d8fff70ab6a817e00aa053b996342554681))
+- prettier error with go template ([#398](https://github.com/lxndrblz/anatole/issues/398)) ([549a722](https://github.com/lxndrblz/anatole/commit/549a722314ac6d8397ffa1802426480641c92064))
+- properly escape title in schema ([#358](https://github.com/lxndrblz/anatole/issues/358)) ([c0c367c](https://github.com/lxndrblz/anatole/commit/c0c367c2de79783614b926a0661e287fc401af20))
+- resolve dependency conflict conventional changelog release it ([#388](https://github.com/lxndrblz/anatole/issues/388)) ([b86ecc7](https://github.com/lxndrblz/anatole/commit/b86ecc78a16aa7348fdc9c4175d3daca16bd4fe8))
+- update FA translation ([#400](https://github.com/lxndrblz/anatole/issues/400)) ([24afb94](https://github.com/lxndrblz/anatole/commit/24afb94d40460a32eef5b3458e73197eca89901e))
 
 ## [1.11.0](https://github.com/lxndrblz/anatole/compare/v1.10.0...v1.11.0) (2022-05-13)
 

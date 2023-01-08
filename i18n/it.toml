@@ -5,8 +5,8 @@ other = "categoria"
 other = "tag"
 
 [reading_time]
-one = "Tempo di lettura: Un minuto"
-other = "Tempo di lettura: {{ .Count }} Minuti"
+one = "Tempo di lettura: un minuto."
+other = "Tempo di lettura: {{ .Count }} minuti."
 
 [page_not_found]
 other = "Pagina non trovata"
@@ -21,7 +21,7 @@ other = "Puoi tornare alla <a href=\"{{ . }}\">homepage</a>."
 other = "commenti"
 
 [send]
-other = "Spedire"
+other = "Invia"
 
 [read_more]
 other = "Continua a leggere"
@@ -43,3 +43,6 @@ other = "Informazioni"
 
 [update]
 other = "Aggiorna"
+
+[series_posts]
+other = "Messaggi di questa serie"

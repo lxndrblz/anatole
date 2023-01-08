@@ -47,3 +47,6 @@ other = "경고"
 
 [update]
 other = "업데이트"
+
+[series_posts]
+other = "이 시리즈의 게시물"

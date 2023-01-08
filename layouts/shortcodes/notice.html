@@ -3,19 +3,15 @@
 <div
   class="notice{{ if eq $noticeType "warning" }}
     notice--warning
-
   {{ else if eq $noticeType "update" }}
     notice--update
-
   {{ end }}"
 >
   <span
     class="notice__title{{ if eq $noticeType "warning" }}
       notice__title--warning
-
     {{ else if eq $noticeType "update" }}
       notice__title--update
-
     {{ end }}"
   >
     {{- i18n $noticeType -}}

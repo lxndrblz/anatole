@@ -43,3 +43,6 @@ other = "关于"
 
 [update]
 other = "更新"
+
+[series_posts]
+other = "这个系列的帖子"

@@ -2,17 +2,14 @@
   <div
     class="post {{ with .Site.Params.doNotLoadAnimations }}
       .
-
     {{ else }}
       animated fadeInDown
-
     {{ end }}"
   >
     {{ if .Params.thumbnail }}
       <div class="post__thumbnail-wrapper">
         <img class="post__thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
       </div>
-
     {{ end }}
     <div class="post__content">
       <h1>{{ title .Title }}</h1>
@@ -22,12 +19,18 @@
             <em class="fas fa-calendar-day post__meta-icon"></em>
             <span class="post__meta-text"
               >{{ if isset .Site.Params "singledateformat" }}
-                {{ .Date.Format .Site.Params.singleDateFormat }}
-
+                {{ if .Site.Params.localizedDates }}
+                  {{ time.Format .Site.Params.singleDateFormat .Date }}
+                {{ else }}
+                  {{ .Date.Format .Site.Params.singleDateFormat }}
+                {{ end }}
 
               {{ else }}
-                {{ .Date.Format "Mon, Jan 2, 2006" }}
-
+                {{ if .Site.Params.localizedDates }}
+                  {{ time.Format "Mon, Jan 2, 2006" .Date }}
+                {{ else }}
+                  {{ .Date.Format "Mon, Jan 2, 2006" }}
+                {{ end }}
 
               {{ end }}
             </span>
@@ -37,49 +40,39 @@
             <span class="post__meta-text">{{ i18n "reading_time" .ReadingTime }}</span>
           </li>
         </ul>
-
       {{ end }}
 
       {{- partial "expirationnote.html" . -}}
 
       {{- if (eq .Params.toc true) -}}
-        <h3>Table of Contents</h3>
-        {{ .TableOfContents }}
-
-
+        {{- partial "toc.html" . -}}
       {{- end -}}
 
       {{ .Content }}
 
       {{- if isset .Params "series" -}}
         {{- partial "series.html" . -}}
-
-
       {{- end -}}
 
       {{- if (eq .Site.Params.relatedPosts true) -}}
         {{- partial "related.html" . -}}
-
-
       {{- end -}}
 
       {{- if (eq .Params.contact true) -}}
         {{- partial "contact.html" . -}}
+      {{- end -}}
 
-
+      {{- if (eq .Site.Params.mermaid.enable true) -}}
+        {{- partial "mermaid.html" . -}}
       {{- end -}}
     </div>
     <div class="post__footer">
       {{ with .Page.Params.Categories }}
         {{ partial "taxonomy/categories.html" . }}
-
-
       {{ end }}
 
       {{ with .Page.Params.Tags }}
         {{ partial "taxonomy/tags.html" . }}
-
-
       {{ end }}
     </div>
 
@@ -89,32 +82,26 @@
           <h2>{{ i18n "comments" }}</h2>
           {{ template "_internal/disqus.html" . }}
         </div>
-
       {{- end -}}
       {{- if .Site.Params.utterances.repo -}}
         <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/utterances.html" . }}
         </div>
-
       {{- end -}}
       {{- if .Site.Params.CommentoURL -}}
         <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/commento.html" . }}
         </div>
-
       {{- end -}}
       {{- if .Site.Params.gitalk.repo -}}
         <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/gitalk.html" . }}
         </div>
-
       {{- end -}}
-
 
     {{ end }}
   </div>
-
 {{ end }}

@@ -1,10 +1,8 @@
 <div
   class="sidebar{{ with .Site.Params.doNotLoadAnimations }}
     .
-
   {{ else }}
     animated fadeInDown
-
   {{ end }}"
 >
   <div class="sidebar__content">
@@ -18,12 +16,10 @@
         <h1 class="sidebar__introduction-title">
           <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
         </h1>
-
       {{ else }}
         <div class="sidebar__introduction-title">
           <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
         </div>
-
       {{ end }}
       <div class="sidebar__introduction-description">
         <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>
@@ -32,11 +28,16 @@
     <ul class="sidebar__list">
       {{ range $item := .Site.Params.socialIcons }}
         <li class="sidebar__list-item">
-          <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}">
+          <a
+            href="{{ $item.url }}"
+            target="_blank"
+            rel="noopener me"
+            aria-label="{{ $item.title }}"
+            title="{{ $item.title }}"
+          >
             <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
           </a>
         </li>
-
       {{ end }}
     </ul>
   </div>

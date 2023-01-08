@@ -1,10 +1,8 @@
 <div
   class="{{ with .Site.Params.doNotLoadAnimations }}
     .
-
   {{ else }}
     animated fadeInDown
-
   {{ end }}"
 >
   <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
@@ -15,67 +13,59 @@
   <nav class="nav">
     <ul class="nav__list" id="navMenu">
       {{ $url := .RelPermalink }}
-      {{ $current := . }}
-      {{ range .Site.Menus.main }}
-        {{ $active := eq $url .URL }}
-        {{ if .HasChildren }}
+      {{ range $menuId, $menuItem := .Site.Menus.main }}
+        {{ $active := eq $url $menuItem.URL }}
+        {{ if $menuItem.HasChildren }}
+
           <li class="nav__list-item">
             <div class="optionswitch">
-              <input class="optionswitch__picker" type="checkbox" id="menuoptionpicker" hidden />
-              <label
-                {{ range .Children }}
-                  {{ if in $current.RelPermalink .URL }}
-                    class="optionswitch__label nav__link--active"
+              <input class="optionswitch__picker" type="checkbox" id="{{ $menuId }}" hidden />
 
-                  {{ else }}
-                    class="optionswitch__label"
-
-                  {{ end }}
-
-
+              {{ $labelClass := "optionswitch__label" }}
+              {{ range $menuItem.Children }}
+                {{ if eq $url .URL }}
+                  {{ $labelClass = "optionswitch__label nav__link--active" }}
                 {{ end }}
-                for="menuoptionpicker"
-                >{{ .Name }} <i class="fa fa-angle-down" aria-hidden="true"></i
+
+              {{ end }}
+
+
+              <label class="{{ $labelClass }}" for="{{ $menuId }}"
+                >{{ $menuItem.Name }} <i class="fa fa-angle-down" aria-hidden="true"></i
               ></label>
+
               <div class="optionswitch__triangle"></div>
               <ul class="optionswitch__list">
-                {{ range .Children }}
+                {{ range $menuItem.Children }}
                   <li class="optionswitch__list-item">
                     <a
                       href="{{ .URL }}"
                       {{ if strings.HasPrefix .URL "http" }}
                         target="_blank" rel="noopener noreferrer"
-
                       {{ end }}
                       title="{{ .Title }}"
                       >{{ .Name }}</a
                     >
                   </li>
-
                 {{ end }}
               </ul>
             </div>
           </li>
-
         {{ else }}
           <li class="nav__list-item">
             <a
               {{ if $active }}
                 class="nav__link--active"
-
               {{ end }}
               href="{{ .URL }}"
               {{ if strings.HasPrefix .URL "http" }}
                 target="_blank" rel="noopener noreferrer"
-
               {{ end }}
               title="{{ .Title }}"
-              >{{ .Name }}</a
+              >{{ $menuItem.Name }}</a
             >
           </li>
-
         {{ end }}
-
 
       {{ end }}
     </ul>
@@ -95,19 +85,16 @@
                     ><span
                       {{ if eq . $.Site.Language }}
                         class="active"
-
                       {{ end }}
                       aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
                       >{{ .Language.LanguageName }}</span
                     >
                   </a>
                 </li>
-
               {{ end }}
             </ul>
           </div>
         </li>
-
       {{ end }}
       {{ if not .Site.Params.disableThemeSwitcher }}
         <li class="nav__list-item">
@@ -117,7 +104,6 @@
             </a>
           </div>
         </li>
-
       {{ end }}
     </ul>
   </nav>

@@ -43,3 +43,6 @@ other = "Tietoja"
 
 [update]
 other = "Päivitys"
+
+[series_posts]
+other = "Viestit tässä sarjassa"

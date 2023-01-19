@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  const nav = document.querySelector('nav');
+  const nav = document.querySelector('body > div > main > header > div > nav');
   if (navbarBurgers.length < 1) return;
   navbarBurgers.forEach((navbarBurger) => {
     navbarBurger.addEventListener('click', () => {

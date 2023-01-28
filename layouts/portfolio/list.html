@@ -87,9 +87,13 @@
               {{ end }}
             </ul>
             <p>{{ .description | markdownify }}</p>
-            {{ if .links }}
+            {{ if or .links .link }}
+              {{ $links := .links }}
+              {{ if .link }}
+                {{ $links = $links | append (dict "url" .link "text" .linktext) }}
+              {{ end }}
               <div class="portfolio__button-wrapper">
-              {{ range $link :=.links}}
+              {{ range $link := $links}}
                 <a class="portfolio__button" href="{{ .url | safeURL }}" target="_blank" rel="noopener">
                     {{- if .icon -}}
                       <i class="{{ .icon }} fa-2x" aria-hidden="true"></i>

@@ -1,0 +1,52 @@
+[category]
+other = "kategória"
+
+[tag]
+other = "cimke"
+
+[reading_time]
+one = "Egyperces olvasmány"
+other = "{{ .Count }} perces olvasmány"
+
+[old_content_warning]
+one = "Figyelem: Ez a bejegyzés több, mint {{ .Count }} napja készült. A benne szereplő információ elavult lehet."
+other = "Figyelem: Ez a bejegyzés több, mint {{ .Count }} napja készült. A benne szereplő információ elavult lehet."
+
+[page_not_found]
+other = "Az oldal nem található"
+
+[page_does_not_exist]
+other = "Sajnos az oldal nem létezik."
+
+[head_back]
+other = "Visszatérés a <a href=\"{{ . }}\">főoldalra</a>."
+
+[comments]
+other = "hozzászólások"
+
+[send]
+other = "Küldés"
+
+[read_more]
+other = "Tovább"
+
+[name]
+other = "Név"
+
+[email]
+other = "Email"
+
+[message]
+other = "Üzenet"
+
+[warning]
+other = "Figyelmeztetés"
+
+[info]
+other = "Információ"
+
+[update]
+other = "Újdonság"
+
+[series_posts]
+other = "További bejegyzések a cikksorozatban"

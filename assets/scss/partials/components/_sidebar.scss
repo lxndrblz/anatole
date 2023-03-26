@@ -1,7 +1,7 @@
 .sidebar {
   margin-top: 40px;
 
-  @include desktop_and_print {
+  @include desktop {
     z-index: 2;
     position: fixed;
     height: 100%;
@@ -24,7 +24,7 @@
   }
 
   &__content {
-    @include desktop_and_print {
+    @include desktop {
       display: flex;
       flex-direction: column;
       flex-grow: 1;

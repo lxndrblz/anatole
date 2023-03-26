@@ -16,16 +16,6 @@
   }
 }
 
-@mixin desktop_and_print {
-  @include desktop {
-    @content;
-  }
-
-  @include print {
-    @content;
-  }
-}
-
 @mixin ltr {
   @if $text-direction == ltr {
     @content;

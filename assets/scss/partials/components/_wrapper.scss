@@ -13,7 +13,7 @@
   &__main {
     width: 100%;
 
-    @include desktop_and_print {
+    @include desktop {
       width: $content-width;
     }
 
@@ -24,7 +24,7 @@
     &--fullscreen {
       margin-top: 20px;
 
-      @include desktop_and_print {
+      @include desktop {
         width: 100%;
         margin-top: 0px;
       }
@@ -39,7 +39,7 @@
     width: 100%;
     padding: 16px 0;
 
-    @include desktop_and_print {
+    @include desktop {
       width: $sidebar-width;
       padding: 0;
     }

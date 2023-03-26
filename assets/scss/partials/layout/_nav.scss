@@ -3,7 +3,7 @@
 
   display: none;
 
-  @include desktop_and_print {
+  @include desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,7 +20,7 @@
       background-color: t('primary-lighter');
     }
 
-    @include desktop_and_print {
+    @include desktop {
       display: flex;
       padding: $py-desktop 30px;
 

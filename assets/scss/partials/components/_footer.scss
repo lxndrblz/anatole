@@ -32,13 +32,13 @@
   &__sidebar {
     display: none;
 
-    @include desktop_and_print {
+    @include desktop {
       display: inline-block;
     }
   }
 
   &__base {
-    @include desktop_and_print {
+    @include desktop {
       display: none;
     }
   }

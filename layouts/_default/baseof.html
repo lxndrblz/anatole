@@ -3,26 +3,20 @@
   dir="{{ .Site.Language.LanguageDirection | default "ltr" }}"
   lang="{{- site.Language.Lang -}}"
   data-theme="{{- .Site.Params.displayMode -}}"
-  class="html"
+  {{ if eq .Site.Params.displayMode "dark" }}
+    class="html theme--dark"
+  {{ else }}
+    class="html theme--light"
+  {{ end }}
 >
   {{- partial "head.html" . -}}
-  <body
-    {{ if eq .Site.Params.displayMode "dark" }}
-      class="body theme--dark"
-
-    {{ else }}
-      class="body theme--light"
-
-    {{ end }}
-  >
+  <body class="body">
     <div class="wrapper">
       <aside
         {{ if and (not .IsHome) (eq .Site.Params.hidesidebar true) }}
           class="wrapper__sidebar wrapper__sidebar--hidden"
-
         {{ else }}
           class="wrapper__sidebar"
-
         {{ end }}
       >
         {{- partial "sidebar.html" . -}}
@@ -30,10 +24,8 @@
       <main
         {{ if and (not .IsHome) (eq .Site.Params.hidesidebar true) }}
           class="wrapper__main wrapper__main--fullscreen"
-
         {{ else }}
           class="wrapper__main"
-
         {{ end }}
       >
         <header class="header">{{ partial "navbar.html" . }}</header>
@@ -45,8 +37,6 @@
 
     {{- if (eq .Site.Params.simpleAnalytics.enable true) -}}
       {{- partial "analytics/simpleanalytics.html" . -}}
-
-
     {{- end -}}
   </body>
 </html>

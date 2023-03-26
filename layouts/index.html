@@ -2,10 +2,8 @@
   <div
     class="post {{ with .Site.Params.doNotLoadAnimations }}
       .
-
     {{ else }}
       animated fadeInDown
-
     {{ end }}"
   >
     <div class="post__content">
@@ -24,17 +22,14 @@
     <div
       class="post {{ with .Site.Params.doNotLoadAnimations }}
         .
-
       {{ else }}
         animated fadeInDown
-
       {{ end }}"
     >
       <div class="post__content">
         <h2>{{ .Params.mainSectionsTitle }}</h2>
       </div>
     </div>
-
   {{ end }}
 
   {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
@@ -42,10 +37,8 @@
     <div
       class="post {{ with .Site.Params.doNotLoadAnimations }}
         .
-
       {{ else }}
         animated fadeInDown
-
       {{ end }}"
     >
       {{ if .Params.thumbnail }}
@@ -54,21 +47,17 @@
             <img class="post__thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" loading="lazy" />
           </a>
         </div>
-
       {{ end }}
       <div class="post__content">
         <h3><a href="{{ .RelPermalink }}">{{ upper .Title }}</a></h3>
         {{ if .Site.Params.fullPostContent }}
           <p>{{ .Content | markdownify }}</p>
-
         {{ else }}
           <p>{{ .Summary | markdownify }}</p>
-
         {{ end }}
         <!-- add read more -->
         {{- if and (.Truncated) (.Site.Params.readMore) -}}
           <a href="{{ .RelPermalink }}">{{ i18n "read_more" }}</a>
-
         {{- end -}}
       </div>
 
@@ -79,46 +68,30 @@
           >{{ if isset .Site.Params "indexdateformat" }}
             {{ if .Site.Params.localizedDates }}
               {{ time.Format .Site.Params.indexDateFormat .Date }}
-
-
             {{ else }}
               {{ .Date.Format .Site.Params.indexDateFormat }}
-
-
             {{ end }}
-
 
           {{ else }}
             {{ if .Site.Params.localizedDates }}
               {{ time.Format "Mon, Jan 2, 2006" .Date }}
-
-
             {{ else }}
               {{ .Date.Format "Mon, Jan 2, 2006" }}
-
-
             {{ end }}
-
 
           {{ end }}</span
         >
         {{ with .Page.Params.Categories }}
           {{ partial "taxonomy/categories.html" . }}
-
-
         {{ end }}
 
         {{ with .Page.Params.Tags }}
           {{ partial "taxonomy/tags.html" . }}
-
-
         {{ end }}
       </div>
     </div>
-
   {{ end }}
   <div class="pagination">
     {{ template "partials/pagination.html" . }}
   </div>
-
 {{ end }}

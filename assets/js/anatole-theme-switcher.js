@@ -1,11 +1,11 @@
 const getStoredThemeStyle = () => localStorage.getItem('theme');
 
 const setThemeClass = (style) => {
-  const body = document.body;
-  const prevTheme = [...body.classList].find((c) => c.match(/theme--(light|dark)/));
+  const html = document.documentElement;
+  const prevTheme = [...html.classList].find((c) => c.match(/theme--(light|dark)/));
   if (!prevTheme) return;
-  body.classList.remove(prevTheme);
-  body.classList.add(`theme--${style}`);
+  html.classList.remove(prevTheme);
+  html.classList.add(`theme--${style}`);
 };
 
 const setThemeStyle = (style) => {
@@ -28,17 +28,6 @@ const switchTheme = () => {
   }
 };
 
-const initTheme = () => {
-  const currThemeStyle = getStoredThemeStyle();
-  if (currThemeStyle) {
-    setThemeStyle(currThemeStyle);
-    return;
-  }
-  const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (!userPrefersDark) return;
-  setThemeStyle('dark');
-};
-
 document.addEventListener(
   'DOMContentLoaded',
   () => {
@@ -50,4 +39,12 @@ document.addEventListener(
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', switchTheme, false);
 
-document.addEventListener('DOMContentLoaded', () => initTheme());
+const currThemeStyle = getStoredThemeStyle();
+if (currThemeStyle) {
+  setThemeStyle(currThemeStyle);
+} else {
+  const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (userPrefersDark) {
+    setThemeStyle('dark');
+  }
+}

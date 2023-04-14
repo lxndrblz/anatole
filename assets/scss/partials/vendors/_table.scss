@@ -10,6 +10,8 @@ tr {
 
 th, td {
     display: table-cell;
-    border: 1px solid black;
     padding: 8px;
+    @include themed(){
+    border: t('border');
+    }
 }

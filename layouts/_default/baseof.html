@@ -13,7 +13,7 @@
   <body class="body">
     <div class="wrapper">
       <aside
-        {{ if and (not .IsHome) (eq .Site.Params.hidesidebar true) }}
+        {{ if (and (or (eq .Site.Params.hidesidebar true) (eq .Params.hidesidebar true)) (not .IsHome)) }}
           class="wrapper__sidebar wrapper__sidebar--hidden"
         {{ else }}
           class="wrapper__sidebar"
@@ -22,7 +22,7 @@
         {{- partial "sidebar.html" . -}}
       </aside>
       <main
-        {{ if and (not .IsHome) (eq .Site.Params.hidesidebar true) }}
+        {{ if (and (or (eq .Site.Params.hidesidebar true) (eq .Params.hidesidebar true)) (not .IsHome)) }}
           class="wrapper__main wrapper__main--fullscreen"
         {{ else }}
           class="wrapper__main"

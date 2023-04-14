@@ -47,6 +47,7 @@ reversepagetitle = true # When set to 'true', the Window Title will be reversed 
 [umami]
 # serverURL = "example.com"
 # id = "94db1cb1-74f4-4a40-ad6c-962362670409"
+# trackerScriptName = "mycustomscriptname.js"
 
 ## Math settings
 [math]

@@ -9,6 +9,5 @@
     {{- $item = replace $item "." "%2e" -}}
     {{- $link := ( printf "%s/%s/" $linkBase ( $item | urlize ) ) | relLangURL -}}
     <a class="{{ $linkClass }}" href="{{ $link }}">{{- . -}}</a>
-
   {{- end -}}
 </span>

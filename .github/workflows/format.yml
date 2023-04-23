@@ -9,11 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: install
-        run: npm ci
+        run: |
+          npm ci
+          npm run prepare
       - name: format
         run: npm run prettier
       - name: commit changes

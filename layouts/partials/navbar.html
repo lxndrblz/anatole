@@ -1,10 +1,8 @@
 <div
   class="{{ with .Site.Params.doNotLoadAnimations }}
     .
-
   {{ else }}
     animated fadeInDown
-
   {{ end }}"
 >
   <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
@@ -27,10 +25,7 @@
               {{ range $menuItem.Children }}
                 {{ if eq $url .URL }}
                   {{ $labelClass = "optionswitch__label nav__link--active" }}
-
-
                 {{ end }}
-
 
               {{ end }}
 
@@ -47,37 +42,30 @@
                       href="{{ .URL }}"
                       {{ if strings.HasPrefix .URL "http" }}
                         target="_blank" rel="noopener noreferrer"
-
                       {{ end }}
                       title="{{ .Title }}"
                       >{{ .Name }}</a
                     >
                   </li>
-
                 {{ end }}
               </ul>
             </div>
           </li>
-
         {{ else }}
           <li class="nav__list-item">{{ .Pre }}
             <a
               {{ if $active }}
                 class="nav__link--active"
-
               {{ end }}
               href="{{ .URL }}"
               {{ if strings.HasPrefix .URL "http" }}
                 target="_blank" rel="noopener noreferrer"
-
               {{ end }}
               title="{{ .Title }}"
               >{{ $menuItem.Name }}</a
             >
           </li>
-
         {{ end }}
-
 
       {{ end }}
     </ul>
@@ -97,19 +85,16 @@
                     ><span
                       {{ if eq . $.Site.Language }}
                         class="active"
-
                       {{ end }}
                       aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
                       >{{ .Language.LanguageName }}</span
                     >
                   </a>
                 </li>
-
               {{ end }}
             </ul>
           </div>
         </li>
-
       {{ end }}
       {{ if not .Site.Params.disableThemeSwitcher }}
         <li class="nav__list-item">
@@ -119,7 +104,6 @@
             </a>
           </div>
         </li>
-
       {{ end }}
     </ul>
   </nav>

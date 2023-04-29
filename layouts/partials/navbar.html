@@ -37,7 +37,7 @@
               <div class="optionswitch__triangle"></div>
               <ul class="optionswitch__list">
                 {{ range $menuItem.Children }}
-                  <li class="optionswitch__list-item">
+                  <li class="optionswitch__list-item">{{ .Pre }}
                     <a
                       href="{{ .URL }}"
                       {{ if strings.HasPrefix .URL "http" }}
@@ -52,7 +52,7 @@
             </div>
           </li>
         {{ else }}
-          <li class="nav__list-item">
+          <li class="nav__list-item">{{ .Pre }}
             <a
               {{ if $active }}
                 class="nav__link--active"

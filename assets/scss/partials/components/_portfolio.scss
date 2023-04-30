@@ -5,7 +5,7 @@
   padding-bottom: 0px;
   padding-top: 48px;
 
-  @include desktop_and_print {
+  @include desktop {
     padding: 48px;
   }
 
@@ -19,7 +19,7 @@
     background: transparent;
     border-radius: 0.5em;
 
-    @include desktop_and_print {
+    @include desktop {
       @include themed() {
         border: t('border');
       }
@@ -62,7 +62,7 @@
           background-color: t('accent');
         }
 
-        @include desktop_and_print {
+        @include desktop {
           width: 60%;
           object-fit: contain;
           max-width: none;
@@ -72,14 +72,14 @@
       }
 
       &--left {
-        @include desktop_and_print {
+        @include desktop {
           margin-right: auto;
           margin-left: 0;
         }
       }
 
       &--right {
-        @include desktop_and_print {
+        @include desktop {
           margin-right: 0;
           margin-left: auto;
         }
@@ -95,7 +95,7 @@
       background-color: t('accent');
     }
 
-    @include desktop_and_print {
+    @include desktop {
       padding: 48px;
       border-radius: 0.5em;
 
@@ -112,7 +112,7 @@
         border-bottom: t('border');
       }
 
-      @include desktop_and_print {
+      @include desktop {
         @include themed() {
           background: t('primary-lighter');
         }
@@ -123,7 +123,7 @@
     }
 
     &--right {
-      @include desktop_and_print {
+      @include desktop {
         margin-left: auto;
       }
     }

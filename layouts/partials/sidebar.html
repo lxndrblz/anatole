@@ -41,5 +41,16 @@
       {{ end }}
     </ul>
   </div>
+  {{ if .Site.Params.enableCarbonBadge }}
+    <div id="wcb"  
+        {{ if eq .Site.Params.displayMode "dark" }}
+        class="carbonbadge wcb-d"
+        {{ else }}
+        class="carbonbadge"
+        {{ end }}
+    >
+    </div>
+    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+  {{ end }}
   {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
 </div>

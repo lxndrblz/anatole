@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.13.0](https://github.com/lxndrblz/anatole/compare/v1.12.0...v1.13.0) (2023-05-13)
+
+### Features
+
+- add Hungarian localization ([#434](https://github.com/lxndrblz/anatole/issues/434)) ([86586db](https://github.com/lxndrblz/anatole/commit/86586dbdde6cc9de3b3cd88ef4ca16acc5b9f25c))
+- add id.toml ([#417](https://github.com/lxndrblz/anatole/issues/417)) ([82847f7](https://github.com/lxndrblz/anatole/commit/82847f76262b2822edc8879a09983e192712eeab))
+- add support to provide custom tracker script name for Umami Analytics ([#418](https://github.com/lxndrblz/anatole/issues/418)) ([f6c9968](https://github.com/lxndrblz/anatole/commit/f6c9968ffd595e105d20f3f4aa80ded571f05abb))
+- enable 'pre' property in menu config file ([#381](https://github.com/lxndrblz/anatole/issues/381)) ([6deb26e](https://github.com/lxndrblz/anatole/commit/6deb26e699ceb1eb3d2d325689655bf0e06bb4bb))
+- hide sidebar on certain posts ([#439](https://github.com/lxndrblz/anatole/issues/439)) ([38de0c9](https://github.com/lxndrblz/anatole/commit/38de0c9dfe6bb598bef0effb980bd001553ef59c))
+
+### Bug Fixes
+
+- remove mixin to fix print layout ([#391](https://github.com/lxndrblz/anatole/issues/391)) ([7981438](https://github.com/lxndrblz/anatole/commit/7981438d6c1bd1513ff0f2faab88035c1ef116c2))
+- Resolve font sizing issue ([#451](https://github.com/lxndrblz/anatole/issues/451)) ([de7c5bb](https://github.com/lxndrblz/anatole/commit/de7c5bb037893effd996bc878ba123f4cccdb8cb))
+
 ## [1.12.0](https://github.com/lxndrblz/anatole/compare/v1.11.0...v1.12.0) (2022-11-26)
 
 ### Features

@@ -13,7 +13,9 @@
           <li class="archive__list-item">
             <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">
               {{ .Title }}
-              <small> - {{ .Description }}</small>
+              {{ if .Description }}
+                <small> - {{ .Description }}</small>
+              {{ end }}
             </a>
             <div class="archive__list-date">
               {{ if isset .Site.Params "listdateformat" }}

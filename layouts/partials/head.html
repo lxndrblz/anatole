@@ -1,4 +1,5 @@
 <head>
+  <meta charset="utf-8">
   <title>
     {{ if (eq .Site.Params.reversepagetitle true) }}
       {{ with .Title }}
@@ -16,10 +17,9 @@
   </title>
 
   <!-- Meta -->
-  <meta charset="utf-8" />
   {{- hugo.Generator -}}
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="author" content="{{ .Site.Params.author }}" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="author" content="{{ .Site.Params.author }}">
   <meta
     name="description"
     content="{{ if .Params.description }}
@@ -27,12 +27,12 @@
     {{ else }}
       {{- .Site.Params.description -}}
     {{ end }}"
-  />
+  >
   {{ if .Params.redirectUrl }}
-    <meta http-equiv="refresh" content="1; url={{ .Params.redirectUrl }}" />
+    <meta http-equiv="refresh" content="1; url={{ .Params.redirectUrl }}">
   {{ end }}
   {{- if .Site.Params.googleSiteVerify }}
-    <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}" />
+    <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerify }}">
   {{- end -}}
 
 
@@ -56,7 +56,7 @@
       integrity="{{ $style.Data.Integrity }}"
       crossorigin="anonymous"
       type="text/css"
-    />
+    >
   {{ end }}
 
   {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
@@ -66,7 +66,7 @@
     integrity="{{ $markupHighlightStyle.Data.Integrity }}"
     crossorigin="anonymous"
     type="text/css"
-  />
+  >
   {{ range .Site.Params.customCss }}
     {{ $minstyles := resources.Get . }}
     {{ $styles := $minstyles | resources.Minify | resources.Fingerprint }}
@@ -76,7 +76,7 @@
       integrity="{{ $styles.Data.Integrity }}"
       crossorigin="anonymous"
       media="screen"
-    />
+    >
   {{ end }}
   {{ $style := resources.Get "fontawesome/css/fontawesome.min.css" | resources.Fingerprint }}
   <link
@@ -85,7 +85,7 @@
     integrity="{{ $style.Data.Integrity }}"
     crossorigin="anonymous"
     type="text/css"
-  />
+  >
   {{ $style := resources.Get "fontawesome/css/solid.min.css" | resources.Fingerprint }}
   <link
     rel="stylesheet"
@@ -93,7 +93,7 @@
     integrity="{{ $style.Data.Integrity }}"
     crossorigin="anonymous"
     type="text/css"
-  />
+  >
   {{ $style := resources.Get "fontawesome/css/regular.min.css" | resources.Fingerprint }}
   <link
     rel="stylesheet"
@@ -101,7 +101,7 @@
     integrity="{{ $style.Data.Integrity }}"
     crossorigin="anonymous"
     type="text/css"
-  />
+  >
   {{ $style := resources.Get "fontawesome/css/brands.min.css" | resources.Fingerprint }}
   <link
     rel="stylesheet"
@@ -109,7 +109,7 @@
     integrity="{{ $style.Data.Integrity }}"
     crossorigin="anonymous"
     type="text/css"
-  />
+  >
   {{ if .Params.redirectUrl }}
     {{ $style := resources.Get "css/spinner.css" | resources.Minify | resources.Fingerprint }}
     <link
@@ -118,7 +118,7 @@
       integrity="{{ $style.Data.Integrity }}"
       crossorigin="anonymous"
       type="text/css"
-    />
+    >
   {{- end -}}
   {{ if .Site.Params.googleFonts }}
     {{ $baseUrl := "https://fonts.googleapis.com/css2?family=" }}
@@ -131,12 +131,12 @@
 
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="{{ .Site.Params.favicon | relURL }}favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | relURL }}apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | relURL }}favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | relURL }}favicon-16x16.png" />
+  <link rel="shortcut icon" href="{{ .Site.Params.favicon | relURL }}favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | relURL }}apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | relURL }}favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | relURL }}favicon-16x16.png">
 
-  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="canonical" href="{{ .Permalink }}">
 
   <!-- RSS -->
   {{ with .OutputFormats.Get "rss" -}}

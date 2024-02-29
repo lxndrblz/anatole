@@ -8,7 +8,11 @@
       {{ end }}"
     >
       {{ $anchorTitle := delimit (split .title " ") "" }}
+     
       <h2 class="portfolio__title" id="{{ $anchorTitle | lower }}">{{ title .title }}</h2>
+      {{ if .description }}
+      <h4>{{ .description }}</h4>
+      {{ end }}
       {{ range $i, $p := .portfolioitem }}
         <div class="portfolio">
           {{ if .image }}

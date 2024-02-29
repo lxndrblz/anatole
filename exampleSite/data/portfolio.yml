@@ -1,6 +1,7 @@
 portfolioitems:
   # portfolio category
   - title: Coding Projects
+    description: 'All my coding projects'
     portfolioitem:
       - name: Project 1
         image: '/images/portfolio/code.jpg'
@@ -33,6 +34,7 @@ portfolioitems:
           - Tag 2
   # portfolio category
   - title: Research
+    description: 'All my research projects'
     portfolioitem:
       - name: Project 1
         image: '/images/portfolio/code.jpg'

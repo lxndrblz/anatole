@@ -202,6 +202,10 @@
     {{- partial "analytics/umami" . -}}
   {{ end }}
 
+  {{ if and hugo.IsProduction .Site.Params.Matomo.instance .Site.Params.Matomo.siteId }}
+    {{- partial "analytics/matomo . -}}
+  {{ end }}
+
 
   <!-- Twitter Cards -->
   {{ template "_internal/twitter_cards.html" . }}

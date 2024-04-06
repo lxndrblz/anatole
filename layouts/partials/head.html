@@ -203,7 +203,7 @@
   {{ end }}
 
   {{ if and hugo.IsProduction .Site.Params.Matomo.instance .Site.Params.Matomo.siteId }}
-    {{- partial "analytics/matomo . -}}
+    {{- partial "analytics/matomo" . -}}
   {{ end }}
 
 

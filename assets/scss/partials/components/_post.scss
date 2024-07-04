@@ -76,12 +76,6 @@
     code {
       font-family: monospace;
       padding: 0 2px;
-
-      @include themed() {
-        background-color: t('primary-lighter');
-        border: 1px solid t('primary-lighter');
-        border-radius: 2px;
-      }
     }
 
     pre {

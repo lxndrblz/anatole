@@ -47,3 +47,6 @@ other = "تحديث"
 
 [series_posts]
 other = "المشاركات في هذه السلسلة"
+
+[related_posts]
+other = "مشاركات مماثلة"

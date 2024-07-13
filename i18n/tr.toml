@@ -50,3 +50,6 @@ other = "Güncelleme"
 
 [series_posts]
 other = "Bu serideki gönderiler"
+
+[related_posts]
+other = "Benzer gönderiler"

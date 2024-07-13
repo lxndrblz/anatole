@@ -50,3 +50,6 @@ other = "Újdonság"
 
 [series_posts]
 other = "További bejegyzések a cikksorozatban"
+
+[related_posts]
+other = "Hasonló hozzászólások"

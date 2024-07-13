@@ -46,3 +46,6 @@ other = "更新"
 
 [series_posts]
 other = "このシリーズの投稿"
+
+[related_posts]
+other = "同様の投稿"

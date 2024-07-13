@@ -3,7 +3,7 @@
   <h3>{{- T "related_posts" -}}</h3>
   <ul>
     {{ range . }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
 {{ end }}

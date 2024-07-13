@@ -46,3 +46,6 @@ other = "Actualizar"
 
 [series_posts]
 other = "Publicaciones en esta serie"
+
+[related_posts]
+other = "Publicaciones similares"

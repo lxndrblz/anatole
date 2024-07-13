@@ -46,3 +46,6 @@ other = "更新"
 
 [series_posts]
 other = "这个系列的帖子"
+
+[related_posts]
+other = "类似的帖子"

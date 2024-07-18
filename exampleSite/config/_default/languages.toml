@@ -6,8 +6,9 @@ contentDir = "content/english"
 
 [ar]
 title = "فلانة الفلانية"
-description = "أنا أعمل كمطورة ويب في شركة س"
 contentDir = "content/arabic" 
 weight = 2
 LanguageDirection = "rtl" 
 LanguageName = "AR"
+[ar.params]
+description = "أنا أعمل كمطورة ويب في شركة س"

@@ -12,11 +12,7 @@ summarylength = 10
 enableEmoji = true
 enableRobotsTXT = true
 
-# Enable Disqus
-#disqusShortname = ""
 
-# Google Analytics
-#googleAnalytics = "UA-123-45"
 
 # Syntax highlighting
 pygmentsUseClasses = true   
@@ -46,3 +42,11 @@ localizedDates = false
 [[related.indices]]
   name = 'tags'
   weight = 80
+
+[services]
+# Enable Disqus.Disqus.Shortname
+  [services.disqus]
+    #shortname = 'your-disqus-shortname'
+# Google Analytics
+  [services.googleAnalytics]
+    #ID = 'G-MEASUREMENT_ID'

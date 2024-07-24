@@ -2,22 +2,20 @@
 
 ## [1.15.0](https://github.com/lxndrblz/anatole/compare/v1.14.0...v1.15.0) (2024-07-24)
 
-
 ### Features
 
-* add config option to disable title capitalization ([#408](https://github.com/lxndrblz/anatole/issues/408)) ([297bcc8](https://github.com/lxndrblz/anatole/commit/297bcc825d97cad41359d047e02d310d3fcdf8a1))
-* add general styling for tables ([4eee0da](https://github.com/lxndrblz/anatole/commit/4eee0da80251b046049c3806da9ef4dc90be6a07))
-* implement multilingual portfolio data ([#481](https://github.com/lxndrblz/anatole/issues/481)) ([d500419](https://github.com/lxndrblz/anatole/commit/d500419b5b0ac464387df6226d0dd51721a3e976))
-* translate related posts header ([#473](https://github.com/lxndrblz/anatole/issues/473)) ([f8eda4a](https://github.com/lxndrblz/anatole/commit/f8eda4ac663328b89e8e99d3d5d18b815ccccee1))
-* update fontawesome version ([#508](https://github.com/lxndrblz/anatole/issues/508)) ([7a44369](https://github.com/lxndrblz/anatole/commit/7a44369734a6a2a37162da7c5321c4c8d0a84a43))
-
+- add config option to disable title capitalization ([#408](https://github.com/lxndrblz/anatole/issues/408)) ([297bcc8](https://github.com/lxndrblz/anatole/commit/297bcc825d97cad41359d047e02d310d3fcdf8a1))
+- add general styling for tables ([4eee0da](https://github.com/lxndrblz/anatole/commit/4eee0da80251b046049c3806da9ef4dc90be6a07))
+- implement multilingual portfolio data ([#481](https://github.com/lxndrblz/anatole/issues/481)) ([d500419](https://github.com/lxndrblz/anatole/commit/d500419b5b0ac464387df6226d0dd51721a3e976))
+- translate related posts header ([#473](https://github.com/lxndrblz/anatole/issues/473)) ([f8eda4a](https://github.com/lxndrblz/anatole/commit/f8eda4ac663328b89e8e99d3d5d18b815ccccee1))
+- update fontawesome version ([#508](https://github.com/lxndrblz/anatole/issues/508)) ([7a44369](https://github.com/lxndrblz/anatole/commit/7a44369734a6a2a37162da7c5321c4c8d0a84a43))
 
 ### Bug Fixes
 
-* deprecation warnings for recent Hugo versions ([#511](https://github.com/lxndrblz/anatole/issues/511)) ([4435557](https://github.com/lxndrblz/anatole/commit/4435557b80dd5b8f9ff5a391fb9a128254c13ffb))
-* remove decoration around backtick blocks ([#507](https://github.com/lxndrblz/anatole/issues/507)) ([ca04698](https://github.com/lxndrblz/anatole/commit/ca0469823bacccd11f571577ceeb17421b6e1b08))
-* resolve language params warning when using hugo v0.112+ ([#464](https://github.com/lxndrblz/anatole/issues/464)) ([9ac9117](https://github.com/lxndrblz/anatole/commit/9ac9117bccbd19ce4f7d602b9c12a2a38ca2e76d))
-* title in sidebar changing marging ([1ca7be2](https://github.com/lxndrblz/anatole/commit/1ca7be2ca23b7ac6809c3a3a013ce0c6d09ed1c6))
+- deprecation warnings for recent Hugo versions ([#511](https://github.com/lxndrblz/anatole/issues/511)) ([4435557](https://github.com/lxndrblz/anatole/commit/4435557b80dd5b8f9ff5a391fb9a128254c13ffb))
+- remove decoration around backtick blocks ([#507](https://github.com/lxndrblz/anatole/issues/507)) ([ca04698](https://github.com/lxndrblz/anatole/commit/ca0469823bacccd11f571577ceeb17421b6e1b08))
+- resolve language params warning when using hugo v0.112+ ([#464](https://github.com/lxndrblz/anatole/issues/464)) ([9ac9117](https://github.com/lxndrblz/anatole/commit/9ac9117bccbd19ce4f7d602b9c12a2a38ca2e76d))
+- title in sidebar changing marging ([1ca7be2](https://github.com/lxndrblz/anatole/commit/1ca7be2ca23b7ac6809c3a3a013ce0c6d09ed1c6))
 
 ## [1.14.0](https://github.com/lxndrblz/anatole/compare/v1.12.0...v1.14.0) (2024-04-09)
 

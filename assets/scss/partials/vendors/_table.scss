@@ -1,17 +1,18 @@
 table {
-    display: table;
-    width: 80%;
-    border-collapse: collapse;
+  display: table;
+  width: 80%;
+  border-collapse: collapse;
 }
 
 tr {
-    display: table-row;
+  display: table-row;
 }
 
-th, td {
-    display: table-cell;
-    padding: 8px;
-    @include themed(){
+th,
+td {
+  display: table-cell;
+  padding: 8px;
+  @include themed() {
     border: t('border');
-    }
+  }
 }

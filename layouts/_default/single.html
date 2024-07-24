@@ -12,7 +12,11 @@
       </div>
     {{ end }}
     <div class="post__content">
-      <h1>{{ title .Title }}</h1>
+      {{ if (eq .Site.Params.disableTitleCapitalization true) }}
+        <h1>{{ .Title }}</h1>
+      {{ else }}
+        <h1>{{ title .Title }}</h1>
+      {{ end }}
       {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
         <ul class="post__meta">
           <li class="post__meta-item">

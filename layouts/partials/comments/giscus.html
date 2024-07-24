@@ -1,0 +1,45 @@
+<script>
+    const getStoredTheme = () => localStorage.getItem("theme") === "dark" ? "dark" : "light";
+
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+        }
+        sendMessage({ setConfig: { theme: getStoredTheme() } })
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "{{ .Site.Params.giscus.repo }}",
+            "data-repo-id": "{{ .Site.Params.giscus.repoID }}",
+            "data-category": "{{ .Site.Params.giscus.category }}",
+            "data-category-id": "{{ .Site.Params.giscus.categoryID }}",
+            "data-mapping": "{{ .Site.Params.giscus.mapping | default "pathname" }}",
+            "data-strict": "{{ .Site.Params.giscus.strict | default "0" }}",
+            "data-reactions-enabled": "{{ .Site.Params.giscus.reactionsEnabled | default "1" }}",
+            "data-emit-metadata": "{{ .Site.Params.giscus.emitMetadata | default "0" }}",
+            "data-input-position": "{{ .Site.Params.giscus.inputPosition | default "bottom" }}",
+            "data-theme": getStoredTheme(),
+            "data-lang": "{{ .Site.Params.giscus.lang | default "en" }}",
+            "data-loading": "{{ .Site.Params.giscus.loading | default "lazy" }}",
+            "crossorigin": "anonymous",
+            "async": "",
+        };
+
+        // Dynamically create script tag.
+        const giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+            ([key, value]) => giscusScript.setAttribute(key, value));
+        document.getElementById("comment").appendChild(giscusScript);
+
+        // Update giscus theme when the theme switcher is clicked.
+        const themeSwitcher = document.querySelector(".themeswitch");
+        if (themeSwitcher) {
+            themeSwitcher.addEventListener("click", setGiscusTheme);
+        }
+    });
+</script>

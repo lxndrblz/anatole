@@ -27,10 +27,8 @@
 </footer>
 {{- partial "medium-zoom.html" .context -}}
 {{- partial "math.html" .context -}}
-{{- if (hasPrefix .context.Site.GoogleAnalytics "G-") -}}
+{{- if (hasPrefix .context.Site.Config.Services.GoogleAnalytics.ID "G-") -}}
   {{- template "_internal/google_analytics.html" .context -}}
-{{- else -}}
-  {{- template "_internal/google_analytics_async.html" .context -}}
 {{- end -}}
 {{- if and (hugo.IsProduction) (.context.Site.Params.gtagId) -}}
   {{ partial "google-analytics-gtag-async.html" .context }}

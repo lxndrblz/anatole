@@ -12,7 +12,11 @@
       </div>
     {{ end }}
     <div class="post__content">
-      <h1>{{ title .Title }}</h1>
+      {{ if (eq .Site.Params.disableTitleCapitalization true) }}
+        <h1>{{ .Title }}</h1>
+      {{ else }}
+        <h1>{{ title .Title }}</h1>
+      {{ end }}
       {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
         <ul class="post__meta">
           <li class="post__meta-item">
@@ -77,7 +81,7 @@
     </div>
 
     {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}
-      {{- if .Site.DisqusShortname -}}
+      {{- if .Site.Config.Services.Disqus.Shortname -}}
         <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ template "_internal/disqus.html" . }}
@@ -87,6 +91,12 @@
         <div id="comment">
           <h2>{{ i18n "comments" }}</h2>
           {{ partial "comments/utterances.html" . }}
+        </div>
+      {{- end -}}
+      {{- if .Site.Params.giscus.repo -}}
+        <div id="comment">
+          <h2>{{ i18n "comments" }}</h2>
+          {{ partial "comments/giscus.html" . }}
         </div>
       {{- end -}}
       {{- if .Site.Params.CommentoURL -}}

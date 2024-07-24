@@ -1,4 +1,5 @@
 <head>
+  <meta charset="utf-8" />
   <title>
     {{ if (eq .Site.Params.reversepagetitle true) }}
       {{ with .Title }}
@@ -16,7 +17,6 @@
   </title>
 
   <!-- Meta -->
-  <meta charset="utf-8" />
   {{- hugo.Generator -}}
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="author" content="{{ .Site.Params.author }}" />
@@ -200,6 +200,10 @@
 
   {{ if and hugo.IsProduction .Site.Params.umami.serverURL .Site.Params.umami.id }}
     {{- partial "analytics/umami" . -}}
+  {{ end }}
+
+  {{ if and hugo.IsProduction .Site.Params.Matomo.instance .Site.Params.Matomo.siteId }}
+    {{- partial "analytics/matomo" . -}}
   {{ end }}
 
 

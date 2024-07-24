@@ -1,5 +1,7 @@
 {{ define "main" }}
-  {{ range $index, $elemen:= .Site.Data.portfolio.portfolioitems }}
+  {{ $data := index .Site.Data .Site.Language.Lang "portfolio" }}
+  {{ if not $data }}{{ $data = .Site.Data.portfolio }}{{ end }}
+  {{ range $index, $elemen:= $data.portfolioitems }}
     <div
       class="post {{ with .Site.Params.doNotLoadAnimations }}
         .
@@ -8,7 +10,12 @@
       {{ end }}"
     >
       {{ $anchorTitle := delimit (split .title " ") "" }}
+
+
       <h2 class="portfolio__title" id="{{ $anchorTitle | lower }}">{{ title .title }}</h2>
+      {{ if .description }}
+        <h4>{{ .description }}</h4>
+      {{ end }}
       {{ range $i, $p := .portfolioitem }}
         <div class="portfolio">
           {{ if .image }}

@@ -4,5 +4,6 @@ demo/
 !.hugo/version
 .hugo_build.lock
 /node_modules
-.devcontainer
 exampleSite/public/
+.DS_Store
+public/

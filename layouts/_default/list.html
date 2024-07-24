@@ -11,7 +11,11 @@
       {{ range .Pages }}
         <ul class="archive__list">
           <li class="archive__list-item">
+            {{ if (eq .Site.Params.disableArchiveTitleStyling true) }}
             <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+            {{ else }}
+            <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ upper .Title }}</a>
+            {{ end }}
             <div class="archive__list-date">
               {{ if isset .Site.Params "listdateformat" }}
                 {{ if .Site.Params.localizedDates }}

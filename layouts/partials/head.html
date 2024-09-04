@@ -39,7 +39,7 @@
   <!-- CSS -->
   {{ if eq .Site.Language.LanguageDirection "rtl" }}
     {{ $sassTemplate := resources.Get "scss/anatole.rtl.scss" }}
-    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.rtl.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.rtl.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
     <link
       rel="stylesheet"
       href="{{ $style.RelPermalink }}"
@@ -49,7 +49,7 @@
     />
   {{ else }}
     {{ $sassTemplate := resources.Get "scss/anatole.scss" }}
-    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
     <link
       rel="stylesheet"
       href="{{ $style.RelPermalink }}"

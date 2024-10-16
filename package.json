@@ -1,6 +1,6 @@
 {
   "name": "anatole",
-  "version": "1.15.0",
+  "version": "1.15.1",
   "description": "Anatole is a beautiful minimalist two-column hugo theme based on farbox-theme-Anatole.",
   "scripts": {
     "build": "hugo --themesDir=../.. --source=exampleSite && shx rm -rf ./resources && shx cp -r ./exampleSite/resources ./resources && shx echo Done building resources.",

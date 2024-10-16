@@ -2,10 +2,9 @@
 
 ## [1.15.1](https://github.com/lxndrblz/anatole/compare/v1.15.0...v1.15.1) (2024-10-16)
 
-
 ### Bug Fixes
 
-* deprecation warnings ([#521](https://github.com/lxndrblz/anatole/issues/521)) ([98c88d0](https://github.com/lxndrblz/anatole/commit/98c88d0574cba5072c5fa11accf66776ea5d0cf9))
+- deprecation warnings ([#521](https://github.com/lxndrblz/anatole/issues/521)) ([98c88d0](https://github.com/lxndrblz/anatole/commit/98c88d0574cba5072c5fa11accf66776ea5d0cf9))
 
 ## [1.15.0](https://github.com/lxndrblz/anatole/compare/v1.14.0...v1.15.0) (2024-07-24)
 

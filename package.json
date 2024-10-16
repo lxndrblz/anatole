@@ -6,7 +6,7 @@
     "build": "hugo --themesDir=../.. --source=exampleSite && shx rm -rf ./resources && shx cp -r ./exampleSite/resources ./resources && shx echo Done building resources.",
     "dev": "hugo serve --themesDir=../.. --source=exampleSite",
     "prettier": "npx prettier --write .",
-    "prepare": "husky init",
+    "prepare": "husky",
     "release": "release-it",
     "setup": "npm install && npm run prepare",
     "test": ""

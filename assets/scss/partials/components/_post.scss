@@ -100,6 +100,14 @@
           color: t('primary');
         }
       }
+
+      a:hover {
+        font-size: $font-size-h1;
+
+        @include themed() {
+          color: t('info');
+        }
+      }
     }
 
     h2 {
@@ -117,6 +125,14 @@
           color: t('primary');
         }
       }
+
+      a:hover {
+        font-size: $font-size-h2;
+
+        @include themed() {
+          color: t('info');
+        }
+      }
     }
 
     h3 {
@@ -132,6 +148,14 @@
 
         @include themed() {
           color: t('primary');
+        }
+      }
+
+      a:hover {
+        font-size: $font-size-h3;
+
+        @include themed() {
+          color: t('info');
         }
       }
     }

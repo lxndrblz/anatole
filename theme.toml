@@ -9,7 +9,7 @@ homepage = "https://github.com/lxndrblz/anatole/"
 demosite = "https://anatole-demo.netlify.app/"
 tags = ["blog", "responsive", "clean", "minimalist", "minimal", "personal", "dark"]
 features = ["blog", "seo", "responsive", "mobile", "disqus", "fontawesome", "analytics", "math"]
-min_version = "0.53.0"
+min_version = "0.128.0"
 
 [author]
   name = "Alexander Bilz"

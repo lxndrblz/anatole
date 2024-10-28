@@ -72,7 +72,7 @@
       {{ end }}
     </ul>
     <ul class="nav__list nav__list--end">
-      {{ if and .IsTranslated .Site.IsMultiLingual }}
+      {{ if and .IsTranslated hugo.IsMultilingual }}
         <li class="nav__list-item">
           <div class="optionswitch">
             <input class="optionswitch__picker" type="checkbox" id="languagepicker" hidden />

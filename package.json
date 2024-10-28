@@ -1,14 +1,15 @@
 {
   "name": "anatole",
-  "version": "1.15.0",
+  "version": "1.15.1",
   "description": "Anatole is a beautiful minimalist two-column hugo theme based on farbox-theme-Anatole.",
   "scripts": {
     "build": "hugo --themesDir=../.. --source=exampleSite && shx rm -rf ./resources && shx cp -r ./exampleSite/resources ./resources && shx echo Done building resources.",
     "dev": "hugo serve --themesDir=../.. --source=exampleSite",
     "prettier": "npx prettier --write .",
-    "prepare": "husky install",
+    "prepare": "husky",
     "release": "release-it",
-    "setup": "npm install && npm run prepare"
+    "setup": "npm install && npm run prepare",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -27,13 +28,13 @@
   },
   "homepage": "https://github.com/lxndrblz/anatole#readme",
   "devDependencies": {
-    "@commitlint/cli": "^19.2.1",
-    "@commitlint/config-conventional": "^19.1.0",
-    "@release-it/conventional-changelog": "^8.0.1",
-    "husky": "^9.0.11",
-    "prettier": "^3.2.5",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@release-it/conventional-changelog": "^8.0.2",
+    "husky": "^9.1.6",
+    "prettier": "^3.3.3",
     "prettier-plugin-go-template": "^0.0.15",
-    "release-it": "^17.1.1",
+    "release-it": "^17.6.0",
     "shx": "^0.3.4"
   }
 }

@@ -22,7 +22,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - 100⁄100 Google Lighthouse score
 - Analytics powered by Google Analytics, Simple Analytics and Umami (optional)
 - Comments powered by Disqus, Commento, Gitalk, Utteranc.es or Giscus (optional)
-- KaTex support (optional)
+- KaTeX support (optional)
 - Formspree Contact Form (optional)
 - Twitter Cards support
 - Open Graph support

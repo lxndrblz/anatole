@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/lxndrblz/anatole/compare/v1.15.1...v1.16.0) (2024-11-17)
+
+
+### Features
+
+* add option to disable title capitalization on index ([#526](https://github.com/lxndrblz/anatole/issues/526)) ([9f214dc](https://github.com/lxndrblz/anatole/commit/9f214dc775456a34215de3acc1b34fa25b5eb4ed))
+
 ## [1.15.1](https://github.com/lxndrblz/anatole/compare/v1.15.0...v1.15.1) (2024-10-16)
 
 ### Bug Fixes

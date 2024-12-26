@@ -2,10 +2,9 @@
 
 ## [1.16.1](https://github.com/lxndrblz/anatole/compare/v1.16.0...v1.16.1) (2024-12-26)
 
-
 ### Bug Fixes
 
-* unsafe html warnings ([#531](https://github.com/lxndrblz/anatole/issues/531)) ([056ff32](https://github.com/lxndrblz/anatole/commit/056ff3230698a3bec8ab75897b2085032b513b3a))
+- unsafe html warnings ([#531](https://github.com/lxndrblz/anatole/issues/531)) ([056ff32](https://github.com/lxndrblz/anatole/commit/056ff3230698a3bec8ab75897b2085032b513b3a))
 
 ## [1.16.0](https://github.com/lxndrblz/anatole/compare/v1.15.1...v1.16.0) (2024-11-17)
 

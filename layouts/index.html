@@ -55,9 +55,9 @@
           <h3><a href="{{ .RelPermalink }}">{{ upper .Title }}</a></h3>
         {{ end }}
         {{ if .Site.Params.fullPostContent }}
-          <p>{{ .Content | markdownify }}</p>
+          <p>{{ .Content | safeHTML }}</p>
         {{ else }}
-          <p>{{ .Summary | markdownify }}</p>
+          <p>{{ .Summary | safeHTML }}</p>
         {{ end }}
         <!-- add read more -->
         {{- if and (.Truncated) (.Site.Params.readMore) -}}

@@ -33,11 +33,11 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       {{ if eq .Site.Params.rssFullContent true }}
-        <description>{{ .Content | safeHTML }}</description>
+        <description>{{ .Content | html }}</description>
       {{ else if .Description }}
         <description>{{ .Description }}</description>
       {{ else }}
-        <description>{{ .Summary | safeHTML }}</description>
+        <description>{{ .Summary | html }}</description>
       {{ end }}
     </item>
     {{ end }}

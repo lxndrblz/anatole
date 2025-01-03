@@ -2,10 +2,9 @@
 
 ## [1.16.2](https://github.com/lxndrblz/anatole/compare/v1.16.1...v1.16.2) (2025-01-03)
 
-
 ### Bug Fixes
 
-* broken rss feed ([#535](https://github.com/lxndrblz/anatole/issues/535)) ([1c6273e](https://github.com/lxndrblz/anatole/commit/1c6273e5c61c9a9e3d2aeb95317acea30f41e13d))
+- broken rss feed ([#535](https://github.com/lxndrblz/anatole/issues/535)) ([1c6273e](https://github.com/lxndrblz/anatole/commit/1c6273e5c61c9a9e3d2aeb95317acea30f41e13d))
 
 ## [1.16.1](https://github.com/lxndrblz/anatole/compare/v1.16.0...v1.16.1) (2024-12-26)
 

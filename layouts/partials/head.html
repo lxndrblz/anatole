@@ -206,6 +206,8 @@
     {{- partial "analytics/matomo" . -}}
   {{ end }}
 
+  <!-- Meta Pixel -->
+  {{- partial "analytics/meta.html" . -}}
 
   <!-- Twitter Cards -->
   {{ template "_internal/twitter_cards.html" . }}

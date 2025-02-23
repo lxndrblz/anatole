@@ -15,11 +15,11 @@ jobs:
         uses: peaceiris/actions-hugo@v3
         with:
           extended: true
-          hugo-version: 0.134.2
+          hugo-version: 0.144.2
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: install
         run: |
           npm ci

@@ -1,0 +1,6 @@
+{{ if .Site.Params.showReadingTime }}
+  <span class="post__footer-reading-time">
+    <em class="fas fa-stopwatch"></em>
+    {{ i18n "reading_time" .ReadingTime }}
+  </span>
+{{ end }}

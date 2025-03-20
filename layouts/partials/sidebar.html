@@ -1,47 +1,81 @@
-<div
-  class="sidebar{{ with .Site.Params.doNotLoadAnimations }}
+<div class="sidebar{{ with .Site.Params.doNotLoadAnimations }}
     .
   {{ else }}
     animated fadeInDown
-  {{ end }}"
->
-  <div class="sidebar__content">
-    <div class="sidebar__introduction">
-      <img
-        class="sidebar__introduction-profileimage"
-        src="{{ .Site.Params.profilePicture | relURL }}"
-        alt="profile picture"
-      />
-      {{ if .IsHome }}
-        <div class="sidebar__introduction-title">
-          <h1>
-            <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
-          </h1>
+  {{ end }}">
+    <div class="sidebar__content">
+        <div class="sidebar__introduction">
+            <img class="sidebar__introduction-profileimage" src="{{ .Site.Params.profilePicture | relURL }}"
+                alt="profile picture" />
+            {{ if .IsHome }}
+            <div class="sidebar__introduction-title">
+                <h1>
+                    <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
+                </h1>
+            </div>
+            {{ else }}
+            <div class="sidebar__introduction-title">
+                <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
+            </div>
+            {{ end }}
+            <div class="sidebar__introduction-description">
+                <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>
+            </div>
         </div>
-      {{ else }}
-        <div class="sidebar__introduction-title">
-          <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
+
+        <!-- Social Icons -->
+        <ul class="sidebar__list">
+            {{ range $item := .Site.Params.socialIcons }}
+            <li class="sidebar__list-item">
+                <a href="{{ $item.url }}" target="_blank" rel="noopener me" aria-label="{{ $item.title }}"
+                    title="{{ $item.title }}">
+                    <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+
+        <!-- Search Bar -->
+        {{ if .Site.Params.sidebarSearch }}
+        <form class="search-box" action="/search/" method="get">
+            <input type="text" name="q" placeholder="Search..." aria-label="Search">
+            <button type="submit" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        {{ end }}
+
+        <!-- Most Used Categories -->
+        {{ if .Site.Params.sidebarCategories }}
+        <div class="sidebar__categories">
+            <ul class="category-list">
+            {{ range first 10 (sort .Site.Taxonomies.categories.ByCount "Count" "desc") }}
+                <li>
+                <a href="{{ .Page.Permalink | relURL }}" class="category">
+                    {{ .Name }} <span class="category-count">({{ .Count }})</span>
+                </a>
+                </li>
+            {{ end }}
+            </ul>
         </div>
-      {{ end }}
-      <div class="sidebar__introduction-description">
-        <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>
-      </div>
+        {{ end }}
+
+        <!-- Most Used Tags -->
+        {{ if .Site.Params.sidebarTags }}
+        <div class="sidebar__tags">
+            <ul class="tag-cloud">
+                {{ range first 5 (sort .Site.Taxonomies.tags.ByCount "Count" "desc") }}
+                <li>
+                    <a href="{{ .Page.Permalink }}" class="tag-cloud-item"
+                        style="font-size: {{ add 12 (mul .Count 2) }}px;">
+                        {{ .Name }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
     </div>
-    <ul class="sidebar__list">
-      {{ range $item := .Site.Params.socialIcons }}
-        <li class="sidebar__list-item">
-          <a
-            href="{{ $item.url }}"
-            target="_blank"
-            rel="noopener me"
-            aria-label="{{ $item.title }}"
-            title="{{ $item.title }}"
-          >
-            <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      {{ end }}
-    </ul>
-  </div>
-  {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
+    {{- partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") -}}
 </div>

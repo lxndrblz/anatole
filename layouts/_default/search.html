@@ -1,0 +1,25 @@
+{{- define "main" }}
+
+<header class="welcome-message">
+    <h1>Search Results</h1>
+</header>
+
+<div id="searchbox">
+    <form class="search-box" action="/search/" method="get">
+        <input id="searchInput" type="text" name="q" placeholder="Search..." aria-label="Search">
+        <button type="submit" aria-label="Search">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+</div>
+
+<div id="searchResults" class="post animated fadeInDown">
+    <p>Type in the search box above to see results.</p>
+</div>
+
+<!-- Include the external JavaScript file -->
+{{ $search := resources.Get "js/search.js" }}
+{{ $securesearchJS := $search |  resources.Minify | resources.Fingerprint }}
+<script src="{{ $securesearchJS.RelPermalink }}"></script>
+
+{{- end }}

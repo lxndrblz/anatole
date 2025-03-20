@@ -1,0 +1,14 @@
+[
+    {{- $pages := .Site.RegularPages -}}
+    {{- range $index, $page := $pages -}}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "description": {{ $page.Params.description | default "" | jsonify }},
+      "content": {{ $page.Plain | jsonify }},
+      "url": {{ $page.Permalink | jsonify }},
+      "tags": {{ $page.Params.tags | default slice | jsonify }},
+      "categories": {{ $page.Params.categories | default slice | jsonify }},
+      "thumbnail": {{ $page.Params.thumbnail | default "" | jsonify }}
+    }{{ if lt (add $index 1) (len $pages) }},{{ end }}
+    {{- end -}}
+]

@@ -1,0 +1,48 @@
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.search-box input {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid var(--sk-color);
+    border-radius: 5px;
+    background-color: transparent; /* Transparent background */
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    caret-color: var(--sk-color); /* Use --sk-color for the blinking cursor */
+    color: var(--sk-color); /* Use --sk-color for the text color */
+}
+
+.search-box input::placeholder {
+    color: var(--sk-color); /* Use --sk-color for placeholder text */
+    font-style: italic; /* Optional: Make placeholder text italic */
+}
+
+.search-box input:focus {
+    border-color: var(--sk-color); /* Use --sk-color for the border on focus */
+    background-color: rgba(141, 141, 141, 0.362); /* Slightly visible background on focus */
+}
+
+.search-box button {
+    padding: 10px;
+    font-size: 1em;
+    border: none; /* Remove border */
+    background: none; /* Transparent background */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease; /* Add a hover effect */
+    color: var(--sk-color); /* Use --sk-color for the icon color */
+}
+
+.search-box button:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}

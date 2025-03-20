@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     page.title.toLowerCase().includes(query.toLowerCase()) ||
                     page.description.toLowerCase().includes(query.toLowerCase()) ||
                     page.content.toLowerCase().includes(query.toLowerCase()) ||
-                    (page.tags && page.tags.some(tag => tag.toLowerCase() === query.toLowerCase()))
+                    (page.tags && page.tags.some(tag => tag.toLowerCase() === query.toLowerCase())) ||
+                    (page.categories && page.categories.some(category => category.toLowerCase() === query.toLowerCase()))
                 );
 
                 // Clear previous results

@@ -1,12 +1,12 @@
-.search-box {
+.search__box {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.search-box input {
+.search__box input {
     width: 60%;
     max-width: 400px;
     padding: 10px;
@@ -20,17 +20,17 @@
     color: var(--sk-color); /* Use --sk-color for the text color */
 }
 
-.search-box input::placeholder {
+.search__box input::placeholder {
     color: var(--sk-color); /* Use --sk-color for placeholder text */
     font-style: italic; /* Optional: Make placeholder text italic */
 }
 
-.search-box input:focus {
+.search__box input:focus {
     border-color: var(--sk-color); /* Use --sk-color for the border on focus */
     background-color: rgba(141, 141, 141, 0.362); /* Slightly visible background on focus */
 }
 
-.search-box button {
+.search__box button {
     padding: 10px;
     font-size: 1em;
     border: none; /* Remove border */
@@ -43,6 +43,6 @@
     color: var(--sk-color); /* Use --sk-color for the icon color */
 }
 
-.search-box button:hover {
+.search__box button:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }

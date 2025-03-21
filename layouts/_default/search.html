@@ -4,10 +4,10 @@
     <h1 class="post__title">Search Results</h1>
 </header>
 
-<div id="searchbox">
-    <form class="search__box" action="/search/" method="get">
-        <input id="searchInput" type="text" name="q" placeholder="Search..." aria-label="Search">
-        <button type="submit" aria-label="Search">
+<div id="search">
+    <form class="search" action="/search/" method="get">
+        <input id="searchInput" class="search__input" type="text" name="q" placeholder="Search..." aria-label="Search">
+        <button class="search__button" type="submit" aria-label="Search">
             <i class="fas fa-search"></i>
         </button>
     </form>
@@ -19,7 +19,7 @@
 
 <!-- Include the external JavaScript file -->
 {{ $search := resources.Get "js/search.js" }}
-{{ $securesearchJS := $search |  resources.Minify | resources.Fingerprint }}
+{{ $securesearchJS := $search | resources.Minify | resources.Fingerprint }}
 <script src="{{ $securesearchJS.RelPermalink }}"></script>
 
 {{- end }}

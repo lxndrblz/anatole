@@ -1,48 +1,60 @@
-.search__box {
+.search {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-top: 10px;
-}
 
-.search__box input {
-    width: 60%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid var(--sk-color);
-    border-radius: 5px;
-    background-color: transparent;
-    outline: none;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
-    caret-color: var(--sk-color);
-    color: var(--sk-color);
-}
+    &__input {
+        width: 60%;
+        max-width: 400px;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: transparent;
+        outline: none;
+        transition: border-color 0.3s ease, background-color 0.3s ease;
 
-.search__box input::placeholder {
-    color: var(--sk-color); /* Use --sk-color for placeholder text */
-    font-style: italic; /* Optional: Make placeholder text italic */
-}
+        @include themed() {
+            caret-color: t('primary');
+            color: t('primary');
+            border-color: t('primary-lighter')
+        }
 
-.search__box input:focus {
-    border-color: var(--sk-color);
-    background-color: rgba(141, 141, 141, 0.362);
-}
+        &::placeholder {
+            font-style: italic;
 
-.search__box button {
-    padding: 10px;
-    font-size: 1em;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    color: var(--sk-color);
-}
+            @include themed() {
+                color: t('primary');
+            }
+        }
 
-.search__box button:hover {
-    transform: scale(1.1);
+        &:focus {
+            @include themed() {
+                border-color: t('border');
+                background-color: t('primary-lighter');
+            }
+        }
+    }
+
+    &__button {
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+
+        @include themed() {
+            color: t('primary');
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }

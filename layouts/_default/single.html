@@ -11,7 +11,7 @@
         <img class="post__thumbnail" src="{{ .Params.thumbnail | relURL }}" alt="Thumbnail image" />
       </div>
     {{ end }}
-    <div class="post__content">
+    <div class="post__content {{ if .Params.article }}post__content-article{{ end }}">
       {{ if (eq .Site.Params.disableTitleCapitalization true) }}
         <h1>{{ .Title }}</h1>
       {{ else }}

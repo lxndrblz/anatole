@@ -139,8 +139,9 @@
   <link rel="canonical" href="{{ .Permalink }}" />
   <!-- License -->
   {{- with .Site.Params.license -}}
-    <link rel="license" href="{{ . }}"/>
+    <link rel="license" href="{{ . }}" />
   {{- end -}}
+
 
   <!-- RSS -->
   {{ with .OutputFormats.Get "rss" -}}

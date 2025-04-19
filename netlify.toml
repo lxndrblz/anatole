@@ -3,7 +3,7 @@
   command = "cd exampleSite && hugo --gc --minify --themesDir ../.."
   
 [build.environment]
-  HUGO_VERSION = "0.134.2"
+  HUGO_VERSION = "0.146.5"
   HUGO_ENV = "production"
   HUGO_THEME = "repo"
   HUGO_BASEURL = "https://anatole-demo.netlify.app"

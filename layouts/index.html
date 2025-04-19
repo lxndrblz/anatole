@@ -49,11 +49,15 @@
         </div>
       {{ end }}
       <div class="post__content">
-        <h3><a href="{{ .RelPermalink }}">{{ upper .Title }}</a></h3>
-        {{ if .Site.Params.fullPostContent }}
-          <p>{{ .Content | markdownify }}</p>
+        {{ if (eq .Site.Params.disableTitleCapitalization true) }}
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         {{ else }}
-          <p>{{ .Summary | markdownify }}</p>
+          <h3><a href="{{ .RelPermalink }}">{{ upper .Title }}</a></h3>
+        {{ end }}
+        {{ if .Site.Params.fullPostContent }}
+          <p>{{ .Content | safeHTML | plainify }}</p>
+        {{ else }}
+          <p>{{ .Summary | safeHTML | plainify }}</p>
         {{ end }}
         <!-- add read more -->
         {{- if and (.Truncated) (.Site.Params.readMore) -}}
@@ -92,6 +96,6 @@
     </div>
   {{ end }}
   <div class="pagination">
-    {{ template "partials/pagination.html" . }}
+    {{ partial "pagination.html" . }}
   </div>
 {{ end }}

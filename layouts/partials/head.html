@@ -206,6 +206,10 @@
     {{- partial "analytics/matomo" . -}}
   {{ end }}
 
+  {{ if and hugo.IsProduction .Site.Params.meta.pixelId }}
+    {{- partial "analytics/meta.html" . -}}
+  {{ end }}
+
 
   <!-- Twitter Cards -->
   {{ template "_internal/twitter_cards.html" . }}

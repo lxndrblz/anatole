@@ -49,3 +49,6 @@ other = "このシリーズの投稿"
 
 [related_posts]
 other = "同様の投稿"
+
+[toc]
+other = "目次"

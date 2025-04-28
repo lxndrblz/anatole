@@ -55,7 +55,7 @@
         margin-right: auto;
         margin-left: auto;
         width: calc(100% - 64px);
-        padding: 32px 32px 0px 32px;
+        padding: 0 32px 32px;
         max-width: inherit;
 
         @include themed() {
@@ -88,7 +88,7 @@
   }
 
   &__description {
-    padding: 32px;
+    padding: 0 32px 32px;
     position: relative;
 
     @include themed() {

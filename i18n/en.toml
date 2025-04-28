@@ -53,3 +53,6 @@ other = "Posts in this series"
 
 [related_posts]
 other = "Related Posts"
+
+[table_of_contents]
+other = "Table Of Contents"

@@ -49,3 +49,6 @@ other = "這個系列的帖子"
 
 [related_posts]
 other = "類似的帖子"
+
+[toc]
+other = "目錄"

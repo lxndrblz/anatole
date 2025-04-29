@@ -49,3 +49,6 @@ other = "Articles dans cette série"
 
 [related_posts]
 other = "Messages similaires"
+
+[toc]
+other = "Table des matières"

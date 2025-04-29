@@ -49,3 +49,6 @@ other = "Publicaciones en esta serie"
 
 [related_posts]
 other = "Publicaciones similares"
+
+[toc]
+other = "Índice"

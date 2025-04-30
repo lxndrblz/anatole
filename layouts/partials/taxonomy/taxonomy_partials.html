@@ -1,0 +1,10 @@
+{{ $pageParams := .Page.Params }}
+{{ range $taxonomy, $_ := .Site.Taxonomies }}
+  {{ with (index $pageParams $taxonomy) }}
+    {{ $terms := . }}
+    {{ with index $.Site.Params.TaxonomyPartials $taxonomy }}
+      {{ partial . $terms }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+

@@ -71,13 +71,21 @@
       {{- end -}}
     </div>
     <div class="post__footer">
+      {{/* Deprecated, use taxonomyPartials instead and define Categories as a taxonomy */}}
       {{ with .Page.Params.Categories }}
-        {{ partial "taxonomy/categories.html" . }}
+        {{ if not $.Site.Params.TaxonomyPartials.Categories }}
+          {{ partial "taxonomy/categories.html" . }}
+        {{ end }}
       {{ end }}
 
+      {{/* Deprecated, use taxonomyPartials instead and define Categories as a taxonomy */}}
       {{ with .Page.Params.Tags }}
-        {{ partial "taxonomy/tags.html" . }}
+        {{ if not $.Site.Params.TaxonomyPartials.Tags }}
+          {{ partial "taxonomy/tags.html" . }}
+        {{ end }}
       {{ end }}
+
+      {{ partial "taxonomy/taxonomy_partials.html" . }}
     </div>
 
     {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}

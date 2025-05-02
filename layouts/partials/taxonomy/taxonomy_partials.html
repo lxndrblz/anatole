@@ -1,3 +1,17 @@
+{{/* Deprecated, use taxonomyPartials instead and define Categories as a taxonomy */}}
+{{ with .Page.Params.Categories }}
+  {{ if not $.Site.Params.TaxonomyPartials.Categories }}
+    {{ partial "taxonomy/categories.html" . }}
+  {{ end }}
+{{ end }}
+
+{{/* Deprecated, use taxonomyPartials instead and define Categories as a taxonomy */}}
+{{ with .Page.Params.Tags }}
+  {{ if not $.Site.Params.TaxonomyPartials.Tags }}
+    {{ partial "taxonomy/tags.html" . }}
+  {{ end }}
+{{ end }}
+
 {{ $pageParams := .Page.Params }}
 {{ range $taxonomy, $_ := .Site.Taxonomies }}
   {{ with index $pageParams $taxonomy }}

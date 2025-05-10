@@ -1,5 +1,9 @@
 {{ define "main" }}
-  <div class="page_404">
+  <div class="page_404 {{ with .Site.Params.doNotLoadAnimations }}
+      .
+    {{ else }}
+      animated fadeInDown
+    {{ end }}">
     <h1>404</h1>
     <h2>{{ i18n "page_not_found" }}</h2>
     <p>{{ i18n "page_does_not_exist" }}</p>

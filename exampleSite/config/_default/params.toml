@@ -53,11 +53,6 @@ reversepagetitle = true # When set to 'true', the Window Title will be reversed 
 # id = "94db1cb1-74f4-4a40-ad6c-962362670409"
 # trackerScriptName = "mycustomscriptname.js"
 
-## Math settings
-[math]
-enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
-use = "katex"  # options: "katex", "mathjax". default is "katex".
-
 ## Social links
 # use 'fa-brands' when brand icons, use 'fas' when standard solid icons.
 [[socialIcons]]

@@ -5,5 +5,6 @@ demo/
 .hugo_build.lock
 /node_modules
 exampleSite/public/
+exampleSite/resources/
 .DS_Store
 public/

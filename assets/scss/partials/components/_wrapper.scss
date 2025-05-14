@@ -14,11 +14,11 @@
     width: 100%;
 
     @include desktop {
-      width: $content-width;
+      width: $content-ratio;
     }
 
     @include widescreen {
-      width: calc(#{$content-ratio} * 80%);
+      width: $content-ratio-wide;
     }
 
     &--fullscreen {
@@ -40,12 +40,12 @@
     padding: 16px 0;
 
     @include desktop {
-      width: $sidebar-width;
+      width: $sidebar_ratio;
       padding: 0;
     }
 
     @include widescreen {
-      width: calc(#{$sidebar-ratio} * 80%);
+      width: $sidebar_ratio_wide;
     }
 
     &--hidden {

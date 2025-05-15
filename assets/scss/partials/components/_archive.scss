@@ -1,3 +1,5 @@
+@use 'modules/color_theme' as color;
+
 .archive {
   margin: 30px;
 
@@ -6,8 +8,8 @@
     font-weight: 600;
     line-height: 2.2em;
 
-    @include themed() {
-      color: t('primary');
+    @include color.themed() {
+      color: color.t('primary');
     }
   }
 
@@ -24,8 +26,8 @@
     &-date {
       text-align: right;
 
-      @include themed() {
-        color: t('primary-light');
+      @include color.themed() {
+        color: color.t('primary-light');
       }
     }
 
@@ -33,12 +35,12 @@
       display: inline-block;
       flex: 0.96;
 
-      @include themed() {
-        color: t('primary');
+      @include color.themed() {
+        color: color.t('primary');
       }
       &:hover {
-        @include themed() {
-          color: t('info');
+        @include color.themed() {
+          color: color.t('info');
         }
       }
     }

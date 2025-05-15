@@ -1,9 +1,12 @@
+@use 'modules/color_theme' as color;
+@use 'modules/config' as conf;
+
 .nav {
   $py-desktop: 24px;
 
   display: none;
 
-  @include desktop {
+  @include conf.desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,16 +19,16 @@
     padding: 0;
     width: 100%;
 
-    @include themed() {
-      background-color: t('primary-lighter');
+    @include color.themed() {
+      background-color: color.t('primary-lighter');
     }
 
-    @include desktop {
+    @include conf.desktop {
       display: flex;
       padding: $py-desktop 30px;
 
-      @include themed() {
-        background-color: t('accent');
+      @include color.themed() {
+        background-color: color.t('accent');
       }
 
       &--end {
@@ -40,15 +43,15 @@
       text-align: center;
       white-space: nowrap;
 
-      @include desktop {
+      @include conf.desktop {
         padding-top: 0;
         padding-bottom: 0;
 
         &:not(:last-child) {
-          @include ltr {
+          @include conf.ltr {
             padding-right: 20px;
           }
-          @include rtl {
+          @include conf.rtl {
             padding-left: 20px;
           }
         }
@@ -60,9 +63,9 @@
     &--active {
       padding-bottom: $py-desktop;
 
-      @include desktop {
-        @include themed() {
-          border-bottom: 1px solid t('primary');
+      @include conf.desktop {
+        @include color.themed() {
+          border-bottom: 1px solid color.t('primary');
         }
       }
     }

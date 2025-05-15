@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: install dart sass
+        run: sudo snap install dart-sass --edge
       - name: setup hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -19,7 +21,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
       - name: install
         run: |
           npm ci

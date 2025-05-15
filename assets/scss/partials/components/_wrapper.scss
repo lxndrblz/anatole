@@ -1,36 +1,40 @@
+@use 'hugo:vars' as hugo;
+@use 'modules/config' as conf;
+@use 'modules/variables' as var;
+
 .wrapper {
   display: flex;
   flex-direction: column;
 
-  @include desktop {
+  @include conf.desktop {
     flex-direction: row;
   }
 
-  @include widescreen {
+  @include conf.widescreen {
     justify-content: center;
   }
 
   &__main {
     width: 100%;
 
-    @include desktop {
-      width: $content-width;
+    @include conf.desktop {
+      width: hugo.$content-ratio;
     }
 
-    @include widescreen {
-      width: calc(#{$content-ratio} * 80%);
+    @include conf.widescreen {
+      width: hugo.$content-ratio-wide;
     }
 
     &--fullscreen {
       margin-top: 20px;
 
-      @include desktop {
+      @include conf.desktop {
         width: 100%;
         margin-top: 0px;
       }
 
-      @include widescreen {
-        width: $body-max-width;
+      @include conf.widescreen {
+        width: var.$body-max-width;
       }
     }
   }
@@ -39,13 +43,13 @@
     width: 100%;
     padding: 16px 0;
 
-    @include desktop {
-      width: $sidebar-width;
+    @include conf.desktop {
+      width: hugo.$sidebar_ratio;
       padding: 0;
     }
 
-    @include widescreen {
-      width: calc(#{$sidebar-ratio} * 80%);
+    @include conf.widescreen {
+      width: hugo.$sidebar_ratio_wide;
     }
 
     &--hidden {

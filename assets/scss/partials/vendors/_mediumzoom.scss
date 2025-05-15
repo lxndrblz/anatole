@@ -1,6 +1,8 @@
+@use 'modules/color_theme' as color;
+
 .medium-zoom-overlay {
-  @include themed() {
-    background: t('accent');
+  @include color.themed() {
+    background: color.t('accent');
   }
   position: fixed;
   top: 0;

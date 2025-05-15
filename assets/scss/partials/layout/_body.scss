@@ -1,9 +1,11 @@
+@use 'modules/color_theme' as color;
+
 .body {
   width: 100%;
   margin: 0 auto;
   // work around to style body
-  @include themed() {
-    color: t('primary');
-    background-color: t('accent');
+  @include color.themed() {
+    color: color.t('primary');
+    background-color: color.t('accent');
   }
 }

@@ -45,7 +45,11 @@
     "content_ratio_wide" (printf "%f%%" (mul 0.8 (mul $contentRatio 100)))
     "sidebar_ratio_wide" (printf "%f%%" (mul 0.8 (mul (sub 1.0 $contentRatio) 100)))
   }}
-  {{ $options := dict "transpiler" "libsass" "vars" $vars "targetPath" "anatole.css" }}
+  {{ $options := dict 
+       "transpiler" "dartsass"
+       "vars" $vars
+       "targetPath" "anatole.css"
+       "silenceDeprecations" slice "import" "global-builtin" }}
   {{ with resources.Get "scss/main.scss" }}
     {{ if hugo.IsProduction }}
       {{ with . | toCSS $options | minify | fingerprint }}

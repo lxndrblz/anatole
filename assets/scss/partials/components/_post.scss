@@ -1,8 +1,12 @@
+@use 'modules/color_theme' as color;
+@use 'modules/config' as conf;
+@use 'modules/variables' as var;
+
 .post {
   margin: 30px;
 
-  @include themed() {
-    background-color: t('accent');
+  @include color.themed() {
+    background-color: color.t('accent');
   }
 
   &__meta {
@@ -17,22 +21,22 @@
     }
 
     &-icon {
-      @include ltr {
+      @include conf.ltr {
         margin-right: 2px;
       }
 
-      @include rtl {
+      @include conf.rtl {
         margin-left: 2px;
       }
     }
 
     &-text {
       &:not(:last-child) {
-        @include ltr {
+        @include conf.ltr {
           margin-right: 4px;
         }
 
-        @include rtl {
+        @include conf.rtl {
           margin-left: 4px;
         }
       }
@@ -41,7 +45,7 @@
 
   &__thumbnail {
     width: 100%;
-    height: $thumbnail-height;
+    height: var.$thumbnail-height;
     object-fit: cover;
     display: block;
 
@@ -52,24 +56,24 @@
       overflow: hidden;
       transition: box-shadow 0.3s ease;
 
-      @include themed() {
-        box-shadow: t('shadow');
+      @include color.themed() {
+        box-shadow: color.t('shadow');
       }
     }
   }
 
   &__content {
     a {
-      @include themed() {
-        color: t('info');
+      @include color.themed() {
+        color: color.t('info');
       }
     }
 
     .chroma {
-      @include themed() {
-        background-color: t('primary-lighter');
+      @include color.themed() {
+        background-color: color.t('primary-lighter');
         display: block;
-        border-bottom: 1px solid t('primary-lighter');
+        border-bottom: 1px solid color.t('primary-lighter');
       }
     }
 
@@ -81,8 +85,8 @@
       padding: 5px;
       overflow-x: auto;
 
-      @include themed() {
-        background-color: t('primary-lighter');
+      @include color.themed() {
+        background-color: color.t('primary-lighter');
       }
     }
 
@@ -96,8 +100,8 @@
       a {
         font-size: $font-size-h1;
 
-        @include themed() {
-          color: t('primary');
+        @include color.themed() {
+          color: color.t('primary');
         }
       }
     }
@@ -113,8 +117,8 @@
       a {
         font-size: $font-size-h2;
 
-        @include themed() {
-          color: t('primary');
+        @include color.themed() {
+          color: color.t('primary');
         }
       }
     }
@@ -130,8 +134,8 @@
       a {
         font-size: $font-size-h3;
 
-        @include themed() {
-          color: t('primary');
+        @include color.themed() {
+          color: color.t('primary');
         }
       }
     }
@@ -173,15 +177,15 @@
       }
 
       &.right {
-        @include desktop {
+        @include conf.desktop {
           max-width: 50%;
 
-          @include ltr {
+          @include conf.ltr {
             float: right;
             margin: 0 0 0 1.5em;
           }
 
-          @include rtl {
+          @include conf.rtl {
             float: left;
             margin: 0 1.5em 0 0;
           }
@@ -189,15 +193,15 @@
       }
 
       &.left {
-        @include desktop {
+        @include conf.desktop {
           max-width: 50%;
 
-          @include ltr {
+          @include conf.ltr {
             float: left;
             margin-right: 1.5em;
           }
 
-          @include rtl {
+          @include conf.rtl {
             float: right;
             margin-left: 1.5em;
           }
@@ -209,19 +213,19 @@
   &__footer {
     padding: 12px 0;
 
-    @include themed() {
-      border-bottom: t('border');
+    @include color.themed() {
+      border-bottom: color.t('border');
     }
 
     &-date {
       font-size: 1.4rem;
 
-      @include ltr {
+      @include conf.ltr {
         margin-right: 10px;
         margin-left: 5px;
       }
 
-      @include rtl {
+      @include conf.rtl {
         margin-left: 10px;
         margin-right: 5px;
       }

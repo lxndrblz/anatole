@@ -1,3 +1,6 @@
+@use 'modules/color_theme' as color;
+@use 'modules/config' as conf;
+
 .portfolio {
   position: relative;
   padding-left: 0px;
@@ -5,7 +8,7 @@
   padding-bottom: 0px;
   padding-top: 48px;
 
-  @include desktop {
+  @include conf.desktop {
     padding: 48px;
   }
 
@@ -19,9 +22,9 @@
     background: transparent;
     border-radius: 0.5em;
 
-    @include desktop {
-      @include themed() {
-        border: t('border');
+    @include conf.desktop {
+      @include color.themed() {
+        border: color.t('border');
       }
     }
   }
@@ -36,7 +39,7 @@
   &__image {
     max-width: 100%;
     min-width: 100%;
-    box-shadow: t('shadow');
+    box-shadow: color.t('shadow');
     overflow: hidden;
     transition: box-shadow 0.3s ease;
     object-fit: cover;
@@ -58,11 +61,11 @@
         padding: 32px 32px 0px 32px;
         max-width: inherit;
 
-        @include themed() {
-          background-color: t('accent');
+        @include color.themed() {
+          background-color: color.t('accent');
         }
 
-        @include desktop {
+        @include conf.desktop {
           width: 60%;
           object-fit: contain;
           max-width: none;
@@ -72,14 +75,14 @@
       }
 
       &--left {
-        @include desktop {
+        @include conf.desktop {
           margin-right: auto;
           margin-left: 0;
         }
       }
 
       &--right {
-        @include desktop {
+        @include conf.desktop {
           margin-right: 0;
           margin-left: auto;
         }
@@ -91,16 +94,16 @@
     padding: 32px;
     position: relative;
 
-    @include themed() {
-      background-color: t('accent');
+    @include color.themed() {
+      background-color: color.t('accent');
     }
 
-    @include desktop {
+    @include conf.desktop {
       padding: 48px;
       border-radius: 0.5em;
 
-      @include themed() {
-        box-shadow: t('shadow');
+      @include color.themed() {
+        box-shadow: color.t('shadow');
       }
     }
 
@@ -108,13 +111,13 @@
     &--right {
       margin-top: -24px;
 
-      @include themed() {
-        border-bottom: t('border');
+      @include color.themed() {
+        border-bottom: color.t('border');
       }
 
-      @include desktop {
-        @include themed() {
-          background: t('primary-lighter');
+      @include conf.desktop {
+        @include color.themed() {
+          background: color.t('primary-lighter');
         }
         border-bottom: 0px;
         width: 60%;
@@ -123,7 +126,7 @@
     }
 
     &--right {
-      @include desktop {
+      @include conf.desktop {
         margin-left: auto;
       }
     }
@@ -158,9 +161,9 @@
     border-radius: 999em;
     padding: 10px;
 
-    @include themed() {
-      border: 1px solid t('primary-light');
-      color: t('info');
+    @include color.themed() {
+      border: 1px solid color.t('primary-light');
+      color: color.t('info');
     }
 
     &:hover {

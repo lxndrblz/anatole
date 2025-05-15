@@ -1,3 +1,4 @@
+@use 'modules/config' as conf;
 @charset "UTF-8";
 
 * {
@@ -5,12 +6,12 @@
 }
 
 body {
-  @include ltr {
+  @include conf.ltr {
     font-family: 'PingHei', 'PingFang SC', 'Helvetica Neue', 'Work Sans', 'Hiragino Sans GB', sans-serif;
     font-size: 1.6rem;
   }
 
-  @include rtl {
+  @include conf.rtl {
     font-family: 'Tajawal', sans-serif;
     font-size: 1.5rem;
   }

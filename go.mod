@@ -1,3 +1,3 @@
-module github.com/lxndrblz/anatole
+module github.com/hindlet/anatole
 
 go 1.12

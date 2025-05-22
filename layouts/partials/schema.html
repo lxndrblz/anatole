@@ -7,7 +7,11 @@
       "url": "{{ .Site.BaseURL }}",
       "description": "{{ .Site.Params.description }}",
       "thumbnailUrl": "{{ .Site.Params.Logo | absURL }}",
-      "license": "{{ .Site.Params.Copyright }}"
+      "license": "{{ .Site.Params.license}}"
+      {{ with .Site.Params.copyright }}
+        {{ $copyright := replace . "{{ YEAR }}" (now.Format "2006") }}
+        ,"copyrightYear": "{{ index (findRE `^\d{4}` $copyright 1) 0 }}"
+      {{ end }}
     }
   </script>
 {{ else if .IsPage }}
@@ -34,6 +38,11 @@
 
 
     {{ end }}",
+        "license": "{{ .Site.Params.license}}",
+        {{ with .Site.Params.copyright }}
+          {{ $copyright := replace . "{{ YEAR }}" (now.Format "2006") }}
+          "copyrightYear": "{{ index (findRE `^\d{4}` $copyright 1) 0 }}",
+        {{ end }}
         "inLanguage": {{ .Site.LanguageCode | default "en-us" }},
         "isFamilyFriendly": "true",
         "mainEntityOfPage": {
@@ -56,7 +65,6 @@
             "@type": "Person",
             "name": "{{ $author }}"
         },
-        "copyrightYear" : "{{ .Date.Format "2006" }}",
         "dateCreated": "{{ .Date.Format "2006-01-02T15:04:05.00Z" | safeHTML }}",
         "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05.00Z" | safeHTML }}",
         "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05.00Z" | safeHTML }}",

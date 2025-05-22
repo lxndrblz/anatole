@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.16.2](https://github.com/lxndrblz/anatole/compare/v1.16.1...v1.16.2) (2025-01-03)
+
+### Bug Fixes
+
+- broken rss feed ([#535](https://github.com/lxndrblz/anatole/issues/535)) ([1c6273e](https://github.com/lxndrblz/anatole/commit/1c6273e5c61c9a9e3d2aeb95317acea30f41e13d))
+
+## [1.16.1](https://github.com/lxndrblz/anatole/compare/v1.16.0...v1.16.1) (2024-12-26)
+
+### Bug Fixes
+
+- unsafe html warnings ([#531](https://github.com/lxndrblz/anatole/issues/531)) ([056ff32](https://github.com/lxndrblz/anatole/commit/056ff3230698a3bec8ab75897b2085032b513b3a))
+
+## [1.16.0](https://github.com/lxndrblz/anatole/compare/v1.15.1...v1.16.0) (2024-11-17)
+
+### Features
+
+- add option to disable title capitalization on index ([#526](https://github.com/lxndrblz/anatole/issues/526)) ([9f214dc](https://github.com/lxndrblz/anatole/commit/9f214dc775456a34215de3acc1b34fa25b5eb4ed))
+
+## [1.15.1](https://github.com/lxndrblz/anatole/compare/v1.15.0...v1.15.1) (2024-10-16)
+
+### Bug Fixes
+
+- deprecation warnings ([#521](https://github.com/lxndrblz/anatole/issues/521)) ([98c88d0](https://github.com/lxndrblz/anatole/commit/98c88d0574cba5072c5fa11accf66776ea5d0cf9))
+
 ## [1.15.0](https://github.com/lxndrblz/anatole/compare/v1.14.0...v1.15.0) (2024-07-24)
 
 ### Features

@@ -39,7 +39,7 @@
   <!-- CSS -->
   {{ if eq .Site.Language.LanguageDirection "rtl" }}
     {{ $sassTemplate := resources.Get "scss/anatole.rtl.scss" }}
-    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.rtl.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.rtl.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
     <link
       rel="stylesheet"
       href="{{ $style.RelPermalink }}"
@@ -49,7 +49,7 @@
     />
   {{ else }}
     {{ $sassTemplate := resources.Get "scss/anatole.scss" }}
-    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
     <link
       rel="stylesheet"
       href="{{ $style.RelPermalink }}"
@@ -137,6 +137,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | relURL }}favicon-16x16.png" />
 
   <link rel="canonical" href="{{ .Permalink }}" />
+  <!-- License -->
+  {{- with .Site.Params.license -}}
+    <link rel="license" href="{{ . }}" />
+  {{- end -}}
+
 
   <!-- RSS -->
   {{ with .OutputFormats.Get "rss" -}}
@@ -204,6 +209,10 @@
 
   {{ if and hugo.IsProduction .Site.Params.Matomo.instance .Site.Params.Matomo.siteId }}
     {{- partial "analytics/matomo" . -}}
+  {{ end }}
+
+  {{ if and hugo.IsProduction .Site.Params.meta.pixelId }}
+    {{- partial "analytics/meta.html" . -}}
   {{ end }}
 
 

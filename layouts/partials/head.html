@@ -37,6 +37,9 @@
 
 
   <!-- CSS -->
+  {{ if eq .Params.css "meet_the_team"}}
+    {{ template "css/meet_the_team.html" }}
+  {{ end }}
   {{ if eq .Site.Language.LanguageDirection "rtl" }}
     {{ $sassTemplate := resources.Get "scss/anatole.rtl.scss" }}
     {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.rtl.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
@@ -128,6 +131,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="{{ $url }}" rel="stylesheet" />
   {{- end -}}
+  {{ with .Resources.GetMatch "*.css" }}
+    <link
+      rel="stylesheet"
+      href="{{ $.RelPermalink }}"
+      integrity="{{ $.Data.Integrity }}"
+      crossorigin="anonymous"
+      media="screen"
+    />
+  {{ end }}
 
 
   <!-- Favicons -->

@@ -3,20 +3,18 @@
 
 name = "Anatole"
 license = "MIT"
-licenselink = "https://github.com/lxndrblz/anatole/blob/master/LICENSE"
+licenselink = "https://github.com/hindlet/anatole/blob/master/LICENSE"
 description = "Anatole is a beautiful minimalist two-column hugo theme based on farbox-theme-Anatole."
-homepage = "https://github.com/lxndrblz/anatole/"
-demosite = "https://anatole-demo.netlify.app/"
+homepage = "https://github.com/hindlet/anatole/"
 tags = ["blog", "responsive", "clean", "minimalist", "minimal", "personal", "dark"]
 features = ["blog", "seo", "responsive", "mobile", "disqus", "fontawesome", "analytics", "math"]
 min_version = "0.128.0"
 
 [author]
-  name = "Alexander Bilz"
-  homepage = "https://alexbilz.com"
+  name = "Hindlet"
 
 # If porting an existing theme
 [original]
-  author = "Cai Cai"
-  homepage = "https://www.caicai.me/"
-  repo = "https://github.com/hi-caicai/farbox-theme-Anatole"
+  name = "Alexander Bilz"
+  homepage = "https://alexbilz.com"
+  repo = "https://github.com/lxndrblz/anatole"

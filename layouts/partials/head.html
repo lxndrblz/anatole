@@ -39,32 +39,26 @@
   <!-- CSS -->
   {{ $contentRatio := or site.Params.contentratio 0.6 -}}
   {{ $languageDirection := or site.Language.LanguageDirection "ltr" -}}
-  {{ $vars := dict 
-      "text_direction" $languageDirection
-      "content_ratio" (printf "%f%%" (mul $contentRatio 100))
-      "sidebar_ratio" (printf "%f%%" (mul (sub 1.0 $contentRatio) 100))
-      "content_ratio_wide" (printf "%f%%" (mul 0.8 (mul $contentRatio 100)))
-      "sidebar_ratio_wide" (printf "%f%%" (mul 0.8 (mul (sub 1.0 $contentRatio) 100)))
+  {{ $vars := dict
+    "text_direction" $languageDirection
+    "content_ratio" (printf "%f%%" (mul $contentRatio 100))
+    "sidebar_ratio" (printf "%f%%" (mul (sub 1.0 $contentRatio) 100))
+    "content_ratio_wide" (printf "%f%%" (mul 0.8 (mul $contentRatio 100)))
+    "sidebar_ratio_wide" (printf "%f%%" (mul 0.8 (mul (sub 1.0 $contentRatio) 100)))
   -}}
-  {{ $options := dict 
-      "transpiler" "libsass"
-      "vars" $vars
-      "targetPath" (printf "css/anatole%s.css" (cond (eq site.Language.LanguageDirection "") "" (printf ".%s" site.Language.LanguageDirection)))
+  {{ $options := dict
+    "transpiler" "libsass"
+    "vars" $vars
+    "targetPath" (printf "css/anatole%s.css" (cond (eq site.Language.LanguageDirection "") "" (printf ".%s" site.Language.LanguageDirection)))
   -}}
   {{ with resources.Get "scss/main.scss" -}}
     {{ if hugo.IsProduction -}}
       {{ with . | toCSS $options | minify | fingerprint }}
-  <link rel="stylesheet"
-    href="{{ .RelPermalink }}"
-    integrity="{{ .Data.Integrity }}"
-    crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
       {{ end -}}
     {{ else -}}
       {{ with . | toCSS $options }}
-  <link
-    rel="stylesheet"
-    href="{{ .RelPermalink }}"
-  />
+        <link rel="stylesheet" href="{{ .RelPermalink }}" />
       {{ end -}}
     {{ end -}}
   {{ end -}}

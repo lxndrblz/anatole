@@ -1,7 +1,10 @@
+@use 'modules/color_theme' as color;
+@use 'modules/config' as conf;
+
 .sidebar {
   margin-top: 40px;
 
-  @include desktop {
+  @include conf.desktop {
     z-index: 2;
     position: fixed;
     height: 100%;
@@ -10,21 +13,21 @@
     display: flex;
     flex-direction: column;
 
-    @include themed() {
-      @include ltr {
+    @include color.themed() {
+      @include conf.ltr {
         margin-right: 4px;
-        border-right: t('border');
+        border-right: color.t('border');
       }
 
-      @include rtl {
+      @include conf.rtl {
         margin-left: 4px;
-        border-left: t('border');
+        border-left: color.t('border');
       }
     }
   }
 
   &__content {
-    @include desktop {
+    @include conf.desktop {
       display: flex;
       flex-direction: column;
       flex-grow: 1;

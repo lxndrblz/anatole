@@ -1,4 +1,5 @@
 /* (CONTACT) FORM */
+@use 'modules/color_theme' as color;
 
 .contact-form {
   margin-top: 30px;
@@ -12,19 +13,19 @@
   list-style: none;
 }
 .form-style ul li {
-  @include themed() {
-    background-color: t('accent');
-    color: t('primary');
+  @include color.themed() {
+    background-color: color.t('accent');
+    color: color.t('primary');
   }
   display: block;
   margin-bottom: 10px;
   min-height: 35px;
 }
 .form-style ul li .field-style {
-  @include themed() {
-    border: t('border');
-    background-color: t('accent');
-    color: t('primary');
+  @include color.themed() {
+    border: color.t('border');
+    background-color: color.t('accent');
+    color: color.t('primary');
   }
   box-sizing: border-box;
   -webkit-box-sizing: border-box;

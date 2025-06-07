@@ -53,3 +53,6 @@ other = "Bu serideki gönderiler"
 
 [related_posts]
 other = "Benzer gönderiler"
+
+[toc]
+other = "İçindekiler tablosu"

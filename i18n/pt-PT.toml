@@ -53,3 +53,6 @@ other = "Postagens nesta série"
 
 [related_posts]
 other = "Posts semelhantes"
+
+[toc]
+other = "Índice"

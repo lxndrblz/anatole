@@ -53,3 +53,6 @@ other = "이 시리즈의 게시물"
 
 [related_posts]
 other = "비슷한 게시물"
+
+[toc]
+other = "목차"

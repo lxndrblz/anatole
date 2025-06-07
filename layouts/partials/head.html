@@ -47,7 +47,7 @@
     "sidebar_ratio_wide" (printf "%f%%" (mul 0.8 (mul (sub 1.0 $contentRatio) 100)))
   -}}
   {{ $options := dict
-    "transpiler" "libsass"
+    "transpiler" "dartsass"
     "vars" $vars
     "targetPath" (printf "css/anatole%s.css" (cond (eq site.Language.LanguageDirection "") "" (printf ".%s" site.Language.LanguageDirection)))
   -}}

@@ -1,9 +1,19 @@
 [build]
   publish = "exampleSite/public"
-  command = "cd exampleSite && hugo --gc --minify --themesDir ../.."
-  
+  command = """\
+  curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+  tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+  rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+  export PATH=/opt/build/repo/dart-sass:$PATH && \
+  cd exampleSite && \
+  hugo --gc --minify --themesDir ../.. \
+  """
+
 [build.environment]
   HUGO_VERSION = "0.147.5"
+  DART_SASS_VERSION = "1.89.0"
+  NODE_VERSION = "24"
+  GO_VERSION = "1.24.3"
   HUGO_ENV = "production"
   HUGO_THEME = "repo"
   HUGO_BASEURL = "https://anatole-demo.netlify.app"

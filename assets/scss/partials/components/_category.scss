@@ -1,20 +1,23 @@
+@use 'modules/color_theme' as color;
+@use 'modules/config' as conf;
+
 .category {
   padding: 4px 6px;
   border-radius: 2px;
   display: inline-block;
   font-size: 1.4rem;
 
-  @include themed() {
-    border: t('border');
-    background-color: t('primary-lighter');
-    color: t('primary') !important;
+  @include color.themed() {
+    border: color.t('border');
+    background-color: color.t('primary-lighter');
+    color: color.t('primary') !important;
   }
 
-  @include ltr {
+  @include conf.ltr {
     margin: 5px 8px 5px 0;
   }
 
-  @include rtl {
+  @include conf.rtl {
     margin: 5px 0 5px 8px;
   }
 }

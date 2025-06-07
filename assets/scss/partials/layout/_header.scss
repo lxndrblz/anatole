@@ -1,21 +1,24 @@
+@use 'modules/color_theme' as color;
+@use 'modules/config' as conf;
+
 .header {
-  @include themed() {
-    background-color: t('accent');
+  @include color.themed() {
+    background-color: color.t('accent');
   }
   width: 100%;
   position: fixed;
   z-index: 1;
   top: 0;
 
-  @include desktop {
+  @include conf.desktop {
     position: sticky;
 
-    @include themed() {
-      border-bottom: t('border');
+    @include color.themed() {
+      border-bottom: color.t('border');
     }
   }
 
-  @include print {
+  @include conf.print {
     display: none;
   }
 }

@@ -1,29 +1,32 @@
+@use 'modules/variables' as var;
+@use "sass:map";
+
 $themes: (
   light: (
-    accent: $accent--lightmode,
-    primary: $primary--lightmode,
-    primary-light: $primary-light--lightmode,
-    primary-lighter: $primary-lighter--lightmode,
-    info: $info,
-    shadow: $shadow--lightmode,
-    border: 1px solid $primary-lighter--lightmode,
-    alert: $warning,
-    success: $success,
-    warning: $warning,
-    danger: $danger,
+    accent: var.$accent--lightmode,
+    primary: var.$primary--lightmode,
+    primary-light: var.$primary-light--lightmode,
+    primary-lighter: var.$primary-lighter--lightmode,
+    info: var.$info,
+    shadow: var.$shadow--lightmode,
+    border: 1px solid var.$primary-lighter--lightmode,
+    alert: var.$warning,
+    success: var.$success,
+    warning: var.$warning,
+    danger: var.$danger,
   ),
   dark: (
-    accent: $accent--darkmode,
-    primary: $primary--darkmode,
-    primary-light: $primary-light--darkmode,
-    primary-lighter: $primary-lighter--darkmode,
-    info: $info,
-    shadow: $shadow--darkmode,
-    border: 1px solid $primary-lighter--darkmode,
-    alert: $warning,
-    success: $success,
-    warning: $warning,
-    danger: $danger,
+    accent: var.$accent--darkmode,
+    primary: var.$primary--darkmode,
+    primary-light: var.$primary-light--darkmode,
+    primary-lighter: var.$primary-lighter--darkmode,
+    info: var.$info,
+    shadow: var.$shadow--darkmode,
+    border: 1px solid var.$primary-lighter--darkmode,
+    alert: var.$warning,
+    success: var.$success,
+    warning: var.$warning,
+    danger: var.$danger,
   ),
 );
 
@@ -33,8 +36,8 @@ $theme-map: ();
   @each $theme, $map in $themes {
     .theme--#{$theme} & {
       @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge(
+        $value: map.get(map.get($themes, $theme), '#{$key}');
+        $theme-map: map.merge(
           $theme-map,
           (
             $key: $value,
@@ -48,5 +51,5 @@ $theme-map: ();
 }
 
 @function t($key) {
-  @return map-get($theme-map, $key);
+  @return map.get($theme-map, $key);
 }

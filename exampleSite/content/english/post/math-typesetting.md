@@ -39,7 +39,48 @@ $$
 Chemical equations:
 
 \[
-\tag\*{(2)} \ce{Zn^2+ <=>[+ 2OH-][+ 2H+] $\underset{\text{amphoteric hydroxide}}{\ce{Zn(OH)2 v}}$ <=>[+ 2OH-][+ 2H+] $\underset{\text{tetrahydroxozincate}}{\ce{[Zn(OH)4]^2-}}$}
+\tag*{(2)} \ce{Zn^2+ <=>[+ 2OH-][+ 2H+] $\underset{\text{amphoteric hydroxide}}{\ce{Zn(OH)2 v}}$ <=>[+ 2OH-][+ 2H+] $\underset{\text{tetrahydroxozincate}}{\ce{[Zn(OH)4]^2-}}$}
 \]
 
 **Note:** Use the online reference of [Supported TeX Functions](https://katex.org/docs/supported.html)
+
+### Mathematical formulae inside code blocks
+
+As an alternative to the standard syntax used above, formulae can also be
+authored using a
+[GLFM math block](https://docs.gitlab.com/ee/user/markdown.html#math):
+
+````markdown
+The probability of getting \(k\) heads when flipping \(n\) coins is:
+
+```math
+\tag*{(1)} P(E) = {n \choose k} p^k (1-p)^{n-k}
+```
+````
+
+This `math` block renders to:
+
+The probability of getting \(k\) heads when flipping \(n\) coins is:
+
+```math
+\tag*{(1)}  P(E) = {n \choose k} p^k (1-p)^{n-k}
+```
+
+### Chemical equations inside code blocks
+
+You can use a code block adorned with `chem` in order to render
+a chemical equation:
+
+````markdown
+```chem
+\tag*{(2)} \ce{Hg^2+ ->[I-]  $\underset{\mathrm{red}}{\ce{HgI2}}$  ->[I-]  $\underset{\mathrm{red}}{\ce{[Hg^{II}I4]^2-}$}
+```
+````
+
+This `chem` block renders to:
+
+<!-- prettier-ignore-start -->
+```chem
+\tag*{(2)} \ce{Hg^2+ ->[I-]  $\underset{\mathrm{red}}{\ce{HgI2}}$  ->[I-]  $\underset{\mathrm{red}}{\ce{[Hg^{II}I4]^2-}}$}
+```
+<!-- prettier-ignore-end -->

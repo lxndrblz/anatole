@@ -1,3 +1,5 @@
+@use 'modules/color_theme' as color;
+
 .pagination {
   margin: 30px;
   padding: 0px 0 56px 0;
@@ -15,8 +17,8 @@
       line-height: 1;
       text-decoration: none;
 
-      @include themed() {
-        color: t('primary');
+      @include color.themed() {
+        color: color.t('primary');
       }
     }
   }

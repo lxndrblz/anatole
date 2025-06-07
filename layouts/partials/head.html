@@ -37,27 +37,31 @@
 
 
   <!-- CSS -->
-  {{ if eq .Site.Language.LanguageDirection "rtl" }}
-    {{ $sassTemplate := resources.Get "scss/anatole.rtl.scss" }}
-    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.rtl.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
-    <link
-      rel="stylesheet"
-      href="{{ $style.RelPermalink }}"
-      integrity="{{ $style.Data.Integrity }}"
-      crossorigin="anonymous"
-      type="text/css"
-    />
-  {{ else }}
-    {{ $sassTemplate := resources.Get "scss/anatole.scss" }}
-    {{ $style := $sassTemplate | resources.ExecuteAsTemplate "scss/main.scss" . | css.Sass | resources.Minify | resources.Fingerprint }}
-    <link
-      rel="stylesheet"
-      href="{{ $style.RelPermalink }}"
-      integrity="{{ $style.Data.Integrity }}"
-      crossorigin="anonymous"
-      type="text/css"
-    />
-  {{ end }}
+  {{ $contentRatio := or site.Params.contentratio 0.6 -}}
+  {{ $languageDirection := or site.Language.LanguageDirection "ltr" -}}
+  {{ $vars := dict
+    "text_direction" $languageDirection
+    "content_ratio" (printf "%f%%" (mul $contentRatio 100))
+    "sidebar_ratio" (printf "%f%%" (mul (sub 1.0 $contentRatio) 100))
+    "content_ratio_wide" (printf "%f%%" (mul 0.8 (mul $contentRatio 100)))
+    "sidebar_ratio_wide" (printf "%f%%" (mul 0.8 (mul (sub 1.0 $contentRatio) 100)))
+  -}}
+  {{ $options := dict
+    "transpiler" "dartsass"
+    "vars" $vars
+    "targetPath" (printf "css/anatole%s.css" (cond (eq site.Language.LanguageDirection "") "" (printf ".%s" site.Language.LanguageDirection)))
+  -}}
+  {{ with resources.Get "scss/main.scss" -}}
+    {{ if hugo.IsProduction -}}
+      {{ with . | toCSS $options | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
+      {{ end -}}
+    {{ else -}}
+      {{ with . | toCSS $options }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" />
+      {{ end -}}
+    {{ end -}}
+  {{ end -}}
 
   {{ $markupHighlightStyle := resources.Get "css/markupHighlight.css" | resources.Minify | resources.Fingerprint }}
   <link

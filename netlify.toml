@@ -10,10 +10,10 @@
   """
 
 [build.environment]
-  HUGO_VERSION = "0.147.5"
-  DART_SASS_VERSION = "1.89.0"
+  HUGO_VERSION = "0.147.8"
+  DART_SASS_VERSION = "1.89.1"
   NODE_VERSION = "24"
-  GO_VERSION = "1.24.3"
+  GO_VERSION = "1.24.4"
   HUGO_ENV = "production"
   HUGO_THEME = "repo"
   HUGO_BASEURL = "https://anatole-demo.netlify.app"

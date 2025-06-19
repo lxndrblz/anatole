@@ -29,7 +29,7 @@ jobs:
       - name: build
         run: npm run build
       - name: commit resources
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: 'chore: build resources'
           file_pattern: resources/** exampleSite/resources/**

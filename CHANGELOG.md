@@ -2,22 +2,20 @@
 
 ## [1.17.0](https://github.com/lxndrblz/anatole/compare/v1.16.2...v1.17.0) (2025-06-19)
 
-
 ### Features
 
-* add license metadata ([#518](https://github.com/lxndrblz/anatole/issues/518)) ([f99b5b1](https://github.com/lxndrblz/anatole/commit/f99b5b1345968a5c160e8432f364f8dc36b78c80))
-* add support for Meta Pixel tracker ([#538](https://github.com/lxndrblz/anatole/issues/538)) ([513c2c2](https://github.com/lxndrblz/anatole/commit/513c2c23c92916191a56de17291c32a372e6661e))
-* localize table of contents title ([#557](https://github.com/lxndrblz/anatole/issues/557)) ([e875766](https://github.com/lxndrblz/anatole/commit/e875766eb844963b10b2be143f5c2c47084b13d2))
-
+- add license metadata ([#518](https://github.com/lxndrblz/anatole/issues/518)) ([f99b5b1](https://github.com/lxndrblz/anatole/commit/f99b5b1345968a5c160e8432f364f8dc36b78c80))
+- add support for Meta Pixel tracker ([#538](https://github.com/lxndrblz/anatole/issues/538)) ([513c2c2](https://github.com/lxndrblz/anatole/commit/513c2c23c92916191a56de17291c32a372e6661e))
+- localize table of contents title ([#557](https://github.com/lxndrblz/anatole/issues/557)) ([e875766](https://github.com/lxndrblz/anatole/commit/e875766eb844963b10b2be143f5c2c47084b13d2))
 
 ### Bug Fixes
 
-* clear warnings when previewing example site (hugo 0.144.2) ([#542](https://github.com/lxndrblz/anatole/issues/542)) ([5831d85](https://github.com/lxndrblz/anatole/commit/5831d852d14e2184f4cd4d2d5b78725f7a0a497c))
-* Error while running Devcontainer ([#567](https://github.com/lxndrblz/anatole/issues/567)) ([1b11f01](https://github.com/lxndrblz/anatole/commit/1b11f01e45343a440917e676763ab939a0437727))
-* fix partial handling for pagination ([b6cbc94](https://github.com/lxndrblz/anatole/commit/b6cbc945fe2c4167206883e7fb506e1e35125ac4)), closes [#551](https://github.com/lxndrblz/anatole/issues/551)
-* make setting 'contentratio' work again ([#560](https://github.com/lxndrblz/anatole/issues/560)) ([71f54e9](https://github.com/lxndrblz/anatole/commit/71f54e941b74122353d950c04c7afa1a7b887595))
-* planify post content on index ([#545](https://github.com/lxndrblz/anatole/issues/545)) ([e1aaaf7](https://github.com/lxndrblz/anatole/commit/e1aaaf7463756f65a866ff15f4c15e25b78c82fe))
-* theme switcher toggling incorrectly ([#553](https://github.com/lxndrblz/anatole/issues/553)) ([3683a0f](https://github.com/lxndrblz/anatole/commit/3683a0f2b6a0750f858afd4dd3e65bb9caf3ef5b))
+- clear warnings when previewing example site (hugo 0.144.2) ([#542](https://github.com/lxndrblz/anatole/issues/542)) ([5831d85](https://github.com/lxndrblz/anatole/commit/5831d852d14e2184f4cd4d2d5b78725f7a0a497c))
+- Error while running Devcontainer ([#567](https://github.com/lxndrblz/anatole/issues/567)) ([1b11f01](https://github.com/lxndrblz/anatole/commit/1b11f01e45343a440917e676763ab939a0437727))
+- fix partial handling for pagination ([b6cbc94](https://github.com/lxndrblz/anatole/commit/b6cbc945fe2c4167206883e7fb506e1e35125ac4)), closes [#551](https://github.com/lxndrblz/anatole/issues/551)
+- make setting 'contentratio' work again ([#560](https://github.com/lxndrblz/anatole/issues/560)) ([71f54e9](https://github.com/lxndrblz/anatole/commit/71f54e941b74122353d950c04c7afa1a7b887595))
+- planify post content on index ([#545](https://github.com/lxndrblz/anatole/issues/545)) ([e1aaaf7](https://github.com/lxndrblz/anatole/commit/e1aaaf7463756f65a866ff15f4c15e25b78c82fe))
+- theme switcher toggling incorrectly ([#553](https://github.com/lxndrblz/anatole/issues/553)) ([3683a0f](https://github.com/lxndrblz/anatole/commit/3683a0f2b6a0750f858afd4dd3e65bb9caf3ef5b))
 
 ## [1.16.2](https://github.com/lxndrblz/anatole/compare/v1.16.1...v1.16.2) (2025-01-03)
 

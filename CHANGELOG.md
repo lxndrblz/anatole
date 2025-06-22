@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.17.1](https://github.com/lxndrblz/anatole/compare/v1.17.0...v1.17.1) (2025-06-22)
+
 ## [1.17.0](https://github.com/lxndrblz/anatole/compare/v1.16.2...v1.17.0) (2025-06-19)
 
 ### Features

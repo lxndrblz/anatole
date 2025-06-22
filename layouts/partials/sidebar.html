@@ -1,11 +1,11 @@
 <div
-  class="sidebar{{ with .Site.Params.doNotLoadAnimations }}
+  class="sidebar"
+>
+  <div class="sidebar__content {{ with .Site.Params.doNotLoadAnimations }}
     .
   {{ else }}
     animated fadeInDown
-  {{ end }}"
->
-  <div class="sidebar__content">
+  {{ end }}">
     <div class="sidebar__introduction">
       <img
         class="sidebar__introduction-profileimage"

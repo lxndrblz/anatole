@@ -9,8 +9,8 @@ favicon = "favicons/"
 # example ["css/custom.css"]
 customCss = []
 # example ["js/custom.js"]
-customJs = [] 
-mainSections = ["post"]
+customJs = []
+mainSections = ["post", "blog"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
 # Form Spree Contact Form
@@ -27,7 +27,8 @@ listDateFormat = "2/1/2006"
 # CommentoURL = "https://commento.example.com/js/commento.js"
 # Read More links for truncated summaries
 # readMore = true
-# postSectionName = "blog"
+postSectionName = "blog"  # Deprecated: use postSections instead
+postSections = ["post", "blog", "articles"]  # List of post sections that support comments and post features
 # relatedPosts = true
 # numberOfRelatedPosts = 3
 

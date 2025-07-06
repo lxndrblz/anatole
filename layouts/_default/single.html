@@ -17,7 +17,14 @@
       {{ else }}
         <h1>{{ title .Title }}</h1>
       {{ end }}
-      {{ if or (eq .Type "post") (eq .Type .Site.Params.postSectionName) }}
+      {{ $isPostSection := (eq .Type "post") }}
+      {{ if .Site.Params.postSectionName }}
+        {{ $isPostSection = or $isPostSection (eq .Type .Site.Params.postSectionName) }}
+      {{ end }}
+      {{ if .Site.Params.postSections }}
+        {{ $isPostSection = or $isPostSection (in .Site.Params.postSections .Type) }}
+      {{ end }}
+      {{ if $isPostSection }}
         <ul class="post__meta">
           <li class="post__meta-item">
             <em class="fas fa-calendar-day post__meta-icon"></em>
@@ -80,7 +87,14 @@
       {{ end }}
     </div>
 
-    {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}
+    {{ $isPostSection := (eq .Type "post") }}
+    {{ if .Site.Params.postSectionName }}
+      {{ $isPostSection = or $isPostSection (eq .Type .Site.Params.postSectionName) }}
+    {{ end }}
+    {{ if .Site.Params.postSections }}
+      {{ $isPostSection = or $isPostSection (in .Site.Params.postSections .Type) }}
+    {{ end }}
+    {{ if and $isPostSection (ne .Page.Params.disableComments true) }}
       {{- if .Site.Config.Services.Disqus.Shortname -}}
         <div id="comment">
           <h2>{{ i18n "comments" }}</h2>

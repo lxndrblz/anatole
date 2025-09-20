@@ -30,6 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
+    "@netlify/plugin-lighthouse": "^6.0.3",
     "@release-it/conventional-changelog": "^8.0.2",
     "husky": "^9.1.6",
     "prettier": "^3.3.3",

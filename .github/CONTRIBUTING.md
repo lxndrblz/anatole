@@ -21,7 +21,6 @@ In order to ensure the maintainability and quality of the project, a set of comm
 3. Use conventional commit messages whenever you commit changes, as these help me understand your contribution better and track your changes. If you are not familiar with conventional commit messages, you can find a good introduction under [this](https://www.conventionalcommits.org/en/v1.0.0/) link. Please refrain from using non-descriptive commit messages or filing large changes as a single commit. All commits will be checked for conformity using Git Hooks and [Husky](https://github.com/typicode/husky). For setting up Husky in your Anatole project, you will have to run `npm run setup` once. This step will set up all the necessary dependencies and configuration files.
 
 4. When deciding if I merge a pull request, I look at the following things:
-
    - Does it provide a clear benefit to other users (i. e. does it solve a clearly defined and common problem)
    - Does it follow Anatole's paramount goal of being a minimalistic and visually pleasant Hugo theme? In other words, make sure it does not bloat the theme.
    - Is it of good quality?

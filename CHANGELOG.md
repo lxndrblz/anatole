@@ -2,16 +2,14 @@
 
 ## [1.18.0](https://github.com/lxndrblz/anatole/compare/v1.17.1...v1.18.0) (2025-09-20)
 
-
 ### Features
 
-* update Mermaid diagrams to follow theme preference ([#576](https://github.com/lxndrblz/anatole/issues/576)) ([902d1bf](https://github.com/lxndrblz/anatole/commit/902d1bfcae166cf9b0350bb88810e3c0162430a3))
-* update npm packages to latest versions ([3632c0f](https://github.com/lxndrblz/anatole/commit/3632c0feaa1d2cd9a73cb294b06dbc952957908a))
-
+- update Mermaid diagrams to follow theme preference ([#576](https://github.com/lxndrblz/anatole/issues/576)) ([902d1bf](https://github.com/lxndrblz/anatole/commit/902d1bfcae166cf9b0350bb88810e3c0162430a3))
+- update npm packages to latest versions ([3632c0f](https://github.com/lxndrblz/anatole/commit/3632c0feaa1d2cd9a73cb294b06dbc952957908a))
 
 ### Bug Fixes
 
-* missing string and fixed translation in Spanish localization ([#577](https://github.com/lxndrblz/anatole/issues/577)) ([b0a42b1](https://github.com/lxndrblz/anatole/commit/b0a42b1bc2a8da25a3e8283f8ab7d59a65a293be))
+- missing string and fixed translation in Spanish localization ([#577](https://github.com/lxndrblz/anatole/issues/577)) ([b0a42b1](https://github.com/lxndrblz/anatole/commit/b0a42b1bc2a8da25a3e8283f8ab7d59a65a293be))
 
 ## [1.17.1](https://github.com/lxndrblz/anatole/compare/v1.17.0...v1.17.1) (2025-06-22)
 

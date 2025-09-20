@@ -8,6 +8,10 @@ other = "etiqueta"
 one = "1 minuto de lectura"
 other = "{{ .Count }} minutos de lectura"
 
+[old_content_warning]
+one = "Atención: Este artículo se publicó hace más de {{ .Count }} días. La información podría estar desactualizada."
+other = "Atención: Este artículo se publicó hace más de {{ .Count }} días. La información podría estar desactualizada."
+
 [page_not_found]
 other = "Página no encontrada"
 
@@ -39,7 +43,7 @@ other = "Mensaje"
 other = "Advertencia"
 
 [info]
-other = "Acerca de"
+other = "Información"
 
 [update]
 other = "Actualizar"

@@ -28,14 +28,14 @@
   },
   "homepage": "https://github.com/lxndrblz/anatole#readme",
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@netlify/plugin-lighthouse": "^6.0.3",
-    "@release-it/conventional-changelog": "^8.0.2",
-    "husky": "^9.1.6",
-    "prettier": "^3.3.3",
+    "@commitlint/cli": "^20.3.0",
+    "@commitlint/config-conventional": "^20.3.0",
+    "@netlify/plugin-lighthouse": "^6.0.4",
+    "@release-it/conventional-changelog": "^10.0.4",
+    "husky": "^9.1.7",
+    "prettier": "^3.7.4",
     "prettier-plugin-go-template": "^0.0.15",
-    "release-it": "^17.6.0",
-    "shx": "^0.3.4"
+    "release-it": "^19.2.2",
+    "shx": "^0.4.0"
   }
 }

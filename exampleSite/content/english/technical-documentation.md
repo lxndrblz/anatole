@@ -29,7 +29,7 @@ I've created multiple product help centers and API developer portals. Below are 
 
 ---
 
-## Documentation samples
+## Writing samples
 
 Below are some documentation samples demonstrating my work across different content types.
 

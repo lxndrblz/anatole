@@ -16,3 +16,5 @@ From help centers and API docs to SOPs and training videos, I work with SaaS, B2
 Aside from technical writing, I enjoy tinkering with front-end web stuff like CSS and React, reading (I'm a HUGE horror and thriller buff!), gardening, and low-effort biking.
 
 I live in Northeast Ohio with my husband, son, golden retriever, pit bull, and cat!
+
+[Check out my resumé](resume.md)

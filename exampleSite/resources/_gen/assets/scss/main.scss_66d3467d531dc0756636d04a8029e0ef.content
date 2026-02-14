@@ -2,7 +2,7 @@ a {
   text-decoration: none;
 }
 .theme--light a {
-  color: #464646;
+  color: #000;
 }
 .theme--dark a {
   color: #eeeeee;
@@ -18,7 +18,7 @@ blockquote {
   padding: 0 1em;
 }
 .theme--light blockquote {
-  color: #464646;
+  color: #000;
   border-left: 1px solid #eeeeee;
 }
 .theme--dark blockquote {
@@ -49,7 +49,7 @@ body {
   margin: 0 auto;
 }
 .theme--light .body {
-  color: #464646;
+  color: #000;
   background-color: #fff;
 }
 .theme--dark .body {
@@ -145,7 +145,7 @@ body {
 }
 @media screen and (min-width: 961px) {
   .theme--light .nav__link--active {
-    border-bottom: 1px solid #464646;
+    border-bottom: 1px solid #000;
   }
   .theme--dark .nav__link--active {
     border-bottom: 1px solid #eeeeee;
@@ -209,7 +209,7 @@ body {
 .theme--light .category {
   border: 1px solid #eeeeee;
   background-color: #eeeeee;
-  color: #464646 !important;
+  color: #000 !important;
 }
 .theme--dark .category {
   border: 1px solid #464646;
@@ -420,7 +420,7 @@ body {
   text-decoration: none;
 }
 .theme--light .pagination__list-item {
-  color: #464646;
+  color: #000;
 }
 .theme--dark .pagination__list-item {
   color: #eeeeee;
@@ -447,7 +447,7 @@ body {
   width: 16px;
 }
 .theme--light .navbar-burger__line {
-  background-color: #464646;
+  background-color: #000;
 }
 .theme--dark .navbar-burger__line {
   background-color: #eeeeee;
@@ -512,7 +512,7 @@ body {
   padding-top: 24px;
 }
 .theme--light .optionswitch__list-item {
-  color: #464646;
+  color: #000;
 }
 .theme--dark .optionswitch__list-item {
   color: #eeeeee;
@@ -634,7 +634,7 @@ body {
   font-size: 3.6rem;
 }
 .theme--light .post__content h1 a {
-  color: #464646;
+  color: #000;
 }
 .theme--dark .post__content h1 a {
   color: #eeeeee;
@@ -649,7 +649,7 @@ body {
   font-size: 2.4rem;
 }
 .theme--light .post__content h2 a {
-  color: #464646;
+  color: #000;
 }
 .theme--dark .post__content h2 a {
   color: #eeeeee;
@@ -664,7 +664,7 @@ body {
   font-size: 2rem;
 }
 .theme--light .post__content h3 a {
-  color: #464646;
+  color: #000;
 }
 .theme--dark .post__content h3 a {
   color: #eeeeee;
@@ -959,7 +959,7 @@ body {
   line-height: 2.2em;
 }
 .theme--light .archive__heading {
-  color: #464646;
+  color: #000;
 }
 .theme--dark .archive__heading {
   color: #eeeeee;
@@ -987,7 +987,7 @@ body {
   flex: 0.96;
 }
 .theme--light .archive__list-title {
-  color: #464646;
+  color: #000;
 }
 .theme--dark .archive__list-title {
   color: #eeeeee;
@@ -1102,7 +1102,7 @@ body {
 
 .theme--light .form-style ul li {
   background-color: #fff;
-  color: #464646;
+  color: #000;
 }
 .theme--dark .form-style ul li {
   background-color: #152028;
@@ -1117,7 +1117,7 @@ body {
 .theme--light .form-style ul li .field-style {
   border: 1px solid #eeeeee;
   background-color: #fff;
-  color: #464646;
+  color: #000;
 }
 .theme--dark .form-style ul li .field-style {
   border: 1px solid #464646;

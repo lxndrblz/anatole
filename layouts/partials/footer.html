@@ -1,3 +1,13 @@
+{{- $authorName := "" -}}
+{{- with .context.Site.Params.author -}}
+  {{- if reflect.IsMap . -}}
+    {{- with .name -}}
+      {{- $authorName = . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $authorName = . -}}
+  {{- end -}}
+{{- end -}}
 <footer class="footer footer__{{ .footerClassModifier }}">
   <ul class="footer__list">
     <li class="footer__item">
@@ -5,7 +15,7 @@
       {{ if isset .context.Site.Params "copyright" }}
         {{ replace .context.Site.Params.copyright "{{ YEAR }}" (now.Format "2006") | markdownify }}
       {{ else }}
-        {{ .context.Site.Params.author }}
+        {{ $authorName }}
         {{ now.Format "2006" }}
       {{ end }}
     </li>

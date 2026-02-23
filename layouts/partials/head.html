@@ -1,13 +1,23 @@
 <head>
   <meta charset="utf-8" />
+  {{- $authorName := "" -}}
+  {{- with .Site.Params.author -}}
+    {{- if reflect.IsMap . -}}
+      {{- with .name -}}
+        {{- $authorName = . -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $authorName = . -}}
+    {{- end -}}
+  {{- end -}}
   <title>
     {{ if (eq .Site.Params.reversepagetitle true) }}
       {{ with .Title }}
         {{ . }} |
       {{ end }}
-      {{- .Site.Params.author -}}
+      {{- $authorName -}}
     {{ else }}
-      {{- .Site.Params.author -}}{{ with .Title }}
+      {{- $authorName -}}{{ with .Title }}
         |
         {{ . }}
       {{ end }}
@@ -19,7 +29,7 @@
   <!-- Meta -->
   {{- hugo.Generator -}}
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="author" content="{{ .Site.Params.author }}" />
+  <meta name="author" content="{{ $authorName }}" />
   <meta
     name="description"
     content="{{ if .Params.description }}

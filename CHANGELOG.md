@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.19.0](https://github.com/lxndrblz/anatole/compare/v1.18.0...v1.19.0) (2026-02-28)
+
+
+### Features
+
+* allow using custom SCSS ([#570](https://github.com/lxndrblz/anatole/issues/570)) ([07e40a5](https://github.com/lxndrblz/anatole/commit/07e40a5107ed05bb2dcaa5ea4117088f0246ebbe))
+
+
+### Bug Fixes
+
+* add animation on 404 content and mobile footer ([#559](https://github.com/lxndrblz/anatole/issues/559)) ([7c76b55](https://github.com/lxndrblz/anatole/commit/7c76b55a1c1412579d4556075e5a4d92060c695f))
+* resolve .Site.Author error for Hugo 0.156.0 ([#583](https://github.com/lxndrblz/anatole/issues/583)) ([92946d0](https://github.com/lxndrblz/anatole/commit/92946d0c39dd5a27ff8c9a403a4f2f3cc2d5ab4a))
+
 ## [1.18.0](https://github.com/lxndrblz/anatole/compare/v1.17.1...v1.18.0) (2025-09-20)
 
 ### Features

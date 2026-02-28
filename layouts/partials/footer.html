@@ -9,11 +9,13 @@
   {{- end -}}
 {{- end -}}
 <footer class="footer footer__{{ .footerClassModifier }}">
-  <ul class="footer__list {{ with .Site.Params.doNotLoadAnimations }}
+  <ul
+    class="footer__list {{ with .Site.Params.doNotLoadAnimations }}
       .
     {{ else }}
       animated fadeInDown
-    {{ end }}">
+    {{ end }}"
+  >
     <li class="footer__item">
       &copy;
       {{ if isset .context.Site.Params "copyright" }}

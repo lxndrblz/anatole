@@ -22,6 +22,10 @@ pygmentsCodefencesGuessSyntax = true
 # Localized dates requires Hugo version 0.87.0
 localizedDates = false
 
+# Mermaid
+[params.mermaid]
+enable = true
+
 [markup]
     [markup.goldmark]
       [markup.goldmark.renderer]

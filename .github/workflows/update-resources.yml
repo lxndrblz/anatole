@@ -26,6 +26,9 @@ jobs:
         run: |
           npm ci
           npm run prepare
+      - name: clean resources
+        run: |
+          rm -rf resources/* exampleSite/resources/*
       - name: build
         run: npm run build
       - name: commit resources

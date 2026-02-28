@@ -10,18 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: install dart sass
         run: sudo snap install dart-sass --edge
       - name: setup hugo
         uses: peaceiris/actions-hugo@v3
         with:
           extended: true
-          hugo-version: 0.147.8
+          hugo-version: 0.157.0
       - name: setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
       - name: install
         run: |
           npm ci
@@ -32,7 +32,7 @@ jobs:
       - name: build
         run: npm run build
       - name: commit resources
-        uses: stefanzweifel/git-auto-commit-action@v6
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'chore: build resources'
           file_pattern: resources/** exampleSite/resources/**

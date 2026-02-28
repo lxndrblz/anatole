@@ -15,7 +15,16 @@
     }
   </script>
 {{ else if .IsPage }}
-  {{ $author :=  or (.Params.author) (.Site.Params.author) }}
+  {{- $author := "" -}}
+  {{- with or (.Params.author) (.Site.Params.author) -}}
+    {{- if reflect.IsMap . -}}
+      {{- with .name -}}
+        {{- $author = . -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $author = . -}}
+    {{- end -}}
+  {{- end -}}
   {{ $favicon := .Site.Params.favicon | absURL }}
   <script type="application/ld+json">
     {

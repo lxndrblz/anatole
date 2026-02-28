@@ -53,3 +53,6 @@ other = "További bejegyzések a cikksorozatban"
 
 [related_posts]
 other = "Hasonló hozzászólások"
+
+[toc]
+other = "Tartalomjegyzék"

@@ -22,10 +22,20 @@ pygmentsCodefencesGuessSyntax = true
 # Localized dates requires Hugo version 0.87.0
 localizedDates = false
 
+# Mermaid
+[params.mermaid]
+enable = true
+
 [markup]
     [markup.goldmark]
-        [markup.goldmark.renderer]
+      [markup.goldmark.renderer]
         unsafe=true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
 
 [taxonomies]
     category = "categories"

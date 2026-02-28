@@ -12,8 +12,8 @@
 [build.environment]
   HUGO_VERSION = "0.157.0"
   DART_SASS_VERSION = "1.97.3"
-  NODE_VERSION = "22"
-  GO_VERSION = "1.24.3"
+  NODE_VERSION = "24"
+  GO_VERSION = "1.26.0"
   HUGO_ENV = "production"
   HUGO_THEME = "repo"
   HUGO_BASEURL = "https://anatole-demo.netlify.app"

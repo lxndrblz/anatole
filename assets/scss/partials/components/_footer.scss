@@ -44,4 +44,12 @@
       display: none;
     }
   }
+
+  &__disclaimer {
+    font-size: 1.0rem;
+    opacity: 0.5;
+    max-width: 600px;
+    margin: 10px auto 0;
+    line-height: 1.4;
+  }
 }

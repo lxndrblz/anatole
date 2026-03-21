@@ -40,6 +40,9 @@
       </li>
     {{ end }}
   </ul>
+  {{ if isset .context.Site.Params "disclaimer" }}
+    <p class="footer__disclaimer {{ with .context.Site.Params.doNotLoadAnimations }}{{ else }}animated fadeInDown{{ end }}">{{ .context.Site.Params.disclaimer | markdownify }}</p>
+  {{ end }}
 </footer>
 {{- partial "medium-zoom.html" .context -}}
 {{- if (hasPrefix .context.Site.Config.Services.GoogleAnalytics.ID "G-") -}}

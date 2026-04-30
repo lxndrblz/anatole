@@ -48,7 +48,7 @@
 
   <!-- CSS -->
   {{ $contentRatio := or site.Params.contentratio 0.6 -}}
-  {{ $languageDirection := or site.Language.LanguageDirection "ltr" -}}
+  {{ $languageDirection := or site.Language.Direction "ltr" -}}
   {{ $vars := dict
     "text_direction" $languageDirection
     "content_ratio" (printf "%f%%" (mul $contentRatio 100))
@@ -59,7 +59,7 @@
   {{ $options := dict
     "transpiler" "dartsass"
     "vars" $vars
-    "targetPath" (printf "css/anatole%s.css" (cond (eq site.Language.LanguageDirection "") "" (printf ".%s" site.Language.LanguageDirection)))
+    "targetPath" (printf "css/anatole%s.css" (cond (eq site.Language.Direction "") "" (printf ".%s" site.Language.Direction)))
   -}}
   {{ with resources.Get "scss/main.scss" -}}
     {{ if hugo.IsProduction -}}

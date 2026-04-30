@@ -1,6 +1,6 @@
 <!doctype html>
 <html
-  dir="{{ .Site.Language.LanguageDirection | default "ltr" }}"
+  dir="{{ .Site.Language.Direction | default "ltr" }}"
   lang="{{- site.Language.Lang -}}"
   data-theme="{{- .Site.Params.displayMode -}}"
   {{ if eq .Site.Params.displayMode "dark" }}

@@ -10,7 +10,7 @@
   """
 
 [build.environment]
-  HUGO_VERSION = "0.157.0"
+  HUGO_VERSION = "0.158.0"
   DART_SASS_VERSION = "1.97.3"
   NODE_VERSION = "24"
   GO_VERSION = "1.26.0"

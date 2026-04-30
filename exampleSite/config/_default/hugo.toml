@@ -1,5 +1,5 @@
 baseURL = "https://example.com"
-languageCode = "en"
+locale = "en"
 DefaultContentLanguage = "en"
 title = "Website of Jane Doe"
 

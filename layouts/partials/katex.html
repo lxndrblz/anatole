@@ -1,0 +1,48 @@
+{{/* stylesheet */ -}}
+
+{{ $cssFile := cond hugo.IsProduction "katex.min.css" "katex.css" -}}
+{{ $cssUrl := printf "https://unpkg.com/katex@latest/dist/%s" $cssFile -}}
+{{ with try (resources.GetRemote $cssUrl) -}}
+  {{ with .Err -}}
+    {{ errorf "Could not retrieve KaTeX css file from CDN. Reason: %s." . -}}
+  {{ else with .Value -}}
+    {{ with resources.Copy (printf "css/%s" $cssFile) . -}}
+      {{ $cssHash := . | fingerprint "sha512" -}}
+      <link
+        rel="stylesheet"
+        href="{{- .RelPermalink -}}"
+        integrity="{{- $cssHash.Data.Integrity -}}"
+        crossorigin="anonymous">
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
+
+{{/* font files */ -}}
+
+{{ $fontFiles := slice -}}
+{{ $data := dict -}}
+{{ $url := "https://unpkg.com/katex@latest/dist/fonts?meta" -}}
+{{ with try (resources.GetRemote $url) -}}
+  {{ with .Err -}}
+    {{ errorf "%s" . -}}
+  {{ else with ( .Value | unmarshal ) -}}
+      {{ range .files -}}
+        {{ $fontFiles = $fontFiles | append .path -}}
+      {{ end -}}
+  {{ else -}}
+    {{ errorf "Unable to get remote resource %q" $url -}}
+  {{ end -}}
+{{ end -}}
+
+{{ range $fontFile := $fontFiles -}}
+  {{ $fontUrl := (printf "https://unpkg.com/katex@latest%s" $fontFile) -}}
+  {{ with try (resources.GetRemote $fontUrl) -}}
+    {{ with .Err -}}
+      {{ errorf "Could not retrieve KaTeX font file from CDN. Reason: %s." . -}}
+    {{ else with .Value -}}
+      {{ with resources.Copy (printf "css/fonts/%s" (replace $fontFile "/dist/fonts/" "")) . -}}
+        {{ .Publish -}}
+      {{ end -}}
+    {{ end -}}
+  {{ end -}}
+{{ end -}}

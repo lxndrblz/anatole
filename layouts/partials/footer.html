@@ -41,10 +41,13 @@
     {{ end }}
   </ul>
 </footer>
-{{- partial "medium-zoom.html" .context -}}
-{{- if (hasPrefix .context.Site.Config.Services.GoogleAnalytics.ID "G-") -}}
-  {{- template "_internal/google_analytics.html" .context -}}
-{{- end -}}
-{{- if and (hugo.IsProduction) (.context.Site.Params.gtagId) -}}
-  {{ partial "google-analytics-gtag-async.html" .context }}
+{{- if not (.context.Scratch.Get "footerScriptsRendered") -}}
+  {{- .context.Scratch.Set "footerScriptsRendered" true -}}
+  {{- partial "medium-zoom.html" .context -}}
+  {{- if (hasPrefix .context.Site.Config.Services.GoogleAnalytics.ID "G-") -}}
+    {{- template "_internal/google_analytics.html" .context -}}
+  {{- end -}}
+  {{- if and (hugo.IsProduction) (.context.Site.Params.gtagId) -}}
+    {{ partial "google-analytics-gtag-async.html" .context }}
+  {{- end -}}
 {{- end -}}

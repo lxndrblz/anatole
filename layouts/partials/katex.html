@@ -6,14 +6,12 @@
   {{ with .Err -}}
     {{ errorf "Could not retrieve KaTeX css file from CDN. Reason: %s." . -}}
   {{ else with .Value -}}
-    {{ with resources.Copy (printf "css/%s" $cssFile) . -}}
-      {{ $cssHash := . | fingerprint "sha512" -}}
-      <link
-        rel="stylesheet"
-        href="{{- .RelPermalink -}}"
-        integrity="{{- $cssHash.Data.Integrity -}}"
-        crossorigin="anonymous">
-    {{ end -}}
+    {{ $css := resources.Copy (printf "css/%s" $cssFile) . | resources.Fingerprint "sha512" -}}
+    <link
+      rel="stylesheet"
+      href="{{- $css.RelPermalink -}}"
+      integrity="{{- $css.Data.Integrity -}}"
+      crossorigin="anonymous">
   {{ end -}}
 {{ end -}}
 

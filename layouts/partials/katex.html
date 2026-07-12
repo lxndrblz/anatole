@@ -11,7 +11,8 @@
       rel="stylesheet"
       href="{{- $css.RelPermalink -}}"
       integrity="{{- $css.Data.Integrity -}}"
-      crossorigin="anonymous">
+      crossorigin="anonymous"
+    />
   {{ end -}}
 {{ end -}}
 
@@ -24,9 +25,9 @@
   {{ with .Err -}}
     {{ errorf "%s" . -}}
   {{ else with ( .Value | unmarshal ) -}}
-      {{ range .files -}}
-        {{ $fontFiles = $fontFiles | append .path -}}
-      {{ end -}}
+    {{ range .files -}}
+      {{ $fontFiles = $fontFiles | append .path -}}
+    {{ end -}}
   {{ else -}}
     {{ errorf "Unable to get remote resource %q" $url -}}
   {{ end -}}

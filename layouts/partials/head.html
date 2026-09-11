@@ -55,6 +55,7 @@
     "sidebar_ratio" (printf "%f%%" (mul (sub 1.0 $contentRatio) 100))
     "content_ratio_wide" (printf "%f%%" (mul 0.8 (mul $contentRatio 100)))
     "sidebar_ratio_wide" (printf "%f%%" (mul 0.8 (mul (sub 1.0 $contentRatio) 100)))
+    "search" (partial "search/stylesheet-flag.html" .)
   -}}
   {{ $options := dict
     "transpiler" "dartsass"

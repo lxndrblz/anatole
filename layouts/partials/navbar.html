@@ -98,6 +98,7 @@
           </div>
         </li>
       {{ end }}
+      {{- partial "search/button.html" . -}}
       {{ if not .Site.Params.disableThemeSwitcher }}
         <li class="nav__list-item">
           <div class="themeswitch">
@@ -109,4 +110,5 @@
       {{ end }}
     </ul>
   </nav>
+  {{- partial "search/dialog.html" . -}}
 </div>

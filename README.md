@@ -31,6 +31,7 @@ Anatole's aims to be minimalistic and sleek but still brings some great function
 - Compliant to strict CSP
 - Post Series
 - Mermaid diagram support (optional)
+- Site search with no external service (optional)
 
 ## Preview the Example Site
 

@@ -59,3 +59,25 @@ other = "Inhoudsopgave"
 
 [ariaLanguage]
 other = "Taal: "
+
+[search]
+other = "Zoeken"
+
+[search_placeholder]
+other = "Zoek op deze site…"
+
+[search_close]
+other = "Sluiten"
+
+[search_loading]
+other = "Laden…"
+
+[search_no_results]
+other = "Geen resultaten gevonden"
+
+[search_results_count]
+one = "1 resultaat"
+other = "{n} resultaten"
+
+[search_error]
+other = "Zoeken is momenteel niet beschikbaar"

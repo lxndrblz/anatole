@@ -52,3 +52,25 @@ other = "lignende indlæg"
 
 [toc]
 other = "Indholdsfortegnelse"
+
+[search]
+other = "Søg"
+
+[search_placeholder]
+other = "Søg på dette websted…"
+
+[search_close]
+other = "Luk"
+
+[search_loading]
+other = "Indlæser…"
+
+[search_no_results]
+other = "Ingen resultater fundet"
+
+[search_results_count]
+one = "1 resultat"
+other = "{n} resultater"
+
+[search_error]
+other = "Søgning er ikke tilgængelig lige nu"

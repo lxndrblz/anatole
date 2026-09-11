@@ -52,3 +52,24 @@ other = "类似的帖子"
 
 [toc]
 other = "目录"
+
+[search]
+other = "搜索"
+
+[search_placeholder]
+other = "搜索本站…"
+
+[search_close]
+other = "关闭"
+
+[search_loading]
+other = "正在加载…"
+
+[search_no_results]
+other = "未找到结果"
+
+[search_results_count]
+other = "{n} 条结果"
+
+[search_error]
+other = "搜索暂时不可用"

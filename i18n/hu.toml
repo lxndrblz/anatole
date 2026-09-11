@@ -56,3 +56,25 @@ other = "Hasonló hozzászólások"
 
 [toc]
 other = "Tartalomjegyzék"
+
+[search]
+other = "Keresés"
+
+[search_placeholder]
+other = "Keresés az oldalon…"
+
+[search_close]
+other = "Bezárás"
+
+[search_loading]
+other = "Betöltés…"
+
+[search_no_results]
+other = "Nincs találat"
+
+[search_results_count]
+one = "1 találat"
+other = "{n} találat"
+
+[search_error]
+other = "A keresés jelenleg nem érhető el"

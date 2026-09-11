@@ -52,3 +52,24 @@ other = "類似的帖子"
 
 [toc]
 other = "目錄"
+
+[search]
+other = "搜尋"
+
+[search_placeholder]
+other = "搜尋本站…"
+
+[search_close]
+other = "關閉"
+
+[search_loading]
+other = "載入中…"
+
+[search_no_results]
+other = "找不到結果"
+
+[search_results_count]
+other = "{n} 筆結果"
+
+[search_error]
+other = "目前無法使用搜尋"

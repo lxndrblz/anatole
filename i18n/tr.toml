@@ -56,3 +56,25 @@ other = "Benzer gönderiler"
 
 [toc]
 other = "İçindekiler tablosu"
+
+[search]
+other = "Ara"
+
+[search_placeholder]
+other = "Bu sitede ara…"
+
+[search_close]
+other = "Kapat"
+
+[search_loading]
+other = "Yükleniyor…"
+
+[search_no_results]
+other = "Sonuç bulunamadı"
+
+[search_results_count]
+one = "1 sonuç"
+other = "{n} sonuç"
+
+[search_error]
+other = "Arama şu anda kullanılamıyor"

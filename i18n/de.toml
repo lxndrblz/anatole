@@ -59,3 +59,25 @@ other = "Inhaltsverzeichnis"
 
 [ariaLanguage]
 other = "Sprache: "
+
+[search]
+other = "Suche"
+
+[search_placeholder]
+other = "Diese Website durchsuchen…"
+
+[search_close]
+other = "Schließen"
+
+[search_loading]
+other = "Wird geladen…"
+
+[search_no_results]
+other = "Keine Ergebnisse gefunden"
+
+[search_results_count]
+one = "1 Ergebnis"
+other = "{n} Ergebnisse"
+
+[search_error]
+other = "Die Suche ist derzeit nicht verfügbar"

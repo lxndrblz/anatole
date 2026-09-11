@@ -56,3 +56,25 @@ other = "Posts semelhantes"
 
 [toc]
 other = "Índice"
+
+[search]
+other = "Pesquisar"
+
+[search_placeholder]
+other = "Pesquisar neste site…"
+
+[search_close]
+other = "Fechar"
+
+[search_loading]
+other = "A carregar…"
+
+[search_no_results]
+other = "Nenhum resultado encontrado"
+
+[search_results_count]
+one = "1 resultado"
+other = "{n} resultados"
+
+[search_error]
+other = "A pesquisa não está disponível de momento"

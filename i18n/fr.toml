@@ -52,3 +52,25 @@ other = "Messages similaires"
 
 [toc]
 other = "Table des matières"
+
+[search]
+other = "Rechercher"
+
+[search_placeholder]
+other = "Rechercher sur ce site…"
+
+[search_close]
+other = "Fermer"
+
+[search_loading]
+other = "Chargement…"
+
+[search_no_results]
+other = "Aucun résultat trouvé"
+
+[search_results_count]
+one = "1 résultat"
+other = "{n} résultats"
+
+[search_error]
+other = "La recherche est indisponible pour le moment"

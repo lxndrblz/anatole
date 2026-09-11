@@ -52,3 +52,25 @@ other = "Postagens semelhantes"
 
 [toc]
 other = "Tabela de conteúdo"
+
+[search]
+other = "Buscar"
+
+[search_placeholder]
+other = "Buscar neste site…"
+
+[search_close]
+other = "Fechar"
+
+[search_loading]
+other = "Carregando…"
+
+[search_no_results]
+other = "Nenhum resultado encontrado"
+
+[search_results_count]
+one = "1 resultado"
+other = "{n} resultados"
+
+[search_error]
+other = "A busca não está disponível no momento"

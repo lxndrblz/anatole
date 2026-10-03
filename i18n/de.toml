@@ -56,3 +56,6 @@ other = "Ähnliche Beiträge"
 
 [toc]
 other = "Inhaltsverzeichnis"
+
+[ariaLanguage]
+other = "Sprache: "

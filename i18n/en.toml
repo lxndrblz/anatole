@@ -56,3 +56,6 @@ other = "Related Posts"
 
 [toc]
 other = "Table of contents"
+
+[ariaLanguage]
+other = "Language: "

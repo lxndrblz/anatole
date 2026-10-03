@@ -24,7 +24,7 @@ jobs:
           node-version: 24
       - name: install
         run: |
-          npm ci
+          npm ci --ignore-scripts
           npm run prepare
       - name: clean resources
         run: |

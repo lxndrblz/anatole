@@ -9,29 +9,30 @@ ARG HUGO_VERSION="0.165.0"
 
 ARG DART_SASS_VERSION="1.99.0"
 
-# Download Hugo
-RUN apt-get update && apt-get install -y ca-certificates openssl git curl && \
+# Download Dart Sass and Hugo
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl git openssl && \
     rm -rf /var/lib/apt/lists/* && \
-    case $(uname -m) in \
+    case "$(uname -m)" in \
     aarch64) \
     export ARCH=arm64 ;; \
     *) \
     export ARCH=x64 ;; \
     esac && \
-    echo ${ARCH} && \
-    curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-${ARCH}.tar.gz && \
-    tar -xf dart-sass-${DART_SASS_VERSION}-linux-${ARCH}.tar.gz && \
+    echo "${ARCH}" && \
+    curl --proto "=https" --tlsv1.2 -fsSL -o dart-sass.tar.gz "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-${ARCH}.tar.gz" && \
+    tar -xf dart-sass.tar.gz && \
     cp -r dart-sass/* /usr/local/bin && \
     rm -rf dart-sass* && \
-    case $(uname -m) in \
+    case "$(uname -m)" in \
     aarch64) \
     export ARCH=arm64 ;; \
     *) \
     export ARCH=amd64 ;; \
     esac && \
-    echo ${ARCH} && \
-    wget -O ${HUGO_VERSION}.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${VARIANT}_${HUGO_VERSION}_linux-${ARCH}.tar.gz && \
-    tar xf ${HUGO_VERSION}.tar.gz && \
+    echo "${ARCH}" && \
+    curl --proto "=https" --tlsv1.2 -fsSL -o hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${VARIANT}_${HUGO_VERSION}_linux-${ARCH}.tar.gz" && \
+    tar -xf hugo.tar.gz hugo && \
+    rm hugo.tar.gz && \
     mv hugo /usr/bin/hugo
 # Hugo dev server port
 EXPOSE 1313

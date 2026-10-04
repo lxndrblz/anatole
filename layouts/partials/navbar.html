@@ -77,19 +77,19 @@
           <div class="optionswitch">
             <input class="optionswitch__picker" type="checkbox" id="languagepicker" hidden />
             <label class="optionswitch__label" for="languagepicker"
-              >{{ .Site.Language.LanguageName }} <i class="fa fa-angle-down" aria-hidden="true"></i
+              >{{ .Site.Language.Label }} <i class="fa fa-angle-down" aria-hidden="true"></i
             ></label>
             <div class="optionswitch__triangle"></div>
             <ul class="optionswitch__list">
               {{ range $.Translations }}
                 <li class="optionswitch__list-item">
-                  <a href="{{ .RelPermalink }}" title="{{ .Language.LanguageName }}"
+                  <a href="{{ .RelPermalink }}" title="{{ .Language.Label }}"
                     ><span
                       {{ if eq . $.Site.Language }}
                         class="active"
                       {{ end }}
-                      aria-label="{{ i18n "ariaLanguage" }}{{ .Language.LanguageName }}"
-                      >{{ .Language.LanguageName }}</span
+                      aria-label="{{ i18n "ariaLanguage" }}{{ .Language.Label }}"
+                      >{{ .Language.Label }}</span
                     >
                   </a>
                 </li>

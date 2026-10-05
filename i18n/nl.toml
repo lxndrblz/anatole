@@ -1,0 +1,61 @@
+[category]
+other = "categorie"
+
+[tag]
+other = "label"
+
+[reading_time]
+one = "Eén minuut leestijd"
+other = "{{ .Count }} minuten leestijd"
+
+[old_content_warning]
+one = "Let op: dit bericht is meer dan {{ .Count }} dag oud. De informatie kan verouderd zijn."
+other = "Let op: dit bericht is meer dan {{ .Count }} dagen oud. De informatie kan verouderd zijn."
+
+[page_not_found]
+other = "Pagina niet gevonden"
+
+[page_does_not_exist]
+other = "Sorry, deze pagina bestaat niet."
+
+[head_back]
+other = "Je kunt terug naar de <a href=\"{{ . }}\">homepage</a>."
+
+[comments]
+other = "reacties"
+
+[send]
+other = "Versturen"
+
+[read_more]
+other = "Lees meer"
+
+[name]
+other = "Naam"
+
+[email]
+other = "E-mail"
+
+[message]
+other = "Bericht"
+
+[warning]
+other = "Waarschuwing"
+
+[info]
+other = "Info"
+
+[update]
+other = "Update"
+
+[series_posts]
+other = "Berichten in deze reeks"
+
+[related_posts]
+other = "Gerelateerde berichten"
+
+[toc]
+other = "Inhoudsopgave"
+
+[ariaLanguage]
+other = "Taal: "

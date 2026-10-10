@@ -9,7 +9,7 @@
     "prepare": "husky",
     "release": "release-it",
     "setup": "npm install && npm run prepare",
-    "test": ""
+    "test": "node --test tests/search.test.mjs"
   },
   "repository": {
     "type": "git",

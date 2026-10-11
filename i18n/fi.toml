@@ -52,3 +52,25 @@ other = "Vastaavia viestejä"
 
 [toc]
 other = "Sisällysluettelo"
+
+[search]
+other = "Haku"
+
+[search_placeholder]
+other = "Hae tältä sivustolta…"
+
+[search_close]
+other = "Sulje"
+
+[search_loading]
+other = "Ladataan…"
+
+[search_no_results]
+other = "Tuloksia ei löytynyt"
+
+[search_results_count]
+one = "1 tulos"
+other = "{n} tulosta"
+
+[search_error]
+other = "Haku ei ole juuri nyt käytettävissä"

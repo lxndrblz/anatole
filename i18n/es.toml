@@ -56,3 +56,25 @@ other = "Publicaciones similares"
 
 [toc]
 other = "Índice"
+
+[search]
+other = "Buscar"
+
+[search_placeholder]
+other = "Buscar en este sitio…"
+
+[search_close]
+other = "Cerrar"
+
+[search_loading]
+other = "Cargando…"
+
+[search_no_results]
+other = "No se encontraron resultados"
+
+[search_results_count]
+one = "1 resultado"
+other = "{n} resultados"
+
+[search_error]
+other = "La búsqueda no está disponible en este momento"

@@ -52,3 +52,25 @@ other = "Post simili"
 
 [toc]
 other = "Indice dei contenuti"
+
+[search]
+other = "Cerca"
+
+[search_placeholder]
+other = "Cerca in questo sito…"
+
+[search_close]
+other = "Chiudi"
+
+[search_loading]
+other = "Caricamento…"
+
+[search_no_results]
+other = "Nessun risultato trovato"
+
+[search_results_count]
+one = "1 risultato"
+other = "{n} risultati"
+
+[search_error]
+other = "La ricerca non è al momento disponibile"

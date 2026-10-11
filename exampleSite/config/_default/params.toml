@@ -43,6 +43,16 @@ reversepagetitle = true # When set to 'true', the Window Title will be reversed 
 # Sidebar/Content Ratio
 # contentratio = 0.6
 
+# Site search. Hugo builds a JSON index of all pages at build time and the
+# browser searches it; no external service, no extra dependency.
+[search]
+enable = true
+# minQueryLength = 2   # characters typed before searching starts
+# maxResults = 10      # results shown at most
+# contentLength = 5000 # cap on body characters indexed per page; the whole body by default, 0 for titles, tags and summaries only
+# slashShortcut = true # also open the search with "/"; Ctrl/Cmd+K always works
+# A page opts out with `search = false` in its front matter.
+
 [simpleAnalytics]
 # enable = true
 # customurl = "https://analytics.example.com"

@@ -56,3 +56,25 @@ other = "پست های مشابه"
 
 [toc]
 other = "فهرست مطالب"
+
+[search]
+other = "جستجو"
+
+[search_placeholder]
+other = "جستجو در این سایت…"
+
+[search_close]
+other = "بستن"
+
+[search_loading]
+other = "در حال بارگذاری…"
+
+[search_no_results]
+other = "نتیجه‌ای یافت نشد"
+
+[search_results_count]
+one = "۱ نتیجه"
+other = "{n} نتیجه"
+
+[search_error]
+other = "جستجو در حال حاضر در دسترس نیست"

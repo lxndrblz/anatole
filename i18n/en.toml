@@ -59,3 +59,25 @@ other = "Table of contents"
 
 [ariaLanguage]
 other = "Language: "
+
+[search]
+other = "Search"
+
+[search_placeholder]
+other = "Search this site…"
+
+[search_close]
+other = "Close"
+
+[search_loading]
+other = "Loading…"
+
+[search_no_results]
+other = "No results found"
+
+[search_results_count]
+one = "1 result"
+other = "{n} results"
+
+[search_error]
+other = "Search is unavailable right now"

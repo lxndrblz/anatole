@@ -1,0 +1,74 @@
+{{/* Builds the client-side search index for the current language and returns
+  the fingerprinted URL of the resulting JSON file.
+
+  Called through partialCached (keyed by language) from search/dialog.html,
+  so the index is generated once per language per build, not once per page.
+
+  A page is indexed when it is published as its own file: pages with
+  build.render "never" have no URL, and pages with "link" have a URL but no
+  file. The theme's redirect stubs (redirectUrl) are skipped, and front
+  matter `search = false` opts a page out. Drafts, expired and future pages
+  are already excluded by Hugo.
+
+  Entries are written newest first, which is the order the script keeps for
+  results that score the same.
+
+  The whole body text is indexed unless params.search.contentLength caps it;
+  0 indexes titles, tags and summaries only.
+*/}}
+{{- $contentLength := -1 -}}
+{{- if isset site.Params.search "contentlength" -}}
+  {{- $contentLength = int site.Params.search.contentlength -}}
+{{- end -}}
+{{- $dateFormat := "Jan 2, 2006" -}}
+{{- with site.Params.listDateFormat -}}
+  {{- $dateFormat = . -}}
+{{- end -}}
+{{- $entries := slice -}}
+{{- range site.RegularPages.ByDate.Reverse -}}
+  {{- /* "_build" is the pre-0.145 spelling of the "build" front matter key. */ -}}
+  {{- $render := or .Params.build.render (index .Params "_build" "render") -}}
+  {{- /* The opt-out may be written as a boolean or as the string "false". */ -}}
+  {{- $optedOut := eq (lower (printf "%v" .Params.search)) "false" -}}
+  {{- if and .RelPermalink (ne $render "link") (not .Params.redirectUrl) (not $optedOut) -}}
+    {{- $text := "" -}}
+    {{- if ne $contentLength 0 -}}
+      {{- $text = .Plain -}}
+      {{- if in .Content "<math" -}}
+        {{- /* Hugo renders math as MathML plus HTML, so .Plain holds each formula twice. */ -}}
+        {{- $text = .Content | replaceRE `(?s)<math.*?</math>` "" | plainify -}}
+      {{- end -}}
+      {{- /* strings.Substr counts characters and, unlike truncate, does not HTML-escape. */ -}}
+      {{- $text = $text | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+      {{- if gt $contentLength 0 -}}
+        {{- $text = strings.Substr $text 0 $contentLength -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $date := "" -}}
+    {{- if .Date.IsZero -}}
+      {{- /* undated pages (an about page, say) show no date rather than 0001 */ -}}
+    {{- else if site.Params.localizedDates -}}
+      {{- $date = time.Format $dateFormat .Date -}}
+    {{- else -}}
+      {{- $date = .Date.Format $dateFormat -}}
+    {{- end -}}
+    {{- /* RelPermalink drops the base path under canonifyURLs; the absolute URL's path never does. */ -}}
+    {{- $entries = $entries | append (dict
+      "title" .Title
+      "url" (urls.Parse .Permalink).Path
+      "date" $date
+      "section" .Section
+      "tags" (.Params.tags | default slice)
+      "summary" (.Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace)
+      "text" $text
+      )
+    -}}
+  {{- end -}}
+{{- end -}}
+{{- $json := $entries | jsonify -}}
+{{- /* The browser prepares the index on first open; past ~2 MB that pauses slower devices. */ -}}
+{{- if gt (len $json) 2000000 -}}
+  {{- warnf "Anatole search: the %q search index is %.1f MB, so the first search on slower devices may pause. Set params.search.contentLength to index less body text per page." site.Language.Lang (div (float (len $json)) 1000000) -}}
+{{- end -}}
+{{- $index := resources.FromString (printf "search/index.%s.json" site.Language.Lang) $json | fingerprint -}}
+{{- return $index.RelPermalink -}}

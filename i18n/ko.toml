@@ -56,3 +56,24 @@ other = "비슷한 게시물"
 
 [toc]
 other = "목차"
+
+[search]
+other = "검색"
+
+[search_placeholder]
+other = "사이트 검색…"
+
+[search_close]
+other = "닫기"
+
+[search_loading]
+other = "불러오는 중…"
+
+[search_no_results]
+other = "검색 결과가 없습니다"
+
+[search_results_count]
+other = "결과 {n}개"
+
+[search_error]
+other = "지금은 검색을 사용할 수 없습니다"

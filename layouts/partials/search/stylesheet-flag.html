@@ -1,0 +1,6 @@
+{{/* Returns the hugo:vars flag that compiles the search styles into the theme
+  stylesheet, and records on the page that head.html passed it, so that
+  search/dialog.html can warn about a head.html override without the flag.
+*/}}
+{{- .Store.Set "anatoleSearchStyles" true -}}
+{{- return cond (eq site.Params.search.enable true) "enabled" "disabled" -}}

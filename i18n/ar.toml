@@ -56,3 +56,29 @@ other = "جدول المحتويات"
 
 [ariaLanguage]
 other = "اللغة: "
+
+[search]
+other = "بحث"
+
+[search_placeholder]
+other = "ابحث في هذا الموقع…"
+
+[search_close]
+other = "إغلاق"
+
+[search_loading]
+other = "جارٍ التحميل…"
+
+[search_no_results]
+other = "لا توجد نتائج"
+
+[search_results_count]
+zero = "لا توجد نتائج"
+one = "نتيجة واحدة"
+two = "نتيجتان"
+few = "{n} نتائج"
+many = "{n} نتيجة"
+other = "{n} نتيجة"
+
+[search_error]
+other = "البحث غير متاح حاليًا"

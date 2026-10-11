@@ -56,3 +56,24 @@ other = "Postingan serupa"
 
 [toc]
 other = "Daftar isi"
+
+[search]
+other = "Cari"
+
+[search_placeholder]
+other = "Cari di situs ini…"
+
+[search_close]
+other = "Tutup"
+
+[search_loading]
+other = "Memuat…"
+
+[search_no_results]
+other = "Tidak ada hasil"
+
+[search_results_count]
+other = "{n} hasil"
+
+[search_error]
+other = "Pencarian sedang tidak tersedia"

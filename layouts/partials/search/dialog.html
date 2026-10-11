@@ -1,0 +1,89 @@
+{{/* Search dialog and its script. Rendered once per page, outside the <nav>
+  element so it stays visible on mobile where the nav is collapsed.
+
+  Everything the script needs (index URL, limits, translated strings) is
+  passed as data attributes: no inline JavaScript, so a strict CSP holds.
+
+  Each string falls back to English so a site whose language has no search_*
+  translations yet still gets usable labels.
+
+  IDs are camelCase because Hugo's generated heading IDs are always lowercase,
+  so a heading such as "Search" in the content can never duplicate them.
+*/}}
+{{- if eq site.Params.search.enable true -}}
+  {{- if not (.Store.Get "anatoleSearchStyles") -}}
+    {{- warnf "Anatole search is enabled, but the site's layouts/partials/head.html does not pass the search flag to the stylesheet, so the search dialog is unstyled. Copy the \"search\" entry from the theme's head.html into the override." -}}
+  {{- end -}}
+  {{- $index := partialCached "search/data.html" . site.Language.Lang -}}
+  {{- /* The result count is translated once per plural category; languages disagree on which numbers share a form. */ -}}
+  {{- /* The script matches the real count to the sample below that falls in the same category. */ -}}
+  {{- $counts := dict -}}
+  {{- range slice 1 2 3 11 100 -}}
+    {{- $fallback := cond (eq . 1) "1 result" "{n} results" -}}
+    {{- $counts = merge $counts (dict (string .) (i18n "search_results_count" . | default $fallback)) -}}
+  {{- end -}}
+  <dialog
+    class="searchdialog"
+    id="anatoleSearch"
+    aria-labelledby="anatoleSearchLabel"
+    data-search-index="{{ $index }}"
+    data-search-min="{{ site.Params.search.minQueryLength | default 2 }}"
+    data-search-max="{{ site.Params.search.maxResults | default 10 }}"
+    data-search-slash="{{ eq site.Params.search.slashShortcut true }}"
+  >
+    <form class="searchdialog__form" role="search">
+      <label class="searchdialog__label" id="anatoleSearchLabel" for="anatoleSearchInput"
+        >{{ i18n "search" | default "Search" }}</label
+      >
+      <div class="searchdialog__bar">
+        <i class="fas fa-search searchdialog__icon" aria-hidden="true"></i>
+        <input
+          id="anatoleSearchInput"
+          class="searchdialog__input"
+          type="search"
+          dir="auto"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="{{ i18n "search_placeholder" | default "Search this site…" }}"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-controls="anatoleSearchResults"
+          aria-expanded="false"
+        />
+        <button
+          type="button"
+          class="searchdialog__close"
+          aria-label="{{ i18n "search_close" | default "Close" }}"
+          data-search-close
+        >
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <output
+        class="searchdialog__status"
+        hidden
+        data-search-loading="{{ i18n "search_loading" | default "Loading…" }}"
+        data-search-none="{{ i18n "search_no_results" | default "No results found" }}"
+        data-search-counts="{{ $counts | jsonify }}"
+        data-search-error="{{ i18n "search_error" | default "Search is unavailable right now" }}"
+      ></output>
+      <ol
+        class="searchdialog__results"
+        id="anatoleSearchResults"
+        role="listbox"
+        aria-labelledby="anatoleSearchLabel"
+        hidden
+      ></ol>
+    </form>
+  </dialog>
+  {{ $js := resources.Get "js/anatole-search.js" | resources.Minify | resources.Fingerprint }}
+  <script
+    defer
+    type="text/javascript"
+    src="{{ $js.RelPermalink }}"
+    integrity="{{ $js.Data.Integrity }}"
+    crossorigin="anonymous"
+  ></script>
+{{- end -}}

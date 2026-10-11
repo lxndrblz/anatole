@@ -52,3 +52,24 @@ other = "同様の投稿"
 
 [toc]
 other = "目次"
+
+[search]
+other = "検索"
+
+[search_placeholder]
+other = "サイト内を検索…"
+
+[search_close]
+other = "閉じる"
+
+[search_loading]
+other = "読み込み中…"
+
+[search_no_results]
+other = "結果が見つかりません"
+
+[search_results_count]
+other = "{n} 件の結果"
+
+[search_error]
+other = "現在、検索を利用できません"

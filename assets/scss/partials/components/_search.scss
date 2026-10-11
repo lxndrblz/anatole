@@ -17,24 +17,19 @@
 // module-variables so that a site overriding head.html with a copy that
 // predates it still compiles, with search styles left out.
 @if map.get(meta.module-variables('hugo'), 'search') == enabled {
-  // Same size as .themeswitch; the margin and vertical-align centre the
-  // <button> box on the neighbouring icons (a <button> sits on the line box
-  // differently from the theme switch's <a>).
-  .searchswitch {
-    margin-top: -2px;
-    font-size: 1.75rem;
-
-    &__button {
-      background: none;
-      border: 0;
-      padding: 0;
-      margin: 0;
-      color: inherit;
-      cursor: pointer;
-      font: inherit;
-      line-height: inherit;
-      vertical-align: middle;
-    }
+  // The button takes its size and its place on the text baseline from the
+  // navbar, exactly as the language and theme controls beside it do, so the
+  // three stay level whatever font the page falls back to. The padding
+  // enlarges the hit area; the equal negative margin keeps it from moving
+  // anything.
+  .searchswitch__button {
+    background: none;
+    border: 0;
+    padding: 4px;
+    margin: -4px;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
   }
 
   // The button is hidden until the script reveals it. Keeping its space
@@ -165,10 +160,17 @@
       }
     }
 
+    // An <output> is inline by default, and a display value would otherwise
+    // override the hidden attribute.
     &__status {
+      display: block;
       font-size: 1.3rem;
       margin: 0;
       padding: 10px 18px 0;
+
+      &[hidden] {
+        display: none;
+      }
 
       @include color.themed() {
         color: muted();

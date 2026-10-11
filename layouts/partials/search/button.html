@@ -1,21 +1,15 @@
-{{/* Navbar entry that opens the search dialog. Rendered inside nav__list--end.
-
-  It starts hidden and the search script reveals it, so a visitor without
-  JavaScript never sees a button that cannot work.
+{{/* The button that opens the search dialog. navbar.html renders it inside a
+  list item of its own when params.search.enable is true.
 */}}
-{{- if eq site.Params.search.enable true -}}
-  <li class="nav__list-item" data-search-control hidden>
-    <div class="searchswitch">
-      <button
-        type="button"
-        class="searchswitch__button"
-        aria-label="{{ i18n "search" | default "Search" }}"
-        title="{{ i18n "search" | default "Search" }}"
-        aria-controls="anatoleSearch"
-        data-search-open
-      >
-        <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-      </button>
-    </div>
-  </li>
-{{- end -}}
+<div class="searchswitch">
+  <button
+    type="button"
+    class="searchswitch__button"
+    aria-label="{{ i18n "search" | default "Search" }}"
+    title="{{ i18n "search" | default "Search" }}"
+    aria-controls="anatoleSearch"
+    data-search-open
+  >
+    <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+  </button>
+</div>

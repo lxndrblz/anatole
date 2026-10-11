@@ -61,15 +61,14 @@
           <i class="fas fa-times" aria-hidden="true"></i>
         </button>
       </div>
-      <p
+      <output
         class="searchdialog__status"
-        role="status"
         hidden
         data-search-loading="{{ i18n "search_loading" | default "Loading…" }}"
         data-search-none="{{ i18n "search_no_results" | default "No results found" }}"
         data-search-counts="{{ $counts | jsonify }}"
         data-search-error="{{ i18n "search_error" | default "Search is unavailable right now" }}"
-      ></p>
+      ></output>
       <ol
         class="searchdialog__results"
         id="anatoleSearchResults"

@@ -98,7 +98,12 @@
           </div>
         </li>
       {{ end }}
-      {{- partial "search/button.html" . -}}
+      {{- /* Hidden until the search script reveals it, so it never shows without JavaScript. */ -}}
+      {{ if eq site.Params.search.enable true }}
+        <li class="nav__list-item" data-search-control hidden>
+          {{- partial "search/button.html" . -}}
+        </li>
+      {{ end }}
       {{ if not .Site.Params.disableThemeSwitcher }}
         <li class="nav__list-item">
           <div class="themeswitch">

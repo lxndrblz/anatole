@@ -30,7 +30,7 @@
       .replace(/[يىكةەـßı]/g, (char) => LETTER_FOLDS[char])
       // Persian and Arabic-Indic digits to ASCII: the low nibble of either
       // code point is the digit value.
-      .replace(/[۰-۹٠-٩]/g, (digit) => String(digit.charCodeAt(0) & 0x0f));
+      .replace(/[۰-۹٠-٩]/g, (digit) => String(digit.codePointAt(0) & 0x0f));
 
   // Marks are word characters too: the spacing vowel signs of Indic scripts
   // survive normalisation and sit inside words.
@@ -39,7 +39,7 @@
   // of what it sees, is classified by character code without the regex.
   const isWordChar = (char) => {
     if (char === undefined) return false;
-    const code = char.charCodeAt(0);
+    const code = char.codePointAt(0);
     if (code < 128) return (code > 47 && code < 58) || (code > 64 && code < 91) || (code > 96 && code < 123);
     return WORD_CHAR.test(char);
   };
@@ -154,8 +154,41 @@
   // How far a cut may move to land on a space instead of inside a word.
   const SNIPPET_SNAP = 20;
 
-  const isLowSurrogate = (code) => code >= 0xdc00 && code <= 0xdfff;
-  const isHighSurrogate = (code) => code >= 0xd800 && code <= 0xdbff;
+  // True when cutting the text at `index` would split a surrogate pair: the
+  // code unit there is the second half of one.
+  const splitsPair = (text, index) => {
+    const code = text.codePointAt(index);
+    return code >= 0xdc00 && code <= 0xdfff;
+  };
+
+  // Where the earliest match of any term starts in the normalised text, or -1.
+  const firstMatch = (normalizedText, terms) => {
+    let at = -1;
+    for (const { token } of terms) {
+      const found = normalizedText.indexOf(token);
+      if (found !== -1 && (at === -1 || found < at)) at = found;
+    }
+    return at;
+  };
+
+  // The [start, end) window to show around `position`, moved to a nearby
+  // space where there is one and never cutting a surrogate pair in half.
+  const snippetWindow = (text, position) => {
+    let start = Math.max(0, position - SNIPPET_LEAD);
+    let end = Math.min(text.length, start + SNIPPET_CHARS);
+
+    if (start > 0) {
+      const space = text.indexOf(' ', start);
+      if (space !== -1 && space - start < SNIPPET_SNAP) start = space + 1;
+      if (splitsPair(text, start)) start += 1;
+    }
+    if (end < text.length) {
+      const space = text.lastIndexOf(' ', end);
+      if (space > start && end - space < SNIPPET_SNAP) end = space;
+      if (splitsPair(text, end)) end -= 1;
+    }
+    return [start, end];
+  };
 
   // Cuts a window of the text around the first match and splits it into
   // pieces, flagging those that contain a term. The window is measured in
@@ -163,33 +196,17 @@
   // spaces. Only the window is segmented and normalised, never the whole
   // text. `segment` splits a string into word and non-word pieces.
   const snippetParts = (text, normalizedText, terms, segment) => {
-    let at = -1;
-    for (const { token } of terms) {
-      const found = normalizedText.indexOf(token);
-      if (found !== -1 && (at === -1 || found < at)) at = found;
-    }
+    const at = firstMatch(normalizedText, terms);
     // Normalisation changes the length slightly, so scale the position back
     // onto the original text; the lead-in absorbs the remaining error.
     const estimate = at > 0 ? Math.round((at * text.length) / normalizedText.length) : 0;
-    let start = Math.max(0, estimate - SNIPPET_LEAD);
-    let end = Math.min(text.length, start + SNIPPET_CHARS);
-
-    if (start > 0) {
-      const space = text.indexOf(' ', start);
-      if (space !== -1 && space - start < SNIPPET_SNAP) start = space + 1;
-      if (isLowSurrogate(text.charCodeAt(start))) start += 1;
-    }
-    if (end < text.length) {
-      const space = text.lastIndexOf(' ', end);
-      if (space > start && end - space < SNIPPET_SNAP) end = space;
-      if (isHighSurrogate(text.charCodeAt(end - 1))) end -= 1;
-    }
+    const [start, end] = snippetWindow(text, estimate);
 
     const parts = [];
     for (const piece of segment(text.slice(start, end))) {
       const key = normalize(piece);
       const hit = terms.some(({ token, minimum }) => (minimum === WHOLE_WORD ? key === token : key.includes(token)));
-      const last = parts[parts.length - 1];
+      const last = parts.at(-1);
       if (last && !last.hit && !hit) last.text += piece;
       else parts.push({ text: piece, hit });
     }
@@ -278,7 +295,7 @@
     const describeCount = (count) => {
       const category = pluralRules.select(count);
       const sample = countSamples.find((n) => pluralRules.select(n) === category);
-      const template = countStrings[sample] || countStrings[countSamples[countSamples.length - 1]];
+      const template = countStrings[sample] || countStrings[countSamples.at(-1)];
       return template.replace('{n}', numberFormat.format(count));
     };
 

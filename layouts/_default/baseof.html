@@ -35,6 +35,14 @@
 
     {{- partial "footer.html" (dict "context" . "footerClassModifier" "base") -}}
 
+    {{- partial "medium-zoom.html" . -}}
+    {{- if (hasPrefix .Site.Config.Services.GoogleAnalytics.ID "G-") -}}
+      {{- template "_internal/google_analytics.html" . -}}
+    {{- end -}}
+    {{- if and (hugo.IsProduction) (.Site.Params.gtagId) -}}
+      {{ partial "google-analytics-gtag-async.html" . }}
+    {{- end -}}
+
     {{- if (eq .Site.Params.simpleAnalytics.enable true) -}}
       {{- partial "analytics/simpleanalytics.html" . -}}
     {{- end -}}

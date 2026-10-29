@@ -355,24 +355,28 @@
           active.zoomedHd.removeAttribute('sizes');
           active.zoomedHd.src = active.zoomed.getAttribute('data-zoom-src');
           active.zoomedHd.onerror = function () {
-            clearInterval(getZoomTargetSize);
             console.warn('Unable to reach the zoom image target ' + active.zoomedHd.src);
             active.zoomedHd = null;
             _animate();
           };
-          var getZoomTargetSize = setInterval(function () {
-            if (active.zoomedHd.complete) {
-              clearInterval(getZoomTargetSize);
+          if (active.zoomedHd.complete) {
+            active.zoomedHd.classList.add('medium-zoom-image--opened');
+            active.zoomedHd.addEventListener('click', close);
+            document.body.appendChild(active.zoomedHd);
+            _animate();
+          } else {
+            active.zoomedHd.addEventListener('load', function loadEventListener() {
+              active.zoomedHd.removeEventListener('load', loadEventListener);
               active.zoomedHd.classList.add('medium-zoom-image--opened');
               active.zoomedHd.addEventListener('click', close);
               document.body.appendChild(active.zoomedHd);
               _animate();
-            }
-          }, 10);
+            });
+          }
         } else if (active.original.hasAttribute('srcset')) {
           active.zoomedHd = active.zoomed.cloneNode();
           active.zoomedHd.removeAttribute('sizes');
-          var loadEventListener = active.zoomedHd.addEventListener('load', function () {
+          active.zoomedHd.addEventListener('load', function loadEventListener() {
             active.zoomedHd.removeEventListener('load', loadEventListener);
             active.zoomedHd.classList.add('medium-zoom-image--opened');
             active.zoomedHd.addEventListener('click', close);

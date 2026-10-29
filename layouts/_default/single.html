@@ -22,7 +22,7 @@
           <li class="post__meta-item">
             <em class="fas fa-calendar-day post__meta-icon"></em>
             <span class="post__meta-text"
-              >{{ if isset .Site.Params "singledateformat" }}
+              >{{ if .Site.Params.singleDateFormat }}
                 {{ if .Site.Params.localizedDates }}
                   {{ time.Format .Site.Params.singleDateFormat .Date }}
                 {{ else }}

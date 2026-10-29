@@ -69,7 +69,7 @@
       <div class="post__footer">
         <em class="fas fa-calendar-day"></em>
         <span class="post__footer-date"
-          >{{ if isset .Site.Params "indexdateformat" }}
+          >{{ if .Site.Params.indexDateFormat }}
             {{ if .Site.Params.localizedDates }}
               {{ time.Format .Site.Params.indexDateFormat .Date }}
             {{ else }}

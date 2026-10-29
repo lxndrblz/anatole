@@ -17,7 +17,7 @@
               <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ upper .Title }}</a>
             {{ end }}
             <div class="archive__list-date">
-              {{ if isset .Site.Params "listdateformat" }}
+              {{ if .Site.Params.listDateFormat }}
                 {{ if .Site.Params.localizedDates }}
                   {{ time.Format .Site.Params.listDateFormat .Date }}
                 {{ else }}

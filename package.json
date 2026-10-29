@@ -9,7 +9,7 @@
     "prepare": "husky",
     "release": "release-it",
     "setup": "npm install && npm run prepare",
-    "test": ""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,8 @@
     "@release-it/conventional-changelog": "^11.0.1",
     "conventional-commits-filter": "^6.0.1",
     "husky": "^9.1.7",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
     "prettier": "^3.8.1",
     "prettier-plugin-go-template": "^0.0.15",
     "release-it": "^20.2.1",

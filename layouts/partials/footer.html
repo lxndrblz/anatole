@@ -1,13 +1,4 @@
-{{- $authorName := "" -}}
-{{- with .context.Site.Params.author -}}
-  {{- if reflect.IsMap . -}}
-    {{- with .name -}}
-      {{- $authorName = . -}}
-    {{- end -}}
-  {{- else -}}
-    {{- $authorName = . -}}
-  {{- end -}}
-{{- end -}}
+{{- $authorName := partial "get_author_name.html" .context.Site.Params.author -}}
 <footer class="footer footer__{{ .footerClassModifier }}">
   <ul
     class="footer__list {{ with .context.Site.Params.doNotLoadAnimations }}

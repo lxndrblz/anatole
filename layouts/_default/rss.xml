@@ -6,16 +6,7 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
-{{- $authorName := "" -}}
-{{- with site.Params.author -}}
-  {{- if reflect.IsMap . -}}
-    {{- with .name -}}
-      {{- $authorName = . -}}
-    {{- end -}}
-  {{- else -}}
-    {{- $authorName = . -}}
-  {{- end -}}
-{{- end -}}
+{{- $authorName := partial "author.html" site.Params.author -}}
 {{- $pctx := . -}}
 {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
 {{- $pages := slice -}}

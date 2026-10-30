@@ -1,15 +1,6 @@
 <head>
   <meta charset="utf-8" />
-  {{- $authorName := "" -}}
-  {{- with .Site.Params.author -}}
-    {{- if reflect.IsMap . -}}
-      {{- with .name -}}
-        {{- $authorName = . -}}
-      {{- end -}}
-    {{- else -}}
-      {{- $authorName = . -}}
-    {{- end -}}
-  {{- end -}}
+  {{- $authorName := partial "get_author_name.html" .Site.Params.author -}}
   <title>
     {{ if (eq .Site.Params.reversepagetitle true) }}
       {{ with .Title }}

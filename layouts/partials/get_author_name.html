@@ -1,0 +1,11 @@
+{{- $authorName := "" -}}
+{{- with . -}}
+  {{- if reflect.IsMap . -}}
+    {{- with .name -}}
+      {{- $authorName = . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $authorName = . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $authorName -}}

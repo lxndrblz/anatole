@@ -53,3 +53,7 @@ if (currThemeStyle) {
 } else {
   setLightTheme();
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { switchTheme };
+}

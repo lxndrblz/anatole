@@ -189,7 +189,7 @@
     {{- if or (in . "http://") (in . "https://") -}}
       <script src="{{ . | relURL }}"></script>
     {{- else -}}
-      {{- $customJS := resources.Get . -}}
+      {{- $customJS := partialCached "get-resource.html" . . -}}
       {{- if $customJS -}}
         {{- if eq $js "" -}}
           {{- $js = $customJS -}}
